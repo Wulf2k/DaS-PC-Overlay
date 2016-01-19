@@ -147,6 +147,9 @@ Public Class Form1
     Public Sub WriteUInt32(ByVal addr As IntPtr, val As UInt32)
         WriteProcessMemory(_targetProcessHandle, addr, BitConverter.GetBytes(val), 4, Nothing)
     End Sub
+    Public Sub WriteFloat(ByVal addr As IntPtr, val As Single)
+        WriteProcessMemory(_targetProcessHandle, addr, BitConverter.GetBytes(val), 4, Nothing)
+    End Sub
 
     Public Sub DrawString(ByVal text As String, ByVal pt As Point, ByVal col As Brush)
 
@@ -164,18 +167,65 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Refresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Me.CreateGraphics.Clear(BackColor)
         Me.TopMost = True
 
-        DrawString(playerHP & " / " & playerMaxHP, New Point(200, 230), Brushes.Yellow)
-        DrawString(playerStam & " / " & playerMaxStam, New Point(200, 250), Brushes.Yellow)
+        If tabs.SelectedIndex() = 0 Then
+
+            btnXMinus.Visible = True
+            btnXMinusMinus.Visible = True
+            btnYMinus.Visible = True
+            btnYMinusMinus.Visible = True
+            btnZMinus.Visible = True
+            btnZMinusMinus.Visible = True
+
+            btnXPlus.Visible = True
+            btnXPlusPlus.Visible = True
+            btnYPlus.Visible = True
+            btnYPlusPlus.Visible = True
+            btnZPlus.Visible = True
+            btnZPlusPlus.Visible = True
+
+            chkNoGrav.Visible = True
+            chkNoMapHit.Visible = True
+            chkSetDeadMode.Visible = True
 
 
-        DrawString("Facing: " & playerFacing, New Point(50, 308), Brushes.White)
-        DrawString("X: " & playerXpos, New Point(50, 325), Brushes.White)
-        DrawString("Y: " & playerYpos, New Point(50, 342), Brushes.White)
-        DrawString("Z: " & playerZpos, New Point(50, 359), Brushes.White)
+
+            DrawString(playerHP & " / " & playerMaxHP, New Point(200, 230), Brushes.Yellow)
+            DrawString(playerStam & " / " & playerMaxStam, New Point(200, 250), Brushes.Yellow)
+
+
+            DrawString("Facing: " & playerFacing, New Point(70, 300), Brushes.White)
+            DrawString("X: " & playerXpos, New Point(70, 325), Brushes.White)
+            DrawString("Y: " & playerYpos, New Point(70, 350), Brushes.White)
+            DrawString("Z: " & playerZpos, New Point(70, 375), Brushes.White)
+
+            DrawString("SetDeadMode", New Point(70, 800), Brushes.White)
+            DrawString("NoMapHit", New Point(70, 825), Brushes.White)
+            DrawString("NoGrav", New Point(70, 850), Brushes.White)
+        Else
+            btnXMinus.Visible = False
+            btnXMinusMinus.Visible = False
+            btnYMinus.Visible = False
+            btnYMinusMinus.Visible = False
+            btnZMinus.Visible = False
+            btnZMinusMinus.Visible = False
+
+            btnXPlus.Visible = False
+            btnXPlusPlus.Visible = False
+            btnYPlus.Visible = False
+            btnYPlusPlus.Visible = False
+            btnZPlus.Visible = False
+            btnZPlusPlus.Visible = False
+
+            chkNoGrav.Visible = False
+            chkNoMapHit.Visible = False
+            chkSetDeadMode.Visible = False
+        End If
+
+
 
         'DrawString("Charptr1: " & Hex(charptr1), New Point(50, 380), Brushes.White)
     End Sub
@@ -238,7 +288,7 @@ Public Class Form1
         chkNoGrav.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H4000) = &H4000)
         chkSetDeadMode.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H2000000) = &H2000000)
 
-        Button1.PerformClick()
+        btnRefresh.PerformClick()
 
 
 
@@ -270,5 +320,43 @@ Public Class Form1
             curval += &H2000000
         End If
         WriteUInt32(charptr1 + &H1FC, curval)
+    End Sub
+
+    Private Sub btnXPlus_Click(sender As Object, e As EventArgs) Handles btnXPlus.Click
+        WriteFloat(charposdataptr + &H10, playerXpos + 1)
+    End Sub
+    Private Sub btnXPlusPlus_Click(sender As Object, e As EventArgs) Handles btnXPlusPlus.Click
+        WriteFloat(charposdataptr + &H10, playerXpos + 10)
+    End Sub
+    Private Sub btnYPlus_Click(sender As Object, e As EventArgs) Handles btnYPlus.Click
+        WriteFloat(charposdataptr + &H14, playerYpos + 1)
+    End Sub
+    Private Sub btnYPlusPlus_Click(sender As Object, e As EventArgs) Handles btnYPlusPlus.Click
+        WriteFloat(charposdataptr + &H14, playerYpos + 10)
+    End Sub
+    Private Sub btnZPlus_Click(sender As Object, e As EventArgs) Handles btnZPlus.Click
+        WriteFloat(charposdataptr + &H18, playerZpos + 1)
+    End Sub
+    Private Sub btnZPlusPlus_Click(sender As Object, e As EventArgs) Handles btnZPlusPlus.Click
+        WriteFloat(charposdataptr + &H18, playerZpos + 10)
+    End Sub
+
+    Private Sub btnXMinus_Click(sender As Object, e As EventArgs) Handles btnXMinus.Click
+        WriteFloat(charposdataptr + &H10, playerXpos - 1)
+    End Sub
+    Private Sub btnXMinusMinus_Click(sender As Object, e As EventArgs) Handles btnXMinusMinus.Click
+        WriteFloat(charposdataptr + &H10, playerXpos - 10)
+    End Sub
+    Private Sub btnYMinus_Click(sender As Object, e As EventArgs) Handles btnYMinus.Click
+        WriteFloat(charposdataptr + &H14, playerYpos - 1)
+    End Sub
+    Private Sub btnYMinusMinus_Click(sender As Object, e As EventArgs) Handles btnYMinusMinus.Click
+        WriteFloat(charposdataptr + &H14, playerYpos - 10)
+    End Sub
+    Private Sub btnZMinus_Click(sender As Object, e As EventArgs) Handles btnZMinus.Click
+        WriteFloat(charposdataptr + &H18, playerZpos - 1)
+    End Sub
+    Private Sub btnZMinusMinus_Click(sender As Object, e As EventArgs) Handles btnZMinusMinus.Click
+        WriteFloat(charposdataptr + &H18, playerZpos - 10)
     End Sub
 End Class
