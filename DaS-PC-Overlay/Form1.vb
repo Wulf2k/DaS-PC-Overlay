@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.Runtime.InteropServices
+Imports System.Threading
 
 
 Public Class Form1
@@ -12,6 +13,9 @@ Public Class Form1
     Private Declare Function ReadProcessMemory Lib "kernel32" (ByVal hProcess As IntPtr, ByVal lpBaseAddress As IntPtr, ByVal lpBuffer() As Byte, ByVal iSize As Integer, ByRef lpNumberOfBytesRead As Integer) As Boolean
     Private Declare Function WriteProcessMemory Lib "kernel32" (ByVal hProcess As IntPtr, ByVal lpBaseAddress As IntPtr, ByVal lpBuffer() As Byte, ByVal iSize As Integer, ByVal lpNumberOfBytesWritten As Integer) As Boolean
     Private Declare Function CloseHandle Lib "kernel32.dll" (ByVal hObject As IntPtr) As Boolean
+
+    Dim clearctr As UInteger
+
 
     Dim charptr1 As UInteger
     Dim charmapdataptr As UInteger
@@ -28,7 +32,7 @@ Public Class Form1
     Dim enemyptr4 As UInteger
     Dim tendptr As UInteger
 
-    Dim delay As Integer = 200
+    Dim delay As Integer = 500
 
     Dim crtCount As Integer
 
@@ -150,6 +154,9 @@ Public Class Form1
     Public Sub WriteFloat(ByVal addr As IntPtr, val As Single)
         WriteProcessMemory(_targetProcessHandle, addr, BitConverter.GetBytes(val), 4, Nothing)
     End Sub
+    Public Sub WriteBytes(ByVal addr As IntPtr, val As Byte())
+        WriteProcessMemory(_targetProcessHandle, addr, val, val.Length, Nothing)
+    End Sub
 
     Public Sub DrawString(ByVal text As String, ByVal pt As Point, ByVal col As Brush)
 
@@ -168,7 +175,10 @@ Public Class Form1
     End Sub
 
     Private Sub Refresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+
         Me.CreateGraphics.Clear(BackColor)
+
+
         Me.TopMost = True
 
         If tabs.SelectedIndex() = 0 Then
@@ -187,6 +197,7 @@ Public Class Form1
             btnZPlus.Visible = True
             btnZPlusPlus.Visible = True
 
+            chkLockPos.Visible = True
             chkNoGrav.Visible = True
             chkNoMapHit.Visible = True
             chkSetDeadMode.Visible = True
@@ -202,9 +213,12 @@ Public Class Form1
             DrawString("Y: " & playerYpos, New Point(70, 350), Brushes.White)
             DrawString("Z: " & playerZpos, New Point(70, 375), Brushes.White)
 
+            DrawString("LockPos", New Point(70, 775), Brushes.White)
             DrawString("SetDeadMode", New Point(70, 800), Brushes.White)
             DrawString("NoMapHit", New Point(70, 825), Brushes.White)
             DrawString("NoGrav", New Point(70, 850), Brushes.White)
+
+
         Else
             btnXMinus.Visible = False
             btnXMinusMinus.Visible = False
@@ -220,6 +234,7 @@ Public Class Form1
             btnZPlus.Visible = False
             btnZPlusPlus.Visible = False
 
+            chkLockPos.Visible = False
             chkNoGrav.Visible = False
             chkNoMapHit.Visible = False
             chkSetDeadMode.Visible = False
@@ -294,6 +309,19 @@ Public Class Form1
 
     End Sub
 
+    Private Sub PosUpdate(ByVal bool As Boolean)
+
+        If bool Then
+            WriteBytes(&HEBC83F, {&H90, &H90, &H90, &H90, &H90})
+            WriteBytes(&HEBC850, {&H90, &H90, &H90, &H90, &H90})
+        Else
+            WriteBytes(&HEBC83F, {&H66, &HF, &HD6, &H46, &H10})
+            WriteBytes(&HEBC850, {&H66, &HF, &HD6, &H46, &H18})
+        End If
+
+        Thread.Sleep(500)
+    End Sub
+
     Private Sub chkNoMapHit_CheckedChanged(sender As Object, e As EventArgs) Handles chkNoMapHit.MouseClick
         Dim curval = ReadUInt32(charmapdataptr + &HC4)
         If (curval And &H10) = &H10 Then
@@ -358,5 +386,13 @@ Public Class Form1
     End Sub
     Private Sub btnZMinusMinus_Click(sender As Object, e As EventArgs) Handles btnZMinusMinus.Click
         WriteFloat(charposdataptr + &H18, playerZpos - 10)
+    End Sub
+
+    Private Sub chkLockPos_CheckedChanged(sender As Object, e As EventArgs) Handles chkLockPos.MouseClick
+        PosUpdate(chkLockPos.Checked)
+    End Sub
+
+    Private Sub chkSetDeadMode_CheckedChanged(sender As Object, e As MouseEventArgs) Handles chkSetDeadMode.MouseClick
+
     End Sub
 End Class

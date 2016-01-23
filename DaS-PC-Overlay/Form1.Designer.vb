@@ -41,6 +41,7 @@ Partial Class Form1
         Me.btnYMinusMinus = New System.Windows.Forms.Button()
         Me.btnXMinus = New System.Windows.Forms.Button()
         Me.btnXMinusMinus = New System.Windows.Forms.Button()
+        Me.chkLockPos = New System.Windows.Forms.CheckBox()
         Me.tabs.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -116,111 +117,133 @@ Partial Class Form1
         '
         'btnXPlusPlus
         '
+        Me.btnXPlusPlus.BackColor = System.Drawing.Color.LightGray
         Me.btnXPlusPlus.Location = New System.Drawing.Point(202, 325)
         Me.btnXPlusPlus.Name = "btnXPlusPlus"
         Me.btnXPlusPlus.Size = New System.Drawing.Size(27, 23)
         Me.btnXPlusPlus.TabIndex = 4
         Me.btnXPlusPlus.Text = "++"
-        Me.btnXPlusPlus.UseVisualStyleBackColor = True
+        Me.btnXPlusPlus.UseVisualStyleBackColor = False
         '
         'btnXPlus
         '
+        Me.btnXPlus.BackColor = System.Drawing.Color.LightGray
         Me.btnXPlus.Location = New System.Drawing.Point(185, 325)
         Me.btnXPlus.Name = "btnXPlus"
         Me.btnXPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnXPlus.TabIndex = 5
         Me.btnXPlus.Text = "+"
-        Me.btnXPlus.UseVisualStyleBackColor = True
+        Me.btnXPlus.UseVisualStyleBackColor = False
         '
         'btnYPlus
         '
+        Me.btnYPlus.BackColor = System.Drawing.Color.LightGray
         Me.btnYPlus.Location = New System.Drawing.Point(185, 350)
         Me.btnYPlus.Name = "btnYPlus"
         Me.btnYPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnYPlus.TabIndex = 7
         Me.btnYPlus.Text = "+"
-        Me.btnYPlus.UseVisualStyleBackColor = True
+        Me.btnYPlus.UseVisualStyleBackColor = False
         '
         'btnYPlusPlus
         '
+        Me.btnYPlusPlus.BackColor = System.Drawing.Color.LightGray
         Me.btnYPlusPlus.Location = New System.Drawing.Point(202, 350)
         Me.btnYPlusPlus.Name = "btnYPlusPlus"
         Me.btnYPlusPlus.Size = New System.Drawing.Size(27, 23)
         Me.btnYPlusPlus.TabIndex = 6
         Me.btnYPlusPlus.Text = "++"
-        Me.btnYPlusPlus.UseVisualStyleBackColor = True
+        Me.btnYPlusPlus.UseVisualStyleBackColor = False
         '
         'btnZPlus
         '
+        Me.btnZPlus.BackColor = System.Drawing.Color.LightGray
         Me.btnZPlus.Location = New System.Drawing.Point(185, 375)
         Me.btnZPlus.Name = "btnZPlus"
         Me.btnZPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnZPlus.TabIndex = 9
         Me.btnZPlus.Text = "+"
-        Me.btnZPlus.UseVisualStyleBackColor = True
+        Me.btnZPlus.UseVisualStyleBackColor = False
         '
         'btnZPlusPlus
         '
+        Me.btnZPlusPlus.BackColor = System.Drawing.Color.LightGray
         Me.btnZPlusPlus.Location = New System.Drawing.Point(202, 375)
         Me.btnZPlusPlus.Name = "btnZPlusPlus"
         Me.btnZPlusPlus.Size = New System.Drawing.Size(27, 23)
         Me.btnZPlusPlus.TabIndex = 8
         Me.btnZPlusPlus.Text = "++"
-        Me.btnZPlusPlus.UseVisualStyleBackColor = True
+        Me.btnZPlusPlus.UseVisualStyleBackColor = False
         '
         'btnZMinus
         '
+        Me.btnZMinus.BackColor = System.Drawing.Color.LightGray
         Me.btnZMinus.Location = New System.Drawing.Point(46, 375)
         Me.btnZMinus.Name = "btnZMinus"
         Me.btnZMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnZMinus.TabIndex = 15
         Me.btnZMinus.Text = "-"
-        Me.btnZMinus.UseVisualStyleBackColor = True
+        Me.btnZMinus.UseVisualStyleBackColor = False
         '
         'btnZMinusMinus
         '
+        Me.btnZMinusMinus.BackColor = System.Drawing.Color.LightGray
         Me.btnZMinusMinus.Location = New System.Drawing.Point(20, 375)
         Me.btnZMinusMinus.Name = "btnZMinusMinus"
         Me.btnZMinusMinus.Size = New System.Drawing.Size(27, 23)
         Me.btnZMinusMinus.TabIndex = 14
         Me.btnZMinusMinus.Text = "--"
-        Me.btnZMinusMinus.UseVisualStyleBackColor = True
+        Me.btnZMinusMinus.UseVisualStyleBackColor = False
         '
         'btnYMinus
         '
+        Me.btnYMinus.BackColor = System.Drawing.Color.LightGray
         Me.btnYMinus.Location = New System.Drawing.Point(46, 350)
         Me.btnYMinus.Name = "btnYMinus"
         Me.btnYMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnYMinus.TabIndex = 13
         Me.btnYMinus.Text = "-"
-        Me.btnYMinus.UseVisualStyleBackColor = True
+        Me.btnYMinus.UseVisualStyleBackColor = False
         '
         'btnYMinusMinus
         '
+        Me.btnYMinusMinus.BackColor = System.Drawing.Color.LightGray
         Me.btnYMinusMinus.Location = New System.Drawing.Point(20, 350)
         Me.btnYMinusMinus.Name = "btnYMinusMinus"
         Me.btnYMinusMinus.Size = New System.Drawing.Size(27, 23)
         Me.btnYMinusMinus.TabIndex = 12
         Me.btnYMinusMinus.Text = "--"
-        Me.btnYMinusMinus.UseVisualStyleBackColor = True
+        Me.btnYMinusMinus.UseVisualStyleBackColor = False
         '
         'btnXMinus
         '
+        Me.btnXMinus.BackColor = System.Drawing.Color.LightGray
         Me.btnXMinus.Location = New System.Drawing.Point(46, 325)
         Me.btnXMinus.Name = "btnXMinus"
         Me.btnXMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnXMinus.TabIndex = 11
         Me.btnXMinus.Text = "-"
-        Me.btnXMinus.UseVisualStyleBackColor = True
+        Me.btnXMinus.UseVisualStyleBackColor = False
         '
         'btnXMinusMinus
         '
+        Me.btnXMinusMinus.BackColor = System.Drawing.Color.LightGray
         Me.btnXMinusMinus.Location = New System.Drawing.Point(20, 325)
         Me.btnXMinusMinus.Name = "btnXMinusMinus"
         Me.btnXMinusMinus.Size = New System.Drawing.Size(27, 23)
         Me.btnXMinusMinus.TabIndex = 10
         Me.btnXMinusMinus.Text = "--"
-        Me.btnXMinusMinus.UseVisualStyleBackColor = True
+        Me.btnXMinusMinus.UseVisualStyleBackColor = False
+        '
+        'chkLockPos
+        '
+        Me.chkLockPos.AutoSize = True
+        Me.chkLockPos.BackColor = System.Drawing.Color.Fuchsia
+        Me.chkLockPos.Location = New System.Drawing.Point(49, 781)
+        Me.chkLockPos.Name = "chkLockPos"
+        Me.chkLockPos.Size = New System.Drawing.Size(15, 14)
+        Me.chkLockPos.TabIndex = 16
+        Me.chkLockPos.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -228,6 +251,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Fuchsia
         Me.ClientSize = New System.Drawing.Size(1319, 898)
+        Me.Controls.Add(Me.chkLockPos)
         Me.Controls.Add(Me.btnZMinus)
         Me.Controls.Add(Me.btnZMinusMinus)
         Me.Controls.Add(Me.btnYMinus)
@@ -271,5 +295,6 @@ Partial Class Form1
     Friend WithEvents btnYMinusMinus As System.Windows.Forms.Button
     Friend WithEvents btnXMinus As System.Windows.Forms.Button
     Friend WithEvents btnXMinusMinus As System.Windows.Forms.Button
+    Friend WithEvents chkLockPos As System.Windows.Forms.CheckBox
 
 End Class
