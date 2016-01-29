@@ -14,7 +14,15 @@ Public Class Form1
     Private Declare Function WriteProcessMemory Lib "kernel32" (ByVal hProcess As IntPtr, ByVal lpBaseAddress As IntPtr, ByVal lpBuffer() As Byte, ByVal iSize As Integer, ByVal lpNumberOfBytesWritten As Integer) As Boolean
     Private Declare Function CloseHandle Lib "kernel32.dll" (ByVal hObject As IntPtr) As Boolean
 
+    Dim debug As Boolean
+    Dim beta As Boolean
+    Dim dbgboost As Integer
+
     Dim clearctr As UInteger
+
+    Dim clsBonfires As New Hashtable()
+    Dim clsBonfireIDs As New Hashtable()
+
 
 
     Dim charptr1 As UInteger
@@ -22,6 +30,7 @@ Public Class Form1
     Dim charposdataptr As UInteger
 
     Dim gamestatsptr As UInteger
+    Dim bonfireptr As UInteger
 
 
     Dim charptr2 As UInteger
@@ -92,6 +101,86 @@ Public Class Form1
         End If
     End Sub
 
+    Public Sub initClls()
+        Dim nameList As New List(Of String)
+
+        clsBonfires.Clear()
+        clsBonfires.Add(-1, "Nothing")
+        clsBonfires.Add(1602950, "Abyss (Bonfire)")
+        clsBonfires.Add(1512962, "Anor Londo (Gwyndolin Bonfire)")
+        clsBonfires.Add(1512950, "Anor Londo (Gwynevere Bonfire)")
+        clsBonfires.Add(1512961, "Anor Londo (Interior Bonfire)")
+        clsBonfires.Add(1512960, "Anor Londo (Lady of the Darkling Bonfire)")
+        clsBonfires.Add(1322961, "Ash Lake (Bonfire #1)")
+        clsBonfires.Add(1322960, "Ash Lake (Bonfire #2)")
+        clsBonfires.Add(1402962, "Blighttown (Bridge Bonfire)")
+        clsBonfires.Add(1402963, "Blighttown (Entrance)")
+        clsBonfires.Add(1402961, "Blighttown (Swamp Bonfire)")
+        clsBonfires.Add(1212950, "Chasm of the Abyss (Manus)")
+        clsBonfires.Add(1702950, "Crystal Cave (Seath)")
+        clsBonfires.Add(1602961, "Darkroot Basin (Bonfire)")
+        clsBonfires.Add(1202961, "Darkroot Garden (Bonfire)")
+        clsBonfires.Add(1412961, "Demon Ruins (Bonfire #1)")
+        clsBonfires.Add(1412962, "Demon Ruins (Bonfire #2)")
+        clsBonfires.Add(1412963, "Demon Ruins (Bonfire #3)")
+        clsBonfires.Add(1002960, "Depths (Bonfire)")
+        clsBonfires.Add(1002900, "Depths (Entrance)")
+        clsBonfires.Add(1002950, "Depths (Gaping Dragon's Room)")
+        clsBonfires.Add(1802960, "Firelink Altar")
+        clsBonfires.Add(1022960, "Firelink Shrine (Bonfire)")
+        clsBonfires.Add(1322962, "Great Hollow (Bonfire)")
+        clsBonfires.Add(1802961, "Kiln of the First Flame (Entrance)")
+        clsBonfires.Add(1802130, "Kiln of the First Flame (Gwyn)")
+        clsBonfires.Add(1412950, "Lost Izalith (Bed of Chaos)")
+        clsBonfires.Add(1412964, "Lost Izalith (Bonfire #1)")
+        clsBonfires.Add(1412960, "Lost Izalith (Bonfire #2)")
+        clsBonfires.Add(1602951, "New Londo Ruins (Drainage Lever)")
+        clsBonfires.Add(1602960, "New Londo Ruins (Pre-Ingward)")
+        clsBonfires.Add(1812960, "Northern Undead Asylum (Bonfire #1)")
+        clsBonfires.Add(1812961, "Northern Undead Asylum (Bonfire #2)")
+        clsBonfires.Add(1812962, "Northern Undead Asylum (Cell)")
+        clsBonfires.Add(1212961, "Oolacile Sanctuary (Bonfire)")
+        clsBonfires.Add(1212962, "Oolacile Township (Bonfire)")
+        clsBonfires.Add(1212964, "Oolacile Township Dungeon (Bonfire)")
+        clsBonfires.Add(1102960, "Painted World of Ariamis (Bonfire)")
+        clsBonfires.Add(1102961, "Painted World of Ariamis (Entrance)")
+        clsBonfires.Add(1402960, "Quelaag's Domain (Bonfire)")
+        clsBonfires.Add(1212963, "Sanctuary Garden (Bonfire)")
+        clsBonfires.Add(1502961, "Sen's Fortress (Bonfire)")
+        clsBonfires.Add(1502960, "Sen's Fortress (Bridge, #1)")
+        clsBonfires.Add(1502962, "Sen's Fortress (Bridge, #2)")
+        clsBonfires.Add(1302960, "The Catacombs (Bonfire #1)")
+        clsBonfires.Add(1302961, "The Catacombs (Bonfire #2)")
+        clsBonfires.Add(1302962, "The Catacombs (Entrance)")
+        clsBonfires.Add(1312950, "The Catacombs (Nito)")
+        clsBonfires.Add(1702960, "The Duke's Archives (Balcony Bonfire)")
+        clsBonfires.Add(1702961, "The Duke's Archives (Cell Bonfire)")
+        clsBonfires.Add(1702962, "The Duke's Archives (Elevator Bonfire)")
+        clsBonfires.Add(1312960, "Tomb of the Giants (Bonfire #1)")
+        clsBonfires.Add(1312961, "Tomb of the Giants (Bonfire #2)")
+        clsBonfires.Add(1312962, "Tomb of the Giants (Entrance)")
+        clsBonfires.Add(1012962, "Undead Burg (Bonfire)")
+        clsBonfires.Add(1012960, "Undead Burg (Pre-Dragon Scare)")
+        clsBonfires.Add(1012964, "Undead Parish (Bonfire)")
+        clsBonfires.Add(1012965, "Undead Parish (Near Boar)")
+        clsBonfires.Add(1012966, "Undead Parish (Near Cell)")
+        clsBonfires.Add(1012961, "Undead Parish (Sunlight Altar Bonfire)")
+
+        'clsBonfires.Add(1012967, "_Test")
+
+        clsBonfireIDs.Clear()
+        cmbBonfire.Items.Clear()
+        For Each bonfire In clsBonfires.Keys
+            clsBonfireIDs.Add(clsBonfires(bonfire), bonfire)
+            nameList.Add(clsBonfires(bonfire))
+        Next
+        nameList.Sort()
+        For Each bonfire In nameList
+            cmbBonfire.Items.Add(bonfire)
+        Next
+        cmbBonfire.SelectedItem = "Nothing"
+    End Sub
+
     Public Function ReadInt16(ByVal addr As IntPtr) As Int16
         Dim _rtnBytes(1) As Byte
         ReadProcessMemory(_targetProcessHandle, addr, _rtnBytes, 2, vbNull)
@@ -148,6 +237,9 @@ Public Class Form1
         Return _rtnBytes
     End Function
 
+    Public Sub WriteInt32(ByVal addr As IntPtr, val As Int32)
+        WriteProcessMemory(_targetProcessHandle, addr, BitConverter.GetBytes(val), 4, Nothing)
+    End Sub
     Public Sub WriteUInt32(ByVal addr As IntPtr, val As UInt32)
         WriteProcessMemory(_targetProcessHandle, addr, BitConverter.GetBytes(val), 4, Nothing)
     End Sub
@@ -181,65 +273,6 @@ Public Class Form1
 
         Me.TopMost = True
 
-        If tabs.SelectedIndex() = 0 Then
-
-            btnXMinus.Visible = True
-            btnXMinusMinus.Visible = True
-            btnYMinus.Visible = True
-            btnYMinusMinus.Visible = True
-            btnZMinus.Visible = True
-            btnZMinusMinus.Visible = True
-
-            btnXPlus.Visible = True
-            btnXPlusPlus.Visible = True
-            btnYPlus.Visible = True
-            btnYPlusPlus.Visible = True
-            btnZPlus.Visible = True
-            btnZPlusPlus.Visible = True
-
-            chkLockPos.Visible = True
-            chkNoGrav.Visible = True
-            chkNoMapHit.Visible = True
-            chkSetDeadMode.Visible = True
-
-
-
-            DrawString(playerHP & " / " & playerMaxHP, New Point(200, 230), Brushes.Yellow)
-            DrawString(playerStam & " / " & playerMaxStam, New Point(200, 250), Brushes.Yellow)
-
-
-            DrawString("Facing: " & playerFacing, New Point(70, 300), Brushes.White)
-            DrawString("X: " & playerXpos, New Point(70, 325), Brushes.White)
-            DrawString("Y: " & playerYpos, New Point(70, 350), Brushes.White)
-            DrawString("Z: " & playerZpos, New Point(70, 375), Brushes.White)
-
-            DrawString("LockPos", New Point(70, 775), Brushes.White)
-            DrawString("SetDeadMode", New Point(70, 800), Brushes.White)
-            DrawString("NoMapHit", New Point(70, 825), Brushes.White)
-            DrawString("NoGrav", New Point(70, 850), Brushes.White)
-
-
-        Else
-            btnXMinus.Visible = False
-            btnXMinusMinus.Visible = False
-            btnYMinus.Visible = False
-            btnYMinusMinus.Visible = False
-            btnZMinus.Visible = False
-            btnZMinusMinus.Visible = False
-
-            btnXPlus.Visible = False
-            btnXPlusPlus.Visible = False
-            btnYPlus.Visible = False
-            btnYPlusPlus.Visible = False
-            btnZPlus.Visible = False
-            btnZPlusPlus.Visible = False
-
-            chkLockPos.Visible = False
-            chkNoGrav.Visible = False
-            chkNoMapHit.Visible = False
-            chkSetDeadMode.Visible = False
-        End If
-
 
 
         'DrawString("Charptr1: " & Hex(charptr1), New Point(50, 380), Brushes.White)
@@ -255,6 +288,8 @@ Public Class Form1
         Me.TransparencyKey = Me.BackColor
         Me.TopMost = True
 
+        initClls()
+
         Dim rect As New Rectangle
         Dim hwnd As IntPtr = Process.GetProcessesByName("DARKSOULS").First.MainWindowHandle
 
@@ -266,6 +301,8 @@ Public Class Form1
         refTimer.Interval = delay
         refTimer.Enabled = True
         refTimer.Start()
+
+
 
         TryAttachToProcess("DARK SOULS")
 
@@ -280,46 +317,93 @@ Public Class Form1
 
         'tendptr = Four2UInteger(Four2UInteger(&H1B4EF9C) + &H24)
 
-        charptr1 = ReadInt32(&H137AC70)
+
+
+        debug = (ReadUInt32(&H400080) = &HCE9634B4&)
+        beta = (ReadUInt32(&H400080) = &HE91B11E2&)
+
+
+        If debug Then
+            dbgboost = &H41C0
+            lblRelease.Text = "Debug detected."
+        End If
+
+        If beta Then
+            dbgboost = -&H3000
+            lblRelease.Text = "Beta detected."
+        End If
+
+        bonfireptr = ReadUInt32(&H13784A0 + dbgboost)
+        charptr1 = ReadInt32(&H137DC70 + dbgboost)
         charptr1 = ReadInt32(charptr1 + &H4)
         charptr1 = ReadInt32(charptr1)
+
+        lblCharptr1.Text = "Charptr1: " & Hex(charptr1)
 
         charmapdataptr = ReadInt32(charptr1 + &H28)
         charposdataptr = ReadInt32(charmapdataptr + &H1C)
 
+        lblCharmapdata.Text = "Charmapdata: " & Hex(charmapdataptr)
 
-        playerHP = ReadInt32(charptr1 + &H2D4)
-        playerMaxHP = ReadInt32(charptr1 + &H2D8)
 
-        playerStam = ReadInt32(charptr1 + &H2E4)
-        playerMaxStam = ReadInt32(charptr1 + &H2E8)
+        Select Case tabs.SelectedIndex
+            Case 0
+                playerHP = ReadInt32(charptr1 + &H2D4)
+                playerMaxHP = ReadInt32(charptr1 + &H2D8)
 
-        playerFacing = (ReadFloat(charposdataptr + &H4) + Math.PI) / (Math.PI * 2) * 360
-        playerXpos = ReadFloat(charposdataptr + &H10)
-        playerYpos = ReadFloat(charposdataptr + &H14)
-        playerZpos = ReadFloat(charposdataptr + &H18)
+                lblHP.Text = playerHP & " / " & playerMaxHP
+                lblStam.Text = playerStam & " / " & playerStam
 
-        chkNoMapHit.Checked = ((ReadUInt32(charmapdataptr + &HC4) And &H10) = &H10)
-        chkNoGrav.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H4000) = &H4000)
-        chkSetDeadMode.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H2000000) = &H2000000)
+                playerStam = ReadInt32(charptr1 + &H2E4)
+                playerMaxStam = ReadInt32(charptr1 + &H2E8)
 
+                playerFacing = (ReadFloat(charposdataptr + &H4) + Math.PI) / (Math.PI * 2) * 360
+                playerXpos = ReadFloat(charposdataptr + &H10)
+                playerYpos = ReadFloat(charposdataptr + &H14)
+                playerZpos = ReadFloat(charposdataptr + &H18)
+
+                lblFacing.Text = "Facing: " & playerFacing
+                lblXpos.Text = "X pos: " & playerXpos
+                lblYpos.Text = "Y pos: " & playerYpos
+                lblZpos.Text = "Z pos: " & playerZpos
+
+                chkNoMapHit.Checked = ((ReadUInt32(charmapdataptr + &HC4) And &H10) = &H10)
+                chkNoGrav.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H4000) = &H4000)
+                chkSetDeadMode.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H2000000) = &H2000000)
+            Case 1
+                If debug Then dbgboost = &H4000
+                If beta Then dbgboost = -&H3000
+                chkSelfVagrant.Checked = (ReadBytes(&H12DE238 + dbgboost, 1)(0) = 0)
+
+                If debug Then dbgboost = &H3C20
+                If beta Then dbgboost = -&H1370
+                chkDebugDrawing.Checked = (ReadBytes(&HFA256C + dbgboost, 1)(0) = 1)
+            Case 2
+                Dim bonfireID As Integer
+                bonfireID = ReadInt32(bonfireptr + &HB04)
+                If Not cmbBonfire.DroppedDown Then
+                    If clsBonfires(bonfireID) = "" Then
+                        clsBonfires.Add(bonfireID, bonfireID.ToString)
+                        clsBonfireIDs.Add(bonfireID.ToString, bonfireID)
+                        cmbBonfire.Items.Add(bonfireID.ToString)
+                    End If
+                    cmbBonfire.SelectedItem = clsBonfires(bonfireID)
+                End If
+        End Select
         btnRefresh.PerformClick()
-
-
-
     End Sub
 
     Private Sub PosUpdate(ByVal bool As Boolean)
+        If debug Then dbgboost = &H2EC0
+        If beta Then dbgboost = -&H1390
 
         If bool Then
-            WriteBytes(&HEBC83F, {&H90, &H90, &H90, &H90, &H90})
-            WriteBytes(&HEBC850, {&H90, &H90, &H90, &H90, &H90})
+            WriteBytes(&HEBDBCF + dbgboost, {&H90, &H90, &H90, &H90, &H90})
+            WriteBytes(&HEBDBE0 + dbgboost, {&H90, &H90, &H90, &H90, &H90})
         Else
-            WriteBytes(&HEBC83F, {&H66, &HF, &HD6, &H46, &H10})
-            WriteBytes(&HEBC850, {&H66, &HF, &HD6, &H46, &H18})
+            WriteBytes(&HEBDBCF + dbgboost, {&H66, &HF, &HD6, &H46, &H10})
+            WriteBytes(&HEBDBE0 + dbgboost, {&H66, &HF, &HD6, &H46, &H18})
         End If
-
-        Thread.Sleep(500)
     End Sub
 
     Private Sub chkNoMapHit_CheckedChanged(sender As Object, e As EventArgs) Handles chkNoMapHit.MouseClick
@@ -392,7 +476,63 @@ Public Class Form1
         PosUpdate(chkLockPos.Checked)
     End Sub
 
-    Private Sub chkSetDeadMode_CheckedChanged(sender As Object, e As MouseEventArgs) Handles chkSetDeadMode.MouseClick
+    Private Sub chkDebug_CheckedChanged(sender As Object, e As EventArgs) Handles chkDebugDrawing.MouseClick
+        If debug Then dbgboost = &H3C20
+        If beta Then dbgboost = -&H1370
 
+        If chkDebugDrawing.Checked Then
+            WriteBytes(&HFA256C + dbgboost, {&H1})
+        Else
+            WriteBytes(&HFA256C + dbgboost, {&H0})
+        End If
+    End Sub
+    Private Sub chkBoundingBoxes_CheckedChanged(sender As Object, e As EventArgs) Handles chkBoundingBoxes.MouseClick
+
+        If debug Then dbgboost = &H28F0
+        If beta Then dbgboost = -&H1390
+
+        If chkBoundingBoxes.Checked Then
+            WriteBytes(&HEAF5AD + dbgboost, {&H1})
+        Else
+            WriteBytes(&HEAF5AD + dbgboost, {&H0})
+        End If
+    End Sub
+    Private Sub chkSelfVagrant_CheckedChanged(sender As Object, e As EventArgs) Handles chkSelfVagrant.MouseClick
+        If chkSelfVagrant.Checked Then
+            If debug Then dbgboost = -&H840
+            If beta Then dbgboost = -&HF30
+            WriteBytes(&HBD4444 + dbgboost, {1})
+
+            If debug Then dbgboost = -&H850
+            If beta Then dbgboost = -&HF40
+            WriteBytes(&HBD26A6 + dbgboost, {1})
+
+            If debug Then dbgboost = &H4000
+            If beta Then dbgboost = -&H3000
+            WriteUInt32(&H12DE238 + dbgboost, 0)
+            WriteFloat(&H12DE248 + dbgboost, 1)
+            WriteFloat(&H12DE24C + dbgboost, 1)
+        Else
+            If debug Then dbgboost = -&H840
+            If beta Then dbgboost = -&HF30
+            WriteBytes(&HBD4444 + dbgboost, {0})
+
+            If debug Then dbgboost = -&H850
+            If beta Then dbgboost = -&HF40
+            WriteBytes(&HBD26A6 + dbgboost, {0})
+
+            If debug Then dbgboost = &H4000
+            If beta Then dbgboost = -&H3000
+            WriteUInt32(&H12DE238 + dbgboost, 1)
+            WriteFloat(&H12DE248 + dbgboost, 1800)
+            WriteFloat(&H12DE24C + dbgboost, 3000)
+        End If
+
+    End Sub
+
+    Private Sub cmbBonfire_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbBonfire.DropDownClosed
+        If Not IsNothing(cmbBonfire.SelectedItem) Then
+            WriteInt32(bonfireptr + &HB04, clsBonfireIDs(cmbBonfire.SelectedItem))
+        End If
     End Sub
 End Class
