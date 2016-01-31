@@ -302,8 +302,6 @@ Public Class Form1
         refTimer.Enabled = True
         refTimer.Start()
 
-
-
         TryAttachToProcess("DARK SOULS")
 
     End Sub
@@ -338,6 +336,9 @@ Public Class Form1
         charptr1 = ReadInt32(charptr1 + &H4)
         charptr1 = ReadInt32(charptr1)
 
+        gamestatsptr = ReadUInt32(&H1378700 + dbgboost)
+        charptr2 = ReadUInt32(gamestatsptr + &H8)
+
         lblCharptr1.Text = "Charptr1: " & Hex(charptr1)
 
         charmapdataptr = ReadInt32(charptr1 + &H28)
@@ -352,7 +353,7 @@ Public Class Form1
                 playerMaxHP = ReadInt32(charptr1 + &H2D8)
 
                 lblHP.Text = playerHP & " / " & playerMaxHP
-                lblStam.Text = playerStam & " / " & playerStam
+                lblStam.Text = playerStam & " / " & playerMaxStam
 
                 playerStam = ReadInt32(charptr1 + &H2E4)
                 playerMaxStam = ReadInt32(charptr1 + &H2E8)
@@ -370,15 +371,7 @@ Public Class Form1
                 chkNoMapHit.Checked = ((ReadUInt32(charmapdataptr + &HC4) And &H10) = &H10)
                 chkNoGrav.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H4000) = &H4000)
                 chkSetDeadMode.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H2000000) = &H2000000)
-            Case 1
-                If debug Then dbgboost = &H4000
-                If beta Then dbgboost = -&H3000
-                chkSelfVagrant.Checked = (ReadBytes(&H12DE238 + dbgboost, 1)(0) = 0)
 
-                If debug Then dbgboost = &H3C20
-                If beta Then dbgboost = -&H1370
-                chkDebugDrawing.Checked = (ReadBytes(&HFA256C + dbgboost, 1)(0) = 1)
-            Case 2
                 Dim bonfireID As Integer
                 bonfireID = ReadInt32(bonfireptr + &HB04)
                 If Not cmbBonfire.DroppedDown Then
@@ -389,6 +382,38 @@ Public Class Form1
                     End If
                     cmbBonfire.SelectedItem = clsBonfires(bonfireID)
                 End If
+            Case 1
+                Dim tmpptr As UInteger
+
+                If debug Then dbgboost = &H4000
+                If beta Then dbgboost = -&H3000
+                chkSelfVagrant.Checked = (ReadBytes(&H12DE238 + dbgboost, 1)(0) = 0)
+
+                If debug Then dbgboost = &H3C20
+                If beta Then dbgboost = -&H1370
+                chkDebugDrawing.Checked = (ReadBytes(&HFA256C + dbgboost, 1)(0) = 1)
+
+                If debug Then dbgboost = &H41C0
+                tmpptr = ReadUInt32(&H1378520)
+                tmpptr = ReadUInt32(tmpptr + &H10)
+                chkBrighterCam.Checked = (ReadBytes(tmpptr + &H26D, 1)(0) = 1)
+                nmbBrighterCam.Value = ReadFloat(tmpptr + &H270)
+                nmbContrast.Value = ReadFloat(tmpptr + &H280)
+
+
+                'Only mapped for Debug
+                chkHide.Checked = (ReadBytes(&H137C6A8, 1)(0) = 1)
+
+
+
+            Case 2
+                nmbHumanity.Value = ReadInt32(charptr2 + &H7C)
+                nmbPhantomType.Value = ReadInt32(charptr1 + &H70)
+                nmbTeamType.Value = ReadInt32(charptr1 + &H74)
+
+
+
+
         End Select
         btnRefresh.PerformClick()
     End Sub
@@ -534,5 +559,65 @@ Public Class Form1
         If Not IsNothing(cmbBonfire.SelectedItem) Then
             WriteInt32(bonfireptr + &HB04, clsBonfireIDs(cmbBonfire.SelectedItem))
         End If
+    End Sub
+
+    Private Sub btnSuicide_Click(sender As Object, e As EventArgs) Handles btnSuicide.Click
+        WriteInt32(charptr1 + &H2D4, 0)
+    End Sub
+
+    Private Sub nmbHumanity_ValueChanged(sender As Object, e As EventArgs) Handles nmbHumanity.ValueChanged
+        WriteInt32(charptr2 + &H7C, nmbHumanity.Value)
+    End Sub
+
+
+
+    Private Sub chkHide_CheckedChanged(sender As Object, e As EventArgs) Handles chkHide.MouseClick
+        If chkHide.Checked Then
+            WriteBytes(&H137C6A8, {1})
+        Else
+            WriteBytes(&H137C6A8, {0})
+        End If
+    End Sub
+
+    Private Sub nmbPhantomType_ValueChanged(sender As Object, e As EventArgs) Handles nmbPhantomType.ValueChanged
+        WriteInt32(charptr1 + &H70, nmbPhantomType.Value)
+    End Sub
+    Private Sub nmbTeamType_ValueChanged(sender As Object, e As EventArgs) Handles nmbTeamType.ValueChanged
+        WriteInt32(charptr1 + &H74, nmbTeamType.Value)
+    End Sub
+
+
+    Private Sub chkBrighterCam_CheckedChanged(sender As Object, e As EventArgs) Handles chkBrighterCam.CheckedChanged
+        Dim tmpptr As UInteger
+        If debug Then dbgboost = &H41C0
+        tmpptr = ReadUInt32(&H1378520)
+        tmpptr = ReadUInt32(tmpptr + &H10)
+
+        If chkBrighterCam.Checked Then
+            WriteBytes(tmpptr + &H26D, {1})
+        Else
+            WriteBytes(tmpptr + &H26D, {0})
+        End If
+        chkBrighterCam.Checked = (ReadBytes(tmpptr + &H26D, 1)(0) = 1)
+    End Sub
+    Private Sub nmbBrighterCam_ValueChanged(sender As Object, e As EventArgs) Handles nmbBrighterCam.ValueChanged
+        Dim tmpptr As UInteger
+        If debug Then dbgboost = &H41C0
+        tmpptr = ReadUInt32(&H1378520)
+        tmpptr = ReadUInt32(tmpptr + &H10)
+
+        WriteFloat(tmpptr + &H270, nmbBrighterCam.Value)
+        WriteFloat(tmpptr + &H274, nmbBrighterCam.Value)
+        WriteFloat(tmpptr + &H278, nmbBrighterCam.Value)
+    End Sub
+    Private Sub nmbContrast_ValueChanged(sender As Object, e As EventArgs) Handles nmbContrast.ValueChanged
+        Dim tmpptr As UInteger
+        If debug Then dbgboost = &H41C0
+        tmpptr = ReadUInt32(&H1378520)
+        tmpptr = ReadUInt32(tmpptr + &H10)
+
+        WriteFloat(tmpptr + &H280, nmbContrast.Value)
+        WriteFloat(tmpptr + &H284, nmbContrast.Value)
+        WriteFloat(tmpptr + &H288, nmbContrast.Value)
     End Sub
 End Class
