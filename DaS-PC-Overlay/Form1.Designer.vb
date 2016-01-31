@@ -54,31 +54,34 @@ Partial Class Form1
         Me.lblCharmapdata = New System.Windows.Forms.Label()
         Me.lblCharptr1 = New System.Windows.Forms.Label()
         Me.tabDebug = New System.Windows.Forms.TabPage()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.nmbContrast = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.nmbBrighterCam = New System.Windows.Forms.NumericUpDown()
+        Me.chkBrighterCam = New System.Windows.Forms.CheckBox()
         Me.chkHide = New System.Windows.Forms.CheckBox()
         Me.chkDebugDrawing = New System.Windows.Forms.CheckBox()
         Me.chkSelfVagrant = New System.Windows.Forms.CheckBox()
         Me.chkBoundingBoxes = New System.Windows.Forms.CheckBox()
         Me.tabStats = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.nmbHumanity = New System.Windows.Forms.NumericUpDown()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.nmbPhantomType = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.nmbTeamType = New System.Windows.Forms.NumericUpDown()
-        Me.chkBrighterCam = New System.Windows.Forms.CheckBox()
-        Me.nmbBrighterCam = New System.Windows.Forms.NumericUpDown()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.nmbContrast = New System.Windows.Forms.NumericUpDown()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.nmbPhantomType = New System.Windows.Forms.NumericUpDown()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.nmbHumanity = New System.Windows.Forms.NumericUpDown()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.nmbMPChannel = New System.Windows.Forms.NumericUpDown()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
         Me.tabDebug.SuspendLayout()
-        Me.tabStats.SuspendLayout()
-        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabStats.SuspendLayout()
+        CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnRefresh
@@ -388,9 +391,9 @@ Partial Class Form1
         Me.chkNoMapHit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkNoMapHit.Location = New System.Drawing.Point(20, 798)
         Me.chkNoMapHit.Name = "chkNoMapHit"
-        Me.chkNoMapHit.Size = New System.Drawing.Size(88, 20)
+        Me.chkNoMapHit.Size = New System.Drawing.Size(117, 20)
         Me.chkNoMapHit.TabIndex = 22
-        Me.chkNoMapHit.Text = "NoMapHit"
+        Me.chkNoMapHit.Text = "DisableMapHit"
         Me.chkNoMapHit.UseVisualStyleBackColor = False
         '
         'chkNoGrav
@@ -400,9 +403,9 @@ Partial Class Form1
         Me.chkNoGrav.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkNoGrav.Location = New System.Drawing.Point(20, 818)
         Me.chkNoGrav.Name = "chkNoGrav"
-        Me.chkNoGrav.Size = New System.Drawing.Size(74, 20)
+        Me.chkNoGrav.Size = New System.Drawing.Size(116, 20)
         Me.chkNoGrav.TabIndex = 21
-        Me.chkNoGrav.Text = "NoGrav"
+        Me.chkNoGrav.Text = "DisableGravity"
         Me.chkNoGrav.UseVisualStyleBackColor = False
         '
         'lblRelease
@@ -441,6 +444,8 @@ Partial Class Form1
         'tabDebug
         '
         Me.tabDebug.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabDebug.Controls.Add(Me.Label6)
+        Me.tabDebug.Controls.Add(Me.nmbMPChannel)
         Me.tabDebug.Controls.Add(Me.Label5)
         Me.tabDebug.Controls.Add(Me.nmbContrast)
         Me.tabDebug.Controls.Add(Me.Label4)
@@ -457,12 +462,66 @@ Partial Class Form1
         Me.tabDebug.TabIndex = 1
         Me.tabDebug.Text = "Debug"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.LightGray
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(172, 393)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 16)
+        Me.Label5.TabIndex = 43
+        Me.Label5.Text = "Contrast"
+        '
+        'nmbContrast
+        '
+        Me.nmbContrast.DecimalPlaces = 1
+        Me.nmbContrast.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbContrast.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.nmbContrast.Location = New System.Drawing.Point(174, 412)
+        Me.nmbContrast.Name = "nmbContrast"
+        Me.nmbContrast.Size = New System.Drawing.Size(53, 22)
+        Me.nmbContrast.TabIndex = 42
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.LightGray
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(99, 393)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(71, 16)
+        Me.Label4.TabIndex = 41
+        Me.Label4.Text = "Brightness"
+        '
+        'nmbBrighterCam
+        '
+        Me.nmbBrighterCam.DecimalPlaces = 1
+        Me.nmbBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbBrighterCam.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.nmbBrighterCam.Location = New System.Drawing.Point(106, 412)
+        Me.nmbBrighterCam.Name = "nmbBrighterCam"
+        Me.nmbBrighterCam.Size = New System.Drawing.Size(53, 22)
+        Me.nmbBrighterCam.TabIndex = 23
+        '
+        'chkBrighterCam
+        '
+        Me.chkBrighterCam.AutoSize = True
+        Me.chkBrighterCam.BackColor = System.Drawing.Color.LightGray
+        Me.chkBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkBrighterCam.Location = New System.Drawing.Point(16, 412)
+        Me.chkBrighterCam.Name = "chkBrighterCam"
+        Me.chkBrighterCam.Size = New System.Drawing.Size(70, 20)
+        Me.chkBrighterCam.TabIndex = 22
+        Me.chkBrighterCam.Text = "Enable"
+        Me.chkBrighterCam.UseVisualStyleBackColor = False
+        '
         'chkHide
         '
         Me.chkHide.AutoSize = True
         Me.chkHide.BackColor = System.Drawing.Color.LightGray
         Me.chkHide.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkHide.Location = New System.Drawing.Point(6, 554)
+        Me.chkHide.Location = New System.Drawing.Point(16, 554)
         Me.chkHide.Name = "chkHide"
         Me.chkHide.Size = New System.Drawing.Size(98, 20)
         Me.chkHide.TabIndex = 21
@@ -474,7 +533,7 @@ Partial Class Form1
         Me.chkDebugDrawing.AutoSize = True
         Me.chkDebugDrawing.BackColor = System.Drawing.Color.LightGray
         Me.chkDebugDrawing.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkDebugDrawing.Location = New System.Drawing.Point(6, 673)
+        Me.chkDebugDrawing.Location = New System.Drawing.Point(16, 673)
         Me.chkDebugDrawing.Name = "chkDebugDrawing"
         Me.chkDebugDrawing.Size = New System.Drawing.Size(146, 20)
         Me.chkDebugDrawing.TabIndex = 20
@@ -486,7 +545,7 @@ Partial Class Form1
         Me.chkSelfVagrant.AutoSize = True
         Me.chkSelfVagrant.BackColor = System.Drawing.Color.LightGray
         Me.chkSelfVagrant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSelfVagrant.Location = New System.Drawing.Point(6, 633)
+        Me.chkSelfVagrant.Location = New System.Drawing.Point(16, 633)
         Me.chkSelfVagrant.Name = "chkSelfVagrant"
         Me.chkSelfVagrant.Size = New System.Drawing.Size(100, 20)
         Me.chkSelfVagrant.TabIndex = 19
@@ -498,7 +557,7 @@ Partial Class Form1
         Me.chkBoundingBoxes.AutoSize = True
         Me.chkBoundingBoxes.BackColor = System.Drawing.Color.LightGray
         Me.chkBoundingBoxes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkBoundingBoxes.Location = New System.Drawing.Point(6, 653)
+        Me.chkBoundingBoxes.Location = New System.Drawing.Point(16, 653)
         Me.chkBoundingBoxes.Name = "chkBoundingBoxes"
         Me.chkBoundingBoxes.Size = New System.Drawing.Size(125, 20)
         Me.chkBoundingBoxes.TabIndex = 18
@@ -520,24 +579,24 @@ Partial Class Form1
         Me.tabStats.TabIndex = 2
         Me.tabStats.Text = "Stats"
         '
-        'Label1
+        'Label3
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.LightGray
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(53, 335)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 16)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Humanity"
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.LightGray
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(38, 291)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(79, 16)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Team Type"
         '
-        'nmbHumanity
+        'nmbTeamType
         '
-        Me.nmbHumanity.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmbHumanity.Location = New System.Drawing.Point(123, 331)
-        Me.nmbHumanity.Name = "nmbHumanity"
-        Me.nmbHumanity.Size = New System.Drawing.Size(47, 22)
-        Me.nmbHumanity.TabIndex = 0
+        Me.nmbTeamType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbTeamType.Location = New System.Drawing.Point(123, 287)
+        Me.nmbTeamType.Name = "nmbTeamType"
+        Me.nmbTeamType.Size = New System.Drawing.Size(47, 22)
+        Me.nmbTeamType.TabIndex = 4
         '
         'Label2
         '
@@ -558,78 +617,43 @@ Partial Class Form1
         Me.nmbPhantomType.Size = New System.Drawing.Size(47, 22)
         Me.nmbPhantomType.TabIndex = 2
         '
-        'Label3
+        'Label1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.LightGray
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(38, 291)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 16)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Team Type"
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.LightGray
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(53, 335)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(64, 16)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Humanity"
         '
-        'nmbTeamType
+        'nmbHumanity
         '
-        Me.nmbTeamType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmbTeamType.Location = New System.Drawing.Point(123, 287)
-        Me.nmbTeamType.Name = "nmbTeamType"
-        Me.nmbTeamType.Size = New System.Drawing.Size(47, 22)
-        Me.nmbTeamType.TabIndex = 4
+        Me.nmbHumanity.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbHumanity.Location = New System.Drawing.Point(123, 331)
+        Me.nmbHumanity.Name = "nmbHumanity"
+        Me.nmbHumanity.Size = New System.Drawing.Size(47, 22)
+        Me.nmbHumanity.TabIndex = 0
         '
-        'chkBrighterCam
+        'Label6
         '
-        Me.chkBrighterCam.AutoSize = True
-        Me.chkBrighterCam.BackColor = System.Drawing.Color.LightGray
-        Me.chkBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkBrighterCam.Location = New System.Drawing.Point(34, 401)
-        Me.chkBrighterCam.Name = "chkBrighterCam"
-        Me.chkBrighterCam.Size = New System.Drawing.Size(70, 20)
-        Me.chkBrighterCam.TabIndex = 22
-        Me.chkBrighterCam.Text = "Enable"
-        Me.chkBrighterCam.UseVisualStyleBackColor = False
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.LightGray
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(13, 441)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 16)
+        Me.Label6.TabIndex = 45
+        Me.Label6.Text = "MP Channel"
         '
-        'nmbBrighterCam
+        'nmbMPChannel
         '
-        Me.nmbBrighterCam.DecimalPlaces = 1
-        Me.nmbBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmbBrighterCam.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nmbBrighterCam.Location = New System.Drawing.Point(111, 400)
-        Me.nmbBrighterCam.Name = "nmbBrighterCam"
-        Me.nmbBrighterCam.Size = New System.Drawing.Size(53, 22)
-        Me.nmbBrighterCam.TabIndex = 23
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.LightGray
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(104, 381)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 16)
-        Me.Label4.TabIndex = 41
-        Me.Label4.Text = "Brightness"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.LightGray
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(177, 381)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 16)
-        Me.Label5.TabIndex = 43
-        Me.Label5.Text = "Contrast"
-        '
-        'nmbContrast
-        '
-        Me.nmbContrast.DecimalPlaces = 1
-        Me.nmbContrast.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmbContrast.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nmbContrast.Location = New System.Drawing.Point(179, 400)
-        Me.nmbContrast.Name = "nmbContrast"
-        Me.nmbContrast.Size = New System.Drawing.Size(53, 22)
-        Me.nmbContrast.TabIndex = 42
+        Me.nmbMPChannel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbMPChannel.Location = New System.Drawing.Point(106, 439)
+        Me.nmbMPChannel.Name = "nmbMPChannel"
+        Me.nmbMPChannel.Size = New System.Drawing.Size(53, 22)
+        Me.nmbMPChannel.TabIndex = 44
         '
         'Form1
         '
@@ -646,13 +670,14 @@ Partial Class Form1
         Me.tabMain.PerformLayout()
         Me.tabDebug.ResumeLayout(False)
         Me.tabDebug.PerformLayout()
+        CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabStats.ResumeLayout(False)
         Me.tabStats.PerformLayout()
-        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -704,5 +729,6 @@ Partial Class Form1
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents nmbContrast As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label4 As System.Windows.Forms.Label
-
+    Friend WithEvents Label6 As Label
+    Friend WithEvents nmbMPChannel As NumericUpDown
 End Class

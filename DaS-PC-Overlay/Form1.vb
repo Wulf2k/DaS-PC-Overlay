@@ -307,19 +307,9 @@ Public Class Form1
     End Sub
 
     Private Sub refTimer_Tick() Handles refTimer.Tick
-        'crtCount = Four2UInteger(Four2UInteger(&H1B3D6E0) + &H14)
-
-        'charptr1 = Four2UInteger(Four2UInteger(Four2UInteger(&H1B3D6E0) + &HC) + crtCount * 4)
-        ' charptr2 = Four2UInteger(charptr1 + &H49C)
-        'charptr3 = Four2UInteger(charptr1 + &H1C)
-
-        'tendptr = Four2UInteger(Four2UInteger(&H1B4EF9C) + &H24)
-
-
 
         debug = (ReadUInt32(&H400080) = &HCE9634B4&)
         beta = (ReadUInt32(&H400080) = &HE91B11E2&)
-
 
         If debug Then
             dbgboost = &H41C0
@@ -394,11 +384,14 @@ Public Class Form1
                 chkDebugDrawing.Checked = (ReadBytes(&HFA256C + dbgboost, 1)(0) = 1)
 
                 If debug Then dbgboost = &H41C0
-                tmpptr = ReadUInt32(&H1378520)
+                tmpptr = ReadUInt32(&H1378520 + dbgboost)
                 tmpptr = ReadUInt32(tmpptr + &H10)
                 chkBrighterCam.Checked = (ReadBytes(tmpptr + &H26D, 1)(0) = 1)
                 nmbBrighterCam.Value = ReadFloat(tmpptr + &H270)
                 nmbContrast.Value = ReadFloat(tmpptr + &H280)
+
+                tmpptr = ReadUInt32(&H137E204 + dbgboost)
+                nmbMPChannel.Value = ReadBytes(tmpptr + &HB69, 1)(0)
 
 
                 'Only mapped for Debug
@@ -569,8 +562,6 @@ Public Class Form1
         WriteInt32(charptr2 + &H7C, nmbHumanity.Value)
     End Sub
 
-
-
     Private Sub chkHide_CheckedChanged(sender As Object, e As EventArgs) Handles chkHide.MouseClick
         If chkHide.Checked Then
             WriteBytes(&H137C6A8, {1})
@@ -590,7 +581,7 @@ Public Class Form1
     Private Sub chkBrighterCam_CheckedChanged(sender As Object, e As EventArgs) Handles chkBrighterCam.CheckedChanged
         Dim tmpptr As UInteger
         If debug Then dbgboost = &H41C0
-        tmpptr = ReadUInt32(&H1378520)
+        tmpptr = ReadUInt32(&H1378520 + dbgboost)
         tmpptr = ReadUInt32(tmpptr + &H10)
 
         If chkBrighterCam.Checked Then
@@ -603,7 +594,7 @@ Public Class Form1
     Private Sub nmbBrighterCam_ValueChanged(sender As Object, e As EventArgs) Handles nmbBrighterCam.ValueChanged
         Dim tmpptr As UInteger
         If debug Then dbgboost = &H41C0
-        tmpptr = ReadUInt32(&H1378520)
+        tmpptr = ReadUInt32(&H1378520 + dbgboost)
         tmpptr = ReadUInt32(tmpptr + &H10)
 
         WriteFloat(tmpptr + &H270, nmbBrighterCam.Value)
@@ -613,11 +604,18 @@ Public Class Form1
     Private Sub nmbContrast_ValueChanged(sender As Object, e As EventArgs) Handles nmbContrast.ValueChanged
         Dim tmpptr As UInteger
         If debug Then dbgboost = &H41C0
-        tmpptr = ReadUInt32(&H1378520)
+        tmpptr = ReadUInt32(&H1378520 + dbgboost)
         tmpptr = ReadUInt32(tmpptr + &H10)
 
         WriteFloat(tmpptr + &H280, nmbContrast.Value)
         WriteFloat(tmpptr + &H284, nmbContrast.Value)
         WriteFloat(tmpptr + &H288, nmbContrast.Value)
+    End Sub
+
+    Private Sub nmbMPChannel_ValueChanged(sender As Object, e As EventArgs) Handles nmbMPChannel.ValueChanged
+        Dim tmpptr As UInteger
+        If debug Then dbgboost = &H41C0
+        tmpptr = ReadUInt32(&H137E204 + dbgboost)
+        WriteBytes(tmpptr + &HB69, {nmbMPChannel.Value})
     End Sub
 End Class
