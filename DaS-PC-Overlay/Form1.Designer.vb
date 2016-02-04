@@ -53,6 +53,11 @@ Partial Class Form1
         Me.lblRelease = New System.Windows.Forms.Label()
         Me.lblCharmapdata = New System.Windows.Forms.Label()
         Me.lblCharptr1 = New System.Windows.Forms.Label()
+        Me.tabItems = New System.Windows.Forms.TabPage()
+        Me.nmbItemCount = New System.Windows.Forms.NumericUpDown()
+        Me.cmbItemName = New System.Windows.Forms.ComboBox()
+        Me.cmbItemCat = New System.Windows.Forms.ComboBox()
+        Me.btnDropItem = New System.Windows.Forms.Button()
         Me.tabDebug = New System.Windows.Forms.TabPage()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.nmbMPChannel = New System.Windows.Forms.NumericUpDown()
@@ -72,12 +77,10 @@ Partial Class Form1
         Me.nmbPhantomType = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.nmbHumanity = New System.Windows.Forms.NumericUpDown()
-        Me.tabItems = New System.Windows.Forms.TabPage()
-        Me.btnDropItem = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
+        Me.tabItems.SuspendLayout()
+        CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabDebug.SuspendLayout()
         CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,7 +89,6 @@ Partial Class Form1
         CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabItems.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnRefresh
@@ -447,6 +449,58 @@ Partial Class Form1
         Me.lblCharptr1.TabIndex = 0
         Me.lblCharptr1.Text = "Charptr1"
         '
+        'tabItems
+        '
+        Me.tabItems.BackColor = System.Drawing.Color.Magenta
+        Me.tabItems.Controls.Add(Me.nmbItemCount)
+        Me.tabItems.Controls.Add(Me.cmbItemName)
+        Me.tabItems.Controls.Add(Me.cmbItemCat)
+        Me.tabItems.Controls.Add(Me.btnDropItem)
+        Me.tabItems.Location = New System.Drawing.Point(4, 22)
+        Me.tabItems.Name = "tabItems"
+        Me.tabItems.Size = New System.Drawing.Size(1304, 859)
+        Me.tabItems.TabIndex = 3
+        Me.tabItems.Text = "Items"
+        '
+        'nmbItemCount
+        '
+        Me.nmbItemCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbItemCount.Location = New System.Drawing.Point(411, 743)
+        Me.nmbItemCount.Name = "nmbItemCount"
+        Me.nmbItemCount.Size = New System.Drawing.Size(47, 22)
+        Me.nmbItemCount.TabIndex = 50
+        Me.nmbItemCount.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'cmbItemName
+        '
+        Me.cmbItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbItemName.FormattingEnabled = True
+        Me.cmbItemName.Location = New System.Drawing.Point(152, 742)
+        Me.cmbItemName.Name = "cmbItemName"
+        Me.cmbItemName.Size = New System.Drawing.Size(253, 24)
+        Me.cmbItemName.TabIndex = 49
+        '
+        'cmbItemCat
+        '
+        Me.cmbItemCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbItemCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbItemCat.FormattingEnabled = True
+        Me.cmbItemCat.Location = New System.Drawing.Point(20, 742)
+        Me.cmbItemCat.Name = "cmbItemCat"
+        Me.cmbItemCat.Size = New System.Drawing.Size(126, 24)
+        Me.cmbItemCat.TabIndex = 48
+        '
+        'btnDropItem
+        '
+        Me.btnDropItem.BackColor = System.Drawing.Color.LightGray
+        Me.btnDropItem.Location = New System.Drawing.Point(20, 802)
+        Me.btnDropItem.Name = "btnDropItem"
+        Me.btnDropItem.Size = New System.Drawing.Size(75, 23)
+        Me.btnDropItem.TabIndex = 47
+        Me.btnDropItem.Text = "DropItem"
+        Me.btnDropItem.UseVisualStyleBackColor = False
+        '
         'tabDebug
         '
         Me.tabDebug.BackColor = System.Drawing.Color.Fuchsia
@@ -661,48 +715,6 @@ Partial Class Form1
         Me.nmbHumanity.Size = New System.Drawing.Size(47, 22)
         Me.nmbHumanity.TabIndex = 0
         '
-        'tabItems
-        '
-        Me.tabItems.BackColor = System.Drawing.Color.Magenta
-        Me.tabItems.Controls.Add(Me.ComboBox2)
-        Me.tabItems.Controls.Add(Me.ComboBox1)
-        Me.tabItems.Controls.Add(Me.btnDropItem)
-        Me.tabItems.Location = New System.Drawing.Point(4, 22)
-        Me.tabItems.Name = "tabItems"
-        Me.tabItems.Size = New System.Drawing.Size(1304, 859)
-        Me.tabItems.TabIndex = 3
-        Me.tabItems.Text = "Items"
-        '
-        'btnDropItem
-        '
-        Me.btnDropItem.BackColor = System.Drawing.Color.LightGray
-        Me.btnDropItem.Location = New System.Drawing.Point(38, 427)
-        Me.btnDropItem.Name = "btnDropItem"
-        Me.btnDropItem.Size = New System.Drawing.Size(75, 23)
-        Me.btnDropItem.TabIndex = 47
-        Me.btnDropItem.Text = "DropItem"
-        Me.btnDropItem.UseVisualStyleBackColor = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(38, 367)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(126, 24)
-        Me.ComboBox1.TabIndex = 48
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(38, 397)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(126, 24)
-        Me.ComboBox2.TabIndex = 49
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -716,6 +728,8 @@ Partial Class Form1
         Me.tabs.ResumeLayout(False)
         Me.tabMain.ResumeLayout(False)
         Me.tabMain.PerformLayout()
+        Me.tabItems.ResumeLayout(False)
+        CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabDebug.ResumeLayout(False)
         Me.tabDebug.PerformLayout()
         CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).EndInit()
@@ -726,7 +740,6 @@ Partial Class Form1
         CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabItems.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -782,6 +795,7 @@ Partial Class Form1
     Friend WithEvents nmbMPChannel As NumericUpDown
     Friend WithEvents tabItems As System.Windows.Forms.TabPage
     Friend WithEvents btnDropItem As System.Windows.Forms.Button
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbItemName As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbItemCat As System.Windows.Forms.ComboBox
+    Friend WithEvents nmbItemCount As NumericUpDown
 End Class

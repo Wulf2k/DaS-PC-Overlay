@@ -206,28 +206,28 @@ Public Class Form1
         clsGoods.Add("112", "Servant Roster")
         clsGoods.Add("113", "Blue Eye Orb")
         clsGoods.Add("114", "Dragon Eye")
-        clsGoods.Add("115", "Black Eye Orb")
-        clsGoods.Add("116", "Black Eye Orb")
+        clsGoods.Add("115", "Black Eye Orb (115)")
+        clsGoods.Add("116", "Black Eye Orb (116)")
         clsGoods.Add("117", "Darksign")
-        clsGoods.Add("118", "118")
-        clsGoods.Add("200", "Estus Flask")
-        clsGoods.Add("201", "Estus Flask")
-        clsGoods.Add("202", "Estus Flask+1")
-        clsGoods.Add("203", "Estus Flask+1")
-        clsGoods.Add("204", "Estus Flask+2")
-        clsGoods.Add("205", "Estus Flask+2")
-        clsGoods.Add("206", "Estus Flask+3")
-        clsGoods.Add("207", "Estus Flask+3")
-        clsGoods.Add("208", "Estus Flask+4")
-        clsGoods.Add("209", "Estus Flask+4")
-        clsGoods.Add("210", "Estus Flask+5")
-        clsGoods.Add("211", "Estus Flask+5")
-        clsGoods.Add("212", "Estus Flask+6")
-        clsGoods.Add("213", "Estus Flask+6")
-        clsGoods.Add("214", "Estus Flask+7")
-        clsGoods.Add("215", "Estus Flask+7")
-        clsGoods.Add("220", "220")
-        clsGoods.Add("230", "230")
+        clsGoods.Add("118", "Purple Coward's Crystal")
+        clsGoods.Add("200", "Estus Flask (200)")
+        clsGoods.Add("201", "Estus Flask (201)")
+        clsGoods.Add("202", "Estus Flask+1 (202)")
+        clsGoods.Add("203", "Estus Flask+1 (203)")
+        clsGoods.Add("204", "Estus Flask+2 (204)")
+        clsGoods.Add("205", "Estus Flask+2 (205)")
+        clsGoods.Add("206", "Estus Flask+3 (206)")
+        clsGoods.Add("207", "Estus Flask+3 (207)")
+        clsGoods.Add("208", "Estus Flask+4 (208)")
+        clsGoods.Add("209", "Estus Flask+4 (209)")
+        clsGoods.Add("210", "Estus Flask+5 (210)")
+        clsGoods.Add("211", "Estus Flask+5 (211)")
+        clsGoods.Add("212", "Estus Flask+6 (212)")
+        clsGoods.Add("213", "Estus Flask+6 (213)")
+        clsGoods.Add("214", "Estus Flask+7 (214)")
+        clsGoods.Add("215", "Estus Flask+7 (215)")
+        clsGoods.Add("220", "Silver Pendant")
+        clsGoods.Add("230", "Elizabeth's Mushroom")
         clsGoods.Add("240", "Divine Blessing")
         clsGoods.Add("260", "Green Blossom")
         clsGoods.Add("270", "Bloodred Moss Clump")
@@ -248,7 +248,7 @@ Public Class Form1
         clsGoods.Add("312", "Transient Curse")
         clsGoods.Add("313", "Rotten Pine Resin")
         clsGoods.Add("330", "Homeward Bone")
-        clsGoods.Add("350", "Humanity")
+        clsGoods.Add("350", "Humanity (350)")
         clsGoods.Add("370", "Prism Stone")
         clsGoods.Add("371", "Binoculars")
         clsGoods.Add("373", "Indictment")
@@ -263,13 +263,13 @@ Public Class Form1
         clsGoods.Add("383", "Gold Coin")
         clsGoods.Add("384", "Peculiar Doll")
         clsGoods.Add("385", "Dried Finger")
-        clsGoods.Add("390", "Fire Keeper Soul")
-        clsGoods.Add("391", "Fire Keeper Soul")
-        clsGoods.Add("392", "Fire Keeper Soul")
-        clsGoods.Add("393", "Fire Keeper Soul")
-        clsGoods.Add("394", "Fire Keeper Soul")
-        clsGoods.Add("395", "Fire Keeper Soul")
-        clsGoods.Add("396", "Fire Keeper Soul")
+        clsGoods.Add("390", "Fire Keeper Soul (390)")
+        clsGoods.Add("391", "Fire Keeper Soul (391)")
+        clsGoods.Add("392", "Fire Keeper Soul (392)")
+        clsGoods.Add("393", "Fire Keeper Soul (393)")
+        clsGoods.Add("394", "Fire Keeper Soul (394)")
+        clsGoods.Add("395", "Fire Keeper Soul (395)")
+        clsGoods.Add("396", "Fire Keeper Soul (396)")
         clsGoods.Add("400", "Soul of a Lost Undead")
         clsGoods.Add("401", "Large Soul of a Lost Undead")
         clsGoods.Add("402", "Soul of a Nameless Soldier")
@@ -280,13 +280,13 @@ Public Class Form1
         clsGoods.Add("407", "Large Soul of a Brave Warrior")
         clsGoods.Add("408", "Soul of a Hero")
         clsGoods.Add("409", "Soul of a Great Hero")
-        clsGoods.Add("500", "Humanity")
+        clsGoods.Add("500", "Humanity (500)")
         clsGoods.Add("501", "Twin Humanities")
-        clsGoods.Add("510", "510")
-        clsGoods.Add("511", "511")
-        clsGoods.Add("512", "512")
-        clsGoods.Add("513", "513")
-        clsGoods.Add("514", "514")
+        clsGoods.Add("510", "Hello Carving")
+        clsGoods.Add("511", "Thank you Carving")
+        clsGoods.Add("512", "Very good! Carving")
+        clsGoods.Add("513", "I'm sorry Carving")
+        clsGoods.Add("514", "Help me! Carving")
         clsGoods.Add("700", "Soul of Quelaag")
         clsGoods.Add("701", "Soul of Sif")
         clsGoods.Add("702", "Soul of Gwyn, Lord of Cinder")
@@ -296,9 +296,9 @@ Public Class Form1
         clsGoods.Add("706", "Soul of Smough")
         clsGoods.Add("707", "Soul of Priscilla")
         clsGoods.Add("708", "Soul of Gwyndolin")
-        clsGoods.Add("709", "709")
-        clsGoods.Add("710", "710")
-        clsGoods.Add("711", "711")
+        clsGoods.Add("709", "Guardian Soul")
+        clsGoods.Add("710", "Soul of Artorias")
+        clsGoods.Add("711", "Soul of Manus")
         clsGoods.Add("800", "Large Ember")
         clsGoods.Add("801", "Very Large Ember")
         clsGoods.Add("802", "Crystal Ember")
@@ -344,16 +344,16 @@ Public Class Form1
         clsGoods.Add("2019", "Watchtower Basement Key")
         clsGoods.Add("2020", "Archive Prison Extra Key")
         clsGoods.Add("2021", "Residence Key")
-        clsGoods.Add("2022", "2022")
+        clsGoods.Add("2022", "Crest Key")
         clsGoods.Add("2100", "Master Key")
         clsGoods.Add("2200", "2200")
-        clsGoods.Add("2500", "Lord Soul (2501)")
+        clsGoods.Add("2500", "Lord Soul (2500)")
         clsGoods.Add("2501", "Lord Soul (2501)")
         clsGoods.Add("2502", "Bequeathed Lord Soul Shard (2502)")
         clsGoods.Add("2503", "Bequeathed Lord Soul Shard (2503)")
         clsGoods.Add("2504", "2504")
         clsGoods.Add("2510", "Lordvessel")
-        clsGoods.Add("2520", "2520")
+        clsGoods.Add("2520", "Broken Pendant")
         clsGoods.Add("2600", "Weapon Smithbox")
         clsGoods.Add("2601", "Armor Smithbox")
         clsGoods.Add("2602", "Repairbox")
@@ -388,10 +388,10 @@ Public Class Form1
         clsGoods.Add("3600", "Sorcery: Resist Curse")
         clsGoods.Add("3610", "Sorcery: Remedy")
         clsGoods.Add("3700", "Sorcery: White Dragon Breath")
-        clsGoods.Add("3710", "3710")
-        clsGoods.Add("3720", "3720")
-        clsGoods.Add("3730", "3730")
-        clsGoods.Add("3740", "3740")
+        clsGoods.Add("3710", "Dark Orb")
+        clsGoods.Add("3720", "Dark Bead")
+        clsGoods.Add("3730", "Dark Fog")
+        clsGoods.Add("3740", "Pursuers")
         clsGoods.Add("4000", "Pyromancy: Fireball")
         clsGoods.Add("4010", "Fire Orb")
         clsGoods.Add("4020", "Pyromancy: Great Fireball")
@@ -411,7 +411,7 @@ Public Class Form1
         clsGoods.Add("4500", "Pyromancy: Great Chaos Fireball")
         clsGoods.Add("4510", "Pyromancy: Chaos Storm")
         clsGoods.Add("4520", "Pyromancy: Chaos Fire Whip")
-        clsGoods.Add("4530", "4530")
+        clsGoods.Add("4530", "Black Flame")
         clsGoods.Add("5000", "Miracle: Heal")
         clsGoods.Add("5010", "Miracle: Great Heal")
         clsGoods.Add("5020", "Great Heal Excerpt")
@@ -453,6 +453,18 @@ Public Class Form1
         clsGoods.Add("9014", "Prayer")
 
 
+        nameList.Clear()
+        clsGoodsIDs.Clear()
+        cmbItemName.Items.Clear()
+        For Each good In clsGoods.Keys
+            clsGoodsIDs.Add(clsGoods(good), good)
+            nameList.Add(clsGoods(good))
+        Next
+        nameList.Sort()
+        For Each good In nameList
+            cmbItemName.Items.Add(good)
+        Next
+        cmbItemName.SelectedItem = "Alluring Skull"
 
 
 
@@ -905,7 +917,7 @@ Public Class Form1
         WriteBytes(tmpptr + &HB69, {nmbMPChannel.Value})
     End Sub
 
-    Private Sub btnDropItem_Click(sender As Object, e As EventArgs)
+    Private Sub btnDropItem_Click(sender As Object, e As EventArgs) Handles btnDropItem.Click
 
         Dim TargetBufferSize = 1024
         Dim Rtn As Integer
@@ -914,13 +926,25 @@ Public Class Form1
         Dim bytes() As Byte
         Dim bytes2() As Byte
 
-        bytes = {&HBD, &H0, &H0, &H0, &H40, &HBB, &HF0, &H0, &H0, &H0, &HB9, &HFF, &HFF, &HFF, &HFF, &HBA, &H1, &H0, &H0, &H0, &HA1, &HD0, &H86, &H37, &H1, &H89, &HA8, &H28, &H8, &H0, &H0, &H89, &H98, &H2C, &H8, &H0, &H0, &H89, &H88, &H30, &H8, &H0, &H0, &H89, &H90, &H34, &H8, &H0, &H0, &HA1, &HBC, &HD6, &H37, &H1, &H50, &HE8, 0, 0, 0, 0, &HC3}
+        Dim bytcat As Integer = &H1
+        Dim bytitem As Integer = &H6
+        Dim bytcount As Integer = &H10
+        Dim bytjmp As Integer = &H38
+
+        bytes = {&HBD, &H0, &H0, &H0, &H40, &HBB, &HF0, &H0, &H0, &H0, &HB9, &HFF, &HFF, &HFF, &HFF, &HBA, 0, 0, 0, 0, &HA1, &HD0, &H86, &H37, &H1, &H89, &HA8, &H28, &H8, &H0, &H0, &H89, &H98, &H2C, &H8, &H0, &H0, &H89, &H88, &H30, &H8, &H0, &H0, &H89, &H90, &H34, &H8, &H0, &H0, &HA1, &HBC, &HD6, &H37, &H1, &H50, &HE8, 0, 0, 0, 0, &HC3}
 
 
         insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
-        bytes2 = BitConverter.GetBytes(0 - ((insertPtr + &H3C) - &HDC8C60))
 
-        Array.Copy(bytes2, 0, bytes, &H38, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(clsGoodsIDs(cmbItemName.SelectedItem)))
+        Array.Copy(bytes2, 0, bytes, bytitem, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(nmbItemCount.Value))
+        Array.Copy(bytes2, 0, bytes, bytcount, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(0 - ((insertPtr + &H3C) - &HDC8C60))
+        Array.Copy(bytes2, 0, bytes, bytjmp, bytes2.Length)
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
         CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)
