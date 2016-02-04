@@ -54,6 +54,8 @@ Partial Class Form1
         Me.lblCharmapdata = New System.Windows.Forms.Label()
         Me.lblCharptr1 = New System.Windows.Forms.Label()
         Me.tabDebug = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.nmbMPChannel = New System.Windows.Forms.NumericUpDown()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.nmbContrast = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -70,18 +72,21 @@ Partial Class Form1
         Me.nmbPhantomType = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.nmbHumanity = New System.Windows.Forms.NumericUpDown()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.nmbMPChannel = New System.Windows.Forms.NumericUpDown()
+        Me.tabItems = New System.Windows.Forms.TabPage()
+        Me.btnDropItem = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
         Me.tabDebug.SuspendLayout()
+        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabStats.SuspendLayout()
         CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabItems.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnRefresh
@@ -97,6 +102,7 @@ Partial Class Form1
         'tabs
         '
         Me.tabs.Controls.Add(Me.tabMain)
+        Me.tabs.Controls.Add(Me.tabItems)
         Me.tabs.Controls.Add(Me.tabDebug)
         Me.tabs.Controls.Add(Me.tabStats)
         Me.tabs.Location = New System.Drawing.Point(4, 12)
@@ -462,6 +468,25 @@ Partial Class Form1
         Me.tabDebug.TabIndex = 1
         Me.tabDebug.Text = "Debug"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.LightGray
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(13, 441)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 16)
+        Me.Label6.TabIndex = 45
+        Me.Label6.Text = "MP Channel"
+        '
+        'nmbMPChannel
+        '
+        Me.nmbMPChannel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbMPChannel.Location = New System.Drawing.Point(106, 439)
+        Me.nmbMPChannel.Name = "nmbMPChannel"
+        Me.nmbMPChannel.Size = New System.Drawing.Size(53, 22)
+        Me.nmbMPChannel.TabIndex = 44
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -636,24 +661,47 @@ Partial Class Form1
         Me.nmbHumanity.Size = New System.Drawing.Size(47, 22)
         Me.nmbHumanity.TabIndex = 0
         '
-        'Label6
+        'tabItems
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.LightGray
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(13, 441)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 16)
-        Me.Label6.TabIndex = 45
-        Me.Label6.Text = "MP Channel"
+        Me.tabItems.BackColor = System.Drawing.Color.Magenta
+        Me.tabItems.Controls.Add(Me.ComboBox2)
+        Me.tabItems.Controls.Add(Me.ComboBox1)
+        Me.tabItems.Controls.Add(Me.btnDropItem)
+        Me.tabItems.Location = New System.Drawing.Point(4, 22)
+        Me.tabItems.Name = "tabItems"
+        Me.tabItems.Size = New System.Drawing.Size(1304, 859)
+        Me.tabItems.TabIndex = 3
+        Me.tabItems.Text = "Items"
         '
-        'nmbMPChannel
+        'btnDropItem
         '
-        Me.nmbMPChannel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmbMPChannel.Location = New System.Drawing.Point(106, 439)
-        Me.nmbMPChannel.Name = "nmbMPChannel"
-        Me.nmbMPChannel.Size = New System.Drawing.Size(53, 22)
-        Me.nmbMPChannel.TabIndex = 44
+        Me.btnDropItem.BackColor = System.Drawing.Color.LightGray
+        Me.btnDropItem.Location = New System.Drawing.Point(38, 427)
+        Me.btnDropItem.Name = "btnDropItem"
+        Me.btnDropItem.Size = New System.Drawing.Size(75, 23)
+        Me.btnDropItem.TabIndex = 47
+        Me.btnDropItem.Text = "DropItem"
+        Me.btnDropItem.UseVisualStyleBackColor = False
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(38, 367)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(126, 24)
+        Me.ComboBox1.TabIndex = 48
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(38, 397)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(126, 24)
+        Me.ComboBox2.TabIndex = 49
         '
         'Form1
         '
@@ -670,6 +718,7 @@ Partial Class Form1
         Me.tabMain.PerformLayout()
         Me.tabDebug.ResumeLayout(False)
         Me.tabDebug.PerformLayout()
+        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabStats.ResumeLayout(False)
@@ -677,7 +726,7 @@ Partial Class Form1
         CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabItems.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -731,4 +780,8 @@ Partial Class Form1
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As Label
     Friend WithEvents nmbMPChannel As NumericUpDown
+    Friend WithEvents tabItems As System.Windows.Forms.TabPage
+    Friend WithEvents btnDropItem As System.Windows.Forms.Button
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 End Class
