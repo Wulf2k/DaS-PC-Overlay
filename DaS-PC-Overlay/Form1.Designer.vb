@@ -77,6 +77,13 @@ Partial Class Form1
         Me.nmbPhantomType = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.nmbHumanity = New System.Windows.Forms.NumericUpDown()
+        Me.cmbFuncName = New System.Windows.Forms.ComboBox()
+        Me.btnFuncExecute = New System.Windows.Forms.Button()
+        Me.txtFuncParam1 = New System.Windows.Forms.TextBox()
+        Me.txtFuncParam2 = New System.Windows.Forms.TextBox()
+        Me.txtFuncParam4 = New System.Windows.Forms.TextBox()
+        Me.txtFuncParam3 = New System.Windows.Forms.TextBox()
+        Me.txtFuncParam5 = New System.Windows.Forms.TextBox()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
         Me.tabItems.SuspendLayout()
@@ -452,6 +459,13 @@ Partial Class Form1
         'tabItems
         '
         Me.tabItems.BackColor = System.Drawing.Color.Magenta
+        Me.tabItems.Controls.Add(Me.txtFuncParam5)
+        Me.tabItems.Controls.Add(Me.txtFuncParam4)
+        Me.tabItems.Controls.Add(Me.txtFuncParam3)
+        Me.tabItems.Controls.Add(Me.txtFuncParam2)
+        Me.tabItems.Controls.Add(Me.txtFuncParam1)
+        Me.tabItems.Controls.Add(Me.btnFuncExecute)
+        Me.tabItems.Controls.Add(Me.cmbFuncName)
         Me.tabItems.Controls.Add(Me.nmbItemCount)
         Me.tabItems.Controls.Add(Me.cmbItemName)
         Me.tabItems.Controls.Add(Me.cmbItemCat)
@@ -465,7 +479,7 @@ Partial Class Form1
         'nmbItemCount
         '
         Me.nmbItemCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmbItemCount.Location = New System.Drawing.Point(411, 743)
+        Me.nmbItemCount.Location = New System.Drawing.Point(411, 813)
         Me.nmbItemCount.Name = "nmbItemCount"
         Me.nmbItemCount.Size = New System.Drawing.Size(47, 22)
         Me.nmbItemCount.TabIndex = 50
@@ -476,7 +490,7 @@ Partial Class Form1
         Me.cmbItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbItemName.FormattingEnabled = True
-        Me.cmbItemName.Location = New System.Drawing.Point(152, 742)
+        Me.cmbItemName.Location = New System.Drawing.Point(152, 812)
         Me.cmbItemName.Name = "cmbItemName"
         Me.cmbItemName.Size = New System.Drawing.Size(253, 24)
         Me.cmbItemName.TabIndex = 49
@@ -486,7 +500,7 @@ Partial Class Form1
         Me.cmbItemCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbItemCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbItemCat.FormattingEnabled = True
-        Me.cmbItemCat.Location = New System.Drawing.Point(20, 742)
+        Me.cmbItemCat.Location = New System.Drawing.Point(20, 812)
         Me.cmbItemCat.Name = "cmbItemCat"
         Me.cmbItemCat.Size = New System.Drawing.Size(126, 24)
         Me.cmbItemCat.TabIndex = 48
@@ -494,7 +508,7 @@ Partial Class Form1
         'btnDropItem
         '
         Me.btnDropItem.BackColor = System.Drawing.Color.LightGray
-        Me.btnDropItem.Location = New System.Drawing.Point(20, 802)
+        Me.btnDropItem.Location = New System.Drawing.Point(464, 813)
         Me.btnDropItem.Name = "btnDropItem"
         Me.btnDropItem.Size = New System.Drawing.Size(75, 23)
         Me.btnDropItem.TabIndex = 47
@@ -715,6 +729,66 @@ Partial Class Form1
         Me.nmbHumanity.Size = New System.Drawing.Size(47, 22)
         Me.nmbHumanity.TabIndex = 0
         '
+        'cmbFuncName
+        '
+        Me.cmbFuncName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbFuncName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbFuncName.FormattingEnabled = True
+        Me.cmbFuncName.Location = New System.Drawing.Point(20, 322)
+        Me.cmbFuncName.Name = "cmbFuncName"
+        Me.cmbFuncName.Size = New System.Drawing.Size(253, 24)
+        Me.cmbFuncName.TabIndex = 51
+        '
+        'btnFuncExecute
+        '
+        Me.btnFuncExecute.BackColor = System.Drawing.Color.LightGray
+        Me.btnFuncExecute.Location = New System.Drawing.Point(279, 323)
+        Me.btnFuncExecute.Name = "btnFuncExecute"
+        Me.btnFuncExecute.Size = New System.Drawing.Size(75, 23)
+        Me.btnFuncExecute.TabIndex = 52
+        Me.btnFuncExecute.Text = "Execute"
+        Me.btnFuncExecute.UseVisualStyleBackColor = False
+        '
+        'txtFuncParam1
+        '
+        Me.txtFuncParam1.Location = New System.Drawing.Point(20, 296)
+        Me.txtFuncParam1.Name = "txtFuncParam1"
+        Me.txtFuncParam1.Size = New System.Drawing.Size(55, 20)
+        Me.txtFuncParam1.TabIndex = 53
+        Me.txtFuncParam1.Text = "0"
+        '
+        'txtFuncParam2
+        '
+        Me.txtFuncParam2.Location = New System.Drawing.Point(81, 296)
+        Me.txtFuncParam2.Name = "txtFuncParam2"
+        Me.txtFuncParam2.Size = New System.Drawing.Size(55, 20)
+        Me.txtFuncParam2.TabIndex = 54
+        Me.txtFuncParam2.Text = "0"
+        '
+        'txtFuncParam4
+        '
+        Me.txtFuncParam4.Location = New System.Drawing.Point(203, 296)
+        Me.txtFuncParam4.Name = "txtFuncParam4"
+        Me.txtFuncParam4.Size = New System.Drawing.Size(55, 20)
+        Me.txtFuncParam4.TabIndex = 56
+        Me.txtFuncParam4.Text = "0"
+        '
+        'txtFuncParam3
+        '
+        Me.txtFuncParam3.Location = New System.Drawing.Point(142, 296)
+        Me.txtFuncParam3.Name = "txtFuncParam3"
+        Me.txtFuncParam3.Size = New System.Drawing.Size(55, 20)
+        Me.txtFuncParam3.TabIndex = 55
+        Me.txtFuncParam3.Text = "0"
+        '
+        'txtFuncParam5
+        '
+        Me.txtFuncParam5.Location = New System.Drawing.Point(264, 296)
+        Me.txtFuncParam5.Name = "txtFuncParam5"
+        Me.txtFuncParam5.Size = New System.Drawing.Size(55, 20)
+        Me.txtFuncParam5.TabIndex = 57
+        Me.txtFuncParam5.Text = "0"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -729,6 +803,7 @@ Partial Class Form1
         Me.tabMain.ResumeLayout(False)
         Me.tabMain.PerformLayout()
         Me.tabItems.ResumeLayout(False)
+        Me.tabItems.PerformLayout()
         CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabDebug.ResumeLayout(False)
         Me.tabDebug.PerformLayout()
@@ -798,4 +873,11 @@ Partial Class Form1
     Friend WithEvents cmbItemName As System.Windows.Forms.ComboBox
     Friend WithEvents cmbItemCat As System.Windows.Forms.ComboBox
     Friend WithEvents nmbItemCount As NumericUpDown
+    Friend WithEvents btnFuncExecute As System.Windows.Forms.Button
+    Friend WithEvents cmbFuncName As System.Windows.Forms.ComboBox
+    Friend WithEvents txtFuncParam2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtFuncParam1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtFuncParam5 As System.Windows.Forms.TextBox
+    Friend WithEvents txtFuncParam4 As System.Windows.Forms.TextBox
+    Friend WithEvents txtFuncParam3 As System.Windows.Forms.TextBox
 End Class

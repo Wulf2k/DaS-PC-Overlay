@@ -32,6 +32,9 @@ Public Class Form1
 
     Dim clearctr As UInteger
 
+    Dim clsFuncNames As New Hashtable
+    Dim clsFuncLocs As New Hashtable
+
     Dim clsBonfires As New Hashtable()
     Dim clsBonfireIDs As New Hashtable()
 
@@ -119,6 +122,25 @@ Public Class Form1
     Public Sub initClls()
         Dim nameList As New List(Of String)
 
+        nameList.Clear()
+        clsFuncNames.Clear()
+        clsFuncNames.Add(14028288, "EnableHide")
+        clsFuncNames.Add(14032144, "PlayAnimation")
+        clsFuncNames.Add(14031984, "PlayLoopAnimation")
+
+        clsFuncLocs.Clear()
+        cmbFuncName.Items.Clear()
+        For Each func In clsFuncNames.Keys
+            clsFuncLocs.Add(clsFuncNames(func), func)
+            nameList.Add(clsFuncNames(func))
+        Next
+        nameList.Sort()
+        For Each func In nameList
+            cmbFuncName.Items.Add(func)
+        Next
+        cmbFuncName.SelectedItem = "PlayAnimation"
+
+
         clsBonfires.Clear()
         clsBonfires.Add(-1, "Nothing")
         clsBonfires.Add(1602950, "Abyss (Bonfire)")
@@ -153,7 +175,7 @@ Public Class Form1
         clsBonfires.Add(1602960, "New Londo Ruins (Pre-Ingward)")
         clsBonfires.Add(1812960, "Northern Undead Asylum (Bonfire #1)")
         clsBonfires.Add(1812961, "Northern Undead Asylum (Bonfire #2)")
-        clsBonfires.Add(1812962, "Northern Undead Asylum (Cell)")
+        clsBonfires.Add(1812100, "Northern Undead Asylum (Cell)")
         clsBonfires.Add(1212961, "Oolacile Sanctuary (Bonfire)")
         clsBonfires.Add(1212962, "Oolacile Township (Bonfire)")
         clsBonfires.Add(1212964, "Oolacile Township Dungeon (Bonfire)")
@@ -181,6 +203,7 @@ Public Class Form1
         clsBonfires.Add(1012966, "Undead Parish (Near Cell)")
         clsBonfires.Add(1012961, "Undead Parish (Sunlight Altar Bonfire)")
 
+        nameList.Clear()
         clsBonfireIDs.Clear()
         cmbBonfire.Items.Clear()
         For Each bonfire In clsBonfires.Keys
@@ -945,6 +968,47 @@ Public Class Form1
 
         bytes2 = BitConverter.GetBytes(0 - ((insertPtr + &H3C) - &HDC8C60))
         Array.Copy(bytes2, 0, bytes, bytjmp, bytes2.Length)
+
+        Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
+        CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)
+
+    End Sub
+
+    Private Sub btnFuncExecute_Click(sender As Object, e As EventArgs) Handles btnFuncExecute.Click
+        Dim TargetBufferSize = 1024
+        Dim Rtn As Integer
+        Dim insertPtr As Integer
+
+        Dim bytes() As Byte
+        Dim bytes2() As Byte
+
+        Dim bytParam5 As Integer = &H5
+        Dim bytParam4 As Integer = &HB
+        Dim bytParam3 As Integer = &H11
+        Dim bytParam2 As Integer = &H17
+        Dim bytParam1 As Integer = &H1D
+        Dim bytJmp As Integer = &H23
+
+        bytes = {&H55, &H8B, &HEC, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HE8, 0, 0, 0, 0, &H58, &H58, &H58, &H58, &H58, &H58, &H8B, &HE5, &H5D, &HC3}
+        insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
+
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam5.text))
+        Array.Copy(bytes2, 0, bytes, bytParam5, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam4.Text))
+        Array.Copy(bytes2, 0, bytes, bytParam4, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam3.Text))
+        Array.Copy(bytes2, 0, bytes, bytParam3, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam2.Text))
+        Array.Copy(bytes2, 0, bytes, bytParam2, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam1.Text))
+        Array.Copy(bytes2, 0, bytes, bytParam1, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(0 - ((insertPtr + bytJmp + 4) - clsFuncLocs(cmbFuncName.SelectedItem)))
+        Array.Copy(bytes2, 0, bytes, bytJmp, bytes2.Length)
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
         CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)
