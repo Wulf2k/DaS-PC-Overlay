@@ -124,9 +124,369 @@ Public Class Form1
 
         nameList.Clear()
         clsFuncNames.Clear()
+        clsFuncNames.Add(14030544,"ActionEnd")
+        clsFuncNames.Add(14023712, "AddActionCount")
+        clsFuncNames.Add(14017664, "AddBlockClearBonus")
+        clsFuncNames.Add(14019616, "AddClearCount")
+        clsFuncNames.Add(14027056, "AddCorpseEvent")
+        clsFuncNames.Add(14024912, "AddCurrentVowRankPoint")
+        clsFuncNames.Add(14042560, "AddCustomRoutePoint")
+        clsFuncNames.Add(14016032, "AddDeathCount")
+        clsFuncNames.Add(14028016, "AddEventParts_Ignore")
+        clsFuncNames.Add(14035040, "AddEventSimpleTalk")
+        clsFuncNames.Add(14034976, "AddEventSimpleTalkTimer")
+        clsFuncNames.Add(14034832, "AddFieldInsFilter")
+        clsFuncNames.Add(14033584, "AddGeneEvent")
+        clsFuncNames.Add(14015312, "AddHelpWhiteGhost")
+        clsFuncNames.Add(14044496, "AddHitMaskByBit")
+        clsFuncNames.Add(14042912, "AddInfomationBuffer")
+        clsFuncNames.Add(14042928, "AddInfomationBufferTag")
+        clsFuncNames.Add(14033776, "AddInfomationList")
+        clsFuncNames.Add(14042864, "AddInfomationTimeMsgTag")
+        clsFuncNames.Add(14042832, "AddInfomationTosBuffer")
+        clsFuncNames.Add(14042800, "AddInfomationTosBufferPlus")
+        clsFuncNames.Add(14050496, "AddInventoryItem")
+        clsFuncNames.Add(14015280, "AddKillBlackGhost")
+        clsFuncNames.Add(14022672, "AddQWC")
+        clsFuncNames.Add(14021552, "AddTreasureEvent")
+        clsFuncNames.Add(14015984, "AddTrueDeathCount")
+        clsFuncNames.Add(14023920, "BeginAction")
+        clsFuncNames.Add(14023568, "BeginLoopCheck")
+        clsFuncNames.Add(14023424, "CamReset")
+        clsFuncNames.Add(14049200, "CastPointSpell")
+        clsFuncNames.Add(14048912, "CastTargetSpell")
+        clsFuncNames.Add(14048848, "CastTargetSpellPlus")
+        clsFuncNames.Add(14028144, "ChangeInitPosAng")
+        clsFuncNames.Add(14050256, "ChangeGreyGhost")
+        clsFuncNames.Add(14044272, "ChangeModel")
+        clsFuncNames.Add(14032288, "ChangeTarget")
+        clsFuncNames.Add(14047392, "ChangeThink")
+        clsFuncNames.Add(14028800, "ChangeWander")
+        clsFuncNames.Add(14026848, "CharacterAllAttachSys")
+        clsFuncNames.Add(14041488, "CharactorCopyPosAng")
+        clsFuncNames.Add(14019680, "CheckEventBody")
+        clsFuncNames.Add(14020176, "CheckPenalty")
+        clsFuncNames.Add(14029920, "ChrDisableUpdate")
+        clsFuncNames.Add(14026720, "ChrFadeIn")
+        clsFuncNames.Add(14026608, "ChrFadeOut")
+        clsFuncNames.Add(14026352, "ChrResetAnimation")
+        clsFuncNames.Add(14026400, "ChrResetRequest")
+        clsFuncNames.Add(14015872, "ClearBossGauge")
+        clsFuncNames.Add(14020048, "ClearMyWorldState")
+        clsFuncNames.Add(14020304, "ClearSosSign")
+        clsFuncNames.Add(14029760, "ClearTarget")
+        clsFuncNames.Add(14017792, "CloseGenDialog")
+        clsFuncNames.Add(14019840, "CloseMenu")
+        clsFuncNames.Add(14014800, "CloseRankingDialog")
+        clsFuncNames.Add(14018064, "CloseTalk")
+        clsFuncNames.Add(14049440, "CompleteEvent")
+        clsFuncNames.Add(14033072, "CreateCamSfx")
+        clsFuncNames.Add(14034496, "CreateHeroBloodStain")
+        clsFuncNames.Add(14020608, "CreateSfx")
+        clsFuncNames.Add(14041408, "CreateSfx_DummyPoly")
+        clsFuncNames.Add(14017536, "CroseBriefingMsg")
+        clsFuncNames.Add(14036016, "CustomLuaCall")
+        clsFuncNames.Add(14049856, "CustomLuaCallStart")
+        clsFuncNames.Add(14049808, "CustomLuaCallStartPlus")
+        clsFuncNames.Add(14018720, "DeleteCamSfx")
+        clsFuncNames.Add(14019232, "DeleteEvent")
+        clsFuncNames.Add(14018480, "DeleteObjSfxAll")
+        clsFuncNames.Add(14018544, "DeleteObjSfxDmyPlyID")
+        clsFuncNames.Add(14018512, "DeleteObjSfxEventID")
+        clsFuncNames.Add(14027328, "DisableCollection")
+        clsFuncNames.Add(14028240, "DisableDamage")
+        clsFuncNames.Add(14027264, "DisableHpGauge")
+        clsFuncNames.Add(14029488, "DisableInterupt")
+        clsFuncNames.Add(14030736, "DisableMapHit")
+        clsFuncNames.Add(14030800, "DisableMove")
+        clsFuncNames.Add(14020384, "EnableGeneratorSystem")
         clsFuncNames.Add(14028288, "EnableHide")
+        clsFuncNames.Add(14028176, "EnableInvincible")
+        clsFuncNames.Add(14024080, "EnableLogic")
+        clsFuncNames.Add(14049744, "EnableObjTreasure")
+        clsFuncNames.Add(14031856, "EndAnimation")
+        clsFuncNames.Add(14029328, "EraseEventSpecialEffect")
+        clsFuncNames.Add(14029168, "EraseEventSpecialEffect_2")
+        clsFuncNames.Add(14018592, "EventTagInsertString_forPlayerNo")
+        clsFuncNames.Add(14032384, "ForceChangeTarget")
+        clsFuncNames.Add(14050960, "ForceDead")
+        clsFuncNames.Add(14032112, "ForcePlayAnimation")
+        clsFuncNames.Add(14032032, "ForcePlayAnimationStayCancel")
+        clsFuncNames.Add(14031952, "ForcePlayLoopAnimation")
+        clsFuncNames.Add(14027920, "ForceUpdateNextFrame")
+        clsFuncNames.Add(14025008, "GetBountyRankPoint")
+        clsFuncNames.Add(14016176, "GetClearBonus")
+        clsFuncNames.Add(14019856, "GetEnemyPlayerId_Random")
+        clsFuncNames.Add(14029552, "GetEventGoalState")
+        clsFuncNames.Add(14030480, "GetEventMode")
+        clsFuncNames.Add(14025856, "GetFloorMaterial")
+        clsFuncNames.Add(14022736, "GetGlobalQWC")
+        clsFuncNames.Add(14023296, "GetHp")
+        clsFuncNames.Add(14017088, "GetItem")
+        clsFuncNames.Add(14023536, "GetLocalPlayerChrType")
+        clsFuncNames.Add(14023504, "GetLocalPlayerInvadeType")
+        clsFuncNames.Add(14023456, "GetLocalPlayerVowType")
+        clsFuncNames.Add(14022768, "GetLocalQWC")
+        clsFuncNames.Add(14019888, "GetPlayerId_Random")
+        clsFuncNames.Add(14041344, "GetPlayerNo_LotNitoMultiItem")
+        clsFuncNames.Add(14022848, "GetQWC")
+        clsFuncNames.Add(14016752, "GetRandom")
+        clsFuncNames.Add(14050736, "GetRateItem")
+        clsFuncNames.Add(14020480, "GetRightCurrentWeaponId")
+        clsFuncNames.Add(14016096, "GetSoloClearBonus")
+        clsFuncNames.Add(14026896, "GetSummonAnimId")
+        clsFuncNames.Add(14041440, "GetTargetChrID")
+        clsFuncNames.Add(14025792, "GetTravelItemParamId")
+        clsFuncNames.Add(14025776, "HasSuppleItem")
+        clsFuncNames.Add(14035968, "HoverMoveVal")
+        clsFuncNames.Add(14043360, "HoverMoveValDmy")
+        clsFuncNames.Add(14021072, "IncrementCoopPlaySuccessCount")
+        clsFuncNames.Add(14021024, "IncrementThiefInvadePlaySuccessCount")
+        clsFuncNames.Add(14041360, "InfomationMenu")
+        clsFuncNames.Add(14014432, "InitDeathState")
+        clsFuncNames.Add(14028368, "InvalidMyBloodMarkInfo")
+        clsFuncNames.Add(14028336, "InvalidMyBloodMarkInfo_Tutorial")
+        clsFuncNames.Add(14020704, "InvalidPointLight")
+        clsFuncNames.Add(14022528, "InvalidSfx")
+        clsFuncNames.Add(14023344, "IsAction")
+        clsFuncNames.Add(14030304, "IsAlive")
+        clsFuncNames.Add(14031664, "IsAngle")
+        clsFuncNames.Add(14020976, "IsAppearancePlayer")
+        clsFuncNames.Add(14028528, "IsBlackGhost")
+        clsFuncNames.Add(14028464, "IsColiseumGhost")
+        clsFuncNames.Add(14028656, "IsDisable")
+        clsFuncNames.Add(14031776, "IsDistance")
+        clsFuncNames.Add(14027776, "IsDropCheck_Only")
+        clsFuncNames.Add(14021872, "IsEquip")
+        clsFuncNames.Add(14031920, "IsEventAnim")
+        clsFuncNames.Add(14025728, "IsFireDead")
+        clsFuncNames.Add(14028592, "IsGreyGhost")
+        clsFuncNames.Add(14028496, "IsIntruder")
+        clsFuncNames.Add(14020416, "IsInventoryEquip")
+        clsFuncNames.Add(14025808, "IsLand")
+        clsFuncNames.Add(14028624, "IsLivePlayer")
+        clsFuncNames.Add(14019968, "IsMatchingMultiPlay")
+        clsFuncNames.Add(14030352, "IsPlayerStay")
+        clsFuncNames.Add(14027504, "IsPlayMovie")
+        clsFuncNames.Add(14029632, "IsProcessEventGoal")
+        clsFuncNames.Add(14027824, "IsRegionDrop")
+        clsFuncNames.Add(14028832, "IsRegionIn")
+        clsFuncNames.Add(14022608, "IsSuccessQWC")
+        clsFuncNames.Add(14021904, "IsValidInstance")
+        clsFuncNames.Add(14028560, "IsWhiteGhost")
+        clsFuncNames.Add(14035200, "LeaveSession")
+        clsFuncNames.Add(14020192, "LockSession")
+        clsFuncNames.Add(14036064, "LuaCall")
+        clsFuncNames.Add(14049936, "LuaCallStart")
+        clsFuncNames.Add(14049888, "LuaCallStartPlus")
+        clsFuncNames.Add(14032224, "MultiDoping_AllEventBody")
+        clsFuncNames.Add(14029952, "NoAnimeTurnCharactor")
+        clsFuncNames.Add(14015456, "NotNetMessage_begin")
+        clsFuncNames.Add(14015440, "NotNetMessage_end")
+        clsFuncNames.Add(14043040, "ObjRootMtxMove")
+        clsFuncNames.Add(14042976, "ObjRootMtxMoveByChrDmyPoly")
+        clsFuncNames.Add(14043008, "ObjRootMtxMoveDmyPoly")
+        clsFuncNames.Add(14040176, "OnActionEventRegion")
+        clsFuncNames.Add(14040032, "OnActionEventRegionAttribute")
+        clsFuncNames.Add(14039136, "OnCharacterAnimEnd")
+        clsFuncNames.Add(14039728, "OnCharacterDead")
+        clsFuncNames.Add(14039632, "OnCharacterHP")
+        clsFuncNames.Add(14039520, "OnCharacterHP_CheckAttacker")
+        clsFuncNames.Add(14042480, "OnChrAnimEnd")
+        clsFuncNames.Add(14038992, "OnChrAnimEndPlus")
+        clsFuncNames.Add(14044752, "OnDistanceJustIn")
+        clsFuncNames.Add(14038192, "OnFireDamage")
+        clsFuncNames.Add(14034384, "OnNetRegion")
+        clsFuncNames.Add(14036480, "OnNetRegionPlus")
+        clsFuncNames.Add(14042464, "OnObjAnimEnd")
+        clsFuncNames.Add(14042448, "OnObjAnimEndPlus")
+        clsFuncNames.Add(14039296, "OnObjDestroy")
+        clsFuncNames.Add(14040464, "OnPlayerActionInRegionAngle")
+        clsFuncNames.Add(14040320, "OnPlayerActionInRegionAngleAttribute")
+        clsFuncNames.Add(14046080, "OnPlayerDistanceInTarget")
+        clsFuncNames.Add(14044896, "OnPlayerDistanceOut")
+        clsFuncNames.Add(14038064, "OnPlayerKill")
+        clsFuncNames.Add(14041168, "OnRegionIn")
+        clsFuncNames.Add(14041024, "OnRegionJustIn")
+        clsFuncNames.Add(14040896, "OnRegionJustOut")
+        clsFuncNames.Add(14037936, "OnSelfBloodMark")
+        clsFuncNames.Add(14037808, "OnSelfHeroBloodMark")
+        clsFuncNames.Add(14037552, "OnSessionIn")
+        clsFuncNames.Add(14037680, "OnSessionJustIn")
+        clsFuncNames.Add(14037424, "OnSessionJustOut")
+        clsFuncNames.Add(14037296, "OnSessionOut")
+        clsFuncNames.Add(14038336, "OnSimpleDamage")
+        clsFuncNames.Add(14048048, "OnTalkEventDistIn")
+        clsFuncNames.Add(14047920, "OnTalkEventDistOut")
+        clsFuncNames.Add(14034720, "OnTextEffectEnd")
+        clsFuncNames.Add(14035504, "OnTurnCharactorEnd")
+        clsFuncNames.Add(14033472, "OnWanderingDemon")
+        clsFuncNames.Add(14015104, "OpenCampMenu")
+        clsFuncNames.Add(14018384, "OpenSOSMsg_Tutorial")
+        clsFuncNames.Add(14050816, "OpeningDead")
+        clsFuncNames.Add(14050144, "ParamInitialize")
+        clsFuncNames.Add(14016688, "PauseTutorial")
         clsFuncNames.Add(14032144, "PlayAnimation")
+        clsFuncNames.Add(14032064, "PlayAnimationStayCancel")
+        clsFuncNames.Add(14026288, "PlayerChrResetAnimation_RemoOnly")
         clsFuncNames.Add(14031984, "PlayLoopAnimation")
+        clsFuncNames.Add(14030432, "PlayObjectSE")
+        clsFuncNames.Add(14032640, "PlayPointSE")
+        clsFuncNames.Add(14030384, "PlayTypeSE")
+        clsFuncNames.Add(14034816, "RecallMenuEvent")
+        clsFuncNames.Add(14049392, "ReconstructBreak")
+        clsFuncNames.Add(14026560, "RecoveryHeroin")
+        clsFuncNames.Add(14027888, "RemoveInventoryEquip")
+        clsFuncNames.Add(14015424, "RepeatMessage_begin")
+        clsFuncNames.Add(14015408, "RepeatMessage_end")
+        clsFuncNames.Add(14015952, "RequestEnding")
+        clsFuncNames.Add(14027424, "RequestForceUpdateNetwork")
+        clsFuncNames.Add(14015808, "RequestFullRecover")
+        clsFuncNames.Add(14021264, "RequestGenerate")
+        clsFuncNames.Add(14027376, "RequestNormalUpdateNetwork")
+        clsFuncNames.Add(14019408, "RequestOpenBriefingMsg")
+        clsFuncNames.Add(14033504, "RequestOpenBriefingMsgPlus")
+        clsFuncNames.Add(14047056, "RequestPlayMovie")
+        clsFuncNames.Add(14046928, "RequestPlayMoviePlus")
+        clsFuncNames.Add(14050368, "RequestRemo")
+        clsFuncNames.Add(14050272, "RequestRemoPlus")
+        clsFuncNames.Add(14019504, "RequestUnlockTrophy")
+        clsFuncNames.Add(14017504, "ReqularLeavePlayer")
+        clsFuncNames.Add(14019360, "ResetCamAngle")
+        clsFuncNames.Add(14032592, "ResetEventQwcSpEffect")
+        clsFuncNames.Add(14019456, "ResetSummonParam")
+        clsFuncNames.Add(14025984, "ResetSyncRideObjInfo")
+        clsFuncNames.Add(14028912, "ResetThink")
+        clsFuncNames.Add(14044224, "RestorePiece")
+        clsFuncNames.Add(14016960, "ReturnMapSelect")
+        clsFuncNames.Add(14042592, "RevivePlayer")
+        clsFuncNames.Add(14016672, "RevivePlayerNext")
+        clsFuncNames.Add(14020240, "SaveRequest")
+        clsFuncNames.Add(14020208, "SaveRequest_Profile")
+        clsFuncNames.Add(14029104, "SendEventRequest")
+        clsFuncNames.Add(14050464, "SetAlive")
+        clsFuncNames.Add(14018240, "SetAliveMotion")
+        clsFuncNames.Add(14026096, "SetAlwaysDrawForEvent")
+        clsFuncNames.Add(14026576, "SetAlwaysEnableBackread_forEvent")
+        clsFuncNames.Add(14031488, "SetAngleFoward")
+        clsFuncNames.Add(14022432, "SetAreaStartMapUid")
+        clsFuncNames.Add(14026496, "SetBossGauge")
+        clsFuncNames.Add(14030608, "SetBossUnitJrHit")
+        clsFuncNames.Add(14044672, "SetBountyRankPoint")
+        clsFuncNames.Add(14022560, "SetBrokenPiece")
+        clsFuncNames.Add(14016256, "SetCamModeParamTargetId")
+        clsFuncNames.Add(14016240, "SetCamModeParamTargetIdForBossLock")
+        clsFuncNames.Add(14028400, "SetChrType")
+        clsFuncNames.Add(14016432, "SetChrTypeDataGrey")
+        clsFuncNames.Add(14016336, "SetChrTypeDataGreyNext")
+        clsFuncNames.Add(14021584, "SetClearBonus")
+        clsFuncNames.Add(14015696, "SetClearItem")
+        clsFuncNames.Add(14017728, "SetClearSesiionCount")
+        clsFuncNames.Add(14017888, "SetClearState")
+        clsFuncNames.Add(14024848, "SetColiEnable")
+        clsFuncNames.Add(14043808, "SetColiEnableArray")
+        clsFuncNames.Add(14025952, "SetCompletelyNoMove")
+        clsFuncNames.Add(14029872, "SetDeadMode")
+        clsFuncNames.Add(14029808, "SetDeadMode2")
+        clsFuncNames.Add(14042528, "SetDefaultRoutePoint")
+        clsFuncNames.Add(14022272, "SetDefaultMapUid")
+        clsFuncNames.Add(14028736, "SetDisable")
+        clsFuncNames.Add(14027472, "SetDisableBackread_ForEvent")
+        clsFuncNames.Add(14019632, "SetDisableDamage")
+        clsFuncNames.Add(14028960, "SetDisableGravity")
+        clsFuncNames.Add(14025680, "SetDisableWeakDamageAnim")
+        clsFuncNames.Add(14025616, "SetDisableWeakDamageAnim_light")
+        clsFuncNames.Add(14030848, "SetDispMask")
+        clsFuncNames.Add(14024880, "SetDrawEnable")
+        clsFuncNames.Add(14042416, "SetDrawEnableArray")
+        clsFuncNames.Add(14031360, "SetDrawGroup")
+        clsFuncNames.Add(14017568, "SetEnableEventPad")
+        clsFuncNames.Add(14018320, "SetEventBodyMaterialSeAndSfx")
+        clsFuncNames.Add(14032240, "SetEventBodyMaxHp")
+        clsFuncNames.Add(14023856, "SetEventCommand")
+        clsFuncNames.Add(14023792, "SetEventCommandIndex")
+        clsFuncNames.Add(14025104, "SetEventFlag")
+        clsFuncNames.Add(14025904, "SetEventGenerate")
+        clsFuncNames.Add(14027696, "SetEventMovePointType")
+        clsFuncNames.Add(14029440, "SetEventSpecialEffect")
+        clsFuncNames.Add(14029248, "SetEventSpecialEffect_2")
+        clsFuncNames.Add(14029376, "SetEventSpecialEffectOwner")
+        clsFuncNames.Add(14029200, "SetEventSpecialEffectOwner_2")
+        clsFuncNames.Add(14031520, "SetEventTarget")
+        clsFuncNames.Add(14032528, "SetFirstSpeed")
+        clsFuncNames.Add(14015472, "SetFlagInitState")
+        clsFuncNames.Add(14025488, "SetFootIKInterpolateType")
+        clsFuncNames.Add(14048752, "SetForceJoinBlackRequest")
+        clsFuncNames.Add(14031248, "SetHitInfo")
+        clsFuncNames.Add(14043424, "SetHitMask")
+        clsFuncNames.Add(14023072, "SetHp")
+        clsFuncNames.Add(14030672, "SetIgnoreHit")
+        clsFuncNames.Add(14015248, "SetInfomationPriority")
+        clsFuncNames.Add(14028880, "SetInsideBattleArea")
+        clsFuncNames.Add(14021376, "SetIsAnimPauseOnRemoPlayForEvent")
+        clsFuncNames.Add(14034160, "SetKeepCommandIndex")
+        clsFuncNames.Add(14014784, "SetLoadWait")
+        clsFuncNames.Add(14026992, "SetLockActPntInvalidateMask")
+        clsFuncNames.Add(14042640, "SetMapUid")
+        clsFuncNames.Add(14022928, "SetMaxHp")
+        clsFuncNames.Add(14015344, "SetMenuBrake")
+        clsFuncNames.Add(14022128, "SetMiniBlockIndex")
+        clsFuncNames.Add(14029712, "SetMovePoint")
+        clsFuncNames.Add(14021120, "SetMultiWallMapUid")
+        clsFuncNames.Add(14026448, "SetNoNetSync")
+        clsFuncNames.Add(14020896, "SetObjDeactivate")
+        clsFuncNames.Add(14021440, "SetObjDisableBreak")
+        clsFuncNames.Add(14024576, "SetObjEventCollisionFill")
+        clsFuncNames.Add(14015600, "SetReturnPointEntityId")
+        clsFuncNames.Add(14018176, "SetReviveWait")
+        clsFuncNames.Add(14024688, "SetSelfBloodMapUid")
+        clsFuncNames.Add(14022000, "SetSosSignPos")
+        clsFuncNames.Add(14016624, "SetSosSignWarp")
+        clsFuncNames.Add(14027200, "SetSpStayAndDamageAnimId")
+        clsFuncNames.Add(14014592, "SetSubMenuBrake")
+        clsFuncNames.Add(14016656, "SetSummonedPos")
+        clsFuncNames.Add(14026016, "SetSyncRideObjInfo")
+        clsFuncNames.Add(14026144, "SetSystemIgnore")
+        clsFuncNames.Add(14016912, "SetTalkMsg")
+        clsFuncNames.Add(14027600, "SetTeamType")
+        clsFuncNames.Add(14027520, "SetTeamTypeDefault")
+        clsFuncNames.Add(14027568, "SetTeamTypePlus")
+        clsFuncNames.Add(14017584, "SetTextEffect")
+        clsFuncNames.Add(14016640, "SetTutorialSummonedPos")
+        clsFuncNames.Add(14017984, "SetValidTalk")
+        clsFuncNames.Add(14014816, "ShowRankingDialog")
+        clsFuncNames.Add(14024640, "StopLoopAnimation")
+        clsFuncNames.Add(14027088, "StopPlayer")
+        clsFuncNames.Add(14019168, "StopPointSE")
+        clsFuncNames.Add(14023616, "SubActionCount")
+        clsFuncNames.Add(14024352, "SubDispMaskByBit")
+        clsFuncNames.Add(14044320, "SubHitMask")
+        clsFuncNames.Add(14044400, "SubHitMaskByBit")
+        clsFuncNames.Add(14034896, "SummonBlackRequest")
+        clsFuncNames.Add(14026832, "SummonedMapReload")
+        clsFuncNames.Add(14044080, "SummonSuccess")
+        clsFuncNames.Add(14024480, "SwitchDispMask")
+        clsFuncNames.Add(14044592, "SwitchHitMask")
+        clsFuncNames.Add(14018112, "TalkNextPage")
+        clsFuncNames.Add(14043232, "TreasureDispModeChange")
+        clsFuncNames.Add(14033824, "TurnCharactor")
+        clsFuncNames.Add(14016560, "Tutorial_begin")
+        clsFuncNames.Add(14016544, "Tutorial_end")
+        clsFuncNames.Add(14017520, "UnLockSession")
+        clsFuncNames.Add(14049776, "UpDateBloodMark")
+        clsFuncNames.Add(14014512, "Util_RequestLevelUp")
+        clsFuncNames.Add(14014544, "Util_RequestLevelUpFirst")
+        clsFuncNames.Add(14014496, "Util_RequestRegene")
+        clsFuncNames.Add(14014480, "Util_RequestRespawn")
+        clsFuncNames.Add(14020640, "ValidPointLight")
+        clsFuncNames.Add(14020768, "ValidSfx")
+        clsFuncNames.Add(14032192, "Warp")
+        clsFuncNames.Add(14043760, "WarpDmy")
+        clsFuncNames.Add(14036224, "WarpNextStage")
+        clsFuncNames.Add(14035248, "WarpNextStageKick")
+        clsFuncNames.Add(14036128, "WarpNextStage_Bonfire")
+        clsFuncNames.Add(14034304, "WarpRestart")
+        clsFuncNames.Add(14034256, "WarpRestartNoGrey")
 
         clsFuncLocs.Clear()
         cmbFuncName.Items.Clear()
@@ -567,33 +927,7 @@ Public Class Form1
         WriteProcessMemory(_targetProcessHandle, addr, val, val.Length, Nothing)
     End Sub
 
-    Public Sub DrawString(ByVal text As String, ByVal pt As Point, ByVal col As Brush)
 
-        Using g As Graphics = Me.CreateGraphics
-            g.DrawString(text, _Font, Brushes.Black, pt.X - 1, pt.Y) 'left
-            g.DrawString(text, _Font, Brushes.Black, pt.X, pt.Y + 1) 'top
-            g.DrawString(text, _Font, Brushes.Black, pt.X + 1, pt.Y) 'right
-            g.DrawString(text, _Font, Brushes.Black, pt.X, pt.Y + 1) 'bottom
-            g.DrawString(text, _Font, Brushes.Black, pt.X - 1, pt.Y - 1) 'top left
-            g.DrawString(text, _Font, Brushes.Black, pt.X - 1, pt.Y + 1) 'bottom left
-            g.DrawString(text, _Font, Brushes.Black, pt.X + 1, pt.Y - 1) 'top right
-            g.DrawString(text, _Font, Brushes.Black, pt.X + 1, pt.Y + 1) 'bottom right
-            g.DrawString(text, _Font, col, pt)
-        End Using
-
-    End Sub
-
-    Private Sub Refresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
-
-        Me.CreateGraphics.Clear(BackColor)
-
-
-        Me.TopMost = True
-
-
-
-        'DrawString("Charptr1: " & Hex(charptr1), New Point(50, 380), Brushes.White)
-    End Sub
     <System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint:="GetWindowRect")>
     Shared Function GetWindowRectangle(
            ByVal [Handle] As IntPtr,
@@ -612,7 +946,7 @@ Public Class Form1
 
         GetWindowRectangle(hwnd, rect)
 
-        Me.Location = New Point(rect.X - 10, rect.Y - 160)
+        Me.Location = New Point(rect.X - 10, rect.Y - 90)
 
         refTimer = New System.Windows.Forms.Timer
         refTimer.Interval = delay
@@ -646,13 +980,8 @@ Public Class Form1
         gamestatsptr = ReadUInt32(&H1378700 + dbgboost)
         charptr2 = ReadUInt32(gamestatsptr + &H8)
 
-        lblCharptr1.Text = "Charptr1: " & Hex(charptr1)
-
         charmapdataptr = ReadInt32(charptr1 + &H28)
         charposdataptr = ReadInt32(charmapdataptr + &H1C)
-
-        lblCharmapdata.Text = "Charmapdata: " & Hex(charmapdataptr)
-
 
         Select Case tabs.SelectedIndex
             Case 0
@@ -729,7 +1058,6 @@ Public Class Form1
 
 
         End Select
-        btnRefresh.PerformClick()
     End Sub
 
     Private Sub PosUpdate(ByVal bool As Boolean)
@@ -952,7 +1280,18 @@ Public Class Form1
         Dim bytcat As Integer = &H1
         Dim bytitem As Integer = &H6
         Dim bytcount As Integer = &H10
+        Dim bytptr1 As Integer = &H15
+        Dim bytptr2 As Integer = &H32
         Dim bytjmp As Integer = &H38
+
+        Dim dbgboost As Integer
+
+        If debug Then
+            dbgboost = &H41C0
+        Else
+            dbgboost = 0
+        End If
+
 
         bytes = {&HBD, &H0, &H0, &H0, &H40, &HBB, &HF0, &H0, &H0, &H0, &HB9, &HFF, &HFF, &HFF, &HFF, &HBA, 0, 0, 0, 0, &HA1, &HD0, &H86, &H37, &H1, &H89, &HA8, &H28, &H8, &H0, &H0, &H89, &H98, &H2C, &H8, &H0, &H0, &H89, &H88, &H30, &H8, &H0, &H0, &H89, &H90, &H34, &H8, &H0, &H0, &HA1, &HBC, &HD6, &H37, &H1, &H50, &HE8, 0, 0, 0, 0, &HC3}
 
@@ -966,10 +1305,23 @@ Public Class Form1
         bytes2 = BitConverter.GetBytes(Convert.ToInt32(nmbItemCount.Value))
         Array.Copy(bytes2, 0, bytes, bytcount, bytes2.Length)
 
-        bytes2 = BitConverter.GetBytes(0 - ((insertPtr + &H3C) - &HDC8C60))
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(&H13786D0 + dbgboost))
+        Array.Copy(bytes2, 0, bytes, bytptr1, bytes2.Length)
+
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(&H137D6BC + dbgboost))
+        Array.Copy(bytes2, 0, bytes, bytptr2, bytes2.Length)
+
+        If debug Then
+            dbgboost = &H28F0
+        Else
+            dbgboost = 0
+        End If
+
+        bytes2 = BitConverter.GetBytes(0 - ((insertPtr + &H3C) - (&HDC8C60 + dbgboost)))
         Array.Copy(bytes2, 0, bytes, bytjmp, bytes2.Length)
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
+        MsgBox(Hex(insertPtr))
         CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)
 
     End Sub
@@ -989,10 +1341,19 @@ Public Class Form1
         Dim bytParam1 As Integer = &H1D
         Dim bytJmp As Integer = &H23
 
+        Dim dbgboost As Integer
+
+        If debug Then
+            dbgboost = &H1590
+        Else
+            dbgboost = 0
+        End If
+
+
         bytes = {&H55, &H8B, &HEC, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HE8, 0, 0, 0, 0, &H58, &H58, &H58, &H58, &H58, &H58, &H8B, &HE5, &H5D, &HC3}
         insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
 
-        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam5.text))
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam5.Text))
         Array.Copy(bytes2, 0, bytes, bytParam5, bytes2.Length)
 
         bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam4.Text))
@@ -1007,7 +1368,7 @@ Public Class Form1
         bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam1.Text))
         Array.Copy(bytes2, 0, bytes, bytParam1, bytes2.Length)
 
-        bytes2 = BitConverter.GetBytes(0 - ((insertPtr + bytJmp + 4) - clsFuncLocs(cmbFuncName.SelectedItem)))
+        bytes2 = BitConverter.GetBytes(0 - ((insertPtr + bytJmp + 4) - (clsFuncLocs(cmbFuncName.SelectedItem) + dbgboost)))
         Array.Copy(bytes2, 0, bytes, bytJmp, bytes2.Length)
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
