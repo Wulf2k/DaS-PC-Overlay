@@ -82,6 +82,11 @@ Partial Class Form1
         Me.txtFuncParam1 = New System.Windows.Forms.TextBox()
         Me.btnFuncExecute = New System.Windows.Forms.Button()
         Me.cmbFuncName = New System.Windows.Forms.ComboBox()
+        Me.tabCreatures = New System.Windows.Forms.TabPage()
+        Me.txtNumCreatures = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.nmbCrtNum = New System.Windows.Forms.NumericUpDown()
+        Me.btnCrtControl = New System.Windows.Forms.Button()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
         Me.tabItems.SuspendLayout()
@@ -95,6 +100,8 @@ Partial Class Form1
         CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabLUA.SuspendLayout()
+        Me.tabCreatures.SuspendLayout()
+        CType(Me.nmbCrtNum, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabs
@@ -104,6 +111,7 @@ Partial Class Form1
         Me.tabs.Controls.Add(Me.tabDebug)
         Me.tabs.Controls.Add(Me.tabStats)
         Me.tabs.Controls.Add(Me.tabLUA)
+        Me.tabs.Controls.Add(Me.tabCreatures)
         Me.tabs.Location = New System.Drawing.Point(4, 12)
         Me.tabs.Name = "tabs"
         Me.tabs.SelectedIndex = 0
@@ -781,6 +789,59 @@ Partial Class Form1
         Me.cmbFuncName.Size = New System.Drawing.Size(253, 24)
         Me.cmbFuncName.TabIndex = 58
         '
+        'tabCreatures
+        '
+        Me.tabCreatures.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabCreatures.Controls.Add(Me.btnCrtControl)
+        Me.tabCreatures.Controls.Add(Me.nmbCrtNum)
+        Me.tabCreatures.Controls.Add(Me.Label7)
+        Me.tabCreatures.Controls.Add(Me.txtNumCreatures)
+        Me.tabCreatures.Location = New System.Drawing.Point(4, 22)
+        Me.tabCreatures.Name = "tabCreatures"
+        Me.tabCreatures.Size = New System.Drawing.Size(1304, 778)
+        Me.tabCreatures.TabIndex = 5
+        Me.tabCreatures.Text = "Creatures"
+        '
+        'txtNumCreatures
+        '
+        Me.txtNumCreatures.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumCreatures.Location = New System.Drawing.Point(166, 262)
+        Me.txtNumCreatures.Name = "txtNumCreatures"
+        Me.txtNumCreatures.Size = New System.Drawing.Size(100, 22)
+        Me.txtNumCreatures.TabIndex = 0
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.LightGray
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(29, 265)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(131, 16)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Number of Creatures"
+        '
+        'nmbCrtNum
+        '
+        Me.nmbCrtNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbCrtNum.Location = New System.Drawing.Point(166, 290)
+        Me.nmbCrtNum.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nmbCrtNum.Name = "nmbCrtNum"
+        Me.nmbCrtNum.Size = New System.Drawing.Size(53, 22)
+        Me.nmbCrtNum.TabIndex = 45
+        Me.nmbCrtNum.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'btnCrtControl
+        '
+        Me.btnCrtControl.BackColor = System.Drawing.Color.LightGray
+        Me.btnCrtControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCrtControl.Location = New System.Drawing.Point(32, 290)
+        Me.btnCrtControl.Name = "btnCrtControl"
+        Me.btnCrtControl.Size = New System.Drawing.Size(128, 23)
+        Me.btnCrtControl.TabIndex = 46
+        Me.btnCrtControl.Text = "Control Creature"
+        Me.btnCrtControl.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -807,6 +868,9 @@ Partial Class Form1
         CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabLUA.ResumeLayout(False)
         Me.tabLUA.PerformLayout()
+        Me.tabCreatures.ResumeLayout(False)
+        Me.tabCreatures.PerformLayout()
+        CType(Me.nmbCrtNum, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -870,4 +934,9 @@ Partial Class Form1
     Friend WithEvents txtFuncParam1 As System.Windows.Forms.TextBox
     Friend WithEvents btnFuncExecute As System.Windows.Forms.Button
     Friend WithEvents cmbFuncName As System.Windows.Forms.ComboBox
+    Friend WithEvents tabCreatures As System.Windows.Forms.TabPage
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtNumCreatures As System.Windows.Forms.TextBox
+    Friend WithEvents nmbCrtNum As System.Windows.Forms.NumericUpDown
+    Friend WithEvents btnCrtControl As System.Windows.Forms.Button
 End Class

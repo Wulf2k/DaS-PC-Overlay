@@ -124,7 +124,7 @@ Public Class Form1
 
         nameList.Clear()
         clsFuncNames.Clear()
-        clsFuncNames.Add(14030544,"ActionEnd")
+        clsFuncNames.Add(14030544, "ActionEnd")
         clsFuncNames.Add(14023712, "AddActionCount")
         clsFuncNames.Add(14017664, "AddBlockClearBonus")
         clsFuncNames.Add(14019616, "AddClearCount")
@@ -1055,6 +1055,20 @@ Public Class Form1
                 nmbTeamType.Value = ReadInt32(charptr1 + &H74)
 
 
+            Case 5
+                'Mapped for Debug only
+                Dim crtdata As Integer = ReadInt32(&H1381E30)
+                Dim crtstart As Integer = ReadInt32(crtdata + 4)
+                Dim crtend As Integer = ReadInt32(crtdata + 8)
+
+                txtNumCreatures.Text = ((crtend - crtstart) / 4)
+
+                nmbCrtNum.Maximum = txtNumCreatures.Text
+
+
+
+
+
 
 
         End Select
@@ -1373,6 +1387,25 @@ Public Class Form1
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
         CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)
+
+    End Sub
+
+    Private Sub btnCrtControl_Click(sender As Object, e As EventArgs) Handles btnCrtControl.Click
+        Dim crtdata As Integer = ReadInt32(&H1381E30)
+        Dim crtstart As Integer = ReadInt32(crtdata + 4)
+        Dim crtend As Integer = ReadInt32(crtdata + 8)
+
+        Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbCrtNum.Value - 4)
+        Dim crtdata3ptr As Integer = ReadInt32(crtdata1ptr + &H28)
+
+        Dim camPtr As Integer = ReadInt32(&H1381808) + &HEC
+
+        WriteInt32(camPtr, crtdata1ptr)
+
+        Dim ctrlptr As Integer = ReadInt32(&H1381808)
+        ctrlptr = ReadInt32(ctrlptr + &HE8)
+
+        WriteInt32(crtdata3ptr + &H244, ctrlptr)
 
     End Sub
 End Class
