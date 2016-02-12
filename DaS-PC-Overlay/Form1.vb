@@ -1067,21 +1067,19 @@ Public Class Form1
 
 
             Case 5
-                'Mapped for Debug only
-                Dim crtdata As Integer = ReadInt32(&H1381E30)
+                If debug Then
+                    dbgboost = &H41C0
+                Else
+                    dbgboost = 0
+                End If
+
+                Dim crtdata As Integer = ReadInt32(&H137DC70 + dbgboost)
                 Dim crtstart As Integer = ReadInt32(crtdata + 4)
                 Dim crtend As Integer = ReadInt32(crtdata + 8)
 
                 txtNumCreatures.Text = ((crtend - crtstart) / 4)
 
                 nmbCrtNum.Maximum = txtNumCreatures.Text
-
-
-
-
-
-
-
         End Select
     End Sub
 
@@ -1400,18 +1398,25 @@ Public Class Form1
     End Sub
 
     Private Sub btnCrtControl_Click(sender As Object, e As EventArgs) Handles btnCrtControl.Click
-        Dim crtdata As Integer = ReadInt32(&H1381E30)
+        'Only fully works in debug.
+        If debug Then
+            dbgboost = &H41C0
+        Else
+            dbgboost = 0
+        End If
+
+        Dim crtdata As Integer = ReadInt32(&H137DC70 + dbgboost)
         Dim crtstart As Integer = ReadInt32(crtdata + 4)
         Dim crtend As Integer = ReadInt32(crtdata + 8)
 
         Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbCrtNum.Value - 4)
         Dim crtdata3ptr As Integer = ReadInt32(crtdata1ptr + &H28)
 
-        Dim camPtr As Integer = ReadInt32(&H1381808) + &HEC
+        Dim camPtr As Integer = ReadInt32(&H137D648 + dbgboost) + &HEC
 
         WriteInt32(camPtr, crtdata1ptr)
 
-        Dim ctrlptr As Integer = ReadInt32(&H1381808)
+        Dim ctrlptr As Integer = ReadInt32(&H137D648 + dbgboost)
         ctrlptr = ReadInt32(ctrlptr + &HE8)
 
         WriteInt32(crtdata3ptr + &H244, ctrlptr)
