@@ -8,6 +8,9 @@ Public Class Form1
     Private _Font As New Font("Courier New", 16)
 
     Private WithEvents refTimer As New System.Windows.Forms.Timer()
+    Private WithEvents mouseMoveTimer As New System.Windows.Forms.Timer()
+    Public Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Integer) As Short
+
 
     Private Declare Function OpenProcess Lib "kernel32.dll" (ByVal dwDesiredAcess As UInt32, ByVal bInheritHandle As Boolean, ByVal dwProcessId As Int32) As IntPtr
     Private Declare Function ReadProcessMemory Lib "kernel32" (ByVal hProcess As IntPtr, ByVal lpBaseAddress As IntPtr, ByVal lpBuffer() As Byte, ByVal iSize As Integer, ByRef lpNumberOfBytesRead As Integer) As Boolean
@@ -73,6 +76,15 @@ Public Class Form1
     Dim playerXpos As Integer
     Dim playerYpos As Integer
     Dim playerZpos As Integer
+
+    Dim ctrlHeld As Boolean
+    Dim mouseStartXPos As Integer
+    Dim mouseStartYPos As Integer
+    Dim charStartXPos As Single
+    Dim charstartYPos As Single
+    Dim charstartZpos As Single
+
+
 
     Private _targetProcess As Process = Nothing 'to keep track of it. not used yet.
     Private _targetProcessHandle As IntPtr = IntPtr.Zero 'Used for ReadProcessMemory
@@ -937,7 +949,6 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.TransparencyKey = Me.BackColor
-        Me.TopMost = True
 
         initClls()
 
@@ -1156,7 +1167,6 @@ Public Class Form1
     Private Sub chkLockPos_CheckedChanged(sender As Object, e As EventArgs) Handles chkLockPos.MouseClick
         PosUpdate(chkLockPos.Checked)
     End Sub
-
     Private Sub chkDebug_CheckedChanged(sender As Object, e As EventArgs) Handles chkDebugDrawing.MouseClick
         If debug Then dbgboost = &H3C20
         If beta Then dbgboost = -&H1370
@@ -1224,7 +1234,6 @@ Public Class Form1
     Private Sub nmbHumanity_ValueChanged(sender As Object, e As EventArgs) Handles nmbHumanity.ValueChanged
         WriteInt32(charptr2 + &H7C, nmbHumanity.Value)
     End Sub
-
     Private Sub chkHide_CheckedChanged(sender As Object, e As EventArgs) Handles chkHide.MouseClick
         If chkHide.Checked Then
             WriteBytes(&H137C6A8, {1})
@@ -1407,5 +1416,60 @@ Public Class Form1
 
         WriteInt32(crtdata3ptr + &H244, ctrlptr)
 
+    End Sub
+
+    Private Sub chkMouseMove_CheckedChanged(sender As Object, e As EventArgs) Handles chkMouseMove.CheckedChanged
+
+        If chkMouseMove.Checked Then
+            mouseMoveTimer.Enabled = True
+            mouseMoveTimer.Interval = 10
+            mouseMoveTimer.Start()
+        Else
+            mouseMoveTimer.Stop()
+        End If
+
+
+    End Sub
+
+    Private Shared Sub MouseMoveTimer_Tick() Handles mouseMoveTimer.Tick
+
+        Dim ctrlkey As Boolean
+        Dim shiftkey As Boolean
+        ctrlkey = GetAsyncKeyState(Keys.ControlKey)
+        shiftkey = GetAsyncKeyState(Keys.ShiftKey)
+
+        If ctrlkey And Not Form1.ctrlHeld Then
+            Form1.PosUpdate(True)
+            Form1.ctrlHeld = True
+            Form1.mouseStartXPos = MousePosition.X
+            Form1.mouseStartYPos = MousePosition.Y
+            Form1.charStartXPos = Form1.playerXpos
+            Form1.charstartZpos = Form1.playerZpos
+        End If
+
+        If shiftkey And Not Form1.ctrlHeld Then
+            Form1.PosUpdate(True)
+            Form1.ctrlHeld = True
+            Form1.mouseStartYPos = MousePosition.Y
+            Form1.charstartYPos = Form1.playerYpos
+        End If
+
+        If ctrlkey Then
+            Form1.WriteFloat(Form1.charposdataptr + &H10, Form1.charStartXPos + (MousePosition.X - Form1.mouseStartXPos) * 0.1)
+            Form1.WriteFloat(Form1.charposdataptr + &H18, Form1.charstartZpos + (MousePosition.Y - Form1.mouseStartYPos) * 0.1)
+        End If
+
+        If shiftkey Then
+            Form1.WriteFloat(Form1.charposdataptr + &H14, Form1.charstartYPos + (Form1.mouseStartYPos - MousePosition.Y) * 0.1)
+        End If
+
+        If Not ctrlkey And Not shiftkey Then
+            Form1.ctrlHeld = False
+            Form1.PosUpdate(False)
+        End If
+    End Sub
+
+    Private Sub chkTopMost_CheckedChanged(sender As Object, e As EventArgs) Handles chkTopMost.CheckedChanged
+        Me.TopMost = chkTopMost.Checked
     End Sub
 End Class

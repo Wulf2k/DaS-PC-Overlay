@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.tabs = New System.Windows.Forms.TabControl()
         Me.tabMain = New System.Windows.Forms.TabPage()
+        Me.chkMouseMove = New System.Windows.Forms.CheckBox()
         Me.btnSuicide = New System.Windows.Forms.Button()
         Me.lblBonfire = New System.Windows.Forms.Label()
         Me.cmbBonfire = New System.Windows.Forms.ComboBox()
@@ -83,10 +84,11 @@ Partial Class Form1
         Me.btnFuncExecute = New System.Windows.Forms.Button()
         Me.cmbFuncName = New System.Windows.Forms.ComboBox()
         Me.tabCreatures = New System.Windows.Forms.TabPage()
-        Me.txtNumCreatures = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.nmbCrtNum = New System.Windows.Forms.NumericUpDown()
         Me.btnCrtControl = New System.Windows.Forms.Button()
+        Me.nmbCrtNum = New System.Windows.Forms.NumericUpDown()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtNumCreatures = New System.Windows.Forms.TextBox()
+        Me.chkTopMost = New System.Windows.Forms.CheckBox()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
         Me.tabItems.SuspendLayout()
@@ -121,6 +123,8 @@ Partial Class Form1
         'tabMain
         '
         Me.tabMain.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabMain.Controls.Add(Me.chkTopMost)
+        Me.tabMain.Controls.Add(Me.chkMouseMove)
         Me.tabMain.Controls.Add(Me.btnSuicide)
         Me.tabMain.Controls.Add(Me.lblBonfire)
         Me.tabMain.Controls.Add(Me.cmbBonfire)
@@ -153,6 +157,18 @@ Partial Class Form1
         Me.tabMain.Size = New System.Drawing.Size(1304, 778)
         Me.tabMain.TabIndex = 0
         Me.tabMain.Text = "Main"
+        '
+        'chkMouseMove
+        '
+        Me.chkMouseMove.AutoSize = True
+        Me.chkMouseMove.BackColor = System.Drawing.Color.LightGray
+        Me.chkMouseMove.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkMouseMove.Location = New System.Drawing.Point(19, 315)
+        Me.chkMouseMove.Name = "chkMouseMove"
+        Me.chkMouseMove.Size = New System.Drawing.Size(121, 20)
+        Me.chkMouseMove.TabIndex = 46
+        Me.chkMouseMove.Text = "CtrlMouseMove"
+        Me.chkMouseMove.UseVisualStyleBackColor = False
         '
         'btnSuicide
         '
@@ -802,13 +818,26 @@ Partial Class Form1
         Me.tabCreatures.TabIndex = 5
         Me.tabCreatures.Text = "Creatures"
         '
-        'txtNumCreatures
+        'btnCrtControl
         '
-        Me.txtNumCreatures.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumCreatures.Location = New System.Drawing.Point(166, 262)
-        Me.txtNumCreatures.Name = "txtNumCreatures"
-        Me.txtNumCreatures.Size = New System.Drawing.Size(100, 22)
-        Me.txtNumCreatures.TabIndex = 0
+        Me.btnCrtControl.BackColor = System.Drawing.Color.LightGray
+        Me.btnCrtControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCrtControl.Location = New System.Drawing.Point(32, 290)
+        Me.btnCrtControl.Name = "btnCrtControl"
+        Me.btnCrtControl.Size = New System.Drawing.Size(128, 23)
+        Me.btnCrtControl.TabIndex = 46
+        Me.btnCrtControl.Text = "Control Creature"
+        Me.btnCrtControl.UseVisualStyleBackColor = False
+        '
+        'nmbCrtNum
+        '
+        Me.nmbCrtNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbCrtNum.Location = New System.Drawing.Point(166, 290)
+        Me.nmbCrtNum.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nmbCrtNum.Name = "nmbCrtNum"
+        Me.nmbCrtNum.Size = New System.Drawing.Size(53, 22)
+        Me.nmbCrtNum.TabIndex = 45
+        Me.nmbCrtNum.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label7
         '
@@ -821,26 +850,25 @@ Partial Class Form1
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Number of Creatures"
         '
-        'nmbCrtNum
+        'txtNumCreatures
         '
-        Me.nmbCrtNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmbCrtNum.Location = New System.Drawing.Point(166, 290)
-        Me.nmbCrtNum.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nmbCrtNum.Name = "nmbCrtNum"
-        Me.nmbCrtNum.Size = New System.Drawing.Size(53, 22)
-        Me.nmbCrtNum.TabIndex = 45
-        Me.nmbCrtNum.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txtNumCreatures.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumCreatures.Location = New System.Drawing.Point(166, 262)
+        Me.txtNumCreatures.Name = "txtNumCreatures"
+        Me.txtNumCreatures.Size = New System.Drawing.Size(100, 22)
+        Me.txtNumCreatures.TabIndex = 0
         '
-        'btnCrtControl
+        'chkTopMost
         '
-        Me.btnCrtControl.BackColor = System.Drawing.Color.LightGray
-        Me.btnCrtControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCrtControl.Location = New System.Drawing.Point(32, 290)
-        Me.btnCrtControl.Name = "btnCrtControl"
-        Me.btnCrtControl.Size = New System.Drawing.Size(128, 23)
-        Me.btnCrtControl.TabIndex = 46
-        Me.btnCrtControl.Text = "Control Creature"
-        Me.btnCrtControl.UseVisualStyleBackColor = False
+        Me.chkTopMost.AutoSize = True
+        Me.chkTopMost.BackColor = System.Drawing.Color.LightGray
+        Me.chkTopMost.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkTopMost.Location = New System.Drawing.Point(19, 335)
+        Me.chkTopMost.Name = "chkTopMost"
+        Me.chkTopMost.Size = New System.Drawing.Size(81, 20)
+        Me.chkTopMost.TabIndex = 47
+        Me.chkTopMost.Text = "TopMost"
+        Me.chkTopMost.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -939,4 +967,6 @@ Partial Class Form1
     Friend WithEvents txtNumCreatures As System.Windows.Forms.TextBox
     Friend WithEvents nmbCrtNum As System.Windows.Forms.NumericUpDown
     Friend WithEvents btnCrtControl As System.Windows.Forms.Button
+    Friend WithEvents chkMouseMove As CheckBox
+    Friend WithEvents chkTopMost As CheckBox
 End Class
