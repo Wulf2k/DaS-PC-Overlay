@@ -948,16 +948,10 @@ Public Class Form1
     End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.TransparencyKey = Me.BackColor
+
 
         initClls()
 
-        Dim rect As New Rectangle
-        Dim hwnd As IntPtr = Process.GetProcessesByName("DARKSOULS").First.MainWindowHandle
-
-        GetWindowRectangle(hwnd, rect)
-
-        Me.Location = New Point(rect.X - 10, rect.Y - 90)
 
         refTimer = New System.Windows.Forms.Timer
         refTimer.Interval = delay
@@ -1061,9 +1055,22 @@ Public Class Form1
 
 
             Case 3
-                nmbHumanity.Value = ReadInt32(charptr2 + &H7C)
-                nmbPhantomType.Value = ReadInt32(charptr1 + &H70)
-                nmbTeamType.Value = ReadInt32(charptr1 + &H74)
+                If Not nmbPhantomType.Focused Then nmbPhantomType.Value = ReadInt32(charptr1 + &H70)
+                If Not nmbTeamType.Focused Then nmbTeamType.Value = ReadInt32(charptr1 + &H74)
+
+                If Not nmbVitality.Focused Then nmbVitality.Value = ReadInt32(charptr2 + &H38)
+                If Not nmbAttunement.Focused Then nmbAttunement.Value = ReadInt32(charptr2 + &H40)
+                If Not nmbEnd.Focused Then nmbEnd.Value = ReadInt32(charptr2 + &H48)
+                If Not nmbStr.Focused Then nmbStr.Value = ReadInt32(charptr2 + &H50)
+                If Not nmbDex.Focused Then nmbDex.Value = ReadInt32(charptr2 + &H58)
+                If Not nmbIntelligence.Focused Then nmbIntelligence.Value = ReadInt32(charptr2 + &H60)
+                If Not nmbFaith.Focused Then nmbFaith.Value = ReadInt32(charptr2 + &H68)
+
+                If Not nmbHumanity.Focused Then nmbHumanity.Value = ReadInt32(charptr2 + &H7C)
+                If Not nmbResistance.Focused Then nmbResistance.Value = ReadInt32(charptr2 + &H80)
+                If Not nmbSoulLevel.Focused Then nmbSoulLevel.Value = ReadInt32(charptr2 + &H88)
+
+                If Not txtSouls.Focused Then txtSouls.Text = ReadInt32(charptr2 + &H8C)
 
 
             Case 5
@@ -1229,9 +1236,7 @@ Public Class Form1
         WriteInt32(charptr1 + &H2D4, 0)
     End Sub
 
-    Private Sub nmbHumanity_ValueChanged(sender As Object, e As EventArgs) Handles nmbHumanity.ValueChanged
-        WriteInt32(charptr2 + &H7C, nmbHumanity.Value)
-    End Sub
+
     Private Sub chkHide_CheckedChanged(sender As Object, e As EventArgs) Handles chkHide.MouseClick
         If chkHide.Checked Then
             WriteBytes(&H137C6A8, {1})
@@ -1474,7 +1479,93 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub chkTopMost_CheckedChanged(sender As Object, e As EventArgs) Handles chkTopMost.CheckedChanged
-        Me.TopMost = chkTopMost.Checked
+    Private Sub chkTopMost_CheckedChanged(sender As Object, e As EventArgs) Handles chkOverlay.CheckedChanged
+        Me.TopMost = chkOverlay.Checked
+        If chkOverlay.Checked Then
+            Me.TransparencyKey = Me.BackColor
+            Dim rect As New Rectangle
+            Dim hwnd As IntPtr = Process.GetProcessesByName("DARKSOULS").First.MainWindowHandle
+
+            GetWindowRectangle(hwnd, rect)
+
+            Me.Location = New Point(rect.X - 10, rect.Y - 90)
+        Else
+            Me.TransparencyKey = Color.Aqua
+        End If
+
+    End Sub
+
+
+    Private Sub chkSteamName_CheckedChanged(sender As Object, e As EventArgs) Handles chkSteamName.CheckedChanged
+        Dim TargetBufferSize = 1024
+        Dim Rtn As Integer
+        Dim insertPtr As Integer
+        Dim dbgboost As Integer = 0
+
+        Dim bytes() As Byte
+        Dim bytes2() As Byte
+
+        Dim bytjmp As Integer = &H32
+
+        If chkSteamName.Checked Then
+            insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
+
+
+
+
+            REM bytes = {&H8B, &H44, &H24, &H10, &H8B, &H5B, &HD0, &H8B, &H5B, &H14, &H83, &HC3, &H30, &H56, &HE9, 0, 0, 0, 0}
+            bytes = {&H81, &HFC, 0, &HFC, &H18, 0, &H8B, &H44, &H24, &H10, &H77, &H24, &H8B, &H5B, &HD0, &H8B, &H5B, &H14, &H83, &HC3, &H30, &H50, &HB8, 0, 0, 0, 0, &H83, &HF8, &H1E,
+                &H74, &H9, &H8A, &H13, &H88, &H17, &H40, &H43, &H47, &HEB, &HF2, &H83, &HEB, &H1E, &H83, &HEF, &H1E, &H58, &H56, &HE9, 0, 0, 0, 0}
+            bytes2 = BitConverter.GetBytes((&H55A550 - &H31 + dbgboost) - insertPtr)
+            Array.Copy(bytes2, 0, bytes, bytjmp, bytes2.Length)
+
+            WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
+
+            MsgBox(Hex(insertPtr))
+
+            bytes = {&HE9, 0, 0, 0, 0}
+            bytes2 = BitConverter.GetBytes((insertPtr - (&H55A550 + dbgboost) - 5))
+            Array.Copy(bytes2, 0, bytes, 1, bytes2.Length)
+
+            WriteProcessMemory(_targetProcessHandle, (&H55A550 + dbgboost), bytes, bytes.Length, 0)
+
+        Else
+            bytes = {&H8B, &H44, &H24, &H10, &H56}
+            WriteProcessMemory(_targetProcessHandle, (&H55A550 + dbgboost), bytes, bytes.Length, 0)
+        End If
+    End Sub
+
+    Private Sub nmbVitality_ValueChanged(sender As Object, e As EventArgs) Handles nmbVitality.ValueChanged
+        WriteInt32(charptr2 + &H38, nmbVitality.Value)
+    End Sub
+    Private Sub nmbAttunement_ValueChanged(sender As Object, e As EventArgs) Handles nmbAttunement.ValueChanged
+        WriteInt32(charptr2 + &H40, nmbAttunement.Value)
+    End Sub
+    Private Sub nmbEnd_ValueChanged(sender As Object, e As EventArgs) Handles nmbEnd.ValueChanged
+        WriteInt32(charptr2 + &H48, nmbEnd.Value)
+    End Sub
+    Private Sub nmbStr_ValueChanged(sender As Object, e As EventArgs) Handles nmbStr.ValueChanged
+        WriteInt32(charptr2 + &H50, nmbStr.Value)
+    End Sub
+    Private Sub nmbDex_ValueChanged(sender As Object, e As EventArgs) Handles nmbDex.ValueChanged
+        WriteInt32(charptr2 + &H58, nmbDex.Value)
+    End Sub
+    Private Sub nmbHumanity_ValueChanged(sender As Object, e As EventArgs) Handles nmbHumanity.ValueChanged
+        WriteInt32(charptr2 + &H7C, nmbHumanity.Value)
+    End Sub
+    Private Sub nmbResistance_ValueChanged(sender As Object, e As EventArgs) Handles nmbResistance.ValueChanged
+        WriteInt32(charptr2 + &H80, nmbResistance.Value)
+    End Sub
+    Private Sub nmbIntelligence_ValueChanged(sender As Object, e As EventArgs) Handles nmbIntelligence.ValueChanged
+        WriteInt32(charptr2 + &H60, nmbIntelligence.Value)
+    End Sub
+    Private Sub nmbFaith_ValueChanged(sender As Object, e As EventArgs) Handles nmbFaith.ValueChanged
+        WriteInt32(charptr2 + &H68, nmbFaith.Value)
+    End Sub
+    Private Sub nmbSoulLevel_ValueChanged(sender As Object, e As EventArgs) Handles nmbSoulLevel.ValueChanged
+        WriteInt32(charptr2 + &H88, nmbSoulLevel.Value)
+    End Sub
+    Private Sub txtSouls_TextChanged(sender As Object, e As EventArgs) Handles txtSouls.TextChanged
+        WriteInt32(charptr2 + &H8C, Val(txtSouls.Text))
     End Sub
 End Class
