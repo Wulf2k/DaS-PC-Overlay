@@ -670,13 +670,15 @@ Public Class Form1
         End If
 
 
-        bytes = {&HBD, &H0, &H0, &H0, &H40, &HBB, &HF0, &H0, &H0, &H0, &HB9, &HFF, &HFF, &HFF, &HFF, &HBA, 0, 0, 0, 0, &HA1, &HD0, &H86, &H37, &H1, &H89, &HA8, &H28, &H8, &H0, &H0, &H89, &H98, &H2C, &H8, &H0, &H0, &H89, &H88, &H30, &H8, &H0, &H0, &H89, &H90, &H34, &H8, &H0, &H0, &HA1, &HBC, &HD6, &H37, &H1, &H50, &HE8, 0, 0, 0, 0, &HC3}
+        bytes = {&HBD, 0, 0, 0, 0, &HBB, &HF0, &H0, &H0, &H0, &HB9, &HFF, &HFF, &HFF, &HFF, &HBA, 0, 0, 0, 0, &HA1, &HD0, &H86, &H37, &H1, &H89, &HA8, &H28, &H8, &H0, &H0, &H89, &H98, &H2C, &H8, &H0, &H0, &H89, &H88, &H30, &H8, &H0, &H0, &H89, &H90, &H34, &H8, &H0, &H0, &HA1, &HBC, &HD6, &H37, &H1, &H50, &HE8, 0, 0, 0, 0, &HC3}
 
 
         insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
 
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(clsItemCatsIDs(cmbItemCat.SelectedItem)))
+        Array.Copy(bytes2, 0, bytes, bytcat, bytes2.Length)
 
-        bytes2 = BitConverter.GetBytes(Convert.ToInt32(clsGoodsIDs(cmbItemName.SelectedItem)))
+        bytes2 = BitConverter.GetBytes(Convert.ToInt32(cllItemCatsIDs(cmbItemCat.SelectedIndex)(cmbItemName.SelectedItem)))
         Array.Copy(bytes2, 0, bytes, bytitem, bytes2.Length)
 
         bytes2 = BitConverter.GetBytes(Convert.ToInt32(nmbItemCount.Value))
@@ -698,7 +700,7 @@ Public Class Form1
         Array.Copy(bytes2, 0, bytes, bytjmp, bytes2.Length)
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
-        MsgBox(Hex(insertPtr))
+        'MsgBox(Hex(insertPtr))
         CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)
 
     End Sub
