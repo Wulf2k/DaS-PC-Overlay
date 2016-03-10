@@ -61,6 +61,49 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to 1|1
+        '''1000|Shaved (1000)
+        '''1100|Receding
+        '''1200|Short
+        '''1300|Swept Back
+        '''1400|Ponytail
+        '''1500|Wild
+        '''1600|Parted Center
+        '''1700|Semi-Long
+        '''1800|Curly
+        '''1900|Bobbed
+        '''2000|Male 11
+        '''2100|Male 12
+        '''2200|Male 13
+        '''2300|Male 14
+        '''2400|Male 15
+        '''2500|Male 16
+        '''2600|Male 17
+        '''2700|Male 18
+        '''2800|Male 19
+        '''2900|Male 20
+        '''3000|Shaved (3000)
+        '''3100|Very Short
+        '''3200|Wave
+        '''3300|Straight A
+        '''3400|Straight B
+        '''3500|Ponytail A
+        '''3600|Ponytail B
+        '''3700|Pigtails
+        '''3800|Bun
+        '''3900|Braided
+        '''4000|Female 11
+        '''4100|Female 12
+        '''4200|Female 13
+        '''4300|Female 1 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Armor() As String
+            Get
+                Return ResourceManager.GetString("Armor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to -1|Nothing
         '''1602950|Abyss (Bonfire)
         '''1512962|Anor Londo (Gwyndolin Bonfire)
@@ -138,6 +181,76 @@ Namespace My.Resources
         Friend ReadOnly Property Goods() As String
             Get
                 Return ResourceManager.GetString("Goods", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 100|Havel&apos;s Ring
+        '''101|Red Tearstone Ring
+        '''102|Darkmoon Blade Covenant Ring
+        '''103|Cat Covenant Ring
+        '''104|Cloranthy Ring
+        '''105|Flame Stoneplate Ring
+        '''106|Thunder Stoneplate Ring
+        '''107|Spell Stoneplate Ring
+        '''108|Speckled Stoneplate Ring
+        '''109|Bloodbite Ring
+        '''110|Poisonbite Ring
+        '''111|Tiny Being&apos;s Ring
+        '''113|Cursebite Ring
+        '''114|White Seance Ring
+        '''115|Bellowing Dragoncrest Ring
+        '''116|Dusk Crown Ring
+        '''117|Hornet Ring
+        '''119|Hawk Ring
+        '''120|Ring of Steel Protection
+        '''121|Covetous Gold Serpent Ring
+        '''122|Covetous Silver Serpen [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Rings() As String
+            Get
+                Return ResourceManager.GetString("Rings", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 199000|199000
+        '''299000|299000
+        '''398000|398000
+        '''399000|399000
+        '''454001|454001
+        '''454002|454002
+        '''454003|454003
+        '''454004|454004
+        '''454005|454005
+        '''498000|498000
+        '''499000|499000
+        '''599000|599000
+        '''699000|699000
+        '''798000|798000
+        '''799000|799000
+        '''898000|898000
+        '''899000|899000
+        '''999000|999000
+        '''1053000|1053000
+        '''1054000|1054000
+        '''1099000|1099000
+        '''1151800|1151800
+        '''1199000|1199000
+        '''1298000|1298000
+        '''1299000|1299000
+        '''1304500|1304500
+        '''1397000|1397000
+        '''1398000|1398000
+        '''1399000|1399000
+        '''1498000|1498000
+        '''1499000|1499000
+        '''1599000|1599000
+        '''1699 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Weapons() As String
+            Get
+                Return ResourceManager.GetString("Weapons", resourceCulture)
             End Get
         End Property
     End Module

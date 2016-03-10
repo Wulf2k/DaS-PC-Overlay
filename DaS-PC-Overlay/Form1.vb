@@ -38,11 +38,28 @@ Public Class Form1
     Dim clsFuncNames As New Hashtable
     Dim clsFuncLocs As New Hashtable
 
-    Dim clsBonfires As New Hashtable()
-    Dim clsBonfireIDs As New Hashtable()
+    Dim clsBonfires As New Hashtable
+    Dim clsBonfiresIDs As New Hashtable
 
-    Dim clsGoods As New Hashtable()
-    Dim clsGoodsIDs As New Hashtable()
+    Dim clsItemCats As New Hashtable
+    Dim clsItemCatsIDs As New Hashtable
+
+
+    Dim cllItemCats As Hashtable()
+    Dim cllItemCatsIDs As Hashtable()
+
+    Dim clsWeapons As New Hashtable
+    Dim clsWeaponsIDs As New Hashtable
+
+    Dim clsArmor As New Hashtable
+    Dim clsArmorIDs As New Hashtable
+
+    Dim clsRings As New Hashtable
+    Dim clsRingsIDs As New Hashtable
+
+    Dim clsGoods As New Hashtable
+    Dim clsGoodsIDs As New Hashtable
+
 
 
 
@@ -137,25 +154,12 @@ Public Class Form1
         Dim tmp1 As String
         Dim tmp2 As String
 
+        cllItemCats = {clsWeapons, clsArmor, clsRings, clsGoods}
+        cllItemCatsIDs = {clsWeaponsIDs, clsArmorIDs, clsRingsIDs, clsGoodsIDs}
 
 
         '-----------------------Function names-----------------------
-        nameList.Clear()
-        clsFuncNames.Clear()
-        tmpList = My.Resources.FuncLocs.Replace(Chr(&HD), "").Split(Chr(&HA))
-        For i = 0 To tmpList.Length - 1
-            tmp1 = tmpList(i).Split("|")(0)
-            tmp2 = tmpList(i).Split("|")(1)
-            clsFuncNames.Add(Val(tmp1), tmp2)
-        Next
-
-        clsFuncLocs.Clear()
-        cmbFuncName.Items.Clear()
-        For Each func In clsFuncNames.Keys
-            clsFuncLocs.Add(clsFuncNames(func), func)
-            nameList.Add(clsFuncNames(func))
-        Next
-        nameList.Sort()
+        nameList = ParseItems(clsFuncNames, clsFuncLocs, My.Resources.FuncLocs)
         For Each func In nameList
             cmbFuncName.Items.Add(func)
         Next
@@ -163,51 +167,59 @@ Public Class Form1
 
 
         '-----------------------Bonfires-----------------------
-        clsBonfires.Clear()
-        tmpList = My.Resources.Bonfires.Replace(Chr(&HD), "").Split(Chr(&HA))
-        For i = 0 To tmpList.Length - 1
-            tmp1 = tmpList(i).Split("|")(0)
-            tmp2 = tmpList(i).Split("|")(1)
-            clsBonfires.Add(Val(tmp1), tmp2)
-        Next
-
-        nameList.Clear()
-        clsBonfireIDs.Clear()
-        cmbBonfire.Items.Clear()
-        For Each bonfire In clsBonfires.Keys
-            clsBonfireIDs.Add(clsBonfires(bonfire), bonfire)
-            nameList.Add(clsBonfires(bonfire))
-        Next
-        nameList.Sort()
+        nameList = ParseItems(clsBonfires, clsBonfiresIDs, My.Resources.Bonfires)
         For Each bonfire In nameList
             cmbBonfire.Items.Add(bonfire)
         Next
         cmbBonfire.SelectedItem = "Nothing"
 
 
-        '-----------------------Goods-----------------------
-        clsGoods.Clear()
-        tmpList = My.Resources.Goods.Replace(Chr(&HD), "").Split(Chr(&HA))
+        '-----------------------Item Categories-----------------------
+        clsItemCats.Clear()
+        clsItemCats.Add(0, "Weapons")
+        clsItemCats.Add(268435456, "Armor")
+        clsItemCats.Add(536870912, "Rings")
+        clsItemCats.Add(1073741824, "Goods")
+
+        clsItemCatsIDs.Clear()
+        For Each itemCat In clsItemCats.Keys
+            clsItemCatsIDs.Add(clsItemCats(itemCat), itemCat)
+        Next
+
+
+        '-----------------------Items-----------------------
+        ParseItems(clsWeapons, clsWeaponsIDs, My.Resources.Weapons)
+        ParseItems(clsArmor, clsArmorIDs, My.Resources.Armor)
+        ParseItems(clsRings, clsRingsIDs, My.Resources.Rings)
+        ParseItems(clsGoods, clsGoodsIDs, My.Resources.Goods)
+
+
+        cmbItemCat.SelectedIndex = 0
+    End Sub
+
+    Public Function ParseItems(ByRef cls As Hashtable, ByRef clsIDs As Hashtable, ByRef txt As String) As List(Of String)
+        Dim nameList As New List(Of String)
+        Dim tmpList = txt.Replace(Chr(&HD), "").Split(Chr(&HA))
+        Dim tmp1 As String
+        Dim tmp2 As String
+
+        cls.Clear()
         For i = 0 To tmpList.Length - 1
             tmp1 = tmpList(i).Split("|")(0)
             tmp2 = tmpList(i).Split("|")(1)
-            clsGoods.Add(Val(tmp1), tmp2)
+            cls.Add(Val(tmp1), tmp2)
         Next
 
         nameList.Clear()
-        clsGoodsIDs.Clear()
-        cmbItemName.Items.Clear()
-        For Each good In clsGoods.Keys
-            clsGoodsIDs.Add(clsGoods(good), good)
-            nameList.Add(clsGoods(good))
+        clsIDs.Clear()
+        For Each item In cls.Keys
+            clsIDs.Add(cls(item), item)
+            nameList.Add(cls(item))
         Next
-        nameList.Sort()
-        For Each good In nameList
-            cmbItemName.Items.Add(good)
-        Next
-        cmbItemName.SelectedItem = "Alluring Skull"
 
-    End Sub
+        nameList.Sort()
+        Return nameList
+    End Function
 
     Public Function ReadInt16(ByVal addr As IntPtr) As Int16
         Dim _rtnBytes(1) As Byte
@@ -357,7 +369,7 @@ Public Class Form1
                 If Not cmbBonfire.DroppedDown Then
                     If clsBonfires(bonfireID) = "" Then
                         clsBonfires.Add(bonfireID, bonfireID.ToString)
-                        clsBonfireIDs.Add(bonfireID.ToString, bonfireID)
+                        clsBonfiresIDs.Add(bonfireID.ToString, bonfireID)
                         cmbBonfire.Items.Add(bonfireID.ToString)
                     End If
                     cmbBonfire.SelectedItem = clsBonfires(bonfireID)
@@ -567,7 +579,7 @@ Public Class Form1
 
     Private Sub cmbBonfire_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbBonfire.DropDownClosed
         If Not IsNothing(cmbBonfire.SelectedItem) Then
-            WriteInt32(bonfireptr + &HB04, clsBonfireIDs(cmbBonfire.SelectedItem))
+            WriteInt32(bonfireptr + &HB04, clsBonfiresIDs(cmbBonfire.SelectedItem))
         End If
     End Sub
 
@@ -868,4 +880,20 @@ Public Class Form1
     Private Sub txtSouls_TextChanged(sender As Object, e As EventArgs) Handles txtSouls.TextChanged
         WriteInt32(charptr2 + &H8C, Val(txtSouls.Text))
     End Sub
+
+    Private Sub cmbItemCat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbItemCat.SelectedIndexChanged
+        Dim nameList As New List(Of String)
+
+        cmbItemName.Items.Clear()
+        For Each item In cllItemCats(cmbItemCat.SelectedIndex).Values
+            nameList.Add(item)
+        Next
+
+        nameList.Sort()
+        For Each item In nameList
+            cmbItemName.Items.Add(item)
+        Next
+        cmbItemName.SelectedIndex = 0
+    End Sub
+
 End Class

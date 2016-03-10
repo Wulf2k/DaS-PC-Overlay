@@ -534,6 +534,7 @@ Partial Class Form1
         Me.cmbItemCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbItemCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbItemCat.FormattingEnabled = True
+        Me.cmbItemCat.Items.AddRange(New Object() {"Weapons", "Armor", "Rings", "Goods"})
         Me.cmbItemCat.Location = New System.Drawing.Point(20, 741)
         Me.cmbItemCat.Name = "cmbItemCat"
         Me.cmbItemCat.Size = New System.Drawing.Size(126, 24)
