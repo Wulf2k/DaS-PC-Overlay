@@ -150,9 +150,6 @@ Public Class Form1
 
     Public Sub initClls()
         Dim nameList As New List(Of String)
-        Dim tmpList As String()
-        Dim tmp1 As String
-        Dim tmp2 As String
 
         cllItemCats = {clsWeapons, clsArmor, clsRings, clsGoods}
         cllItemCatsIDs = {clsWeaponsIDs, clsArmorIDs, clsRingsIDs, clsGoodsIDs}
@@ -200,14 +197,14 @@ Public Class Form1
     Public Function ParseItems(ByRef cls As Hashtable, ByRef clsIDs As Hashtable, ByRef txt As String) As List(Of String)
         Dim nameList As New List(Of String)
         Dim tmpList = txt.Replace(Chr(&HD), "").Split(Chr(&HA))
-        Dim tmp1 As String
+        Dim tmp1 As Integer
         Dim tmp2 As String
 
         cls.Clear()
         For i = 0 To tmpList.Length - 1
             tmp1 = tmpList(i).Split("|")(0)
             tmp2 = tmpList(i).Split("|")(1)
-            cls.Add(Val(tmp1), tmp2)
+            cls.Add(tmp1, tmp2)
         Next
 
         nameList.Clear()

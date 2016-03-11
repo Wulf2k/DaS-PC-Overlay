@@ -1,7 +1,3 @@
-199000|199000
-299000|299000
-398000|398000
-399000|399000
 454001|454001
 454002|454002
 454003|454003
@@ -16,20 +12,8 @@
 898000|898000
 899000|899000
 999000|999000
-1053000|1053000
-1054000|1054000
-1099000|1099000
-1151800|1151800
-1199000|1199000
-1298000|1298000
-1299000|1299000
-1304500|1304500
-1397000|1397000
 1398000|1398000
 1399000|1399000
-1498000|1498000
-1499000|1499000
-1599000|1599000
 1699000|1699000
 9004000|9004000
 9004100|9004100
@@ -105,6 +89,18 @@
 9019900|9019900
 9020000|9020000
 9021000|9021000
+1298000|(Ghost Bow) (1298000)
+1299000|(Ghost Crossbow) (1299000)
+199000|(Ghost Dagger) (199000)
+1199000|(Ghost Halberd) (1199000)
+1499000|(Ghost Kite Shield) (1499000)
+398000|(Ghost Large Sword) (398000)
+399000|(Ghost Large Sword) (399000)
+1498000|(Ghost Round Shield) (1498000)
+1397000|(Ghost Sceptre) (1397000)
+1099000|(Ghost Spear) (1099000)
+299000|(Ghost Sword) (299000)
+1599000|(Ghost Tower Shield) (1599000)
 2099000|Arrow
 209000|Astora's Straight Sword
 209001|Astora's Straight Sword+1
@@ -533,9 +529,9 @@
 810903|Chaos Blacksmith Hammer+3
 810904|Chaos Blacksmith Hammer+4
 810905|Chaos Blacksmith Hammer+5
-503200|Chaos Blade (503200)
 503000|Chaos Blade (503000)
 503100|Chaos Blade (503100)
+503200|Chaos Blade (503200)
 503001|Chaos Blade+1 (503001)
 503101|Chaos Blade+1 (503101)
 503201|Chaos Blade+1 (503201)
@@ -1366,16 +1362,16 @@
 750105|Crystal Greataxe+5
 351100|Crystal Greatsword
 304000|Crystal Greatsword (304000)
-351101|Crystal Greatsword+1 (351101)
 304001|Crystal Greatsword+1 (304001)
-351102|Crystal Greatsword+2 (351102)
+351101|Crystal Greatsword+1 (351101)
 304002|Crystal Greatsword+2 (304002)
-351103|Crystal Greatsword+3 (351103)
+351102|Crystal Greatsword+2 (351102)
 304003|Crystal Greatsword+3 (304003)
-351104|Crystal Greatsword+4 (351104)
+351103|Crystal Greatsword+3 (351103)
 304004|Crystal Greatsword+4 (304004)
-351105|Crystal Greatsword+5 (351105)
+351104|Crystal Greatsword+4 (351104)
 304005|Crystal Greatsword+5 (304005)
+351105|Crystal Greatsword+5 (351105)
 1100100|Crystal Halberd
 1100101|Crystal Halberd+1
 1100102|Crystal Halberd+2
@@ -1556,7 +1552,6 @@
 604103|Crystal Ricard's Rapier+3
 604104|Crystal Ricard's Rapier+4
 604105|Crystal Ricard's Rapier+5
-1414600|Crystal Ring Shield (1414600)
 1411000|Crystal Ring Shield (1411000)
 1411100|Crystal Ring Shield (1411100)
 1411200|Crystal Ring Shield (1411200)
@@ -1593,7 +1588,7 @@
 1414300|Crystal Ring Shield (1414300)
 1414400|Crystal Ring Shield (1414400)
 1414500|Crystal Ring Shield (1414500)
-1414601|Crystal Ring Shield+1 (1414601)
+1414600|Crystal Ring Shield (1414600)
 1411001|Crystal Ring Shield+1 (1411001)
 1411101|Crystal Ring Shield+1 (1411101)
 1411201|Crystal Ring Shield+1 (1411201)
@@ -1630,7 +1625,7 @@
 1414301|Crystal Ring Shield+1 (1414301)
 1414401|Crystal Ring Shield+1 (1414401)
 1414501|Crystal Ring Shield+1 (1414501)
-1414602|Crystal Ring Shield+2 (1414602)
+1414601|Crystal Ring Shield+1 (1414601)
 1411002|Crystal Ring Shield+2 (1411002)
 1411102|Crystal Ring Shield+2 (1411102)
 1411202|Crystal Ring Shield+2 (1411202)
@@ -1667,7 +1662,7 @@
 1414302|Crystal Ring Shield+2 (1414302)
 1414402|Crystal Ring Shield+2 (1414402)
 1414502|Crystal Ring Shield+2 (1414502)
-1414603|Crystal Ring Shield+3 (1414603)
+1414602|Crystal Ring Shield+2 (1414602)
 1411003|Crystal Ring Shield+3 (1411003)
 1411103|Crystal Ring Shield+3 (1411103)
 1411203|Crystal Ring Shield+3 (1411203)
@@ -1704,7 +1699,7 @@
 1414303|Crystal Ring Shield+3 (1414303)
 1414403|Crystal Ring Shield+3 (1414403)
 1414503|Crystal Ring Shield+3 (1414503)
-1414604|Crystal Ring Shield+4 (1414604)
+1414603|Crystal Ring Shield+3 (1414603)
 1411004|Crystal Ring Shield+4 (1411004)
 1411104|Crystal Ring Shield+4 (1411104)
 1411204|Crystal Ring Shield+4 (1411204)
@@ -1741,7 +1736,7 @@
 1414304|Crystal Ring Shield+4 (1414304)
 1414404|Crystal Ring Shield+4 (1414404)
 1414504|Crystal Ring Shield+4 (1414504)
-1414605|Crystal Ring Shield+5 (1414605)
+1414604|Crystal Ring Shield+4 (1414604)
 1411005|Crystal Ring Shield+5 (1411005)
 1411105|Crystal Ring Shield+5 (1411105)
 1411205|Crystal Ring Shield+5 (1411205)
@@ -1778,6 +1773,7 @@
 1414305|Crystal Ring Shield+5 (1414305)
 1414405|Crystal Ring Shield+5 (1414405)
 1414505|Crystal Ring Shield+5 (1414505)
+1414605|Crystal Ring Shield+5 (1414605)
 9001100|Crystal Sanctus
 9001101|Crystal Sanctus+1
 9001102|Crystal Sanctus+2
@@ -1935,30 +1931,30 @@
 904003|Dark Hand+3
 904004|Dark Hand+4
 904005|Dark Hand+5
-1205300|Darkmoon Bow (1205300)
 1205000|Darkmoon Bow (1205000)
 1205100|Darkmoon Bow (1205100)
 1205200|Darkmoon Bow (1205200)
-1205301|Darkmoon Bow+1 (1205301)
+1205300|Darkmoon Bow (1205300)
 1205001|Darkmoon Bow+1 (1205001)
 1205101|Darkmoon Bow+1 (1205101)
 1205201|Darkmoon Bow+1 (1205201)
-1205302|Darkmoon Bow+2 (1205302)
+1205301|Darkmoon Bow+1 (1205301)
 1205002|Darkmoon Bow+2 (1205002)
 1205102|Darkmoon Bow+2 (1205102)
 1205202|Darkmoon Bow+2 (1205202)
-1205303|Darkmoon Bow+3 (1205303)
+1205302|Darkmoon Bow+2 (1205302)
 1205003|Darkmoon Bow+3 (1205003)
 1205103|Darkmoon Bow+3 (1205103)
 1205203|Darkmoon Bow+3 (1205203)
-1205304|Darkmoon Bow+4 (1205304)
+1205303|Darkmoon Bow+3 (1205303)
 1205004|Darkmoon Bow+4 (1205004)
 1205104|Darkmoon Bow+4 (1205104)
 1205204|Darkmoon Bow+4 (1205204)
-1205305|Darkmoon Bow+5 (1205305)
+1205304|Darkmoon Bow+4 (1205304)
 1205005|Darkmoon Bow+5 (1205005)
 1205105|Darkmoon Bow+5 (1205105)
 1205205|Darkmoon Bow+5 (1205205)
+1205305|Darkmoon Bow+5 (1205305)
 1366000|Darkmoon Talisman
 210000|Darksword
 210001|Darksword+1
@@ -3230,18 +3226,18 @@
 350607|Divine Zweihander+7
 350608|Divine Zweihander+8
 350609|Divine Zweihander+9
-903100|Dragon Bone Fist (903100)
 903000|Dragon Bone Fist (903000)
-903101|Dragon Bone Fist+1 (903101)
+903100|Dragon Bone Fist (903100)
 903001|Dragon Bone Fist+1 (903001)
-903102|Dragon Bone Fist+2 (903102)
+903101|Dragon Bone Fist+1 (903101)
 903002|Dragon Bone Fist+2 (903002)
-903103|Dragon Bone Fist+3 (903103)
+903102|Dragon Bone Fist+2 (903102)
 903003|Dragon Bone Fist+3 (903003)
-903104|Dragon Bone Fist+4 (903104)
+903103|Dragon Bone Fist+3 (903103)
 903004|Dragon Bone Fist+4 (903004)
-903105|Dragon Bone Fist+5 (903105)
+903104|Dragon Bone Fist+4 (903104)
 903005|Dragon Bone Fist+5 (903005)
+903105|Dragon Bone Fist+5 (903105)
 1457000|Dragon Crest Shield
 1457001|Dragon Crest Shield+1
 1457002|Dragon Crest Shield+2
@@ -3273,7 +3269,6 @@
 1203003|Dragonslayer Greatbow+3
 1203004|Dragonslayer Greatbow+4
 1203005|Dragonslayer Greatbow+5
-1051900|Dragonslayer Spear (1051900)
 1051000|Dragonslayer Spear (1051000)
 1051100|Dragonslayer Spear (1051100)
 1051200|Dragonslayer Spear (1051200)
@@ -3283,7 +3278,8 @@
 1051600|Dragonslayer Spear (1051600)
 1051700|Dragonslayer Spear (1051700)
 1051800|Dragonslayer Spear (1051800)
-1051901|Dragonslayer Spear+1 (1051901)
+1051900|Dragonslayer Spear (1051900)
+1054000|Dragonslayer Spear (1054000)
 1051001|Dragonslayer Spear+1 (1051001)
 1051101|Dragonslayer Spear+1 (1051101)
 1051201|Dragonslayer Spear+1 (1051201)
@@ -3293,7 +3289,7 @@
 1051601|Dragonslayer Spear+1 (1051601)
 1051701|Dragonslayer Spear+1 (1051701)
 1051801|Dragonslayer Spear+1 (1051801)
-1051902|Dragonslayer Spear+2 (1051902)
+1051901|Dragonslayer Spear+1 (1051901)
 1051002|Dragonslayer Spear+2 (1051002)
 1051102|Dragonslayer Spear+2 (1051102)
 1051202|Dragonslayer Spear+2 (1051202)
@@ -3303,7 +3299,7 @@
 1051602|Dragonslayer Spear+2 (1051602)
 1051702|Dragonslayer Spear+2 (1051702)
 1051802|Dragonslayer Spear+2 (1051802)
-1051903|Dragonslayer Spear+3 (1051903)
+1051902|Dragonslayer Spear+2 (1051902)
 1051003|Dragonslayer Spear+3 (1051003)
 1051103|Dragonslayer Spear+3 (1051103)
 1051203|Dragonslayer Spear+3 (1051203)
@@ -3313,7 +3309,7 @@
 1051603|Dragonslayer Spear+3 (1051603)
 1051703|Dragonslayer Spear+3 (1051703)
 1051803|Dragonslayer Spear+3 (1051803)
-1051904|Dragonslayer Spear+4 (1051904)
+1051903|Dragonslayer Spear+3 (1051903)
 1051004|Dragonslayer Spear+4 (1051004)
 1051104|Dragonslayer Spear+4 (1051104)
 1051204|Dragonslayer Spear+4 (1051204)
@@ -3323,7 +3319,7 @@
 1051604|Dragonslayer Spear+4 (1051604)
 1051704|Dragonslayer Spear+4 (1051704)
 1051804|Dragonslayer Spear+4 (1051804)
-1051905|Dragonslayer Spear+5 (1051905)
+1051904|Dragonslayer Spear+4 (1051904)
 1051005|Dragonslayer Spear+5 (1051005)
 1051105|Dragonslayer Spear+5 (1051105)
 1051205|Dragonslayer Spear+5 (1051205)
@@ -3333,6 +3329,7 @@
 1051605|Dragonslayer Spear+5 (1051605)
 1051705|Dragonslayer Spear+5 (1051705)
 1051805|Dragonslayer Spear+5 (1051805)
+1051905|Dragonslayer Spear+5 (1051905)
 211000|Drake Sword
 211001|Drake Sword+1
 211002|Drake Sword+2
@@ -5140,48 +5137,48 @@
 1101007|Giant's Halberd+7
 1101008|Giant's Halberd+8
 1101009|Giant's Halberd+9
-704600|Golem Axe (704600)
 704000|Golem Axe (704000)
 704100|Golem Axe (704100)
 704200|Golem Axe (704200)
 704300|Golem Axe (704300)
 704400|Golem Axe (704400)
 704500|Golem Axe (704500)
-704601|Golem Axe+1 (704601)
+704600|Golem Axe (704600)
 704001|Golem Axe+1 (704001)
 704101|Golem Axe+1 (704101)
 704201|Golem Axe+1 (704201)
 704301|Golem Axe+1 (704301)
 704401|Golem Axe+1 (704401)
 704501|Golem Axe+1 (704501)
-704602|Golem Axe+2 (704602)
+704601|Golem Axe+1 (704601)
 704002|Golem Axe+2 (704002)
 704102|Golem Axe+2 (704102)
 704202|Golem Axe+2 (704202)
 704302|Golem Axe+2 (704302)
 704402|Golem Axe+2 (704402)
 704502|Golem Axe+2 (704502)
-704603|Golem Axe+3 (704603)
+704602|Golem Axe+2 (704602)
 704003|Golem Axe+3 (704003)
 704103|Golem Axe+3 (704103)
 704203|Golem Axe+3 (704203)
 704303|Golem Axe+3 (704303)
 704403|Golem Axe+3 (704403)
 704503|Golem Axe+3 (704503)
-704604|Golem Axe+4 (704604)
+704603|Golem Axe+3 (704603)
 704004|Golem Axe+4 (704004)
 704104|Golem Axe+4 (704104)
 704204|Golem Axe+4 (704204)
 704304|Golem Axe+4 (704304)
 704404|Golem Axe+4 (704404)
 704504|Golem Axe+4 (704504)
-704605|Golem Axe+5 (704605)
+704604|Golem Axe+4 (704604)
 704005|Golem Axe+5 (704005)
 704105|Golem Axe+5 (704105)
 704205|Golem Axe+5 (704205)
 704305|Golem Axe+5 (704305)
 704405|Golem Axe+5 (704405)
 704505|Golem Axe+5 (704505)
+704605|Golem Axe+5 (704605)
 851000|Grant
 851001|Grant+1
 851002|Grant+2
@@ -5226,7 +5223,6 @@
 850007|Great Club+7
 850008|Great Club+8
 850009|Great Club+9
-315700|Great Lord Greatsword (315700)
 308000|Great Lord Greatsword (308000)
 314000|Great Lord Greatsword (314000)
 314100|Great Lord Greatsword (314100)
@@ -5245,7 +5241,7 @@
 315400|Great Lord Greatsword (315400)
 315500|Great Lord Greatsword (315500)
 315600|Great Lord Greatsword (315600)
-315701|Great Lord Greatsword+1 (315701)
+315700|Great Lord Greatsword (315700)
 308001|Great Lord Greatsword+1 (308001)
 314001|Great Lord Greatsword+1 (314001)
 314101|Great Lord Greatsword+1 (314101)
@@ -5264,7 +5260,7 @@
 315401|Great Lord Greatsword+1 (315401)
 315501|Great Lord Greatsword+1 (315501)
 315601|Great Lord Greatsword+1 (315601)
-315702|Great Lord Greatsword+2 (315702)
+315701|Great Lord Greatsword+1 (315701)
 308002|Great Lord Greatsword+2 (308002)
 314002|Great Lord Greatsword+2 (314002)
 314102|Great Lord Greatsword+2 (314102)
@@ -5283,7 +5279,7 @@
 315402|Great Lord Greatsword+2 (315402)
 315502|Great Lord Greatsword+2 (315502)
 315602|Great Lord Greatsword+2 (315602)
-315703|Great Lord Greatsword+3 (315703)
+315702|Great Lord Greatsword+2 (315702)
 308003|Great Lord Greatsword+3 (308003)
 314003|Great Lord Greatsword+3 (314003)
 314103|Great Lord Greatsword+3 (314103)
@@ -5302,7 +5298,7 @@
 315403|Great Lord Greatsword+3 (315403)
 315503|Great Lord Greatsword+3 (315503)
 315603|Great Lord Greatsword+3 (315603)
-315704|Great Lord Greatsword+4 (315704)
+315703|Great Lord Greatsword+3 (315703)
 308004|Great Lord Greatsword+4 (308004)
 314004|Great Lord Greatsword+4 (314004)
 314104|Great Lord Greatsword+4 (314104)
@@ -5321,7 +5317,7 @@
 315404|Great Lord Greatsword+4 (315404)
 315504|Great Lord Greatsword+4 (315504)
 315604|Great Lord Greatsword+4 (315604)
-315705|Great Lord Greatsword+5 (315705)
+315704|Great Lord Greatsword+4 (315704)
 308005|Great Lord Greatsword+5 (308005)
 314005|Great Lord Greatsword+5 (314005)
 314105|Great Lord Greatsword+5 (314105)
@@ -5340,6 +5336,7 @@
 315405|Great Lord Greatsword+5 (315405)
 315505|Great Lord Greatsword+5 (315505)
 315605|Great Lord Greatsword+5 (315605)
+315705|Great Lord Greatsword+5 (315705)
 1150000|Great Scythe
 1150001|Great Scythe+1
 1150010|Great Scythe+10
@@ -5372,7 +5369,6 @@
 750007|Greataxe+7
 750008|Greataxe+8
 750009|Greataxe+9
-1510600|Greatshield of Artorias (1510600)
 1507000|Greatshield of Artorias (1507000)
 1507100|Greatshield of Artorias (1507100)
 1507200|Greatshield of Artorias (1507200)
@@ -5409,7 +5405,7 @@
 1510300|Greatshield of Artorias (1510300)
 1510400|Greatshield of Artorias (1510400)
 1510500|Greatshield of Artorias (1510500)
-1510601|Greatshield of Artorias+1 (1510601)
+1510600|Greatshield of Artorias (1510600)
 1507001|Greatshield of Artorias+1 (1507001)
 1507101|Greatshield of Artorias+1 (1507101)
 1507201|Greatshield of Artorias+1 (1507201)
@@ -5446,7 +5442,7 @@
 1510301|Greatshield of Artorias+1 (1510301)
 1510401|Greatshield of Artorias+1 (1510401)
 1510501|Greatshield of Artorias+1 (1510501)
-1510602|Greatshield of Artorias+2 (1510602)
+1510601|Greatshield of Artorias+1 (1510601)
 1507002|Greatshield of Artorias+2 (1507002)
 1507102|Greatshield of Artorias+2 (1507102)
 1507202|Greatshield of Artorias+2 (1507202)
@@ -5483,7 +5479,7 @@
 1510302|Greatshield of Artorias+2 (1510302)
 1510402|Greatshield of Artorias+2 (1510402)
 1510502|Greatshield of Artorias+2 (1510502)
-1510603|Greatshield of Artorias+3 (1510603)
+1510602|Greatshield of Artorias+2 (1510602)
 1507003|Greatshield of Artorias+3 (1507003)
 1507103|Greatshield of Artorias+3 (1507103)
 1507203|Greatshield of Artorias+3 (1507203)
@@ -5520,7 +5516,7 @@
 1510303|Greatshield of Artorias+3 (1510303)
 1510403|Greatshield of Artorias+3 (1510403)
 1510503|Greatshield of Artorias+3 (1510503)
-1510604|Greatshield of Artorias+4 (1510604)
+1510603|Greatshield of Artorias+3 (1510603)
 1507004|Greatshield of Artorias+4 (1507004)
 1507104|Greatshield of Artorias+4 (1507104)
 1507204|Greatshield of Artorias+4 (1507204)
@@ -5557,7 +5553,7 @@
 1510304|Greatshield of Artorias+4 (1510304)
 1510404|Greatshield of Artorias+4 (1510404)
 1510504|Greatshield of Artorias+4 (1510504)
-1510605|Greatshield of Artorias+5 (1510605)
+1510604|Greatshield of Artorias+4 (1510604)
 1507005|Greatshield of Artorias+5 (1507005)
 1507105|Greatshield of Artorias+5 (1507105)
 1507205|Greatshield of Artorias+5 (1507205)
@@ -5594,8 +5590,8 @@
 1510305|Greatshield of Artorias+5 (1510305)
 1510405|Greatshield of Artorias+5 (1510405)
 1510505|Greatshield of Artorias+5 (1510505)
+1510605|Greatshield of Artorias+5 (1510605)
 351000|Greatsword
-312700|Greatsword of Artorias (312700)
 307000|Greatsword of Artorias (307000)
 307100|Greatsword of Artorias (307100)
 311000|Greatsword of Artorias (311000)
@@ -5615,7 +5611,7 @@
 312400|Greatsword of Artorias (312400)
 312500|Greatsword of Artorias (312500)
 312600|Greatsword of Artorias (312600)
-312701|Greatsword of Artorias+1 (312701)
+312700|Greatsword of Artorias (312700)
 307001|Greatsword of Artorias+1 (307001)
 307101|Greatsword of Artorias+1 (307101)
 311001|Greatsword of Artorias+1 (311001)
@@ -5635,7 +5631,7 @@
 312401|Greatsword of Artorias+1 (312401)
 312501|Greatsword of Artorias+1 (312501)
 312601|Greatsword of Artorias+1 (312601)
-312702|Greatsword of Artorias+2 (312702)
+312701|Greatsword of Artorias+1 (312701)
 307002|Greatsword of Artorias+2 (307002)
 307102|Greatsword of Artorias+2 (307102)
 311002|Greatsword of Artorias+2 (311002)
@@ -5655,7 +5651,7 @@
 312402|Greatsword of Artorias+2 (312402)
 312502|Greatsword of Artorias+2 (312502)
 312602|Greatsword of Artorias+2 (312602)
-312703|Greatsword of Artorias+3 (312703)
+312702|Greatsword of Artorias+2 (312702)
 307003|Greatsword of Artorias+3 (307003)
 307103|Greatsword of Artorias+3 (307103)
 311003|Greatsword of Artorias+3 (311003)
@@ -5675,7 +5671,7 @@
 312403|Greatsword of Artorias+3 (312403)
 312503|Greatsword of Artorias+3 (312503)
 312603|Greatsword of Artorias+3 (312603)
-312704|Greatsword of Artorias+4 (312704)
+312703|Greatsword of Artorias+3 (312703)
 307004|Greatsword of Artorias+4 (307004)
 307104|Greatsword of Artorias+4 (307104)
 311004|Greatsword of Artorias+4 (311004)
@@ -5695,7 +5691,7 @@
 312404|Greatsword of Artorias+4 (312404)
 312504|Greatsword of Artorias+4 (312504)
 312604|Greatsword of Artorias+4 (312604)
-312705|Greatsword of Artorias+5 (312705)
+312704|Greatsword of Artorias+4 (312704)
 307005|Greatsword of Artorias+5 (307005)
 307105|Greatsword of Artorias+5 (307105)
 311005|Greatsword of Artorias+5 (311005)
@@ -5715,6 +5711,7 @@
 312405|Greatsword of Artorias+5 (312405)
 312505|Greatsword of Artorias+5 (312505)
 312605|Greatsword of Artorias+5 (312605)
+312705|Greatsword of Artorias+5 (312705)
 351001|Greatsword+1
 351010|Greatsword+10
 351011|Greatsword+11
@@ -5939,7 +5936,6 @@
 1408007|Leather Shield+7
 1408008|Leather Shield+8
 1408009|Leather Shield+9
-1151700|Lifehunt Scythe (1151700)
 1151000|Lifehunt Scythe (1151000)
 1151100|Lifehunt Scythe (1151100)
 1151200|Lifehunt Scythe (1151200)
@@ -5947,7 +5943,8 @@
 1151400|Lifehunt Scythe (1151400)
 1151500|Lifehunt Scythe (1151500)
 1151600|Lifehunt Scythe (1151600)
-1151701|Lifehunt Scythe+1 (1151701)
+1151700|Lifehunt Scythe (1151700)
+1151800|LifeHunt Scythe (1151800)
 1151001|Lifehunt Scythe+1 (1151001)
 1151101|Lifehunt Scythe+1 (1151101)
 1151201|Lifehunt Scythe+1 (1151201)
@@ -5955,7 +5952,7 @@
 1151401|Lifehunt Scythe+1 (1151401)
 1151501|Lifehunt Scythe+1 (1151501)
 1151601|Lifehunt Scythe+1 (1151601)
-1151702|Lifehunt Scythe+2 (1151702)
+1151701|Lifehunt Scythe+1 (1151701)
 1151002|Lifehunt Scythe+2 (1151002)
 1151102|Lifehunt Scythe+2 (1151102)
 1151202|Lifehunt Scythe+2 (1151202)
@@ -5963,7 +5960,7 @@
 1151402|Lifehunt Scythe+2 (1151402)
 1151502|Lifehunt Scythe+2 (1151502)
 1151602|Lifehunt Scythe+2 (1151602)
-1151703|Lifehunt Scythe+3 (1151703)
+1151702|Lifehunt Scythe+2 (1151702)
 1151003|Lifehunt Scythe+3 (1151003)
 1151103|Lifehunt Scythe+3 (1151103)
 1151203|Lifehunt Scythe+3 (1151203)
@@ -5971,7 +5968,7 @@
 1151403|Lifehunt Scythe+3 (1151403)
 1151503|Lifehunt Scythe+3 (1151503)
 1151603|Lifehunt Scythe+3 (1151603)
-1151704|Lifehunt Scythe+4 (1151704)
+1151703|Lifehunt Scythe+3 (1151703)
 1151004|Lifehunt Scythe+4 (1151004)
 1151104|Lifehunt Scythe+4 (1151104)
 1151204|Lifehunt Scythe+4 (1151204)
@@ -5979,7 +5976,7 @@
 1151404|Lifehunt Scythe+4 (1151404)
 1151504|Lifehunt Scythe+4 (1151504)
 1151604|Lifehunt Scythe+4 (1151604)
-1151705|Lifehunt Scythe+5 (1151705)
+1151704|Lifehunt Scythe+4 (1151704)
 1151005|Lifehunt Scythe+5 (1151005)
 1151105|Lifehunt Scythe+5 (1151105)
 1151205|Lifehunt Scythe+5 (1151205)
@@ -5987,6 +5984,7 @@
 1151405|Lifehunt Scythe+5 (1151405)
 1151505|Lifehunt Scythe+5 (1151505)
 1151605|Lifehunt Scythe+5 (1151605)
+1151705|Lifehunt Scythe+5 (1151705)
 1250000|Light Crossbow
 1250001|Light Crossbow+1
 1250010|Light Crossbow+10
@@ -7940,7 +7938,6 @@
 302008|Man-serpent Greatsword+8
 302009|Man-serpent Greatsword+9
 2005000|Moonlight Arrow
-1052900|Moonlight Butterfly Horn (1052900)
 1052000|Moonlight Butterfly Horn (1052000)
 1052100|Moonlight Butterfly Horn (1052100)
 1052200|Moonlight Butterfly Horn (1052200)
@@ -7950,7 +7947,8 @@
 1052600|Moonlight Butterfly Horn (1052600)
 1052700|Moonlight Butterfly Horn (1052700)
 1052800|Moonlight Butterfly Horn (1052800)
-1052901|Moonlight Butterfly Horn+1 (1052901)
+1052900|Moonlight Butterfly Horn (1052900)
+1053000|Moonlight Butterfly Horn (1053000)
 1052001|Moonlight Butterfly Horn+1 (1052001)
 1052101|Moonlight Butterfly Horn+1 (1052101)
 1052201|Moonlight Butterfly Horn+1 (1052201)
@@ -7960,7 +7958,7 @@
 1052601|Moonlight Butterfly Horn+1 (1052601)
 1052701|Moonlight Butterfly Horn+1 (1052701)
 1052801|Moonlight Butterfly Horn+1 (1052801)
-1052902|Moonlight Butterfly Horn+2 (1052902)
+1052901|Moonlight Butterfly Horn+1 (1052901)
 1052002|Moonlight Butterfly Horn+2 (1052002)
 1052102|Moonlight Butterfly Horn+2 (1052102)
 1052202|Moonlight Butterfly Horn+2 (1052202)
@@ -7970,7 +7968,7 @@
 1052602|Moonlight Butterfly Horn+2 (1052602)
 1052702|Moonlight Butterfly Horn+2 (1052702)
 1052802|Moonlight Butterfly Horn+2 (1052802)
-1052903|Moonlight Butterfly Horn+3 (1052903)
+1052902|Moonlight Butterfly Horn+2 (1052902)
 1052003|Moonlight Butterfly Horn+3 (1052003)
 1052103|Moonlight Butterfly Horn+3 (1052103)
 1052203|Moonlight Butterfly Horn+3 (1052203)
@@ -7980,7 +7978,7 @@
 1052603|Moonlight Butterfly Horn+3 (1052603)
 1052703|Moonlight Butterfly Horn+3 (1052703)
 1052803|Moonlight Butterfly Horn+3 (1052803)
-1052904|Moonlight Butterfly Horn+4 (1052904)
+1052903|Moonlight Butterfly Horn+3 (1052903)
 1052004|Moonlight Butterfly Horn+4 (1052004)
 1052104|Moonlight Butterfly Horn+4 (1052104)
 1052204|Moonlight Butterfly Horn+4 (1052204)
@@ -7990,7 +7988,7 @@
 1052604|Moonlight Butterfly Horn+4 (1052604)
 1052704|Moonlight Butterfly Horn+4 (1052704)
 1052804|Moonlight Butterfly Horn+4 (1052804)
-1052905|Moonlight Butterfly Horn+5 (1052905)
+1052904|Moonlight Butterfly Horn+4 (1052904)
 1052005|Moonlight Butterfly Horn+5 (1052005)
 1052105|Moonlight Butterfly Horn+5 (1052105)
 1052205|Moonlight Butterfly Horn+5 (1052205)
@@ -8000,6 +7998,7 @@
 1052605|Moonlight Butterfly Horn+5 (1052605)
 1052705|Moonlight Butterfly Horn+5 (1052705)
 1052805|Moonlight Butterfly Horn+5 (1052805)
+1052905|Moonlight Butterfly Horn+5 (1052905)
 309000|Moonlight Greatsword
 309001|Moonlight Greatsword+1
 309002|Moonlight Greatsword+2
@@ -8602,74 +8601,74 @@
 104003|Priscilla's Dagger+3
 104004|Priscilla's Dagger+4
 104005|Priscilla's Dagger+5
-1332000|Pyromancy Flame (1332000)
 1330000|Pyromancy Flame (1330000)
-1332100|Pyromancy Flame+1 (1332100)
+1332000|Pyromancy Flame (1332000)
 1330100|Pyromancy Flame+1 (1330100)
-1333000|Pyromancy Flame+10 (1333000)
+1332100|Pyromancy Flame+1 (1332100)
 1331000|Pyromancy Flame+10 (1331000)
-1333100|Pyromancy Flame+11 (1333100)
+1333000|Pyromancy Flame+10 (1333000)
 1331100|Pyromancy Flame+11 (1331100)
-1333200|Pyromancy Flame+12 (1333200)
+1333100|Pyromancy Flame+11 (1333100)
 1331200|Pyromancy Flame+12 (1331200)
-1333300|Pyromancy Flame+13 (1333300)
+1333200|Pyromancy Flame+12 (1333200)
 1331300|Pyromancy Flame+13 (1331300)
-1333400|Pyromancy Flame+14 (1333400)
+1333300|Pyromancy Flame+13 (1333300)
 1331400|Pyromancy Flame+14 (1331400)
-1333500|Pyromancy Flame+15 (1333500)
+1333400|Pyromancy Flame+14 (1333400)
 1331500|Pyromancy Flame+15 (1331500)
-1332200|Pyromancy Flame+2 (1332200)
+1333500|Pyromancy Flame+15 (1333500)
 1330200|Pyromancy Flame+2 (1330200)
-1332300|Pyromancy Flame+3 (1332300)
+1332200|Pyromancy Flame+2 (1332200)
 1330300|Pyromancy Flame+3 (1330300)
-1332400|Pyromancy Flame+4 (1332400)
+1332300|Pyromancy Flame+3 (1332300)
 1330400|Pyromancy Flame+4 (1330400)
-1332500|Pyromancy Flame+5 (1332500)
+1332400|Pyromancy Flame+4 (1332400)
 1330500|Pyromancy Flame+5 (1330500)
-1332600|Pyromancy Flame+6 (1332600)
+1332500|Pyromancy Flame+5 (1332500)
 1330600|Pyromancy Flame+6 (1330600)
-1332700|Pyromancy Flame+7 (1332700)
+1332600|Pyromancy Flame+6 (1332600)
 1330700|Pyromancy Flame+7 (1330700)
-1332800|Pyromancy Flame+8 (1332800)
+1332700|Pyromancy Flame+7 (1332700)
 1330800|Pyromancy Flame+8 (1330800)
-1332900|Pyromancy Flame+9 (1332900)
+1332800|Pyromancy Flame+8 (1332800)
 1330900|Pyromancy Flame+9 (1330900)
-406500|Quelaag's Furysword (406500)
+1332900|Pyromancy Flame+9 (1332900)
 406000|Quelaag's Furysword (406000)
 406100|Quelaag's Furysword (406100)
 406200|Quelaag's Furysword (406200)
 406300|Quelaag's Furysword (406300)
 406400|Quelaag's Furysword (406400)
-406501|Quelaag's Furysword+1 (406501)
+406500|Quelaag's Furysword (406500)
 406001|Quelaag's Furysword+1 (406001)
 406101|Quelaag's Furysword+1 (406101)
 406201|Quelaag's Furysword+1 (406201)
 406301|Quelaag's Furysword+1 (406301)
 406401|Quelaag's Furysword+1 (406401)
-406502|Quelaag's Furysword+2 (406502)
+406501|Quelaag's Furysword+1 (406501)
 406002|Quelaag's Furysword+2 (406002)
 406102|Quelaag's Furysword+2 (406102)
 406202|Quelaag's Furysword+2 (406202)
 406302|Quelaag's Furysword+2 (406302)
 406402|Quelaag's Furysword+2 (406402)
-406503|Quelaag's Furysword+3 (406503)
+406502|Quelaag's Furysword+2 (406502)
 406003|Quelaag's Furysword+3 (406003)
 406103|Quelaag's Furysword+3 (406103)
 406203|Quelaag's Furysword+3 (406203)
 406303|Quelaag's Furysword+3 (406303)
 406403|Quelaag's Furysword+3 (406403)
-406504|Quelaag's Furysword+4 (406504)
+406503|Quelaag's Furysword+3 (406503)
 406004|Quelaag's Furysword+4 (406004)
 406104|Quelaag's Furysword+4 (406104)
 406204|Quelaag's Furysword+4 (406204)
 406304|Quelaag's Furysword+4 (406304)
 406404|Quelaag's Furysword+4 (406404)
-406505|Quelaag's Furysword+5 (406505)
+406504|Quelaag's Furysword+4 (406504)
 406005|Quelaag's Furysword+5 (406005)
 406105|Quelaag's Furysword+5 (406105)
 406205|Quelaag's Furysword+5 (406205)
 406305|Quelaag's Furysword+5 (406305)
 406405|Quelaag's Furysword+5 (406405)
+406505|Quelaag's Furysword+5 (406505)
 601000|Rapier
 601001|Rapier+1
 601010|Rapier+10
@@ -9308,7 +9307,6 @@
 1403007|Small Leather Shield+7
 1403008|Small Leather Shield+8
 1403009|Small Leather Shield+9
-857100|Smough's Hammer (857100)
 856000|Smough's Hammer (856000)
 856100|Smough's Hammer (856100)
 856200|Smough's Hammer (856200)
@@ -9320,7 +9318,7 @@
 856800|Smough's Hammer (856800)
 856900|Smough's Hammer (856900)
 857000|Smough's Hammer (857000)
-857101|Smough's Hammer+1 857101)
+857100|Smough's Hammer (857100)
 856001|Smough's Hammer+1 (856001)
 856101|Smough's Hammer+1 (856101)
 856201|Smough's Hammer+1 (856201)
@@ -9332,7 +9330,7 @@
 856801|Smough's Hammer+1 (856801)
 856901|Smough's Hammer+1 (856901)
 857001|Smough's Hammer+1 (857001)
-857102|Smough's Hammer+2 (857102)
+857101|Smough's Hammer+1 857101)
 856002|Smough's Hammer+2 (856002)
 856102|Smough's Hammer+2 (856102)
 856202|Smough's Hammer+2 (856202)
@@ -9344,7 +9342,7 @@
 856802|Smough's Hammer+2 (856802)
 856902|Smough's Hammer+2 (856902)
 857002|Smough's Hammer+2 (857002)
-857103|Smough's Hammer+3 (857103)
+857102|Smough's Hammer+2 (857102)
 856003|Smough's Hammer+3 (856003)
 856103|Smough's Hammer+3 (856103)
 856203|Smough's Hammer+3 (856203)
@@ -9356,7 +9354,7 @@
 856803|Smough's Hammer+3 (856803)
 856903|Smough's Hammer+3 (856903)
 857003|Smough's Hammer+3 (857003)
-857104|Smough's Hammer+4 (857104)
+857103|Smough's Hammer+3 (857103)
 856004|Smough's Hammer+4 (856004)
 856104|Smough's Hammer+4 (856104)
 856204|Smough's Hammer+4 (856204)
@@ -9368,7 +9366,7 @@
 856804|Smough's Hammer+4 (856804)
 856904|Smough's Hammer+4 (856904)
 857004|Smough's Hammer+4 (857004)
-857105|Smough's Hammer+5 (857105)
+857104|Smough's Hammer+4 (857104)
 856005|Smough's Hammer+5 (856005)
 856105|Smough's Hammer+5 (856105)
 856205|Smough's Hammer+5 (856205)
@@ -9380,6 +9378,7 @@
 856805|Smough's Hammer+5 (856805)
 856905|Smough's Hammer+5 (856905)
 857005|Smough's Hammer+5 (857005)
+857105|Smough's Hammer+5 (857105)
 2102000|Sniper Bolt
 1253000|Sniper Crossbow
 1253001|Sniper Crossbow+1
@@ -9529,11 +9528,12 @@
 1362000|Thorolund Talisman
 1302000|Tin Banishment Catalyst
 1306000|Tin Crystallization Ctlyst.
-1304400|Tin Darkmoon Catalyst (1304400)
 1304000|Tin Darkmoon Catalyst (1304000)
 1304100|Tin Darkmoon Catalyst (1304100)
 1304200|Tin Darkmoon Catalyst (1304200)
 1304300|Tin Darkmoon Catalyst (1304300)
+1304400|Tin Darkmoon Catalyst (1304400)
+1304500|Tin Darkmoon Catalyst (1304500)
 1102000|Titanite Catch Pole
 1102001|Titanite Catch Pole+1
 1102002|Titanite Catch Pole+2
