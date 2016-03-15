@@ -435,6 +435,19 @@ Public Class Form1
                 txtNumCreatures.Text = ((crtend - crtstart) / 4)
 
                 nmbCrtNum.Maximum = txtNumCreatures.Text
+            Case 6
+                If debug Then
+                    dbgboost = &H41C0
+                Else
+                    dbgboost = 0
+                End If
+
+                Dim SteamNodesPtr As Integer
+                Dim SteamNodeList As Integer
+
+
+
+
         End Select
     End Sub
 
@@ -746,6 +759,8 @@ Public Class Form1
 
         bytes2 = BitConverter.GetBytes(0 - ((insertPtr + bytJmp + 4) - (clsFuncLocs(cmbFuncName.SelectedItem) + dbgboost)))
         Array.Copy(bytes2, 0, bytes, bytJmp, bytes2.Length)
+
+        MsgBox(Hex(insertPtr))
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
         CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)

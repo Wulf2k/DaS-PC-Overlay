@@ -109,6 +109,8 @@ Partial Class Form1
         Me.nmbCrtNum = New System.Windows.Forms.NumericUpDown()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtNumCreatures = New System.Windows.Forms.TextBox()
+        Me.tabMPNodes = New System.Windows.Forms.TabPage()
+        Me.txtMPNodes = New System.Windows.Forms.TextBox()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
         Me.tabItems.SuspendLayout()
@@ -133,6 +135,7 @@ Partial Class Form1
         Me.tabLUA.SuspendLayout()
         Me.tabCreatures.SuspendLayout()
         CType(Me.nmbCrtNum, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabMPNodes.SuspendLayout()
         Me.SuspendLayout()
         '
         'tabs
@@ -143,6 +146,7 @@ Partial Class Form1
         Me.tabs.Controls.Add(Me.tabStats)
         Me.tabs.Controls.Add(Me.tabLUA)
         Me.tabs.Controls.Add(Me.tabCreatures)
+        Me.tabs.Controls.Add(Me.tabMPNodes)
         Me.tabs.Location = New System.Drawing.Point(4, 12)
         Me.tabs.Name = "tabs"
         Me.tabs.SelectedIndex = 0
@@ -761,6 +765,7 @@ Partial Class Form1
         '
         Me.nmbSoulLevel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nmbSoulLevel.Location = New System.Drawing.Point(132, 650)
+        Me.nmbSoulLevel.Maximum = New Decimal(New Integer() {1024, 0, 0, 0})
         Me.nmbSoulLevel.Name = "nmbSoulLevel"
         Me.nmbSoulLevel.Size = New System.Drawing.Size(47, 22)
         Me.nmbSoulLevel.TabIndex = 22
@@ -1109,6 +1114,24 @@ Partial Class Form1
         Me.txtNumCreatures.Size = New System.Drawing.Size(100, 22)
         Me.txtNumCreatures.TabIndex = 0
         '
+        'tabMPNodes
+        '
+        Me.tabMPNodes.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabMPNodes.Controls.Add(Me.txtMPNodes)
+        Me.tabMPNodes.Location = New System.Drawing.Point(4, 22)
+        Me.tabMPNodes.Name = "tabMPNodes"
+        Me.tabMPNodes.Size = New System.Drawing.Size(1304, 778)
+        Me.tabMPNodes.TabIndex = 6
+        Me.tabMPNodes.Text = "mp nodes"
+        '
+        'txtMPNodes
+        '
+        Me.txtMPNodes.Location = New System.Drawing.Point(65, 199)
+        Me.txtMPNodes.Multiline = True
+        Me.txtMPNodes.Name = "txtMPNodes"
+        Me.txtMPNodes.Size = New System.Drawing.Size(386, 325)
+        Me.txtMPNodes.TabIndex = 0
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1147,6 +1170,8 @@ Partial Class Form1
         Me.tabCreatures.ResumeLayout(False)
         Me.tabCreatures.PerformLayout()
         CType(Me.nmbCrtNum, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabMPNodes.ResumeLayout(False)
+        Me.tabMPNodes.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1237,4 +1262,6 @@ Partial Class Form1
     Friend WithEvents nmbFaith As NumericUpDown
     Friend WithEvents Label17 As Label
     Friend WithEvents txtSouls As TextBox
+    Friend WithEvents tabMPNodes As TabPage
+    Friend WithEvents txtMPNodes As TextBox
 End Class
