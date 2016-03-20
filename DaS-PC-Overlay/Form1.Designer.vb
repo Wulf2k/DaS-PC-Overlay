@@ -110,6 +110,9 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtNumCreatures = New System.Windows.Forms.TextBox()
         Me.tabMPNodes = New System.Windows.Forms.TabPage()
+        Me.dgvMPNodes = New System.Windows.Forms.DataGridView()
+        Me.chkNodeDump = New System.Windows.Forms.CheckBox()
+        Me.txtNodeCount = New System.Windows.Forms.TextBox()
         Me.txtMPNodes = New System.Windows.Forms.TextBox()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
@@ -136,6 +139,7 @@ Partial Class Form1
         Me.tabCreatures.SuspendLayout()
         CType(Me.nmbCrtNum, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabMPNodes.SuspendLayout()
+        CType(Me.dgvMPNodes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabs
@@ -1117,6 +1121,9 @@ Partial Class Form1
         'tabMPNodes
         '
         Me.tabMPNodes.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabMPNodes.Controls.Add(Me.dgvMPNodes)
+        Me.tabMPNodes.Controls.Add(Me.chkNodeDump)
+        Me.tabMPNodes.Controls.Add(Me.txtNodeCount)
         Me.tabMPNodes.Controls.Add(Me.txtMPNodes)
         Me.tabMPNodes.Location = New System.Drawing.Point(4, 22)
         Me.tabMPNodes.Name = "tabMPNodes"
@@ -1124,13 +1131,40 @@ Partial Class Form1
         Me.tabMPNodes.TabIndex = 6
         Me.tabMPNodes.Text = "mp nodes"
         '
+        'dgvMPNodes
+        '
+        Me.dgvMPNodes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvMPNodes.Location = New System.Drawing.Point(65, 408)
+        Me.dgvMPNodes.Name = "dgvMPNodes"
+        Me.dgvMPNodes.Size = New System.Drawing.Size(518, 328)
+        Me.dgvMPNodes.TabIndex = 3
+        '
+        'chkNodeDump
+        '
+        Me.chkNodeDump.AutoSize = True
+        Me.chkNodeDump.BackColor = System.Drawing.Color.LightGray
+        Me.chkNodeDump.Location = New System.Drawing.Point(65, 359)
+        Me.chkNodeDump.Name = "chkNodeDump"
+        Me.chkNodeDump.Size = New System.Drawing.Size(83, 17)
+        Me.chkNodeDump.TabIndex = 2
+        Me.chkNodeDump.Text = "Extract data"
+        Me.chkNodeDump.UseVisualStyleBackColor = False
+        '
+        'txtNodeCount
+        '
+        Me.txtNodeCount.Location = New System.Drawing.Point(65, 382)
+        Me.txtNodeCount.Name = "txtNodeCount"
+        Me.txtNodeCount.Size = New System.Drawing.Size(61, 20)
+        Me.txtNodeCount.TabIndex = 1
+        '
         'txtMPNodes
         '
-        Me.txtMPNodes.Location = New System.Drawing.Point(65, 199)
+        Me.txtMPNodes.Location = New System.Drawing.Point(65, 60)
         Me.txtMPNodes.Multiline = True
         Me.txtMPNodes.Name = "txtMPNodes"
-        Me.txtMPNodes.Size = New System.Drawing.Size(386, 325)
+        Me.txtMPNodes.Size = New System.Drawing.Size(386, 198)
         Me.txtMPNodes.TabIndex = 0
+        Me.txtMPNodes.Visible = False
         '
         'Form1
         '
@@ -1172,6 +1206,7 @@ Partial Class Form1
         CType(Me.nmbCrtNum, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabMPNodes.ResumeLayout(False)
         Me.tabMPNodes.PerformLayout()
+        CType(Me.dgvMPNodes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1264,4 +1299,7 @@ Partial Class Form1
     Friend WithEvents txtSouls As TextBox
     Friend WithEvents tabMPNodes As TabPage
     Friend WithEvents txtMPNodes As TextBox
+    Friend WithEvents txtNodeCount As TextBox
+    Friend WithEvents chkNodeDump As CheckBox
+    Friend WithEvents dgvMPNodes As DataGridView
 End Class
