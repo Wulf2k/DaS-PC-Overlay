@@ -29,6 +29,8 @@ Public Class Form1
     Public Const PROCESS_VM_WRITE = (&H20)
     Public Const PROCESS_ALL_ACCESS = &H1F0FFF
 
+    Dim ForceIdPtr As Integer
+
 
     Dim debug As Boolean
     Dim beta As Boolean
@@ -286,7 +288,6 @@ Public Class Form1
 
         Dim bytes(&H10) As Byte
 
-
         ReadProcessMemory(_targetProcessHandle, addr, bytes, &H10, vbNull)
 
         While (cont And loc < &H10)
@@ -338,7 +339,9 @@ Public Class Form1
     Public Sub WriteBytes(ByVal addr As IntPtr, val As Byte())
         WriteProcessMemory(_targetProcessHandle, addr, val, val.Length, Nothing)
     End Sub
-
+    Public Sub WriteAsciiStr(addr As UInteger, str As String)
+        WriteProcessMemory(_targetProcessHandle, addr, System.Text.Encoding.ASCII.GetBytes(str), str.Length, Nothing)
+    End Sub
 
     <System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint:="GetWindowRect")>
     Shared Function GetWindowRectangle(
@@ -365,167 +368,10 @@ Public Class Form1
 
         TryAttachToProcess("DARK SOULS")
 
-        dgvMPNodes.Columns.Add("Name", "Name")
-        dgvMPNodes.Columns(0).Width = 140
-        dgvMPNodes.Columns.Add("Steam ID", "Steam ID")
-        dgvMPNodes.Columns(1).Width = 140
-        dgvMPNodes.Columns(1).Visible = False
-        dgvMPNodes.Columns.Add("SL", "SL")
-        dgvMPNodes.Columns(2).Width = 60
-        dgvMPNodes.Columns.Add("Phantom Type", "Phantom Type")
-        dgvMPNodes.Columns(3).Width = 60
-        dgvMPNodes.Columns.Add("MP Area", "MP Area")
-        dgvMPNodes.Columns(4).Width = 60
-        dgvMPNodes.Columns.Add("World", "World")
-        dgvMPNodes.Columns(5).Width = 150
-
 
 
     End Sub
 
-    Private Sub refMpData_Tick() Handles refMpData.Tick
-        If debug Then
-            dbgboost = &H41C0
-        Else
-            dbgboost = 0
-        End If
-
-        Dim row(9) As String
-
-        Dim SteamNodesPtr As Integer
-        Dim SteamNodeList As Integer
-        Dim SteamData1 As Integer
-        Dim SteamData2 As Integer
-
-
-        txtNodeCount.Text = ReadInt32(&H1362DD0)
-        SteamNodeList = ReadInt32(&H1362DCC)
-        SteamNodesPtr = ReadInt32(SteamNodeList)
-
-        txtMPNodes.Text = ""
-
-        dgvMPNodes.Rows.Clear()
-
-
-
-        For i = 0 To Val(txtNodeCount.Text) - 1
-            SteamData1 = ReadInt32(SteamNodesPtr + &HC)
-            SteamData2 = ReadInt32(SteamData1 + &HC)
-            row(0) = ReadUnicodeStr(SteamData1 + &H30)
-            row(1) = ReadUnicodeStr(SteamData2 + &H30)
-
-
-            If Not SteamData1 = 0 Then
-                txtMPNodes.Text += ReadUnicodeStr(SteamData1 + &H30)
-            End If
-            txtMPNodes.Text += Environment.NewLine
-            SteamNodesPtr = ReadInt32(SteamNodesPtr)
-
-            dgvMPNodes.Rows.Add(row)
-        Next
-
-        Dim tmpptr As Integer = ReadInt32(&H137E204)
-        dgvMPNodes.Rows(0).Cells(2).Value = ReadInt32(tmpptr + &HA30)
-        dgvMPNodes.Rows(0).Cells(3).Value = ReadInt32(tmpptr + &HA28)
-        dgvMPNodes.Rows(0).Cells(4).Value = ReadInt32(tmpptr + &HA14)
-        dgvMPNodes.Rows(0).Cells(5).Value = ReadInt8(tmpptr + &HA13) & "-" & ReadInt8(tmpptr + &HA12)
-
-
-        Dim cont = True
-        Dim tmpid As String
-        Dim tmprow As Integer
-
-        tmpptr = nodeDumpPtr + &H200
-
-        While cont
-            tmpid = ReadAsciiStr(tmpptr)
-            cont = Not (tmpid = Nothing)
-
-            For i = 1 To dgvMPNodes.Rows.Count - 1
-                If (dgvMPNodes.Rows(i).Cells(1).Value = tmpid) And cont Then
-
-                    'SL
-                    dgvMPNodes.Rows(i).Cells(2).Value = ReadInt16(tmpptr + &H26)
-
-                    'Phantom
-                    dgvMPNodes.Rows(i).Cells(3).Value = ReadInt8(tmpptr + &H24)
-
-
-
-                    'Mp Area ID
-                    dgvMPNodes.Rows(i).Cells(4).Value = ReadInt32(tmpptr + &H28)
-
-                    'World
-                    tmpid = ReadInt8(tmpptr + &H13) & "-" & ReadInt8(tmpptr + &H12)
-
-                    dgvMPNodes.Rows(i).Cells(5).Value = tmpid
-                End If
-                WriteInt32(tmpptr, 0)
-            Next
-            tmpptr += &H30
-        End While
-
-
-        For i = 0 To dgvMPNodes.Rows.Count - 1
-            tmpid = dgvMPNodes.Rows(i).Cells(3).Value
-            Select Case tmpid
-                Case "0"
-                    tmpid = "Human"
-                Case "1"
-                    tmpid = "Co-op"
-                Case "2"
-                    tmpid = "Invader"
-                Case "8"
-                    tmpid = "Hollow"
-            End Select
-            dgvMPNodes.Rows(i).Cells(3).Value = tmpid
-
-            tmpid = dgvMPNodes.Rows(i).Cells(5).Value
-            Select Case tmpid
-                Case "-1--1"
-                    tmpid = "None"
-                Case "10-0"
-                    tmpid = "Depths"
-                Case "10-1"
-                    tmpid = "Undead Burg/Parish"
-                Case "10-2"
-                    tmpid = "Firelink Shrine"
-                Case "11-0"
-                    tmpid = "Painted World"
-                Case "12-0"
-                    tmpid = "Darkroot Garden"
-                Case "12-1"
-                    tmpid = "Oolacile"
-                Case "13-0"
-                    tmpid = "Catacombs"
-                Case "13-2"
-                    tmpid = "Ash Lake"
-                Case "14-0"
-                    tmpid = "Blighttown"
-                Case "14-1"
-                    tmpid = "Demon Ruins"
-                Case "15-0"
-                    tmpid = "Sen's Fortress"
-                Case "15-1"
-                    tmpid = "Anor Londo"
-                Case "16-0"
-                    tmpid = "New Londo Ruins"
-                Case "17-0"
-                    tmpid = "Duke's Archives / Caves"
-                Case "18-0"
-                    tmpid = "Kiln"
-                Case "18-1"
-                    tmpid = "Undead Asylum"
-            End Select
-            dgvMPNodes.Rows(i).Cells(5).Value = tmpid
-
-
-
-
-        Next
-
-
-    End Sub
 
     Private Sub refTimer_Tick() Handles refTimer.Tick
 
@@ -653,7 +499,9 @@ Public Class Form1
 
                 nmbCrtNum.Maximum = txtNumCreatures.Text
             Case 6
-
+                If ForceIdPtr > 0 Then
+                    lblAttemptCount.Text = "Attempts: " & ReadInt32(ForceIdPtr + &H120)
+                End If
 
 
 
@@ -1119,59 +967,54 @@ Public Class Form1
         cmbItemName.SelectedIndex = 0
     End Sub
 
-    Private Sub chkNodeDump_CheckedChanged(sender As Object, e As EventArgs) Handles chkNodeDump.CheckedChanged
-
-        Dim TargetBufferSize = 4096
-        Dim insertPtr As Integer
-        Dim dbgboost As Integer = 0
-
+    Private Sub chkForce_CheckedChanged(sender As Object, e As EventArgs) Handles chkForce.CheckedChanged
+        Dim TargetBufferSize = 1024
         Dim bytes() As Byte
         Dim bytes2() As Byte
 
-        Dim bytjmp As Integer = &H78
-
-        If chkNodeDump.Checked Then
-            If debug Then
-                MsgBox("This function is not currently available in debug.")
-                chkNodeDump.Checked = False
-            Else
-                insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
-                nodeDumpPtr = insertPtr
-
-                bytes = {&H50, &H53, &H51, &H52, &H56, &H57, &HBF, &H00, &H00, &H00, &H00, &HB8, &H00, &H00, &H00, &H00,
-                        &HBB, &H00, &H00, &H00, &H00, &HB9, &H00, &H00, &H00, &H00, &HBA, &H00, &H00, &H00, &H00, &H8A,
-                        &H1F, &H80, &HFB, &H00, &H0F, &H84, &H30, &H00, &H00, &H00, &H8A, &H06, &H8A, &H1F, &H46, &H47,
-                        &H41, &H38, &HD8, &H0F, &H85, &H13, &H00, &H00, &H00, &H83, &HF9, &H11, &H75, &HEC, &H29, &HCE,
-                        &H29, &HCF, &HB9, &H00, &H00, &H00, &H00, &HE9, &H0E, &H00, &H00, &H00, &H29, &HCE, &H29, &HCF,
-                        &HB9, &H00, &H00, &H00, &H00, &H83, &HC7, &H30, &HEB, &HC5, &H8A, &H1E, &H88, &H1F, &H46, &H47,
-                        &H41, &H83, &HF9, &H30, &H0F, &H84, &H02, &H00, &H00, &H00, &HEB, &HEE, &H5F, &H5E, &H5A, &H59,
-                        &H5B, &H58, &H66, &H0F, &HD6, &H46, &H14, &HE9, &H00, &H00, &H00, &H00}
-
-                'Adjust EDI
-                bytes2 = BitConverter.GetBytes(nodeDumpPtr + &H200)
-                Array.Copy(bytes2, 0, bytes, &H7, bytes2.Length)
-
-                'Adjust the jump home
-                bytes2 = BitConverter.GetBytes((&HBE637E - &H77 + dbgboost) - insertPtr)
-                Array.Copy(bytes2, 0, bytes, bytjmp, bytes2.Length)
-                WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
-
-                bytes = {&HE9, 0, 0, 0, 0}
-                bytes2 = BitConverter.GetBytes((insertPtr - (&HBE637E + dbgboost) - 5))
-                Array.Copy(bytes2, 0, bytes, 1, bytes2.Length)
-                WriteProcessMemory(_targetProcessHandle, (&HBE637E + dbgboost), bytes, bytes.Length, 0)
-                refMpData.Start()
-
+        'mov ESI,val = BE xx xx xx xx
+        If chkForce.Checked Then
+            If ForceIdPtr = 0 Then
+                ForceIdPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
             End If
+
+
+            bytes = {&H50, &H53, &H51, &H52, &HB8, 0, 0, 0, 0,
+                &H8B, &HD0, &H84, &HC0, &H0F, &H84, 0, 0, 0, 0,
+                &H8B, &H08, &H89, &H0B,
+                &H83, &HC0, &H04, &H83, &HC3, &H4, &H8B, &H08, &H89, &H0B,
+                &H83, &HC0, &H04, &H83, &HC3, &H4, &H8B, &H08, &H89, &H0B,
+                &H83, &HC0, &H04, &H83, &HC3, &H4, &H8B, &H08, &H89, &H0B,
+                &H83, &HC2, &H20, &H8A, &H02, &HFE, &HC0, &H88, &H02, &H90, &H90, &H90,
+                &H5A, &H59, &H5B, &H58,
+                &HE8, 0, 0, 0, 0,
+                &HE9, 0, 0, 0, 0}
+            bytes2 = BitConverter.GetBytes(ForceIdPtr + &H100)
+            Array.Copy(bytes2, 0, bytes, &H5, bytes2.Length)
+
+            'Handle original call
+            bytes2 = BitConverter.GetBytes((&HBE3C70 - &H4A + dbgboost) - ForceIdPtr)
+            Array.Copy(bytes2, 0, bytes, &H46, bytes2.Length)
+
+            'Handle return jump
+            bytes2 = BitConverter.GetBytes((&HFA1839 - &H4A + dbgboost) - ForceIdPtr)
+            Array.Copy(bytes2, 0, bytes, &H4B, bytes2.Length)
+
+            WriteAsciiStr(ForceIdPtr + &H100, txtSteamID.Text)
+            WriteProcessMemory(_targetProcessHandle, (ForceIdPtr + dbgboost), bytes, bytes.Length, 0)
+
+            bytes = {0, 0, 0, 0}
+            WriteProcessMemory(_targetProcessHandle, (ForceIdPtr + dbgboost + &H120), bytes, bytes.Length, 0)
+
+            'Handle jump to new code
+            bytes = {&HE9, 0, 0, 0, 0}
+            bytes2 = BitConverter.GetBytes((ForceIdPtr - (&HFA1839 + dbgboost) - 5))
+            Array.Copy(bytes2, 0, bytes, 1, bytes2.Length)
+            WriteProcessMemory(_targetProcessHandle, (&HFA1839 + dbgboost), bytes, bytes.Length, 0)
+
         Else
-            bytes = {&H66, &H0F, &HD6, &H46, &H14}
-            WriteProcessMemory(_targetProcessHandle, (&HBE637E + dbgboost), bytes, bytes.Length, 0)
-            refMpData.Stop()
-
+            bytes = {&HE8, &H32, &H24, &HC4, &HFF}
+            WriteProcessMemory(_targetProcessHandle, (&HFA1839 + dbgboost), bytes, bytes.Length, 0)
         End If
-
-
-
-
     End Sub
 End Class
