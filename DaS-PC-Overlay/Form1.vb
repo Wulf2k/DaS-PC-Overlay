@@ -449,19 +449,23 @@ Public Class Form1
                 If beta Then dbgboost = -&H1370
                 chkDebugDrawing.Checked = (ReadBytes(&HFA256C + dbgboost, 1)(0) = 1)
 
-                If debug Then dbgboost = &H41C0
-                tmpptr = ReadUInt32(&H1378520 + dbgboost)
-                tmpptr = ReadUInt32(tmpptr + &H10)
-                chkBrighterCam.Checked = (ReadBytes(tmpptr + &H26D, 1)(0) = 1)
-                nmbBrighterCam.Value = ReadFloat(tmpptr + &H270)
-                nmbContrast.Value = ReadFloat(tmpptr + &H280)
-
-                tmpptr = ReadUInt32(&H137E204 + dbgboost)
-                nmbMPChannel.Value = ReadBytes(tmpptr + &HB69, 1)(0)
+                If Not beta Then
 
 
-                'Only mapped for Debug
-                chkHide.Checked = (ReadBytes(&H137C6A8, 1)(0) = 1)
+                    If debug Then dbgboost = &H41C0
+                    tmpptr = ReadUInt32(&H1378520 + dbgboost)
+                    tmpptr = ReadUInt32(tmpptr + &H10)
+                    chkBrighterCam.Checked = (ReadBytes(tmpptr + &H26D, 1)(0) = 1)
+                    nmbBrighterCam.Value = ReadFloat(tmpptr + &H270)
+                    nmbContrast.Value = ReadFloat(tmpptr + &H280)
+
+                    tmpptr = ReadUInt32(&H137E204 + dbgboost)
+                    nmbMPChannel.Value = ReadBytes(tmpptr + &HB69, 1)(0)
+
+
+                    'Only mapped for Debug
+                    chkHide.Checked = (ReadBytes(&H137C6A8, 1)(0) = 1)
+                End If
 
 
 
