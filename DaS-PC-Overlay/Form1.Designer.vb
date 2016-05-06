@@ -110,35 +110,38 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtNumCreatures = New System.Windows.Forms.TextBox()
         Me.tabMPNodes = New System.Windows.Forms.TabPage()
+        Me.lblAttemptCount = New System.Windows.Forms.Label()
         Me.txtSteamID = New System.Windows.Forms.TextBox()
         Me.chkForce = New System.Windows.Forms.CheckBox()
-        Me.lblAttemptCount = New System.Windows.Forms.Label()
-        Me.tabs.SuspendLayout()
-        Me.tabMain.SuspendLayout()
-        Me.tabItems.SuspendLayout()
-        CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabDebug.SuspendLayout()
-        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabStats.SuspendLayout()
-        CType(Me.nmbSoulLevel, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbVitality, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbAttunement, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbEnd, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbStr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbDex, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbResistance, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbIntelligence, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbFaith, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabLUA.SuspendLayout()
-        Me.tabCreatures.SuspendLayout()
-        CType(Me.nmbCrtNum, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabMPNodes.SuspendLayout()
-        Me.SuspendLayout()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.nmbIndictments = New System.Windows.Forms.NumericUpDown()
+        Me.tabs.SuspendLayout
+        Me.tabMain.SuspendLayout
+        Me.tabItems.SuspendLayout
+        CType(Me.nmbItemCount,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabDebug.SuspendLayout
+        CType(Me.nmbMPChannel,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbContrast,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbBrighterCam,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabStats.SuspendLayout
+        CType(Me.nmbSoulLevel,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbVitality,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbAttunement,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbEnd,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbStr,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbDex,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbResistance,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbIntelligence,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbFaith,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbTeamType,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbPhantomType,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbHumanity,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabLUA.SuspendLayout
+        Me.tabCreatures.SuspendLayout
+        CType(Me.nmbCrtNum,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabMPNodes.SuspendLayout
+        CType(Me.nmbIndictments,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'tabs
         '
@@ -195,44 +198,44 @@ Partial Class Form1
         '
         'chkOverlay
         '
-        Me.chkOverlay.AutoSize = True
+        Me.chkOverlay.AutoSize = true
         Me.chkOverlay.BackColor = System.Drawing.Color.LightGray
-        Me.chkOverlay.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkOverlay.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkOverlay.Location = New System.Drawing.Point(19, 335)
         Me.chkOverlay.Name = "chkOverlay"
         Me.chkOverlay.Size = New System.Drawing.Size(98, 20)
         Me.chkOverlay.TabIndex = 47
         Me.chkOverlay.Text = "720 Overlay"
-        Me.chkOverlay.UseVisualStyleBackColor = False
+        Me.chkOverlay.UseVisualStyleBackColor = false
         '
         'chkMouseMove
         '
-        Me.chkMouseMove.AutoSize = True
+        Me.chkMouseMove.AutoSize = true
         Me.chkMouseMove.BackColor = System.Drawing.Color.LightGray
-        Me.chkMouseMove.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkMouseMove.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkMouseMove.Location = New System.Drawing.Point(19, 315)
         Me.chkMouseMove.Name = "chkMouseMove"
         Me.chkMouseMove.Size = New System.Drawing.Size(121, 20)
         Me.chkMouseMove.TabIndex = 46
         Me.chkMouseMove.Text = "CtrlMouseMove"
-        Me.chkMouseMove.UseVisualStyleBackColor = False
+        Me.chkMouseMove.UseVisualStyleBackColor = false
         '
         'btnSuicide
         '
         Me.btnSuicide.BackColor = System.Drawing.Color.LightGray
-        Me.btnSuicide.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSuicide.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnSuicide.Location = New System.Drawing.Point(83, 123)
         Me.btnSuicide.Name = "btnSuicide"
         Me.btnSuicide.Size = New System.Drawing.Size(16, 24)
         Me.btnSuicide.TabIndex = 45
         Me.btnSuicide.Text = "X"
-        Me.btnSuicide.UseVisualStyleBackColor = False
+        Me.btnSuicide.UseVisualStyleBackColor = false
         '
         'lblBonfire
         '
-        Me.lblBonfire.AutoSize = True
+        Me.lblBonfire.AutoSize = true
         Me.lblBonfire.BackColor = System.Drawing.Color.LightGray
-        Me.lblBonfire.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBonfire.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblBonfire.Location = New System.Drawing.Point(889, 751)
         Me.lblBonfire.Name = "lblBonfire"
         Me.lblBonfire.Size = New System.Drawing.Size(78, 16)
@@ -242,8 +245,8 @@ Partial Class Form1
         'cmbBonfire
         '
         Me.cmbBonfire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbBonfire.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbBonfire.FormattingEnabled = True
+        Me.cmbBonfire.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.cmbBonfire.FormattingEnabled = true
         Me.cmbBonfire.Location = New System.Drawing.Point(973, 747)
         Me.cmbBonfire.Name = "cmbBonfire"
         Me.cmbBonfire.Size = New System.Drawing.Size(296, 24)
@@ -251,9 +254,9 @@ Partial Class Form1
         '
         'lblStam
         '
-        Me.lblStam.AutoSize = True
+        Me.lblStam.AutoSize = true
         Me.lblStam.BackColor = System.Drawing.Color.LightGray
-        Me.lblStam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblStam.Location = New System.Drawing.Point(186, 148)
         Me.lblStam.Name = "lblStam"
         Me.lblStam.Size = New System.Drawing.Size(63, 16)
@@ -262,9 +265,9 @@ Partial Class Form1
         '
         'lblHP
         '
-        Me.lblHP.AutoSize = True
+        Me.lblHP.AutoSize = true
         Me.lblHP.BackColor = System.Drawing.Color.LightGray
-        Me.lblHP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblHP.Location = New System.Drawing.Point(186, 127)
         Me.lblHP.Name = "lblHP"
         Me.lblHP.Size = New System.Drawing.Size(36, 16)
@@ -273,9 +276,9 @@ Partial Class Form1
         '
         'lblFacing
         '
-        Me.lblFacing.AutoSize = True
+        Me.lblFacing.AutoSize = true
         Me.lblFacing.BackColor = System.Drawing.Color.LightGray
-        Me.lblFacing.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFacing.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblFacing.Location = New System.Drawing.Point(73, 193)
         Me.lblFacing.Name = "lblFacing"
         Me.lblFacing.Size = New System.Drawing.Size(55, 16)
@@ -284,9 +287,9 @@ Partial Class Form1
         '
         'lblZpos
         '
-        Me.lblZpos.AutoSize = True
+        Me.lblZpos.AutoSize = true
         Me.lblZpos.BackColor = System.Drawing.Color.LightGray
-        Me.lblZpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblZpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblZpos.Location = New System.Drawing.Point(73, 268)
         Me.lblZpos.Name = "lblZpos"
         Me.lblZpos.Size = New System.Drawing.Size(48, 16)
@@ -295,9 +298,9 @@ Partial Class Form1
         '
         'lblYpos
         '
-        Me.lblYpos.AutoSize = True
+        Me.lblYpos.AutoSize = true
         Me.lblYpos.BackColor = System.Drawing.Color.LightGray
-        Me.lblYpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblYpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblYpos.Location = New System.Drawing.Point(73, 243)
         Me.lblYpos.Name = "lblYpos"
         Me.lblYpos.Size = New System.Drawing.Size(49, 16)
@@ -306,9 +309,9 @@ Partial Class Form1
         '
         'lblXpos
         '
-        Me.lblXpos.AutoSize = True
+        Me.lblXpos.AutoSize = true
         Me.lblXpos.BackColor = System.Drawing.Color.LightGray
-        Me.lblXpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblXpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblXpos.Location = New System.Drawing.Point(73, 218)
         Me.lblXpos.Name = "lblXpos"
         Me.lblXpos.Size = New System.Drawing.Size(48, 16)
@@ -317,26 +320,26 @@ Partial Class Form1
         '
         'chkLockPos
         '
-        Me.chkLockPos.AutoSize = True
+        Me.chkLockPos.AutoSize = true
         Me.chkLockPos.BackColor = System.Drawing.Color.LightGray
-        Me.chkLockPos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkLockPos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkLockPos.Location = New System.Drawing.Point(19, 295)
         Me.chkLockPos.Name = "chkLockPos"
         Me.chkLockPos.Size = New System.Drawing.Size(80, 20)
         Me.chkLockPos.TabIndex = 36
         Me.chkLockPos.Text = "LockPos"
-        Me.chkLockPos.UseVisualStyleBackColor = False
+        Me.chkLockPos.UseVisualStyleBackColor = false
         '
         'btnZMinus
         '
         Me.btnZMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnZMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnZMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnZMinus.Location = New System.Drawing.Point(45, 266)
         Me.btnZMinus.Name = "btnZMinus"
         Me.btnZMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnZMinus.TabIndex = 35
         Me.btnZMinus.Text = "-"
-        Me.btnZMinus.UseVisualStyleBackColor = False
+        Me.btnZMinus.UseVisualStyleBackColor = false
         '
         'btnZMinusMinus
         '
@@ -346,18 +349,18 @@ Partial Class Form1
         Me.btnZMinusMinus.Size = New System.Drawing.Size(30, 23)
         Me.btnZMinusMinus.TabIndex = 34
         Me.btnZMinusMinus.Text = "--"
-        Me.btnZMinusMinus.UseVisualStyleBackColor = False
+        Me.btnZMinusMinus.UseVisualStyleBackColor = false
         '
         'btnYMinus
         '
         Me.btnYMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnYMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnYMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnYMinus.Location = New System.Drawing.Point(45, 241)
         Me.btnYMinus.Name = "btnYMinus"
         Me.btnYMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnYMinus.TabIndex = 33
         Me.btnYMinus.Text = "-"
-        Me.btnYMinus.UseVisualStyleBackColor = False
+        Me.btnYMinus.UseVisualStyleBackColor = false
         '
         'btnYMinusMinus
         '
@@ -367,18 +370,18 @@ Partial Class Form1
         Me.btnYMinusMinus.Size = New System.Drawing.Size(30, 23)
         Me.btnYMinusMinus.TabIndex = 32
         Me.btnYMinusMinus.Text = "--"
-        Me.btnYMinusMinus.UseVisualStyleBackColor = False
+        Me.btnYMinusMinus.UseVisualStyleBackColor = false
         '
         'btnXMinus
         '
         Me.btnXMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnXMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnXMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnXMinus.Location = New System.Drawing.Point(45, 216)
         Me.btnXMinus.Name = "btnXMinus"
         Me.btnXMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnXMinus.TabIndex = 31
         Me.btnXMinus.Text = "-"
-        Me.btnXMinus.UseVisualStyleBackColor = False
+        Me.btnXMinus.UseVisualStyleBackColor = false
         '
         'btnXMinusMinus
         '
@@ -388,115 +391,115 @@ Partial Class Form1
         Me.btnXMinusMinus.Size = New System.Drawing.Size(30, 23)
         Me.btnXMinusMinus.TabIndex = 30
         Me.btnXMinusMinus.Text = "--"
-        Me.btnXMinusMinus.UseVisualStyleBackColor = False
+        Me.btnXMinusMinus.UseVisualStyleBackColor = false
         '
         'btnZPlus
         '
         Me.btnZPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnZPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnZPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnZPlus.Location = New System.Drawing.Point(184, 266)
         Me.btnZPlus.Name = "btnZPlus"
         Me.btnZPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnZPlus.TabIndex = 29
         Me.btnZPlus.Text = "+"
-        Me.btnZPlus.UseVisualStyleBackColor = False
+        Me.btnZPlus.UseVisualStyleBackColor = false
         '
         'btnZPlusPlus
         '
         Me.btnZPlusPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnZPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnZPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnZPlusPlus.Location = New System.Drawing.Point(201, 266)
         Me.btnZPlusPlus.Name = "btnZPlusPlus"
         Me.btnZPlusPlus.Size = New System.Drawing.Size(30, 23)
         Me.btnZPlusPlus.TabIndex = 28
         Me.btnZPlusPlus.Text = "++"
-        Me.btnZPlusPlus.UseVisualStyleBackColor = False
+        Me.btnZPlusPlus.UseVisualStyleBackColor = false
         '
         'btnYPlus
         '
         Me.btnYPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnYPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnYPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnYPlus.Location = New System.Drawing.Point(184, 241)
         Me.btnYPlus.Name = "btnYPlus"
         Me.btnYPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnYPlus.TabIndex = 27
         Me.btnYPlus.Text = "+"
-        Me.btnYPlus.UseVisualStyleBackColor = False
+        Me.btnYPlus.UseVisualStyleBackColor = false
         '
         'btnYPlusPlus
         '
         Me.btnYPlusPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnYPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnYPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnYPlusPlus.Location = New System.Drawing.Point(201, 241)
         Me.btnYPlusPlus.Name = "btnYPlusPlus"
         Me.btnYPlusPlus.Size = New System.Drawing.Size(30, 23)
         Me.btnYPlusPlus.TabIndex = 26
         Me.btnYPlusPlus.Text = "++"
-        Me.btnYPlusPlus.UseVisualStyleBackColor = False
+        Me.btnYPlusPlus.UseVisualStyleBackColor = false
         '
         'btnXPlus
         '
         Me.btnXPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnXPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnXPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnXPlus.Location = New System.Drawing.Point(184, 216)
         Me.btnXPlus.Name = "btnXPlus"
         Me.btnXPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnXPlus.TabIndex = 25
         Me.btnXPlus.Text = "+"
-        Me.btnXPlus.UseVisualStyleBackColor = False
+        Me.btnXPlus.UseVisualStyleBackColor = false
         '
         'btnXPlusPlus
         '
         Me.btnXPlusPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnXPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnXPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnXPlusPlus.Location = New System.Drawing.Point(201, 216)
         Me.btnXPlusPlus.Name = "btnXPlusPlus"
         Me.btnXPlusPlus.Size = New System.Drawing.Size(30, 23)
         Me.btnXPlusPlus.TabIndex = 24
         Me.btnXPlusPlus.Text = "++"
-        Me.btnXPlusPlus.UseVisualStyleBackColor = False
+        Me.btnXPlusPlus.UseVisualStyleBackColor = false
         '
         'chkSetDeadMode
         '
-        Me.chkSetDeadMode.AutoSize = True
+        Me.chkSetDeadMode.AutoSize = true
         Me.chkSetDeadMode.BackColor = System.Drawing.Color.LightGray
-        Me.chkSetDeadMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSetDeadMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkSetDeadMode.Location = New System.Drawing.Point(19, 707)
         Me.chkSetDeadMode.Name = "chkSetDeadMode"
         Me.chkSetDeadMode.Size = New System.Drawing.Size(116, 20)
         Me.chkSetDeadMode.TabIndex = 23
         Me.chkSetDeadMode.Text = "SetDeadMode"
-        Me.chkSetDeadMode.UseVisualStyleBackColor = False
+        Me.chkSetDeadMode.UseVisualStyleBackColor = false
         '
         'chkNoMapHit
         '
-        Me.chkNoMapHit.AutoSize = True
+        Me.chkNoMapHit.AutoSize = true
         Me.chkNoMapHit.BackColor = System.Drawing.Color.LightGray
-        Me.chkNoMapHit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkNoMapHit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkNoMapHit.Location = New System.Drawing.Point(19, 727)
         Me.chkNoMapHit.Name = "chkNoMapHit"
         Me.chkNoMapHit.Size = New System.Drawing.Size(117, 20)
         Me.chkNoMapHit.TabIndex = 22
         Me.chkNoMapHit.Text = "DisableMapHit"
-        Me.chkNoMapHit.UseVisualStyleBackColor = False
+        Me.chkNoMapHit.UseVisualStyleBackColor = false
         '
         'chkNoGrav
         '
-        Me.chkNoGrav.AutoSize = True
+        Me.chkNoGrav.AutoSize = true
         Me.chkNoGrav.BackColor = System.Drawing.Color.LightGray
-        Me.chkNoGrav.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkNoGrav.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkNoGrav.Location = New System.Drawing.Point(19, 747)
         Me.chkNoGrav.Name = "chkNoGrav"
         Me.chkNoGrav.Size = New System.Drawing.Size(116, 20)
         Me.chkNoGrav.TabIndex = 21
         Me.chkNoGrav.Text = "DisableGravity"
-        Me.chkNoGrav.UseVisualStyleBackColor = False
+        Me.chkNoGrav.UseVisualStyleBackColor = false
         '
         'lblRelease
         '
-        Me.lblRelease.AutoSize = True
+        Me.lblRelease.AutoSize = true
         Me.lblRelease.BackColor = System.Drawing.Color.LightGray
-        Me.lblRelease.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRelease.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblRelease.Location = New System.Drawing.Point(6, 3)
         Me.lblRelease.Name = "lblRelease"
         Me.lblRelease.Size = New System.Drawing.Size(166, 16)
@@ -518,7 +521,7 @@ Partial Class Form1
         '
         'nmbItemCount
         '
-        Me.nmbItemCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbItemCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbItemCount.Location = New System.Drawing.Point(411, 742)
         Me.nmbItemCount.Name = "nmbItemCount"
         Me.nmbItemCount.Size = New System.Drawing.Size(47, 22)
@@ -528,8 +531,8 @@ Partial Class Form1
         'cmbItemName
         '
         Me.cmbItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbItemName.FormattingEnabled = True
+        Me.cmbItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.cmbItemName.FormattingEnabled = true
         Me.cmbItemName.Location = New System.Drawing.Point(152, 741)
         Me.cmbItemName.Name = "cmbItemName"
         Me.cmbItemName.Size = New System.Drawing.Size(253, 24)
@@ -538,8 +541,8 @@ Partial Class Form1
         'cmbItemCat
         '
         Me.cmbItemCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbItemCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbItemCat.FormattingEnabled = True
+        Me.cmbItemCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.cmbItemCat.FormattingEnabled = true
         Me.cmbItemCat.Items.AddRange(New Object() {"Weapons", "Armor", "Rings", "Goods"})
         Me.cmbItemCat.Location = New System.Drawing.Point(20, 741)
         Me.cmbItemCat.Name = "cmbItemCat"
@@ -549,13 +552,13 @@ Partial Class Form1
         'btnDropItem
         '
         Me.btnDropItem.BackColor = System.Drawing.Color.LightGray
-        Me.btnDropItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDropItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnDropItem.Location = New System.Drawing.Point(464, 742)
         Me.btnDropItem.Name = "btnDropItem"
         Me.btnDropItem.Size = New System.Drawing.Size(75, 23)
         Me.btnDropItem.TabIndex = 47
         Me.btnDropItem.Text = "DropItem"
-        Me.btnDropItem.UseVisualStyleBackColor = False
+        Me.btnDropItem.UseVisualStyleBackColor = false
         '
         'tabDebug
         '
@@ -580,9 +583,9 @@ Partial Class Form1
         '
         'Label6
         '
-        Me.Label6.AutoSize = True
+        Me.Label6.AutoSize = true
         Me.Label6.BackColor = System.Drawing.Color.LightGray
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label6.Location = New System.Drawing.Point(13, 441)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 16)
@@ -591,7 +594,7 @@ Partial Class Form1
         '
         'nmbMPChannel
         '
-        Me.nmbMPChannel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbMPChannel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbMPChannel.Location = New System.Drawing.Point(106, 439)
         Me.nmbMPChannel.Name = "nmbMPChannel"
         Me.nmbMPChannel.Size = New System.Drawing.Size(53, 22)
@@ -599,9 +602,9 @@ Partial Class Form1
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
+        Me.Label5.AutoSize = true
         Me.Label5.BackColor = System.Drawing.Color.LightGray
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label5.Location = New System.Drawing.Point(172, 393)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(57, 16)
@@ -611,7 +614,7 @@ Partial Class Form1
         'nmbContrast
         '
         Me.nmbContrast.DecimalPlaces = 1
-        Me.nmbContrast.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbContrast.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbContrast.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.nmbContrast.Location = New System.Drawing.Point(174, 412)
         Me.nmbContrast.Name = "nmbContrast"
@@ -620,9 +623,9 @@ Partial Class Form1
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
+        Me.Label4.AutoSize = true
         Me.Label4.BackColor = System.Drawing.Color.LightGray
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label4.Location = New System.Drawing.Point(99, 393)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 16)
@@ -632,7 +635,7 @@ Partial Class Form1
         'nmbBrighterCam
         '
         Me.nmbBrighterCam.DecimalPlaces = 1
-        Me.nmbBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbBrighterCam.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.nmbBrighterCam.Location = New System.Drawing.Point(106, 412)
         Me.nmbBrighterCam.Name = "nmbBrighterCam"
@@ -641,67 +644,69 @@ Partial Class Form1
         '
         'chkBrighterCam
         '
-        Me.chkBrighterCam.AutoSize = True
+        Me.chkBrighterCam.AutoSize = true
         Me.chkBrighterCam.BackColor = System.Drawing.Color.LightGray
-        Me.chkBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkBrighterCam.Location = New System.Drawing.Point(16, 412)
         Me.chkBrighterCam.Name = "chkBrighterCam"
         Me.chkBrighterCam.Size = New System.Drawing.Size(70, 20)
         Me.chkBrighterCam.TabIndex = 22
         Me.chkBrighterCam.Text = "Enable"
-        Me.chkBrighterCam.UseVisualStyleBackColor = False
+        Me.chkBrighterCam.UseVisualStyleBackColor = false
         '
         'chkHide
         '
-        Me.chkHide.AutoSize = True
+        Me.chkHide.AutoSize = true
         Me.chkHide.BackColor = System.Drawing.Color.LightGray
-        Me.chkHide.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkHide.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkHide.Location = New System.Drawing.Point(16, 554)
         Me.chkHide.Name = "chkHide"
         Me.chkHide.Size = New System.Drawing.Size(98, 20)
         Me.chkHide.TabIndex = 21
         Me.chkHide.Text = "Player Hide"
-        Me.chkHide.UseVisualStyleBackColor = False
+        Me.chkHide.UseVisualStyleBackColor = false
         '
         'chkDebugDrawing
         '
-        Me.chkDebugDrawing.AutoSize = True
+        Me.chkDebugDrawing.AutoSize = true
         Me.chkDebugDrawing.BackColor = System.Drawing.Color.LightGray
-        Me.chkDebugDrawing.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkDebugDrawing.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkDebugDrawing.Location = New System.Drawing.Point(16, 673)
         Me.chkDebugDrawing.Name = "chkDebugDrawing"
         Me.chkDebugDrawing.Size = New System.Drawing.Size(146, 20)
         Me.chkDebugDrawing.TabIndex = 20
         Me.chkDebugDrawing.Text = "Debugging Drawing"
-        Me.chkDebugDrawing.UseVisualStyleBackColor = False
+        Me.chkDebugDrawing.UseVisualStyleBackColor = false
         '
         'chkSelfVagrant
         '
-        Me.chkSelfVagrant.AutoSize = True
+        Me.chkSelfVagrant.AutoSize = true
         Me.chkSelfVagrant.BackColor = System.Drawing.Color.LightGray
-        Me.chkSelfVagrant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSelfVagrant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkSelfVagrant.Location = New System.Drawing.Point(16, 633)
         Me.chkSelfVagrant.Name = "chkSelfVagrant"
         Me.chkSelfVagrant.Size = New System.Drawing.Size(100, 20)
         Me.chkSelfVagrant.TabIndex = 19
         Me.chkSelfVagrant.Text = "Self Vagrant"
-        Me.chkSelfVagrant.UseVisualStyleBackColor = False
+        Me.chkSelfVagrant.UseVisualStyleBackColor = false
         '
         'chkBoundingBoxes
         '
-        Me.chkBoundingBoxes.AutoSize = True
+        Me.chkBoundingBoxes.AutoSize = true
         Me.chkBoundingBoxes.BackColor = System.Drawing.Color.LightGray
-        Me.chkBoundingBoxes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkBoundingBoxes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.chkBoundingBoxes.Location = New System.Drawing.Point(16, 653)
         Me.chkBoundingBoxes.Name = "chkBoundingBoxes"
         Me.chkBoundingBoxes.Size = New System.Drawing.Size(125, 20)
         Me.chkBoundingBoxes.TabIndex = 18
         Me.chkBoundingBoxes.Text = "Bounding Boxes"
-        Me.chkBoundingBoxes.UseVisualStyleBackColor = False
+        Me.chkBoundingBoxes.UseVisualStyleBackColor = false
         '
         'tabStats
         '
         Me.tabStats.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabStats.Controls.Add(Me.Label18)
+        Me.tabStats.Controls.Add(Me.nmbIndictments)
         Me.tabStats.Controls.Add(Me.Label17)
         Me.tabStats.Controls.Add(Me.txtSouls)
         Me.tabStats.Controls.Add(Me.Label16)
@@ -736,9 +741,9 @@ Partial Class Form1
         '
         'Label17
         '
-        Me.Label17.AutoSize = True
+        Me.Label17.AutoSize = true
         Me.Label17.BackColor = System.Drawing.Color.LightGray
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label17.Location = New System.Drawing.Point(53, 677)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(42, 16)
@@ -754,9 +759,9 @@ Partial Class Form1
         '
         'Label16
         '
-        Me.Label16.AutoSize = True
+        Me.Label16.AutoSize = true
         Me.Label16.BackColor = System.Drawing.Color.LightGray
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label16.Location = New System.Drawing.Point(53, 654)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(71, 16)
@@ -765,7 +770,7 @@ Partial Class Form1
         '
         'nmbSoulLevel
         '
-        Me.nmbSoulLevel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbSoulLevel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbSoulLevel.Location = New System.Drawing.Point(132, 650)
         Me.nmbSoulLevel.Maximum = New Decimal(New Integer() {1024, 0, 0, 0})
         Me.nmbSoulLevel.Name = "nmbSoulLevel"
@@ -774,9 +779,9 @@ Partial Class Form1
         '
         'Label12
         '
-        Me.Label12.AutoSize = True
+        Me.Label12.AutoSize = true
         Me.Label12.BackColor = System.Drawing.Color.LightGray
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label12.Location = New System.Drawing.Point(53, 447)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(47, 16)
@@ -785,7 +790,7 @@ Partial Class Form1
         '
         'nmbVitality
         '
-        Me.nmbVitality.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbVitality.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbVitality.Location = New System.Drawing.Point(132, 443)
         Me.nmbVitality.Name = "nmbVitality"
         Me.nmbVitality.Size = New System.Drawing.Size(47, 22)
@@ -793,9 +798,9 @@ Partial Class Form1
         '
         'Label13
         '
-        Me.Label13.AutoSize = True
+        Me.Label13.AutoSize = true
         Me.Label13.BackColor = System.Drawing.Color.LightGray
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label13.Location = New System.Drawing.Point(53, 470)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(74, 16)
@@ -804,7 +809,7 @@ Partial Class Form1
         '
         'nmbAttunement
         '
-        Me.nmbAttunement.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbAttunement.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbAttunement.Location = New System.Drawing.Point(132, 466)
         Me.nmbAttunement.Name = "nmbAttunement"
         Me.nmbAttunement.Size = New System.Drawing.Size(47, 22)
@@ -812,9 +817,9 @@ Partial Class Form1
         '
         'Label14
         '
-        Me.Label14.AutoSize = True
+        Me.Label14.AutoSize = true
         Me.Label14.BackColor = System.Drawing.Color.LightGray
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label14.Location = New System.Drawing.Point(53, 493)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(73, 16)
@@ -823,7 +828,7 @@ Partial Class Form1
         '
         'nmbEnd
         '
-        Me.nmbEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbEnd.Location = New System.Drawing.Point(132, 489)
         Me.nmbEnd.Name = "nmbEnd"
         Me.nmbEnd.Size = New System.Drawing.Size(47, 22)
@@ -831,9 +836,9 @@ Partial Class Form1
         '
         'Label15
         '
-        Me.Label15.AutoSize = True
+        Me.Label15.AutoSize = true
         Me.Label15.BackColor = System.Drawing.Color.LightGray
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label15.Location = New System.Drawing.Point(53, 516)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(57, 16)
@@ -842,7 +847,7 @@ Partial Class Form1
         '
         'nmbStr
         '
-        Me.nmbStr.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbStr.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbStr.Location = New System.Drawing.Point(132, 512)
         Me.nmbStr.Name = "nmbStr"
         Me.nmbStr.Size = New System.Drawing.Size(47, 22)
@@ -850,9 +855,9 @@ Partial Class Form1
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
+        Me.Label11.AutoSize = true
         Me.Label11.BackColor = System.Drawing.Color.LightGray
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label11.Location = New System.Drawing.Point(53, 539)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(60, 16)
@@ -861,7 +866,7 @@ Partial Class Form1
         '
         'nmbDex
         '
-        Me.nmbDex.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbDex.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbDex.Location = New System.Drawing.Point(132, 535)
         Me.nmbDex.Name = "nmbDex"
         Me.nmbDex.Size = New System.Drawing.Size(47, 22)
@@ -869,9 +874,9 @@ Partial Class Form1
         '
         'Label10
         '
-        Me.Label10.AutoSize = True
+        Me.Label10.AutoSize = true
         Me.Label10.BackColor = System.Drawing.Color.LightGray
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label10.Location = New System.Drawing.Point(53, 562)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(76, 16)
@@ -880,7 +885,7 @@ Partial Class Form1
         '
         'nmbResistance
         '
-        Me.nmbResistance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbResistance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbResistance.Location = New System.Drawing.Point(132, 558)
         Me.nmbResistance.Name = "nmbResistance"
         Me.nmbResistance.Size = New System.Drawing.Size(47, 22)
@@ -888,9 +893,9 @@ Partial Class Form1
         '
         'Label9
         '
-        Me.Label9.AutoSize = True
+        Me.Label9.AutoSize = true
         Me.Label9.BackColor = System.Drawing.Color.LightGray
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label9.Location = New System.Drawing.Point(53, 585)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(76, 16)
@@ -899,7 +904,7 @@ Partial Class Form1
         '
         'nmbIntelligence
         '
-        Me.nmbIntelligence.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbIntelligence.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbIntelligence.Location = New System.Drawing.Point(132, 581)
         Me.nmbIntelligence.Name = "nmbIntelligence"
         Me.nmbIntelligence.Size = New System.Drawing.Size(47, 22)
@@ -907,9 +912,9 @@ Partial Class Form1
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
+        Me.Label8.AutoSize = true
         Me.Label8.BackColor = System.Drawing.Color.LightGray
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label8.Location = New System.Drawing.Point(53, 608)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(37, 16)
@@ -918,7 +923,7 @@ Partial Class Form1
         '
         'nmbFaith
         '
-        Me.nmbFaith.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbFaith.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbFaith.Location = New System.Drawing.Point(132, 604)
         Me.nmbFaith.Name = "nmbFaith"
         Me.nmbFaith.Size = New System.Drawing.Size(47, 22)
@@ -926,9 +931,9 @@ Partial Class Form1
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        Me.Label3.AutoSize = true
         Me.Label3.BackColor = System.Drawing.Color.LightGray
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label3.Location = New System.Drawing.Point(38, 291)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 16)
@@ -937,7 +942,7 @@ Partial Class Form1
         '
         'nmbTeamType
         '
-        Me.nmbTeamType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbTeamType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbTeamType.Location = New System.Drawing.Point(123, 287)
         Me.nmbTeamType.Name = "nmbTeamType"
         Me.nmbTeamType.Size = New System.Drawing.Size(47, 22)
@@ -945,9 +950,9 @@ Partial Class Form1
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        Me.Label2.AutoSize = true
         Me.Label2.BackColor = System.Drawing.Color.LightGray
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label2.Location = New System.Drawing.Point(21, 268)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 16)
@@ -956,7 +961,7 @@ Partial Class Form1
         '
         'nmbPhantomType
         '
-        Me.nmbPhantomType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbPhantomType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbPhantomType.Location = New System.Drawing.Point(123, 264)
         Me.nmbPhantomType.Name = "nmbPhantomType"
         Me.nmbPhantomType.Size = New System.Drawing.Size(47, 22)
@@ -964,9 +969,9 @@ Partial Class Form1
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
+        Me.Label1.AutoSize = true
         Me.Label1.BackColor = System.Drawing.Color.LightGray
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label1.Location = New System.Drawing.Point(53, 631)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 16)
@@ -975,7 +980,7 @@ Partial Class Form1
         '
         'nmbHumanity
         '
-        Me.nmbHumanity.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbHumanity.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbHumanity.Location = New System.Drawing.Point(132, 627)
         Me.nmbHumanity.Name = "nmbHumanity"
         Me.nmbHumanity.Size = New System.Drawing.Size(47, 22)
@@ -999,7 +1004,7 @@ Partial Class Form1
         '
         'txtFuncParam5
         '
-        Me.txtFuncParam5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFuncParam5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtFuncParam5.Location = New System.Drawing.Point(257, 717)
         Me.txtFuncParam5.Name = "txtFuncParam5"
         Me.txtFuncParam5.Size = New System.Drawing.Size(55, 22)
@@ -1008,7 +1013,7 @@ Partial Class Form1
         '
         'txtFuncParam4
         '
-        Me.txtFuncParam4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFuncParam4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtFuncParam4.Location = New System.Drawing.Point(196, 717)
         Me.txtFuncParam4.Name = "txtFuncParam4"
         Me.txtFuncParam4.Size = New System.Drawing.Size(55, 22)
@@ -1017,7 +1022,7 @@ Partial Class Form1
         '
         'txtFuncParam3
         '
-        Me.txtFuncParam3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFuncParam3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtFuncParam3.Location = New System.Drawing.Point(135, 717)
         Me.txtFuncParam3.Name = "txtFuncParam3"
         Me.txtFuncParam3.Size = New System.Drawing.Size(55, 22)
@@ -1026,7 +1031,7 @@ Partial Class Form1
         '
         'txtFuncParam2
         '
-        Me.txtFuncParam2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFuncParam2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtFuncParam2.Location = New System.Drawing.Point(74, 717)
         Me.txtFuncParam2.Name = "txtFuncParam2"
         Me.txtFuncParam2.Size = New System.Drawing.Size(55, 22)
@@ -1035,7 +1040,7 @@ Partial Class Form1
         '
         'txtFuncParam1
         '
-        Me.txtFuncParam1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFuncParam1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtFuncParam1.Location = New System.Drawing.Point(13, 717)
         Me.txtFuncParam1.Name = "txtFuncParam1"
         Me.txtFuncParam1.Size = New System.Drawing.Size(55, 22)
@@ -1045,19 +1050,19 @@ Partial Class Form1
         'btnFuncExecute
         '
         Me.btnFuncExecute.BackColor = System.Drawing.Color.LightGray
-        Me.btnFuncExecute.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFuncExecute.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnFuncExecute.Location = New System.Drawing.Point(272, 744)
         Me.btnFuncExecute.Name = "btnFuncExecute"
         Me.btnFuncExecute.Size = New System.Drawing.Size(75, 23)
         Me.btnFuncExecute.TabIndex = 59
         Me.btnFuncExecute.Text = "Execute"
-        Me.btnFuncExecute.UseVisualStyleBackColor = False
+        Me.btnFuncExecute.UseVisualStyleBackColor = false
         '
         'cmbFuncName
         '
         Me.cmbFuncName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbFuncName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbFuncName.FormattingEnabled = True
+        Me.cmbFuncName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.cmbFuncName.FormattingEnabled = true
         Me.cmbFuncName.Location = New System.Drawing.Point(13, 743)
         Me.cmbFuncName.Name = "cmbFuncName"
         Me.cmbFuncName.Size = New System.Drawing.Size(253, 24)
@@ -1079,17 +1084,17 @@ Partial Class Form1
         'btnCrtControl
         '
         Me.btnCrtControl.BackColor = System.Drawing.Color.LightGray
-        Me.btnCrtControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCrtControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.btnCrtControl.Location = New System.Drawing.Point(32, 290)
         Me.btnCrtControl.Name = "btnCrtControl"
         Me.btnCrtControl.Size = New System.Drawing.Size(128, 23)
         Me.btnCrtControl.TabIndex = 46
         Me.btnCrtControl.Text = "Control Creature"
-        Me.btnCrtControl.UseVisualStyleBackColor = False
+        Me.btnCrtControl.UseVisualStyleBackColor = false
         '
         'nmbCrtNum
         '
-        Me.nmbCrtNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nmbCrtNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.nmbCrtNum.Location = New System.Drawing.Point(166, 290)
         Me.nmbCrtNum.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nmbCrtNum.Name = "nmbCrtNum"
@@ -1099,9 +1104,9 @@ Partial Class Form1
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
+        Me.Label7.AutoSize = true
         Me.Label7.BackColor = System.Drawing.Color.LightGray
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.Label7.Location = New System.Drawing.Point(29, 265)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(131, 16)
@@ -1110,7 +1115,7 @@ Partial Class Form1
         '
         'txtNumCreatures
         '
-        Me.txtNumCreatures.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumCreatures.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.txtNumCreatures.Location = New System.Drawing.Point(166, 262)
         Me.txtNumCreatures.Name = "txtNumCreatures"
         Me.txtNumCreatures.Size = New System.Drawing.Size(100, 22)
@@ -1128,6 +1133,15 @@ Partial Class Form1
         Me.tabMPNodes.TabIndex = 6
         Me.tabMPNodes.Text = "mp nodes"
         '
+        'lblAttemptCount
+        '
+        Me.lblAttemptCount.AutoSize = true
+        Me.lblAttemptCount.Location = New System.Drawing.Point(62, 345)
+        Me.lblAttemptCount.Name = "lblAttemptCount"
+        Me.lblAttemptCount.Size = New System.Drawing.Size(45, 13)
+        Me.lblAttemptCount.TabIndex = 6
+        Me.lblAttemptCount.Text = "Label18"
+        '
         'txtSteamID
         '
         Me.txtSteamID.Location = New System.Drawing.Point(164, 306)
@@ -1137,67 +1151,78 @@ Partial Class Form1
         '
         'chkForce
         '
-        Me.chkForce.AutoSize = True
+        Me.chkForce.AutoSize = true
         Me.chkForce.BackColor = System.Drawing.Color.LightGray
         Me.chkForce.Location = New System.Drawing.Point(65, 306)
         Me.chkForce.Name = "chkForce"
         Me.chkForce.Size = New System.Drawing.Size(92, 17)
         Me.chkForce.TabIndex = 4
         Me.chkForce.Text = "Force Attempt"
-        Me.chkForce.UseVisualStyleBackColor = False
+        Me.chkForce.UseVisualStyleBackColor = false
         '
-        'lblAttemptCount
+        'Label18
         '
-        Me.lblAttemptCount.AutoSize = True
-        Me.lblAttemptCount.Location = New System.Drawing.Point(62, 345)
-        Me.lblAttemptCount.Name = "lblAttemptCount"
-        Me.lblAttemptCount.Size = New System.Drawing.Size(45, 13)
-        Me.lblAttemptCount.TabIndex = 6
-        Me.lblAttemptCount.Text = "Label18"
+        Me.Label18.AutoSize = true
+        Me.Label18.BackColor = System.Drawing.Color.LightGray
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label18.Location = New System.Drawing.Point(53, 714)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(75, 16)
+        Me.Label18.TabIndex = 27
+        Me.Label18.Text = "Indictments"
+        '
+        'nmbIndictments
+        '
+        Me.nmbIndictments.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.nmbIndictments.Location = New System.Drawing.Point(132, 712)
+        Me.nmbIndictments.Name = "nmbIndictments"
+        Me.nmbIndictments.Size = New System.Drawing.Size(47, 22)
+        Me.nmbIndictments.TabIndex = 26
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Fuchsia
         Me.ClientSize = New System.Drawing.Size(1319, 820)
         Me.Controls.Add(Me.tabs)
         Me.Name = "Form1"
         Me.Text = "Wulf's Dark Souls Overlay"
-        Me.tabs.ResumeLayout(False)
-        Me.tabMain.ResumeLayout(False)
-        Me.tabMain.PerformLayout()
-        Me.tabItems.ResumeLayout(False)
-        CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabDebug.ResumeLayout(False)
-        Me.tabDebug.PerformLayout()
-        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabStats.ResumeLayout(False)
-        Me.tabStats.PerformLayout()
-        CType(Me.nmbSoulLevel, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbVitality, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbAttunement, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbEnd, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbStr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbDex, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbResistance, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbIntelligence, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbFaith, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabLUA.ResumeLayout(False)
-        Me.tabLUA.PerformLayout()
-        Me.tabCreatures.ResumeLayout(False)
-        Me.tabCreatures.PerformLayout()
-        CType(Me.nmbCrtNum, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabMPNodes.ResumeLayout(False)
-        Me.tabMPNodes.PerformLayout()
-        Me.ResumeLayout(False)
+        Me.tabs.ResumeLayout(false)
+        Me.tabMain.ResumeLayout(false)
+        Me.tabMain.PerformLayout
+        Me.tabItems.ResumeLayout(false)
+        CType(Me.nmbItemCount,System.ComponentModel.ISupportInitialize).EndInit
+        Me.tabDebug.ResumeLayout(false)
+        Me.tabDebug.PerformLayout
+        CType(Me.nmbMPChannel,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbContrast,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbBrighterCam,System.ComponentModel.ISupportInitialize).EndInit
+        Me.tabStats.ResumeLayout(false)
+        Me.tabStats.PerformLayout
+        CType(Me.nmbSoulLevel,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbVitality,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbAttunement,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbEnd,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbStr,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbDex,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbResistance,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbIntelligence,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbFaith,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbTeamType,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbPhantomType,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbHumanity,System.ComponentModel.ISupportInitialize).EndInit
+        Me.tabLUA.ResumeLayout(false)
+        Me.tabLUA.PerformLayout
+        Me.tabCreatures.ResumeLayout(false)
+        Me.tabCreatures.PerformLayout
+        CType(Me.nmbCrtNum,System.ComponentModel.ISupportInitialize).EndInit
+        Me.tabMPNodes.ResumeLayout(false)
+        Me.tabMPNodes.PerformLayout
+        CType(Me.nmbIndictments,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
 
-    End Sub
+End Sub
     Friend WithEvents tabs As System.Windows.Forms.TabControl
     Friend WithEvents tabMain As System.Windows.Forms.TabPage
     Friend WithEvents tabDebug As System.Windows.Forms.TabPage
@@ -1289,4 +1314,6 @@ Partial Class Form1
     Friend WithEvents chkForce As CheckBox
     Friend WithEvents txtSteamID As TextBox
     Friend WithEvents lblAttemptCount As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents nmbIndictments As NumericUpDown
 End Class

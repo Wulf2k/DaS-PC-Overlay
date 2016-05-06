@@ -487,6 +487,9 @@ Public Class Form1
 
                 If Not txtSouls.Focused Then txtSouls.Text = ReadInt32(charptr2 + &H8C)
 
+                If Not nmbIndictments.Focused Then nmbIndictments.value = ReadInt32(charptr2 + &HEC)
+
+
 
             Case 5
                 If debug Then
