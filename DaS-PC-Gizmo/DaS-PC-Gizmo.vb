@@ -350,7 +350,7 @@ Public Class DaS_PC_Gizmo
     ) As Boolean
     End Function
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub DaS_PC_Gizmo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
         initClls()
@@ -877,51 +877,39 @@ Public Class DaS_PC_Gizmo
         ctrlkey = GetAsyncKeyState(Keys.ControlKey)
         shiftkey = GetAsyncKeyState(Keys.ShiftKey)
 
-        If ctrlkey And Not Form1.ctrlHeld Then
-            Form1.PosUpdate(True)
-            Form1.ctrlHeld = True
-            Form1.mouseStartXPos = MousePosition.X
-            Form1.mouseStartYPos = MousePosition.Y
-            Form1.charStartXPos = Form1.playerXpos
-            Form1.charstartZpos = Form1.playerZpos
+        If ctrlkey And Not DaS_PC_Gizmo.ctrlHeld Then
+            DaS_PC_Gizmo.PosUpdate(True)
+            DaS_PC_Gizmo.ctrlHeld = True
+            DaS_PC_Gizmo.mouseStartXPos = MousePosition.X
+            DaS_PC_Gizmo.mouseStartYPos = MousePosition.Y
+            DaS_PC_Gizmo.charStartXPos = DaS_PC_Gizmo.playerXpos
+            DaS_PC_Gizmo.charstartZpos = DaS_PC_Gizmo.playerZpos
         End If
 
-        If shiftkey And Not Form1.ctrlHeld Then
-            Form1.PosUpdate(True)
-            Form1.ctrlHeld = True
-            Form1.mouseStartYPos = MousePosition.Y
-            Form1.charstartYPos = Form1.playerYpos
+        If shiftkey And Not DaS_PC_Gizmo.ctrlHeld Then
+            DaS_PC_Gizmo.PosUpdate(True)
+            DaS_PC_Gizmo.ctrlHeld = True
+            DaS_PC_Gizmo.mouseStartYPos = MousePosition.Y
+            DaS_PC_Gizmo.charstartYPos = DaS_PC_Gizmo.playerYpos
         End If
 
         If ctrlkey Then
-            Form1.WriteFloat(Form1.charposdataptr + &H10, Form1.charStartXPos + (MousePosition.X - Form1.mouseStartXPos) * 0.1)
-            Form1.WriteFloat(Form1.charposdataptr + &H18, Form1.charstartZpos + (MousePosition.Y - Form1.mouseStartYPos) * 0.1)
+            DaS_PC_Gizmo.WriteFloat(DaS_PC_Gizmo.charposdataptr + &H10, DaS_PC_Gizmo.charStartXPos + (MousePosition.X - DaS_PC_Gizmo.mouseStartXPos) * 0.1)
+            DaS_PC_Gizmo.WriteFloat(DaS_PC_Gizmo.charposdataptr + &H18, DaS_PC_Gizmo.charstartZpos + (MousePosition.Y - DaS_PC_Gizmo.mouseStartYPos) * 0.1)
         End If
 
         If shiftkey Then
-            Form1.WriteFloat(Form1.charposdataptr + &H14, Form1.charstartYPos + (Form1.mouseStartYPos - MousePosition.Y) * 0.1)
+            DaS_PC_Gizmo.WriteFloat(DaS_PC_Gizmo.charposdataptr + &H14, DaS_PC_Gizmo.charstartYPos + (DaS_PC_Gizmo.mouseStartYPos - MousePosition.Y) * 0.1)
         End If
 
         If Not ctrlkey And Not shiftkey Then
-            Form1.ctrlHeld = False
-            Form1.PosUpdate(False)
+            DaS_PC_Gizmo.ctrlHeld = False
+            DaS_PC_Gizmo.PosUpdate(False)
         End If
     End Sub
 
     Private Sub chkTopMost_CheckedChanged(sender As Object, e As EventArgs) Handles chkOverlay.CheckedChanged
         Me.TopMost = chkOverlay.Checked
-        If chkOverlay.Checked Then
-            Me.TransparencyKey = Me.BackColor
-            Dim rect As New Rectangle
-            Dim hwnd As IntPtr = Process.GetProcessesByName("DARKSOULS").First.MainWindowHandle
-
-            GetWindowRectangle(hwnd, rect)
-
-            Me.Location = New Point(rect.X - 10, rect.Y - 90)
-        Else
-            Me.TransparencyKey = Color.Aqua
-        End If
-
     End Sub
 
 
