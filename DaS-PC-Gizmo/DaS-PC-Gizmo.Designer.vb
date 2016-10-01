@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class DaS_PC_Gizmo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -1186,7 +1186,7 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.Fuchsia
         Me.ClientSize = New System.Drawing.Size(1319, 820)
         Me.Controls.Add(Me.tabs)
-        Me.Name = "Form1"
+        Me.Name = "DaS_PC_Gizmo"
         Me.Text = "Wulf's Dark Souls Overlay"
         Me.tabs.ResumeLayout(false)
         Me.tabMain.ResumeLayout(false)

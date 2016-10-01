@@ -3,7 +3,7 @@ Imports System.Runtime.InteropServices
 Imports System.Threading
 
 
-Public Class Form1
+Public Class DaS_PC_Gizmo
 
     Private _Font As New Font("Courier New", 16)
 
