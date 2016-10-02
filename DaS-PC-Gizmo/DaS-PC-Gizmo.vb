@@ -31,6 +31,7 @@ Public Class DaS_PC_Gizmo
 
     Dim ForceIdPtr As Integer
 
+    Dim isHooked As Boolean = False
 
     Dim debug As Boolean
     Dim beta As Boolean
@@ -92,10 +93,10 @@ Public Class DaS_PC_Gizmo
     Dim playerMaxHP As Integer
     Dim playerMaxStam As Integer
 
-    Dim playerFacing As Integer
-    Dim playerXpos As Integer
-    Dim playerYpos As Integer
-    Dim playerZpos As Integer
+    Dim playerFacing As Decimal
+    Dim playerXpos As Decimal
+    Dim playerYpos As Decimal
+    Dim playerZpos As Decimal
 
     Dim ctrlHeld As Boolean
     Dim mouseStartXPos As Integer
@@ -104,39 +105,42 @@ Public Class DaS_PC_Gizmo
     Dim charstartYPos As Single
     Dim charstartZpos As Single
 
-
+    Dim luaParams = New Integer() {0, 0, 0, 0, 0}
+    Dim previousLuaParamText = New String() {"", "", "", "", ""}
 
     Private _targetProcess As Process = Nothing 'to keep track of it. not used yet.
     Private _targetProcessHandle As IntPtr = IntPtr.Zero 'Used for ReadProcessMemory
 
 
-    Public Function TryAttachToProcess(ByVal windowCaption As String) As Boolean
+    Public Function ScanForProcess(ByVal windowCaption As String, Optional automatic As Boolean = False) As Boolean
         Dim _allProcesses() As Process = Process.GetProcesses
         For Each pp As Process In _allProcesses
             If pp.MainWindowTitle.ToLower.Equals(windowCaption.ToLower) Then
                 'found it! proceed.
-                Return TryAttachToProcess(pp)
+                Return TryAttachToProcess(pp, automatic)
             End If
         Next
-        MessageBox.Show("Unable to find process '" & windowCaption & ".' Is running?")
         Return False
     End Function
-    Public Function TryAttachToProcess(ByVal proc As Process) As Boolean
-        If _targetProcessHandle = IntPtr.Zero Then 'not already attached
-            _targetProcess = proc
-            _targetProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, False, _targetProcess.Id)
-            If _targetProcessHandle = 0 Then
-                TryAttachToProcess = False
-                MessageBox.Show("OpenProcess() FAIL! Are you Administrator??")
-            Else
-                'if we get here, all connected and ready to use ReadProcessMemory()
-                TryAttachToProcess = True
-                'MessageBox.Show("OpenProcess() OK")
-            End If
-        Else
-            MessageBox.Show("Already attached! (Please Detach first?)")
-            TryAttachToProcess = False
+    Public Function TryAttachToProcess(ByVal proc As Process, Optional automatic As Boolean = False) As Boolean
+        If Not (_targetProcessHandle = IntPtr.Zero) Then
+            DetachFromProcess()
         End If
+
+        _targetProcess = proc
+        _targetProcessHandle = OpenProcess(PROCESS_ALL_ACCESS, False, _targetProcess.Id)
+        If _targetProcessHandle = 0 Then
+            If Not automatic Then 'Showing 2 message boxes as soon as you start the program is too annoying.
+                MessageBox.Show("Failed to attach to process.Please run Dark Souls PC Gizmo with administrative privileges.")
+            End If
+
+            Return False
+        Else
+            'if we get here, all connected and ready to use ReadProcessMemory()
+            Return True
+            'MessageBox.Show("OpenProcess() OK")
+        End If
+
     End Function
     Public Sub DetachFromProcess()
         If Not (_targetProcessHandle = IntPtr.Zero) Then
@@ -144,9 +148,9 @@ Public Class DaS_PC_Gizmo
             Try
                 CloseHandle(_targetProcessHandle)
                 _targetProcessHandle = IntPtr.Zero
-                MessageBox.Show("MemReader::Detach() OK")
+                'MessageBox.Show("MemReader::Detach() OK")
             Catch ex As Exception
-                MessageBox.Show("MemoryManager::DetachFromProcess::CloseHandle error " & Environment.NewLine & ex.Message)
+                MessageBox.Show("Warning: MemoryManager::DetachFromProcess::CloseHandle error " & Environment.NewLine & ex.Message)
             End Try
         End If
     End Sub
@@ -343,12 +347,12 @@ Public Class DaS_PC_Gizmo
         WriteProcessMemory(_targetProcessHandle, addr, System.Text.Encoding.ASCII.GetBytes(str), str.Length, Nothing)
     End Sub
 
-    <System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint:="GetWindowRect")>
-    Shared Function GetWindowRectangle(
-           ByVal [Handle] As IntPtr,
-           ByRef [Rectangle] As Rectangle
-    ) As Boolean
-    End Function
+    '<System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint:="GetWindowRect")>
+    'Shared Function GetWindowRectangle(
+    '       ByVal [Handle] As IntPtr,
+    '       ByRef [Rectangle] As Rectangle
+    ') As Boolean
+    'End Function
 
     Private Sub DaS_PC_Gizmo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -359,33 +363,64 @@ Public Class DaS_PC_Gizmo
         refTimer = New System.Windows.Forms.Timer
         refTimer.Interval = delay
         refTimer.Enabled = True
-        refTimer.Start()
 
         refMpData = New System.Windows.Forms.Timer
         refMpData.Interval = 10000
+        refMpData.Enabled = False
+
+        Dim autoFound = False
+        If ScanForProcess("DARK SOULS", True) Then
+            'Check if this process is even Dark Souls
+            checkDarkSoulsVersion()
+            If isHooked Then
+                autoFound = True
+            End If
+        End If
+
+        If Not autoFound Then
+            MessageBox.Show("Unable to find Dark Souls process automatically. Check to make sure that it is running and click the Select Process button to select the process.", "Process Scan Failed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub checkDarkSoulsVersion()
+        debug = False
+        beta = False
+        isHooked = True
         refTimer.Enabled = True
+        tabs.Enabled = True
 
+        If (ReadUInt32(&H400080) = &HCE9634B4&) Then
+            debug = True
+            dbgboost = &H41C0
+            lblRelease.Text = "Dark Souls (Debug Version)"
+        ElseIf (ReadUInt32(&H400080) = &HE91B11E2&) Then
+            beta = True
+            dbgboost = -&H3000
+            lblRelease.Text = "Dark Souls (Steamworks Beta)"
+        ElseIf (ReadUInt32(&H400080) = &HFC293654&) Then
+            lblRelease.Text = "Dark Souls (Latest Release Ver.)"
+        Else
+            lblRelease.Text = "None"
+            isHooked = False
+            refTimer.Enabled = False
+            tabs.Enabled = False
+        End If
 
-        TryAttachToProcess("DARK SOULS")
+        buttonApplyHook.Enabled = Not isHooked
+    End Sub
 
+    Private Sub refMpData_Tick() Handles refMpData.Tick
 
+        'DO MULTIPLAYER LOW-PRIORITY STUFF HERE
 
     End Sub
 
-
     Private Sub refTimer_Tick() Handles refTimer.Tick
 
-        debug = (ReadUInt32(&H400080) = &HCE9634B4&)
-        beta = (ReadUInt32(&H400080) = &HE91B11E2&)
+        checkDarkSoulsVersion()
 
-        If debug Then
-            dbgboost = &H41C0
-            lblRelease.Text = "Debug detected."
-        End If
-
-        If beta Then
-            dbgboost = -&H3000
-            lblRelease.Text = "Beta detected."
+        If Not isHooked Then
+            Return
         End If
 
         bonfireptr = ReadUInt32(&H13784A0 + dbgboost)
@@ -415,10 +450,10 @@ Public Class DaS_PC_Gizmo
                 playerYpos = ReadFloat(charposdataptr + &H14)
                 playerZpos = ReadFloat(charposdataptr + &H18)
 
-                lblFacing.Text = "Facing: " & playerFacing
-                lblXpos.Text = "X pos: " & playerXpos
-                lblYpos.Text = "Y pos: " & playerYpos
-                lblZpos.Text = "Z pos: " & playerZpos
+                lblFacing.Text = "Heading: " & playerFacing.ToString("0.00") & "°"
+                lblXpos.Text = playerXpos.ToString("0.00")
+                lblYpos.Text = playerYpos.ToString("0.00")
+                lblZpos.Text = playerZpos.ToString("0.00")
 
                 chkNoMapHit.Checked = ((ReadUInt32(charmapdataptr + &HC4) And &H10) = &H10)
                 chkNoGrav.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H4000) = &H4000)
@@ -487,7 +522,7 @@ Public Class DaS_PC_Gizmo
 
                 If Not txtSouls.Focused Then txtSouls.Text = ReadInt32(charptr2 + &H8C)
 
-                If Not nmbIndictments.Focused Then nmbIndictments.value = ReadInt32(charptr2 + &HEC)
+                If Not nmbIndictments.Focused Then nmbIndictments.Value = ReadInt32(charptr2 + &HEC)
 
 
 
@@ -502,15 +537,13 @@ Public Class DaS_PC_Gizmo
                 Dim crtstart As Integer = ReadInt32(crtdata + 4)
                 Dim crtend As Integer = ReadInt32(crtdata + 8)
 
-                txtNumCreatures.Text = ((crtend - crtstart) / 4)
-
-                nmbCrtNum.Maximum = txtNumCreatures.Text
+                nmbSelectedEntity.Maximum = ((crtend - crtstart) / 4)
+                lblNumEntities.Text = nmbSelectedEntity.Maximum.ToString()
             Case 6
                 If ForceIdPtr > 0 Then
                     lblAttemptCount.Text = "Attempts: " & ReadInt32(ForceIdPtr + &H120)
                 End If
-
-
+                refMpData.Enabled = True
 
         End Select
     End Sub
@@ -546,7 +579,7 @@ Public Class DaS_PC_Gizmo
         End If
         WriteUInt32(charptr1 + &H1FC, curval)
     End Sub
-    Private Sub chkSetDeadMode_CheckedChanged(sender As Object, e As EventArgs) Handles chkSetDeadMode.MouseClick
+    Private Sub chkSetDeadMode_CheckedChanged(sender As Object, e As EventArgs) Handles chkSetDeadMode.CheckedChanged
         Dim curval = ReadUInt32(charptr1 + &H1FC)
         If (curval And &H2000000) = &H2000000 Then
             curval -= &H2000000
@@ -554,6 +587,12 @@ Public Class DaS_PC_Gizmo
             curval += &H2000000
         End If
         WriteUInt32(charptr1 + &H1FC, curval)
+
+        If chkSetDeadMode.Checked Then
+            btnSuicide.Text = "This will still kill you."
+        Else
+            btnSuicide.Text = "Kill Self"
+        End If
     End Sub
 
     Private Sub btnXPlus_Click(sender As Object, e As EventArgs) Handles btnXPlus.Click
@@ -690,6 +729,8 @@ Public Class DaS_PC_Gizmo
             WriteBytes(tmpptr + &H26D, {0})
         End If
         chkBrighterCam.Checked = (ReadBytes(tmpptr + &H26D, 1)(0) = 1)
+        nmbContrast.Enabled = chkBrighterCam.Checked
+        nmbBrighterCam.Enabled = nmbContrast.Enabled
     End Sub
     Private Sub nmbBrighterCam_ValueChanged(sender As Object, e As EventArgs) Handles nmbBrighterCam.ValueChanged
         Dim tmpptr As UInteger
@@ -787,11 +828,7 @@ Public Class DaS_PC_Gizmo
         Dim bytes() As Byte
         Dim bytes2() As Byte
 
-        Dim bytParam5 As Integer = &H5
-        Dim bytParam4 As Integer = &HB
-        Dim bytParam3 As Integer = &H11
-        Dim bytParam2 As Integer = &H17
-        Dim bytParam1 As Integer = &H1D
+        Dim bytParams = New Integer() {&H5, &HB, &H11, &H17, &H1D}
         Dim bytJmp As Integer = &H23
 
         Dim dbgboost As Integer
@@ -806,25 +843,16 @@ Public Class DaS_PC_Gizmo
         bytes = {&H55, &H8B, &HEC, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HB8, 0, 0, 0, 0, &H50, &HE8, 0, 0, 0, 0, &H58, &H58, &H58, &H58, &H58, &H58, &H8B, &HE5, &H5D, &HC3}
         insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
 
-        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam5.Text))
-        Array.Copy(bytes2, 0, bytes, bytParam5, bytes2.Length)
-
-        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam4.Text))
-        Array.Copy(bytes2, 0, bytes, bytParam4, bytes2.Length)
-
-        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam3.Text))
-        Array.Copy(bytes2, 0, bytes, bytParam3, bytes2.Length)
-
-        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam2.Text))
-        Array.Copy(bytes2, 0, bytes, bytParam2, bytes2.Length)
-
-        bytes2 = BitConverter.GetBytes(Convert.ToInt32(txtFuncParam1.Text))
-        Array.Copy(bytes2, 0, bytes, bytParam1, bytes2.Length)
+        For i As Integer = 4 To 0 Step -1
+            bytes2 = BitConverter.GetBytes(luaParams(i))
+            Array.Copy(bytes2, 0, bytes, bytParams(i), bytes2.Length)
+        Next
 
         bytes2 = BitConverter.GetBytes(0 - ((insertPtr + bytJmp + 4) - (clsFuncLocs(cmbFuncName.SelectedItem) + dbgboost)))
         Array.Copy(bytes2, 0, bytes, bytJmp, bytes2.Length)
 
-        MsgBox(Hex(insertPtr))
+        'A little bit too annoying: MsgBox(Hex(insertPtr))
+        lblLastPointer.Text = Hex(insertPtr)
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
         CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)
@@ -843,7 +871,7 @@ Public Class DaS_PC_Gizmo
         Dim crtstart As Integer = ReadInt32(crtdata + 4)
         Dim crtend As Integer = ReadInt32(crtdata + 8)
 
-        Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbCrtNum.Value - 4)
+        Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbSelectedEntity.Value - 4)
         Dim crtdata3ptr As Integer = ReadInt32(crtdata1ptr + &H28)
 
         Dim camPtr As Integer = ReadInt32(&H137D648 + dbgboost) + &HEC
@@ -909,7 +937,7 @@ Public Class DaS_PC_Gizmo
     End Sub
 
     Private Sub chkTopMost_CheckedChanged(sender As Object, e As EventArgs) Handles chkOverlay.CheckedChanged
-        Me.TopMost = chkOverlay.Checked
+        Me.TopLevel = chkOverlay.Checked
     End Sub
 
 
@@ -975,12 +1003,12 @@ Public Class DaS_PC_Gizmo
 
 
             bytes = {&H50, &H53, &H51, &H52, &HB8, 0, 0, 0, 0,
-                &H8B, &HD0, &H84, &HC0, &H0F, &H84, 0, 0, 0, 0,
-                &H8B, &H08, &H89, &H0B,
-                &H83, &HC0, &H04, &H83, &HC3, &H4, &H8B, &H08, &H89, &H0B,
-                &H83, &HC0, &H04, &H83, &HC3, &H4, &H8B, &H08, &H89, &H0B,
-                &H83, &HC0, &H04, &H83, &HC3, &H4, &H8B, &H08, &H89, &H0B,
-                &H83, &HC2, &H20, &H8A, &H02, &HFE, &HC0, &H88, &H02, &H90, &H90, &H90,
+                &H8B, &HD0, &H84, &HC0, &HF, &H84, 0, 0, 0, 0,
+                &H8B, &H8, &H89, &HB,
+                &H83, &HC0, &H4, &H83, &HC3, &H4, &H8B, &H8, &H89, &HB,
+                &H83, &HC0, &H4, &H83, &HC3, &H4, &H8B, &H8, &H89, &HB,
+                &H83, &HC0, &H4, &H83, &HC3, &H4, &H8B, &H8, &H89, &HB,
+                &H83, &HC2, &H20, &H8A, &H2, &HFE, &HC0, &H88, &H2, &H90, &H90, &H90,
                 &H5A, &H59, &H5B, &H58,
                 &HE8, 0, 0, 0, 0,
                 &HE9, 0, 0, 0, 0}
@@ -1011,5 +1039,72 @@ Public Class DaS_PC_Gizmo
             bytes = {&HE8, &H32, &H24, &HC4, &HFF}
             WriteProcessMemory(_targetProcessHandle, (&HFA1839 + dbgboost), bytes, bytes.Length, 0)
         End If
+    End Sub
+
+    Private Sub nmbCrtNum_ValueChanged(sender As Object, e As EventArgs) Handles nmbSelectedEntity.ValueChanged
+        grpbSelectedEntity.Text = "Entity #" & nmbSelectedEntity.Value & ": "
+    End Sub
+
+    Private Sub removeNonIntLuaParamChars(txtBox As TextBox, paramIndex As Integer)
+        Dim chkStr = txtBox.Text.ToCharArray()
+        Dim newText = ""
+        luaParams(paramIndex) = 0
+        Dim nextDigit As Integer = 0
+        For i As Integer = chkStr.GetUpperBound(0) To 0 Step -1
+            If Integer.TryParse(chkStr(i), nextDigit) Then
+                luaParams(paramIndex) += (nextDigit * (10 ^ (chkStr.GetUpperBound(0) - i)))
+                newText = nextDigit & newText
+            End If
+        Next
+        previousLuaParamText(paramIndex) = newText
+        txtBox.Text = previousLuaParamText(paramIndex)
+    End Sub
+
+    Private Sub checkLuaParamTextChangeIgnore(textBox As TextBox, paramIndex As Integer)
+        If textBox.Text IsNot previousLuaParamText(paramIndex) Then
+            removeNonIntLuaParamChars(textBox, paramIndex)
+        End If
+    End Sub
+
+    Private Sub txtFuncParam1_TextChanged(sender As Object, e As EventArgs) Handles txtFuncParam1.TextChanged
+        checkLuaParamTextChangeIgnore(txtFuncParam1, 0)
+    End Sub
+
+    Private Sub txtFuncParam2_TextChanged(sender As Object, e As EventArgs) Handles txtFuncParam2.TextChanged
+        checkLuaParamTextChangeIgnore(txtFuncParam2, 1)
+    End Sub
+
+    Private Sub txtFuncParam3_TextChanged(sender As Object, e As EventArgs) Handles txtFuncParam3.TextChanged
+        checkLuaParamTextChangeIgnore(txtFuncParam3, 2)
+    End Sub
+
+    Private Sub txtFuncParam4_TextChanged(sender As Object, e As EventArgs) Handles txtFuncParam4.TextChanged
+        checkLuaParamTextChangeIgnore(txtFuncParam4, 3)
+    End Sub
+
+    Private Sub txtFuncParam5_TextChanged(sender As Object, e As EventArgs) Handles txtFuncParam5.TextChanged
+        checkLuaParamTextChangeIgnore(txtFuncParam5, 4)
+    End Sub
+
+    Private Sub buttonApplyHook_Click(sender As Object, e As EventArgs) Handles buttonApplyHook.Click
+        Dim procDialog = New SelectProcessPopup(Me)
+        Dim result = procDialog.ShowDialog()
+
+        If result = DialogResult.OK Then
+            ScanForProcess(procDialog.SelectedProcess)
+            checkDarkSoulsVersion()
+
+            If Not isHooked Then
+                MessageBox.Show("The selected process was not an instance of Dark Souls: Prepare to Die Edition on Steam.", "Invalid Process", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        End If
+    End Sub
+
+    Private Sub chkDebug_CheckedChanged(sender As Object, e As MouseEventArgs) Handles chkDebugDrawing.MouseClick
+
+    End Sub
+
+    Private Sub numRefreshRate_ValueChanged(sender As Object, e As EventArgs) Handles numRefreshRate.ValueChanged
+        refTimer.Interval = (1000.0 / numRefreshRate.Value)
     End Sub
 End Class

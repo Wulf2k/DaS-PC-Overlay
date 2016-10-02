@@ -24,35 +24,41 @@ Partial Class DaS_PC_Gizmo
     Private Sub InitializeComponent()
         Me.tabs = New System.Windows.Forms.TabControl()
         Me.tabMain = New System.Windows.Forms.TabPage()
-        Me.chkOverlay = New System.Windows.Forms.CheckBox()
-        Me.chkMouseMove = New System.Windows.Forms.CheckBox()
-        Me.btnSuicide = New System.Windows.Forms.Button()
-        Me.lblBonfire = New System.Windows.Forms.Label()
-        Me.cmbBonfire = New System.Windows.Forms.ComboBox()
-        Me.lblStam = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblHP = New System.Windows.Forms.Label()
+        Me.lblStam = New System.Windows.Forms.Label()
+        Me.chkSetDeadMode = New System.Windows.Forms.CheckBox()
+        Me.btnSuicide = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.chkMouseMove = New System.Windows.Forms.CheckBox()
+        Me.cmbBonfire = New System.Windows.Forms.ComboBox()
+        Me.lblBonfire = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.lblFacing = New System.Windows.Forms.Label()
-        Me.lblZpos = New System.Windows.Forms.Label()
-        Me.lblYpos = New System.Windows.Forms.Label()
-        Me.lblXpos = New System.Windows.Forms.Label()
+        Me.btnXMinusMinus = New System.Windows.Forms.Button()
+        Me.chkNoGrav = New System.Windows.Forms.CheckBox()
+        Me.chkNoMapHit = New System.Windows.Forms.CheckBox()
+        Me.btnXPlusPlus = New System.Windows.Forms.Button()
         Me.chkLockPos = New System.Windows.Forms.CheckBox()
+        Me.btnXPlus = New System.Windows.Forms.Button()
+        Me.btnYPlusPlus = New System.Windows.Forms.Button()
+        Me.btnYPlus = New System.Windows.Forms.Button()
+        Me.btnZPlusPlus = New System.Windows.Forms.Button()
+        Me.lblZpos = New System.Windows.Forms.Label()
+        Me.btnZPlus = New System.Windows.Forms.Button()
+        Me.lblYpos = New System.Windows.Forms.Label()
+        Me.btnXMinus = New System.Windows.Forms.Button()
+        Me.lblXpos = New System.Windows.Forms.Label()
+        Me.btnYMinusMinus = New System.Windows.Forms.Button()
+        Me.btnYMinus = New System.Windows.Forms.Button()
         Me.btnZMinus = New System.Windows.Forms.Button()
         Me.btnZMinusMinus = New System.Windows.Forms.Button()
-        Me.btnYMinus = New System.Windows.Forms.Button()
-        Me.btnYMinusMinus = New System.Windows.Forms.Button()
-        Me.btnXMinus = New System.Windows.Forms.Button()
-        Me.btnXMinusMinus = New System.Windows.Forms.Button()
-        Me.btnZPlus = New System.Windows.Forms.Button()
-        Me.btnZPlusPlus = New System.Windows.Forms.Button()
-        Me.btnYPlus = New System.Windows.Forms.Button()
-        Me.btnYPlusPlus = New System.Windows.Forms.Button()
-        Me.btnXPlus = New System.Windows.Forms.Button()
-        Me.btnXPlusPlus = New System.Windows.Forms.Button()
-        Me.chkSetDeadMode = New System.Windows.Forms.CheckBox()
-        Me.chkNoMapHit = New System.Windows.Forms.CheckBox()
-        Me.chkNoGrav = New System.Windows.Forms.CheckBox()
-        Me.lblRelease = New System.Windows.Forms.Label()
         Me.tabItems = New System.Windows.Forms.TabPage()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
         Me.nmbItemCount = New System.Windows.Forms.NumericUpDown()
         Me.cmbItemName = New System.Windows.Forms.ComboBox()
         Me.cmbItemCat = New System.Windows.Forms.ComboBox()
@@ -66,10 +72,11 @@ Partial Class DaS_PC_Gizmo
         Me.nmbBrighterCam = New System.Windows.Forms.NumericUpDown()
         Me.chkBrighterCam = New System.Windows.Forms.CheckBox()
         Me.chkHide = New System.Windows.Forms.CheckBox()
-        Me.chkDebugDrawing = New System.Windows.Forms.CheckBox()
         Me.chkSelfVagrant = New System.Windows.Forms.CheckBox()
         Me.chkBoundingBoxes = New System.Windows.Forms.CheckBox()
         Me.tabStats = New System.Windows.Forms.TabPage()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.nmbIndictments = New System.Windows.Forms.NumericUpDown()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txtSouls = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -97,6 +104,10 @@ Partial Class DaS_PC_Gizmo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.nmbHumanity = New System.Windows.Forms.NumericUpDown()
         Me.tabLUA = New System.Windows.Forms.TabPage()
+        Me.lblLastPointer = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.txtFuncParam5 = New System.Windows.Forms.TextBox()
         Me.txtFuncParam4 = New System.Windows.Forms.TextBox()
         Me.txtFuncParam3 = New System.Windows.Forms.TextBox()
@@ -105,46 +116,60 @@ Partial Class DaS_PC_Gizmo
         Me.btnFuncExecute = New System.Windows.Forms.Button()
         Me.cmbFuncName = New System.Windows.Forms.ComboBox()
         Me.tabCreatures = New System.Windows.Forms.TabPage()
+        Me.grpbSelectedEntity = New System.Windows.Forms.GroupBox()
         Me.btnCrtControl = New System.Windows.Forms.Button()
-        Me.nmbCrtNum = New System.Windows.Forms.NumericUpDown()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.lblNumEntities = New System.Windows.Forms.Label()
+        Me.nmbSelectedEntity = New System.Windows.Forms.NumericUpDown()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtNumCreatures = New System.Windows.Forms.TextBox()
         Me.tabMPNodes = New System.Windows.Forms.TabPage()
+        Me.chkDebugDrawing = New System.Windows.Forms.CheckBox()
         Me.lblAttemptCount = New System.Windows.Forms.Label()
         Me.txtSteamID = New System.Windows.Forms.TextBox()
         Me.chkForce = New System.Windows.Forms.CheckBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.nmbIndictments = New System.Windows.Forms.NumericUpDown()
-        Me.tabs.SuspendLayout
-        Me.tabMain.SuspendLayout
-        Me.tabItems.SuspendLayout
-        CType(Me.nmbItemCount,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tabDebug.SuspendLayout
-        CType(Me.nmbMPChannel,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbContrast,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbBrighterCam,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tabStats.SuspendLayout
-        CType(Me.nmbSoulLevel,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbVitality,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbAttunement,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbEnd,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbStr,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbDex,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbResistance,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbIntelligence,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbFaith,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbTeamType,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbPhantomType,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.nmbHumanity,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tabLUA.SuspendLayout
-        Me.tabCreatures.SuspendLayout
-        CType(Me.nmbCrtNum,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tabMPNodes.SuspendLayout
-        CType(Me.nmbIndictments,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        Me.chkOverlay = New System.Windows.Forms.CheckBox()
+        Me.lblRelease = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.buttonApplyHook = New System.Windows.Forms.Button()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.numRefreshRate = New System.Windows.Forms.NumericUpDown()
+        Me.tabs.SuspendLayout()
+        Me.tabMain.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.tabItems.SuspendLayout()
+        CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabDebug.SuspendLayout()
+        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabStats.SuspendLayout()
+        CType(Me.nmbIndictments, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbSoulLevel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbVitality, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbAttunement, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbEnd, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbStr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbDex, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbResistance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbIntelligence, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbFaith, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabLUA.SuspendLayout()
+        Me.tabCreatures.SuspendLayout()
+        Me.grpbSelectedEntity.SuspendLayout()
+        CType(Me.nmbSelectedEntity, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabMPNodes.SuspendLayout()
+        CType(Me.numRefreshRate, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'tabs
         '
+        Me.tabs.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabs.Controls.Add(Me.tabMain)
         Me.tabs.Controls.Add(Me.tabItems)
         Me.tabs.Controls.Add(Me.tabDebug)
@@ -152,417 +177,422 @@ Partial Class DaS_PC_Gizmo
         Me.tabs.Controls.Add(Me.tabLUA)
         Me.tabs.Controls.Add(Me.tabCreatures)
         Me.tabs.Controls.Add(Me.tabMPNodes)
-        Me.tabs.Location = New System.Drawing.Point(4, 12)
+        Me.tabs.Enabled = False
+        Me.tabs.Location = New System.Drawing.Point(4, 28)
         Me.tabs.Name = "tabs"
         Me.tabs.SelectedIndex = 0
-        Me.tabs.Size = New System.Drawing.Size(1312, 804)
+        Me.tabs.Size = New System.Drawing.Size(392, 479)
         Me.tabs.TabIndex = 3
         '
         'tabMain
         '
-        Me.tabMain.BackColor = System.Drawing.Color.Fuchsia
-        Me.tabMain.Controls.Add(Me.chkOverlay)
-        Me.tabMain.Controls.Add(Me.chkMouseMove)
-        Me.tabMain.Controls.Add(Me.btnSuicide)
-        Me.tabMain.Controls.Add(Me.lblBonfire)
-        Me.tabMain.Controls.Add(Me.cmbBonfire)
-        Me.tabMain.Controls.Add(Me.lblStam)
-        Me.tabMain.Controls.Add(Me.lblHP)
-        Me.tabMain.Controls.Add(Me.lblFacing)
-        Me.tabMain.Controls.Add(Me.lblZpos)
-        Me.tabMain.Controls.Add(Me.lblYpos)
-        Me.tabMain.Controls.Add(Me.lblXpos)
-        Me.tabMain.Controls.Add(Me.chkLockPos)
-        Me.tabMain.Controls.Add(Me.btnZMinus)
-        Me.tabMain.Controls.Add(Me.btnZMinusMinus)
-        Me.tabMain.Controls.Add(Me.btnYMinus)
-        Me.tabMain.Controls.Add(Me.btnYMinusMinus)
-        Me.tabMain.Controls.Add(Me.btnXMinus)
-        Me.tabMain.Controls.Add(Me.btnXMinusMinus)
-        Me.tabMain.Controls.Add(Me.btnZPlus)
-        Me.tabMain.Controls.Add(Me.btnZPlusPlus)
-        Me.tabMain.Controls.Add(Me.btnYPlus)
-        Me.tabMain.Controls.Add(Me.btnYPlusPlus)
-        Me.tabMain.Controls.Add(Me.btnXPlus)
-        Me.tabMain.Controls.Add(Me.btnXPlusPlus)
-        Me.tabMain.Controls.Add(Me.chkSetDeadMode)
-        Me.tabMain.Controls.Add(Me.chkNoMapHit)
-        Me.tabMain.Controls.Add(Me.chkNoGrav)
-        Me.tabMain.Controls.Add(Me.lblRelease)
+        Me.tabMain.AutoScroll = True
+        Me.tabMain.Controls.Add(Me.GroupBox2)
+        Me.tabMain.Controls.Add(Me.GroupBox1)
         Me.tabMain.Location = New System.Drawing.Point(4, 22)
         Me.tabMain.Name = "tabMain"
         Me.tabMain.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabMain.Size = New System.Drawing.Size(1304, 778)
+        Me.tabMain.Size = New System.Drawing.Size(384, 453)
         Me.tabMain.TabIndex = 0
-        Me.tabMain.Text = "Main"
+        Me.tabMain.Text = "Player"
         '
-        'chkOverlay
+        'GroupBox2
         '
-        Me.chkOverlay.AutoSize = true
-        Me.chkOverlay.BackColor = System.Drawing.Color.LightGray
-        Me.chkOverlay.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkOverlay.Location = New System.Drawing.Point(19, 335)
-        Me.chkOverlay.Name = "chkOverlay"
-        Me.chkOverlay.Size = New System.Drawing.Size(98, 20)
-        Me.chkOverlay.TabIndex = 47
-        Me.chkOverlay.Text = "720 Overlay"
-        Me.chkOverlay.UseVisualStyleBackColor = false
+        Me.GroupBox2.Controls.Add(Me.lblHP)
+        Me.GroupBox2.Controls.Add(Me.lblStam)
+        Me.GroupBox2.Controls.Add(Me.chkSetDeadMode)
+        Me.GroupBox2.Controls.Add(Me.btnSuicide)
+        Me.GroupBox2.Location = New System.Drawing.Point(40, 10)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(303, 116)
+        Me.GroupBox2.TabIndex = 48
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Status"
         '
-        'chkMouseMove
+        'lblHP
         '
-        Me.chkMouseMove.AutoSize = true
-        Me.chkMouseMove.BackColor = System.Drawing.Color.LightGray
-        Me.chkMouseMove.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkMouseMove.Location = New System.Drawing.Point(19, 315)
-        Me.chkMouseMove.Name = "chkMouseMove"
-        Me.chkMouseMove.Size = New System.Drawing.Size(121, 20)
-        Me.chkMouseMove.TabIndex = 46
-        Me.chkMouseMove.Text = "CtrlMouseMove"
-        Me.chkMouseMove.UseVisualStyleBackColor = false
+        Me.lblHP.AutoSize = True
+        Me.lblHP.Location = New System.Drawing.Point(13, 27)
+        Me.lblHP.Name = "lblHP"
+        Me.lblHP.Size = New System.Drawing.Size(31, 13)
+        Me.lblHP.TabIndex = 41
+        Me.lblHP.Text = "HP:  "
+        '
+        'lblStam
+        '
+        Me.lblStam.AutoSize = True
+        Me.lblStam.Location = New System.Drawing.Point(13, 40)
+        Me.lblStam.Name = "lblStam"
+        Me.lblStam.Size = New System.Drawing.Size(51, 13)
+        Me.lblStam.TabIndex = 42
+        Me.lblStam.Text = "Stamina: "
+        '
+        'chkSetDeadMode
+        '
+        Me.chkSetDeadMode.AutoSize = True
+        Me.chkSetDeadMode.Location = New System.Drawing.Point(16, 86)
+        Me.chkSetDeadMode.Name = "chkSetDeadMode"
+        Me.chkSetDeadMode.Size = New System.Drawing.Size(169, 17)
+        Me.chkSetDeadMode.TabIndex = 23
+        Me.chkSetDeadMode.Text = "Disable Dying (SetDeadMode)"
+        Me.chkSetDeadMode.UseVisualStyleBackColor = False
         '
         'btnSuicide
         '
-        Me.btnSuicide.BackColor = System.Drawing.Color.LightGray
-        Me.btnSuicide.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnSuicide.Location = New System.Drawing.Point(83, 123)
+        Me.btnSuicide.Location = New System.Drawing.Point(16, 56)
         Me.btnSuicide.Name = "btnSuicide"
-        Me.btnSuicide.Size = New System.Drawing.Size(16, 24)
+        Me.btnSuicide.Size = New System.Drawing.Size(111, 24)
         Me.btnSuicide.TabIndex = 45
-        Me.btnSuicide.Text = "X"
-        Me.btnSuicide.UseVisualStyleBackColor = false
+        Me.btnSuicide.Text = "Kill Self"
+        Me.btnSuicide.UseVisualStyleBackColor = False
         '
-        'lblBonfire
+        'GroupBox1
         '
-        Me.lblBonfire.AutoSize = true
-        Me.lblBonfire.BackColor = System.Drawing.Color.LightGray
-        Me.lblBonfire.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblBonfire.Location = New System.Drawing.Point(889, 751)
-        Me.lblBonfire.Name = "lblBonfire"
-        Me.lblBonfire.Size = New System.Drawing.Size(78, 16)
-        Me.lblBonfire.TabIndex = 44
-        Me.lblBonfire.Text = "Last Bonfire"
+        Me.GroupBox1.Controls.Add(Me.Label27)
+        Me.GroupBox1.Controls.Add(Me.chkMouseMove)
+        Me.GroupBox1.Controls.Add(Me.cmbBonfire)
+        Me.GroupBox1.Controls.Add(Me.lblBonfire)
+        Me.GroupBox1.Controls.Add(Me.Label24)
+        Me.GroupBox1.Controls.Add(Me.Label25)
+        Me.GroupBox1.Controls.Add(Me.Label26)
+        Me.GroupBox1.Controls.Add(Me.lblFacing)
+        Me.GroupBox1.Controls.Add(Me.btnXMinusMinus)
+        Me.GroupBox1.Controls.Add(Me.chkNoGrav)
+        Me.GroupBox1.Controls.Add(Me.chkNoMapHit)
+        Me.GroupBox1.Controls.Add(Me.btnXPlusPlus)
+        Me.GroupBox1.Controls.Add(Me.chkLockPos)
+        Me.GroupBox1.Controls.Add(Me.btnXPlus)
+        Me.GroupBox1.Controls.Add(Me.btnYPlusPlus)
+        Me.GroupBox1.Controls.Add(Me.btnYPlus)
+        Me.GroupBox1.Controls.Add(Me.btnZPlusPlus)
+        Me.GroupBox1.Controls.Add(Me.lblZpos)
+        Me.GroupBox1.Controls.Add(Me.btnZPlus)
+        Me.GroupBox1.Controls.Add(Me.lblYpos)
+        Me.GroupBox1.Controls.Add(Me.btnXMinus)
+        Me.GroupBox1.Controls.Add(Me.lblXpos)
+        Me.GroupBox1.Controls.Add(Me.btnYMinusMinus)
+        Me.GroupBox1.Controls.Add(Me.btnYMinus)
+        Me.GroupBox1.Controls.Add(Me.btnZMinus)
+        Me.GroupBox1.Controls.Add(Me.btnZMinusMinus)
+        Me.GroupBox1.Location = New System.Drawing.Point(40, 132)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(303, 306)
+        Me.GroupBox1.TabIndex = 47
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Location"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(19, 55)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(47, 13)
+        Me.Label27.TabIndex = 44
+        Me.Label27.Text = "Position:"
+        '
+        'chkMouseMove
+        '
+        Me.chkMouseMove.AutoSize = True
+        Me.chkMouseMove.Location = New System.Drawing.Point(22, 178)
+        Me.chkMouseMove.Name = "chkMouseMove"
+        Me.chkMouseMove.Size = New System.Drawing.Size(261, 17)
+        Me.chkMouseMove.TabIndex = 46
+        Me.chkMouseMove.Text = "Use Move Player Using Mouse When Holding Ctrl"
+        Me.chkMouseMove.UseVisualStyleBackColor = False
         '
         'cmbBonfire
         '
         Me.cmbBonfire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbBonfire.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.cmbBonfire.FormattingEnabled = true
-        Me.cmbBonfire.Location = New System.Drawing.Point(973, 747)
+        Me.cmbBonfire.FormattingEnabled = True
+        Me.cmbBonfire.Location = New System.Drawing.Point(43, 260)
         Me.cmbBonfire.Name = "cmbBonfire"
-        Me.cmbBonfire.Size = New System.Drawing.Size(296, 24)
+        Me.cmbBonfire.Size = New System.Drawing.Size(240, 21)
         Me.cmbBonfire.TabIndex = 43
         '
-        'lblStam
+        'lblBonfire
         '
-        Me.lblStam.AutoSize = true
-        Me.lblStam.BackColor = System.Drawing.Color.LightGray
-        Me.lblStam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblStam.Location = New System.Drawing.Point(186, 148)
-        Me.lblStam.Name = "lblStam"
-        Me.lblStam.Size = New System.Drawing.Size(63, 16)
-        Me.lblStam.TabIndex = 42
-        Me.lblStam.Text = "Stamina: "
+        Me.lblBonfire.AutoSize = True
+        Me.lblBonfire.Location = New System.Drawing.Point(19, 244)
+        Me.lblBonfire.Name = "lblBonfire"
+        Me.lblBonfire.Size = New System.Drawing.Size(66, 13)
+        Me.lblBonfire.TabIndex = 44
+        Me.lblBonfire.Text = "Last Bonfire:"
         '
-        'lblHP
+        'Label24
         '
-        Me.lblHP.AutoSize = true
-        Me.lblHP.BackColor = System.Drawing.Color.LightGray
-        Me.lblHP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblHP.Location = New System.Drawing.Point(186, 127)
-        Me.lblHP.Name = "lblHP"
-        Me.lblHP.Size = New System.Drawing.Size(36, 16)
-        Me.lblHP.TabIndex = 41
-        Me.lblHP.Text = "HP:  "
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(23, 131)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(20, 13)
+        Me.Label24.TabIndex = 43
+        Me.Label24.Text = "Z: "
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(23, 106)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(20, 13)
+        Me.Label25.TabIndex = 42
+        Me.Label25.Text = "Y: "
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(23, 81)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(20, 13)
+        Me.Label26.TabIndex = 41
+        Me.Label26.Text = "X: "
         '
         'lblFacing
         '
-        Me.lblFacing.AutoSize = true
-        Me.lblFacing.BackColor = System.Drawing.Color.LightGray
-        Me.lblFacing.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblFacing.Location = New System.Drawing.Point(73, 193)
+        Me.lblFacing.AutoSize = True
+        Me.lblFacing.Location = New System.Drawing.Point(19, 28)
         Me.lblFacing.Name = "lblFacing"
-        Me.lblFacing.Size = New System.Drawing.Size(55, 16)
+        Me.lblFacing.Size = New System.Drawing.Size(45, 13)
         Me.lblFacing.TabIndex = 40
         Me.lblFacing.Text = "Facing: "
         '
-        'lblZpos
-        '
-        Me.lblZpos.AutoSize = true
-        Me.lblZpos.BackColor = System.Drawing.Color.LightGray
-        Me.lblZpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblZpos.Location = New System.Drawing.Point(73, 268)
-        Me.lblZpos.Name = "lblZpos"
-        Me.lblZpos.Size = New System.Drawing.Size(48, 16)
-        Me.lblZpos.TabIndex = 39
-        Me.lblZpos.Text = "Z pos: "
-        '
-        'lblYpos
-        '
-        Me.lblYpos.AutoSize = true
-        Me.lblYpos.BackColor = System.Drawing.Color.LightGray
-        Me.lblYpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblYpos.Location = New System.Drawing.Point(73, 243)
-        Me.lblYpos.Name = "lblYpos"
-        Me.lblYpos.Size = New System.Drawing.Size(49, 16)
-        Me.lblYpos.TabIndex = 38
-        Me.lblYpos.Text = "Y pos: "
-        '
-        'lblXpos
-        '
-        Me.lblXpos.AutoSize = true
-        Me.lblXpos.BackColor = System.Drawing.Color.LightGray
-        Me.lblXpos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblXpos.Location = New System.Drawing.Point(73, 218)
-        Me.lblXpos.Name = "lblXpos"
-        Me.lblXpos.Size = New System.Drawing.Size(48, 16)
-        Me.lblXpos.TabIndex = 37
-        Me.lblXpos.Text = "X pos: "
-        '
-        'chkLockPos
-        '
-        Me.chkLockPos.AutoSize = true
-        Me.chkLockPos.BackColor = System.Drawing.Color.LightGray
-        Me.chkLockPos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkLockPos.Location = New System.Drawing.Point(19, 295)
-        Me.chkLockPos.Name = "chkLockPos"
-        Me.chkLockPos.Size = New System.Drawing.Size(80, 20)
-        Me.chkLockPos.TabIndex = 36
-        Me.chkLockPos.Text = "LockPos"
-        Me.chkLockPos.UseVisualStyleBackColor = false
-        '
-        'btnZMinus
-        '
-        Me.btnZMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnZMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnZMinus.Location = New System.Drawing.Point(45, 266)
-        Me.btnZMinus.Name = "btnZMinus"
-        Me.btnZMinus.Size = New System.Drawing.Size(18, 23)
-        Me.btnZMinus.TabIndex = 35
-        Me.btnZMinus.Text = "-"
-        Me.btnZMinus.UseVisualStyleBackColor = false
-        '
-        'btnZMinusMinus
-        '
-        Me.btnZMinusMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnZMinusMinus.Location = New System.Drawing.Point(15, 266)
-        Me.btnZMinusMinus.Name = "btnZMinusMinus"
-        Me.btnZMinusMinus.Size = New System.Drawing.Size(30, 23)
-        Me.btnZMinusMinus.TabIndex = 34
-        Me.btnZMinusMinus.Text = "--"
-        Me.btnZMinusMinus.UseVisualStyleBackColor = false
-        '
-        'btnYMinus
-        '
-        Me.btnYMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnYMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnYMinus.Location = New System.Drawing.Point(45, 241)
-        Me.btnYMinus.Name = "btnYMinus"
-        Me.btnYMinus.Size = New System.Drawing.Size(18, 23)
-        Me.btnYMinus.TabIndex = 33
-        Me.btnYMinus.Text = "-"
-        Me.btnYMinus.UseVisualStyleBackColor = false
-        '
-        'btnYMinusMinus
-        '
-        Me.btnYMinusMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnYMinusMinus.Location = New System.Drawing.Point(15, 241)
-        Me.btnYMinusMinus.Name = "btnYMinusMinus"
-        Me.btnYMinusMinus.Size = New System.Drawing.Size(30, 23)
-        Me.btnYMinusMinus.TabIndex = 32
-        Me.btnYMinusMinus.Text = "--"
-        Me.btnYMinusMinus.UseVisualStyleBackColor = false
-        '
-        'btnXMinus
-        '
-        Me.btnXMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnXMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnXMinus.Location = New System.Drawing.Point(45, 216)
-        Me.btnXMinus.Name = "btnXMinus"
-        Me.btnXMinus.Size = New System.Drawing.Size(18, 23)
-        Me.btnXMinus.TabIndex = 31
-        Me.btnXMinus.Text = "-"
-        Me.btnXMinus.UseVisualStyleBackColor = false
-        '
         'btnXMinusMinus
         '
-        Me.btnXMinusMinus.BackColor = System.Drawing.Color.LightGray
-        Me.btnXMinusMinus.Location = New System.Drawing.Point(15, 216)
+        Me.btnXMinusMinus.Location = New System.Drawing.Point(43, 76)
         Me.btnXMinusMinus.Name = "btnXMinusMinus"
         Me.btnXMinusMinus.Size = New System.Drawing.Size(30, 23)
         Me.btnXMinusMinus.TabIndex = 30
         Me.btnXMinusMinus.Text = "--"
-        Me.btnXMinusMinus.UseVisualStyleBackColor = false
+        Me.btnXMinusMinus.UseVisualStyleBackColor = False
         '
-        'btnZPlus
+        'chkNoGrav
         '
-        Me.btnZPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnZPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnZPlus.Location = New System.Drawing.Point(184, 266)
-        Me.btnZPlus.Name = "btnZPlus"
-        Me.btnZPlus.Size = New System.Drawing.Size(18, 23)
-        Me.btnZPlus.TabIndex = 29
-        Me.btnZPlus.Text = "+"
-        Me.btnZPlus.UseVisualStyleBackColor = false
+        Me.chkNoGrav.AutoSize = True
+        Me.chkNoGrav.Location = New System.Drawing.Point(22, 224)
+        Me.chkNoGrav.Name = "chkNoGrav"
+        Me.chkNoGrav.Size = New System.Drawing.Size(174, 17)
+        Me.chkNoGrav.TabIndex = 21
+        Me.chkNoGrav.Text = "Disable Gravity (DisableGravity)"
+        Me.chkNoGrav.UseVisualStyleBackColor = False
         '
-        'btnZPlusPlus
+        'chkNoMapHit
         '
-        Me.btnZPlusPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnZPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnZPlusPlus.Location = New System.Drawing.Point(201, 266)
-        Me.btnZPlusPlus.Name = "btnZPlusPlus"
-        Me.btnZPlusPlus.Size = New System.Drawing.Size(30, 23)
-        Me.btnZPlusPlus.TabIndex = 28
-        Me.btnZPlusPlus.Text = "++"
-        Me.btnZPlusPlus.UseVisualStyleBackColor = false
-        '
-        'btnYPlus
-        '
-        Me.btnYPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnYPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnYPlus.Location = New System.Drawing.Point(184, 241)
-        Me.btnYPlus.Name = "btnYPlus"
-        Me.btnYPlus.Size = New System.Drawing.Size(18, 23)
-        Me.btnYPlus.TabIndex = 27
-        Me.btnYPlus.Text = "+"
-        Me.btnYPlus.UseVisualStyleBackColor = false
-        '
-        'btnYPlusPlus
-        '
-        Me.btnYPlusPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnYPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnYPlusPlus.Location = New System.Drawing.Point(201, 241)
-        Me.btnYPlusPlus.Name = "btnYPlusPlus"
-        Me.btnYPlusPlus.Size = New System.Drawing.Size(30, 23)
-        Me.btnYPlusPlus.TabIndex = 26
-        Me.btnYPlusPlus.Text = "++"
-        Me.btnYPlusPlus.UseVisualStyleBackColor = false
-        '
-        'btnXPlus
-        '
-        Me.btnXPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnXPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnXPlus.Location = New System.Drawing.Point(184, 216)
-        Me.btnXPlus.Name = "btnXPlus"
-        Me.btnXPlus.Size = New System.Drawing.Size(18, 23)
-        Me.btnXPlus.TabIndex = 25
-        Me.btnXPlus.Text = "+"
-        Me.btnXPlus.UseVisualStyleBackColor = false
+        Me.chkNoMapHit.AutoSize = True
+        Me.chkNoMapHit.Location = New System.Drawing.Point(22, 201)
+        Me.chkNoMapHit.Name = "chkNoMapHit"
+        Me.chkNoMapHit.Size = New System.Drawing.Size(204, 17)
+        Me.chkNoMapHit.TabIndex = 22
+        Me.chkNoMapHit.Text = "Disable Map Collision (DisableMapHit)"
+        Me.chkNoMapHit.UseVisualStyleBackColor = False
         '
         'btnXPlusPlus
         '
-        Me.btnXPlusPlus.BackColor = System.Drawing.Color.LightGray
-        Me.btnXPlusPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnXPlusPlus.Location = New System.Drawing.Point(201, 216)
+        Me.btnXPlusPlus.Location = New System.Drawing.Point(229, 76)
         Me.btnXPlusPlus.Name = "btnXPlusPlus"
         Me.btnXPlusPlus.Size = New System.Drawing.Size(30, 23)
         Me.btnXPlusPlus.TabIndex = 24
         Me.btnXPlusPlus.Text = "++"
-        Me.btnXPlusPlus.UseVisualStyleBackColor = false
+        Me.btnXPlusPlus.UseVisualStyleBackColor = False
         '
-        'chkSetDeadMode
+        'chkLockPos
         '
-        Me.chkSetDeadMode.AutoSize = true
-        Me.chkSetDeadMode.BackColor = System.Drawing.Color.LightGray
-        Me.chkSetDeadMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkSetDeadMode.Location = New System.Drawing.Point(19, 707)
-        Me.chkSetDeadMode.Name = "chkSetDeadMode"
-        Me.chkSetDeadMode.Size = New System.Drawing.Size(116, 20)
-        Me.chkSetDeadMode.TabIndex = 23
-        Me.chkSetDeadMode.Text = "SetDeadMode"
-        Me.chkSetDeadMode.UseVisualStyleBackColor = false
+        Me.chkLockPos.AutoSize = True
+        Me.chkLockPos.Location = New System.Drawing.Point(43, 155)
+        Me.chkLockPos.Name = "chkLockPos"
+        Me.chkLockPos.Size = New System.Drawing.Size(114, 17)
+        Me.chkLockPos.TabIndex = 36
+        Me.chkLockPos.Text = "Hold Position Here"
+        Me.chkLockPos.UseVisualStyleBackColor = False
         '
-        'chkNoMapHit
+        'btnXPlus
         '
-        Me.chkNoMapHit.AutoSize = true
-        Me.chkNoMapHit.BackColor = System.Drawing.Color.LightGray
-        Me.chkNoMapHit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkNoMapHit.Location = New System.Drawing.Point(19, 727)
-        Me.chkNoMapHit.Name = "chkNoMapHit"
-        Me.chkNoMapHit.Size = New System.Drawing.Size(117, 20)
-        Me.chkNoMapHit.TabIndex = 22
-        Me.chkNoMapHit.Text = "DisableMapHit"
-        Me.chkNoMapHit.UseVisualStyleBackColor = false
+        Me.btnXPlus.Location = New System.Drawing.Point(212, 76)
+        Me.btnXPlus.Name = "btnXPlus"
+        Me.btnXPlus.Size = New System.Drawing.Size(18, 23)
+        Me.btnXPlus.TabIndex = 25
+        Me.btnXPlus.Text = "+"
+        Me.btnXPlus.UseVisualStyleBackColor = False
         '
-        'chkNoGrav
+        'btnYPlusPlus
         '
-        Me.chkNoGrav.AutoSize = true
-        Me.chkNoGrav.BackColor = System.Drawing.Color.LightGray
-        Me.chkNoGrav.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkNoGrav.Location = New System.Drawing.Point(19, 747)
-        Me.chkNoGrav.Name = "chkNoGrav"
-        Me.chkNoGrav.Size = New System.Drawing.Size(116, 20)
-        Me.chkNoGrav.TabIndex = 21
-        Me.chkNoGrav.Text = "DisableGravity"
-        Me.chkNoGrav.UseVisualStyleBackColor = false
+        Me.btnYPlusPlus.Location = New System.Drawing.Point(229, 101)
+        Me.btnYPlusPlus.Name = "btnYPlusPlus"
+        Me.btnYPlusPlus.Size = New System.Drawing.Size(30, 23)
+        Me.btnYPlusPlus.TabIndex = 26
+        Me.btnYPlusPlus.Text = "++"
+        Me.btnYPlusPlus.UseVisualStyleBackColor = False
         '
-        'lblRelease
+        'btnYPlus
         '
-        Me.lblRelease.AutoSize = true
-        Me.lblRelease.BackColor = System.Drawing.Color.LightGray
-        Me.lblRelease.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.lblRelease.Location = New System.Drawing.Point(6, 3)
-        Me.lblRelease.Name = "lblRelease"
-        Me.lblRelease.Size = New System.Drawing.Size(166, 16)
-        Me.lblRelease.TabIndex = 3
-        Me.lblRelease.Text = "Release version detected."
+        Me.btnYPlus.Location = New System.Drawing.Point(212, 101)
+        Me.btnYPlus.Name = "btnYPlus"
+        Me.btnYPlus.Size = New System.Drawing.Size(18, 23)
+        Me.btnYPlus.TabIndex = 27
+        Me.btnYPlus.Text = "+"
+        Me.btnYPlus.UseVisualStyleBackColor = False
+        '
+        'btnZPlusPlus
+        '
+        Me.btnZPlusPlus.Location = New System.Drawing.Point(229, 126)
+        Me.btnZPlusPlus.Name = "btnZPlusPlus"
+        Me.btnZPlusPlus.Size = New System.Drawing.Size(30, 23)
+        Me.btnZPlusPlus.TabIndex = 28
+        Me.btnZPlusPlus.Text = "++"
+        Me.btnZPlusPlus.UseVisualStyleBackColor = False
+        '
+        'lblZpos
+        '
+        Me.lblZpos.Location = New System.Drawing.Point(97, 126)
+        Me.lblZpos.Name = "lblZpos"
+        Me.lblZpos.Size = New System.Drawing.Size(109, 23)
+        Me.lblZpos.TabIndex = 39
+        Me.lblZpos.Text = "(Z POS)"
+        Me.lblZpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnZPlus
+        '
+        Me.btnZPlus.Location = New System.Drawing.Point(212, 126)
+        Me.btnZPlus.Name = "btnZPlus"
+        Me.btnZPlus.Size = New System.Drawing.Size(18, 23)
+        Me.btnZPlus.TabIndex = 29
+        Me.btnZPlus.Text = "+"
+        Me.btnZPlus.UseVisualStyleBackColor = False
+        '
+        'lblYpos
+        '
+        Me.lblYpos.Location = New System.Drawing.Point(97, 101)
+        Me.lblYpos.Name = "lblYpos"
+        Me.lblYpos.Size = New System.Drawing.Size(109, 23)
+        Me.lblYpos.TabIndex = 38
+        Me.lblYpos.Text = "(Y POS)"
+        Me.lblYpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnXMinus
+        '
+        Me.btnXMinus.Location = New System.Drawing.Point(73, 76)
+        Me.btnXMinus.Name = "btnXMinus"
+        Me.btnXMinus.Size = New System.Drawing.Size(18, 23)
+        Me.btnXMinus.TabIndex = 31
+        Me.btnXMinus.Text = "-"
+        Me.btnXMinus.UseVisualStyleBackColor = False
+        '
+        'lblXpos
+        '
+        Me.lblXpos.Location = New System.Drawing.Point(97, 76)
+        Me.lblXpos.Name = "lblXpos"
+        Me.lblXpos.Size = New System.Drawing.Size(109, 23)
+        Me.lblXpos.TabIndex = 37
+        Me.lblXpos.Text = "(X POS)"
+        Me.lblXpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnYMinusMinus
+        '
+        Me.btnYMinusMinus.Location = New System.Drawing.Point(43, 101)
+        Me.btnYMinusMinus.Name = "btnYMinusMinus"
+        Me.btnYMinusMinus.Size = New System.Drawing.Size(30, 23)
+        Me.btnYMinusMinus.TabIndex = 32
+        Me.btnYMinusMinus.Text = "--"
+        Me.btnYMinusMinus.UseVisualStyleBackColor = False
+        '
+        'btnYMinus
+        '
+        Me.btnYMinus.Location = New System.Drawing.Point(73, 101)
+        Me.btnYMinus.Name = "btnYMinus"
+        Me.btnYMinus.Size = New System.Drawing.Size(18, 23)
+        Me.btnYMinus.TabIndex = 33
+        Me.btnYMinus.Text = "-"
+        Me.btnYMinus.UseVisualStyleBackColor = False
+        '
+        'btnZMinus
+        '
+        Me.btnZMinus.Location = New System.Drawing.Point(73, 126)
+        Me.btnZMinus.Name = "btnZMinus"
+        Me.btnZMinus.Size = New System.Drawing.Size(18, 23)
+        Me.btnZMinus.TabIndex = 35
+        Me.btnZMinus.Text = "-"
+        Me.btnZMinus.UseVisualStyleBackColor = False
+        '
+        'btnZMinusMinus
+        '
+        Me.btnZMinusMinus.Location = New System.Drawing.Point(43, 126)
+        Me.btnZMinusMinus.Name = "btnZMinusMinus"
+        Me.btnZMinusMinus.Size = New System.Drawing.Size(30, 23)
+        Me.btnZMinusMinus.TabIndex = 34
+        Me.btnZMinusMinus.Text = "--"
+        Me.btnZMinusMinus.UseVisualStyleBackColor = False
         '
         'tabItems
         '
-        Me.tabItems.BackColor = System.Drawing.Color.Magenta
+        Me.tabItems.AutoScroll = True
+        Me.tabItems.Controls.Add(Me.Label29)
+        Me.tabItems.Controls.Add(Me.Label28)
         Me.tabItems.Controls.Add(Me.nmbItemCount)
         Me.tabItems.Controls.Add(Me.cmbItemName)
         Me.tabItems.Controls.Add(Me.cmbItemCat)
         Me.tabItems.Controls.Add(Me.btnDropItem)
         Me.tabItems.Location = New System.Drawing.Point(4, 22)
         Me.tabItems.Name = "tabItems"
-        Me.tabItems.Size = New System.Drawing.Size(1304, 778)
+        Me.tabItems.Size = New System.Drawing.Size(384, 453)
         Me.tabItems.TabIndex = 3
         Me.tabItems.Text = "Items"
         '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(38, 45)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(30, 13)
+        Me.Label29.TabIndex = 52
+        Me.Label29.Text = "Item:"
+        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(16, 20)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(52, 13)
+        Me.Label28.TabIndex = 51
+        Me.Label28.Text = "Category:"
+        Me.Label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'nmbItemCount
         '
-        Me.nmbItemCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbItemCount.Location = New System.Drawing.Point(411, 742)
+        Me.nmbItemCount.Location = New System.Drawing.Point(326, 43)
         Me.nmbItemCount.Name = "nmbItemCount"
-        Me.nmbItemCount.Size = New System.Drawing.Size(47, 22)
+        Me.nmbItemCount.Size = New System.Drawing.Size(47, 20)
         Me.nmbItemCount.TabIndex = 50
         Me.nmbItemCount.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'cmbItemName
         '
         Me.cmbItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.cmbItemName.FormattingEnabled = true
-        Me.cmbItemName.Location = New System.Drawing.Point(152, 741)
+        Me.cmbItemName.FormattingEnabled = True
+        Me.cmbItemName.Location = New System.Drawing.Point(74, 42)
         Me.cmbItemName.Name = "cmbItemName"
-        Me.cmbItemName.Size = New System.Drawing.Size(253, 24)
+        Me.cmbItemName.Size = New System.Drawing.Size(246, 21)
         Me.cmbItemName.TabIndex = 49
         '
         'cmbItemCat
         '
         Me.cmbItemCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbItemCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.cmbItemCat.FormattingEnabled = true
+        Me.cmbItemCat.FormattingEnabled = True
         Me.cmbItemCat.Items.AddRange(New Object() {"Weapons", "Armor", "Rings", "Goods"})
-        Me.cmbItemCat.Location = New System.Drawing.Point(20, 741)
+        Me.cmbItemCat.Location = New System.Drawing.Point(74, 16)
         Me.cmbItemCat.Name = "cmbItemCat"
-        Me.cmbItemCat.Size = New System.Drawing.Size(126, 24)
+        Me.cmbItemCat.Size = New System.Drawing.Size(299, 21)
         Me.cmbItemCat.TabIndex = 48
         '
         'btnDropItem
         '
-        Me.btnDropItem.BackColor = System.Drawing.Color.LightGray
-        Me.btnDropItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnDropItem.Location = New System.Drawing.Point(464, 742)
+        Me.btnDropItem.Location = New System.Drawing.Point(213, 69)
         Me.btnDropItem.Name = "btnDropItem"
-        Me.btnDropItem.Size = New System.Drawing.Size(75, 23)
+        Me.btnDropItem.Size = New System.Drawing.Size(160, 23)
         Me.btnDropItem.TabIndex = 47
-        Me.btnDropItem.Text = "DropItem"
-        Me.btnDropItem.UseVisualStyleBackColor = false
+        Me.btnDropItem.Text = "Spawn Item(DropItem)"
+        Me.btnDropItem.UseVisualStyleBackColor = False
         '
         'tabDebug
         '
-        Me.tabDebug.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabDebug.AutoScroll = True
         Me.tabDebug.Controls.Add(Me.Label6)
         Me.tabDebug.Controls.Add(Me.nmbMPChannel)
         Me.tabDebug.Controls.Add(Me.Label5)
@@ -571,140 +601,112 @@ Partial Class DaS_PC_Gizmo
         Me.tabDebug.Controls.Add(Me.nmbBrighterCam)
         Me.tabDebug.Controls.Add(Me.chkBrighterCam)
         Me.tabDebug.Controls.Add(Me.chkHide)
-        Me.tabDebug.Controls.Add(Me.chkDebugDrawing)
         Me.tabDebug.Controls.Add(Me.chkSelfVagrant)
         Me.tabDebug.Controls.Add(Me.chkBoundingBoxes)
         Me.tabDebug.Location = New System.Drawing.Point(4, 22)
         Me.tabDebug.Name = "tabDebug"
         Me.tabDebug.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabDebug.Size = New System.Drawing.Size(1304, 778)
+        Me.tabDebug.Size = New System.Drawing.Size(384, 453)
         Me.tabDebug.TabIndex = 1
         Me.tabDebug.Text = "Debug"
         '
         'Label6
         '
-        Me.Label6.AutoSize = true
-        Me.Label6.BackColor = System.Drawing.Color.LightGray
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label6.Location = New System.Drawing.Point(13, 441)
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 76)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 16)
+        Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 45
         Me.Label6.Text = "MP Channel"
         '
         'nmbMPChannel
         '
-        Me.nmbMPChannel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbMPChannel.Location = New System.Drawing.Point(106, 439)
+        Me.nmbMPChannel.Location = New System.Drawing.Point(77, 74)
         Me.nmbMPChannel.Name = "nmbMPChannel"
-        Me.nmbMPChannel.Size = New System.Drawing.Size(53, 22)
+        Me.nmbMPChannel.Size = New System.Drawing.Size(53, 20)
         Me.nmbMPChannel.TabIndex = 44
         '
         'Label5
         '
-        Me.Label5.AutoSize = true
-        Me.Label5.BackColor = System.Drawing.Color.LightGray
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label5.Location = New System.Drawing.Point(172, 393)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(167, 5)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 16)
+        Me.Label5.Size = New System.Drawing.Size(46, 13)
         Me.Label5.TabIndex = 43
         Me.Label5.Text = "Contrast"
         '
         'nmbContrast
         '
         Me.nmbContrast.DecimalPlaces = 1
-        Me.nmbContrast.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.nmbContrast.Enabled = False
         Me.nmbContrast.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nmbContrast.Location = New System.Drawing.Point(174, 412)
+        Me.nmbContrast.Location = New System.Drawing.Point(169, 24)
         Me.nmbContrast.Name = "nmbContrast"
-        Me.nmbContrast.Size = New System.Drawing.Size(53, 22)
+        Me.nmbContrast.Size = New System.Drawing.Size(53, 20)
         Me.nmbContrast.TabIndex = 42
         '
         'Label4
         '
-        Me.Label4.AutoSize = true
-        Me.Label4.BackColor = System.Drawing.Color.LightGray
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label4.Location = New System.Drawing.Point(99, 393)
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(94, 5)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 16)
+        Me.Label4.Size = New System.Drawing.Size(56, 13)
         Me.Label4.TabIndex = 41
         Me.Label4.Text = "Brightness"
         '
         'nmbBrighterCam
         '
         Me.nmbBrighterCam.DecimalPlaces = 1
-        Me.nmbBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.nmbBrighterCam.Enabled = False
         Me.nmbBrighterCam.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.nmbBrighterCam.Location = New System.Drawing.Point(106, 412)
+        Me.nmbBrighterCam.Location = New System.Drawing.Point(101, 24)
         Me.nmbBrighterCam.Name = "nmbBrighterCam"
-        Me.nmbBrighterCam.Size = New System.Drawing.Size(53, 22)
+        Me.nmbBrighterCam.Size = New System.Drawing.Size(53, 20)
         Me.nmbBrighterCam.TabIndex = 23
         '
         'chkBrighterCam
         '
-        Me.chkBrighterCam.AutoSize = true
-        Me.chkBrighterCam.BackColor = System.Drawing.Color.LightGray
-        Me.chkBrighterCam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkBrighterCam.Location = New System.Drawing.Point(16, 412)
+        Me.chkBrighterCam.AutoSize = True
+        Me.chkBrighterCam.Location = New System.Drawing.Point(7, 25)
         Me.chkBrighterCam.Name = "chkBrighterCam"
-        Me.chkBrighterCam.Size = New System.Drawing.Size(70, 20)
+        Me.chkBrighterCam.Size = New System.Drawing.Size(94, 17)
         Me.chkBrighterCam.TabIndex = 22
-        Me.chkBrighterCam.Text = "Enable"
-        Me.chkBrighterCam.UseVisualStyleBackColor = false
+        Me.chkBrighterCam.Text = "Override Filter:"
+        Me.chkBrighterCam.UseVisualStyleBackColor = False
         '
         'chkHide
         '
-        Me.chkHide.AutoSize = true
-        Me.chkHide.BackColor = System.Drawing.Color.LightGray
-        Me.chkHide.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkHide.Location = New System.Drawing.Point(16, 554)
+        Me.chkHide.AutoSize = True
+        Me.chkHide.Location = New System.Drawing.Point(11, 100)
         Me.chkHide.Name = "chkHide"
-        Me.chkHide.Size = New System.Drawing.Size(98, 20)
+        Me.chkHide.Size = New System.Drawing.Size(80, 17)
         Me.chkHide.TabIndex = 21
         Me.chkHide.Text = "Player Hide"
-        Me.chkHide.UseVisualStyleBackColor = false
-        '
-        'chkDebugDrawing
-        '
-        Me.chkDebugDrawing.AutoSize = true
-        Me.chkDebugDrawing.BackColor = System.Drawing.Color.LightGray
-        Me.chkDebugDrawing.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkDebugDrawing.Location = New System.Drawing.Point(16, 673)
-        Me.chkDebugDrawing.Name = "chkDebugDrawing"
-        Me.chkDebugDrawing.Size = New System.Drawing.Size(146, 20)
-        Me.chkDebugDrawing.TabIndex = 20
-        Me.chkDebugDrawing.Text = "Debugging Drawing"
-        Me.chkDebugDrawing.UseVisualStyleBackColor = false
+        Me.chkHide.UseVisualStyleBackColor = False
         '
         'chkSelfVagrant
         '
-        Me.chkSelfVagrant.AutoSize = true
-        Me.chkSelfVagrant.BackColor = System.Drawing.Color.LightGray
-        Me.chkSelfVagrant.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkSelfVagrant.Location = New System.Drawing.Point(16, 633)
+        Me.chkSelfVagrant.AutoSize = True
+        Me.chkSelfVagrant.Location = New System.Drawing.Point(11, 123)
         Me.chkSelfVagrant.Name = "chkSelfVagrant"
-        Me.chkSelfVagrant.Size = New System.Drawing.Size(100, 20)
+        Me.chkSelfVagrant.Size = New System.Drawing.Size(84, 17)
         Me.chkSelfVagrant.TabIndex = 19
         Me.chkSelfVagrant.Text = "Self Vagrant"
-        Me.chkSelfVagrant.UseVisualStyleBackColor = false
+        Me.chkSelfVagrant.UseVisualStyleBackColor = False
         '
         'chkBoundingBoxes
         '
-        Me.chkBoundingBoxes.AutoSize = true
-        Me.chkBoundingBoxes.BackColor = System.Drawing.Color.LightGray
-        Me.chkBoundingBoxes.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.chkBoundingBoxes.Location = New System.Drawing.Point(16, 653)
+        Me.chkBoundingBoxes.AutoSize = True
+        Me.chkBoundingBoxes.Location = New System.Drawing.Point(11, 146)
         Me.chkBoundingBoxes.Name = "chkBoundingBoxes"
-        Me.chkBoundingBoxes.Size = New System.Drawing.Size(125, 20)
+        Me.chkBoundingBoxes.Size = New System.Drawing.Size(103, 17)
         Me.chkBoundingBoxes.TabIndex = 18
         Me.chkBoundingBoxes.Text = "Bounding Boxes"
-        Me.chkBoundingBoxes.UseVisualStyleBackColor = false
+        Me.chkBoundingBoxes.UseVisualStyleBackColor = False
         '
         'tabStats
         '
-        Me.tabStats.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabStats.AutoScroll = True
         Me.tabStats.Controls.Add(Me.Label18)
         Me.tabStats.Controls.Add(Me.nmbIndictments)
         Me.tabStats.Controls.Add(Me.Label17)
@@ -735,260 +737,242 @@ Partial Class DaS_PC_Gizmo
         Me.tabStats.Controls.Add(Me.nmbHumanity)
         Me.tabStats.Location = New System.Drawing.Point(4, 22)
         Me.tabStats.Name = "tabStats"
-        Me.tabStats.Size = New System.Drawing.Size(1304, 778)
+        Me.tabStats.Size = New System.Drawing.Size(384, 453)
         Me.tabStats.TabIndex = 2
         Me.tabStats.Text = "Stats"
         '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(29, 63)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(61, 13)
+        Me.Label18.TabIndex = 27
+        Me.Label18.Text = "Indictments"
+        '
+        'nmbIndictments
+        '
+        Me.nmbIndictments.Location = New System.Drawing.Point(116, 59)
+        Me.nmbIndictments.Name = "nmbIndictments"
+        Me.nmbIndictments.Size = New System.Drawing.Size(100, 20)
+        Me.nmbIndictments.TabIndex = 26
+        '
         'Label17
         '
-        Me.Label17.AutoSize = true
-        Me.Label17.BackColor = System.Drawing.Color.LightGray
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label17.Location = New System.Drawing.Point(53, 677)
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(59, 339)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(42, 16)
+        Me.Label17.Size = New System.Drawing.Size(33, 13)
         Me.Label17.TabIndex = 25
         Me.Label17.Text = "Souls"
         '
         'txtSouls
         '
-        Me.txtSouls.Location = New System.Drawing.Point(132, 673)
+        Me.txtSouls.Location = New System.Drawing.Point(116, 335)
         Me.txtSouls.Name = "txtSouls"
         Me.txtSouls.Size = New System.Drawing.Size(100, 20)
         Me.txtSouls.TabIndex = 24
         '
         'Label16
         '
-        Me.Label16.AutoSize = true
-        Me.Label16.BackColor = System.Drawing.Color.LightGray
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label16.Location = New System.Drawing.Point(53, 654)
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(35, 308)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(71, 16)
+        Me.Label16.Size = New System.Drawing.Size(57, 13)
         Me.Label16.TabIndex = 23
         Me.Label16.Text = "Soul Level"
         '
         'nmbSoulLevel
         '
-        Me.nmbSoulLevel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbSoulLevel.Location = New System.Drawing.Point(132, 650)
+        Me.nmbSoulLevel.Location = New System.Drawing.Point(116, 305)
         Me.nmbSoulLevel.Maximum = New Decimal(New Integer() {1024, 0, 0, 0})
         Me.nmbSoulLevel.Name = "nmbSoulLevel"
-        Me.nmbSoulLevel.Size = New System.Drawing.Size(47, 22)
+        Me.nmbSoulLevel.Size = New System.Drawing.Size(100, 20)
         Me.nmbSoulLevel.TabIndex = 22
         '
         'Label12
         '
-        Me.Label12.AutoSize = true
-        Me.Label12.BackColor = System.Drawing.Color.LightGray
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label12.Location = New System.Drawing.Point(53, 447)
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(53, 101)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(47, 16)
+        Me.Label12.Size = New System.Drawing.Size(37, 13)
         Me.Label12.TabIndex = 21
         Me.Label12.Text = "Vitality"
         '
         'nmbVitality
         '
-        Me.nmbVitality.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbVitality.Location = New System.Drawing.Point(132, 443)
+        Me.nmbVitality.Location = New System.Drawing.Point(116, 98)
         Me.nmbVitality.Name = "nmbVitality"
-        Me.nmbVitality.Size = New System.Drawing.Size(47, 22)
+        Me.nmbVitality.Size = New System.Drawing.Size(100, 20)
         Me.nmbVitality.TabIndex = 20
         '
         'Label13
         '
-        Me.Label13.AutoSize = true
-        Me.Label13.BackColor = System.Drawing.Color.LightGray
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label13.Location = New System.Drawing.Point(53, 470)
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(31, 124)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(74, 16)
+        Me.Label13.Size = New System.Drawing.Size(61, 13)
         Me.Label13.TabIndex = 19
         Me.Label13.Text = "Attunement"
         '
         'nmbAttunement
         '
-        Me.nmbAttunement.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbAttunement.Location = New System.Drawing.Point(132, 466)
+        Me.nmbAttunement.Location = New System.Drawing.Point(116, 121)
         Me.nmbAttunement.Name = "nmbAttunement"
-        Me.nmbAttunement.Size = New System.Drawing.Size(47, 22)
+        Me.nmbAttunement.Size = New System.Drawing.Size(100, 20)
         Me.nmbAttunement.TabIndex = 18
         '
         'Label14
         '
-        Me.Label14.AutoSize = true
-        Me.Label14.BackColor = System.Drawing.Color.LightGray
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label14.Location = New System.Drawing.Point(53, 493)
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(33, 147)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(73, 16)
+        Me.Label14.Size = New System.Drawing.Size(59, 13)
         Me.Label14.TabIndex = 17
         Me.Label14.Text = "Endurance"
         '
         'nmbEnd
         '
-        Me.nmbEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbEnd.Location = New System.Drawing.Point(132, 489)
+        Me.nmbEnd.Location = New System.Drawing.Point(116, 144)
         Me.nmbEnd.Name = "nmbEnd"
-        Me.nmbEnd.Size = New System.Drawing.Size(47, 22)
+        Me.nmbEnd.Size = New System.Drawing.Size(100, 20)
         Me.nmbEnd.TabIndex = 16
         '
         'Label15
         '
-        Me.Label15.AutoSize = true
-        Me.Label15.BackColor = System.Drawing.Color.LightGray
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label15.Location = New System.Drawing.Point(53, 516)
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(43, 170)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(57, 16)
+        Me.Label15.Size = New System.Drawing.Size(47, 13)
         Me.Label15.TabIndex = 15
         Me.Label15.Text = "Strength"
         '
         'nmbStr
         '
-        Me.nmbStr.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbStr.Location = New System.Drawing.Point(132, 512)
+        Me.nmbStr.Location = New System.Drawing.Point(116, 167)
         Me.nmbStr.Name = "nmbStr"
-        Me.nmbStr.Size = New System.Drawing.Size(47, 22)
+        Me.nmbStr.Size = New System.Drawing.Size(100, 20)
         Me.nmbStr.TabIndex = 14
         '
         'Label11
         '
-        Me.Label11.AutoSize = true
-        Me.Label11.BackColor = System.Drawing.Color.LightGray
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label11.Location = New System.Drawing.Point(53, 539)
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(44, 193)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(60, 16)
+        Me.Label11.Size = New System.Drawing.Size(48, 13)
         Me.Label11.TabIndex = 13
         Me.Label11.Text = "Dexterity"
         '
         'nmbDex
         '
-        Me.nmbDex.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbDex.Location = New System.Drawing.Point(132, 535)
+        Me.nmbDex.Location = New System.Drawing.Point(116, 190)
         Me.nmbDex.Name = "nmbDex"
-        Me.nmbDex.Size = New System.Drawing.Size(47, 22)
+        Me.nmbDex.Size = New System.Drawing.Size(100, 20)
         Me.nmbDex.TabIndex = 12
         '
         'Label10
         '
-        Me.Label10.AutoSize = true
-        Me.Label10.BackColor = System.Drawing.Color.LightGray
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label10.Location = New System.Drawing.Point(53, 562)
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(30, 214)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(76, 16)
+        Me.Label10.Size = New System.Drawing.Size(60, 13)
         Me.Label10.TabIndex = 11
         Me.Label10.Text = "Resistance"
         '
         'nmbResistance
         '
-        Me.nmbResistance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbResistance.Location = New System.Drawing.Point(132, 558)
+        Me.nmbResistance.Location = New System.Drawing.Point(116, 213)
         Me.nmbResistance.Name = "nmbResistance"
-        Me.nmbResistance.Size = New System.Drawing.Size(47, 22)
+        Me.nmbResistance.Size = New System.Drawing.Size(100, 20)
         Me.nmbResistance.TabIndex = 10
         '
         'Label9
         '
-        Me.Label9.AutoSize = true
-        Me.Label9.BackColor = System.Drawing.Color.LightGray
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label9.Location = New System.Drawing.Point(53, 585)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(31, 239)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(76, 16)
+        Me.Label9.Size = New System.Drawing.Size(61, 13)
         Me.Label9.TabIndex = 9
         Me.Label9.Text = "Intelligence"
         '
         'nmbIntelligence
         '
-        Me.nmbIntelligence.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbIntelligence.Location = New System.Drawing.Point(132, 581)
+        Me.nmbIntelligence.Location = New System.Drawing.Point(116, 236)
         Me.nmbIntelligence.Name = "nmbIntelligence"
-        Me.nmbIntelligence.Size = New System.Drawing.Size(47, 22)
+        Me.nmbIntelligence.Size = New System.Drawing.Size(100, 20)
         Me.nmbIntelligence.TabIndex = 8
         '
         'Label8
         '
-        Me.Label8.AutoSize = true
-        Me.Label8.BackColor = System.Drawing.Color.LightGray
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label8.Location = New System.Drawing.Point(53, 608)
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(60, 262)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(37, 16)
+        Me.Label8.Size = New System.Drawing.Size(30, 13)
         Me.Label8.TabIndex = 7
         Me.Label8.Text = "Faith"
         '
         'nmbFaith
         '
-        Me.nmbFaith.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbFaith.Location = New System.Drawing.Point(132, 604)
+        Me.nmbFaith.Location = New System.Drawing.Point(116, 259)
         Me.nmbFaith.Name = "nmbFaith"
-        Me.nmbFaith.Size = New System.Drawing.Size(47, 22)
+        Me.nmbFaith.Size = New System.Drawing.Size(100, 20)
         Me.nmbFaith.TabIndex = 6
         '
         'Label3
         '
-        Me.Label3.AutoSize = true
-        Me.Label3.BackColor = System.Drawing.Color.LightGray
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label3.Location = New System.Drawing.Point(38, 291)
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(31, 37)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 16)
+        Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Team Type"
         '
         'nmbTeamType
         '
-        Me.nmbTeamType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbTeamType.Location = New System.Drawing.Point(123, 287)
+        Me.nmbTeamType.Location = New System.Drawing.Point(116, 33)
         Me.nmbTeamType.Name = "nmbTeamType"
-        Me.nmbTeamType.Size = New System.Drawing.Size(47, 22)
+        Me.nmbTeamType.Size = New System.Drawing.Size(100, 20)
         Me.nmbTeamType.TabIndex = 4
         '
         'Label2
         '
-        Me.Label2.AutoSize = true
-        Me.Label2.BackColor = System.Drawing.Color.LightGray
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label2.Location = New System.Drawing.Point(21, 268)
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(14, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 16)
+        Me.Label2.Size = New System.Drawing.Size(76, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Phantom Type"
         '
         'nmbPhantomType
         '
-        Me.nmbPhantomType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbPhantomType.Location = New System.Drawing.Point(123, 264)
+        Me.nmbPhantomType.Location = New System.Drawing.Point(116, 10)
         Me.nmbPhantomType.Name = "nmbPhantomType"
-        Me.nmbPhantomType.Size = New System.Drawing.Size(47, 22)
+        Me.nmbPhantomType.Size = New System.Drawing.Size(100, 20)
         Me.nmbPhantomType.TabIndex = 2
         '
         'Label1
         '
-        Me.Label1.AutoSize = true
-        Me.Label1.BackColor = System.Drawing.Color.LightGray
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label1.Location = New System.Drawing.Point(53, 631)
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(41, 285)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 16)
+        Me.Label1.Size = New System.Drawing.Size(51, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Humanity"
         '
         'nmbHumanity
         '
-        Me.nmbHumanity.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbHumanity.Location = New System.Drawing.Point(132, 627)
+        Me.nmbHumanity.Location = New System.Drawing.Point(116, 282)
         Me.nmbHumanity.Name = "nmbHumanity"
-        Me.nmbHumanity.Size = New System.Drawing.Size(47, 22)
+        Me.nmbHumanity.Size = New System.Drawing.Size(100, 20)
         Me.nmbHumanity.TabIndex = 0
         '
         'tabLUA
         '
-        Me.tabLUA.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabLUA.AutoScroll = True
+        Me.tabLUA.Controls.Add(Me.lblLastPointer)
+        Me.tabLUA.Controls.Add(Me.Label23)
+        Me.tabLUA.Controls.Add(Me.Label21)
+        Me.tabLUA.Controls.Add(Me.Label20)
         Me.tabLUA.Controls.Add(Me.txtFuncParam5)
         Me.tabLUA.Controls.Add(Me.txtFuncParam4)
         Me.tabLUA.Controls.Add(Me.txtFuncParam3)
@@ -998,231 +982,341 @@ Partial Class DaS_PC_Gizmo
         Me.tabLUA.Controls.Add(Me.cmbFuncName)
         Me.tabLUA.Location = New System.Drawing.Point(4, 22)
         Me.tabLUA.Name = "tabLUA"
-        Me.tabLUA.Size = New System.Drawing.Size(1304, 778)
+        Me.tabLUA.Size = New System.Drawing.Size(384, 453)
         Me.tabLUA.TabIndex = 4
         Me.tabLUA.Text = "LUA"
         '
+        'lblLastPointer
+        '
+        Me.lblLastPointer.AutoSize = True
+        Me.lblLastPointer.Enabled = False
+        Me.lblLastPointer.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblLastPointer.Location = New System.Drawing.Point(129, 96)
+        Me.lblLastPointer.Name = "lblLastPointer"
+        Me.lblLastPointer.Size = New System.Drawing.Size(27, 13)
+        Me.lblLastPointer.TabIndex = 68
+        Me.lblLastPointer.Text = "N/A"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Enabled = False
+        Me.Label23.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label23.Location = New System.Drawing.Point(29, 95)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(94, 13)
+        Me.Label23.TabIndex = 67
+        Me.Label23.Text = "Last-Used Pointer:"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(4, 48)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(63, 13)
+        Me.Label21.TabIndex = 66
+        Me.Label21.Text = "Parameters:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(4, 18)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(51, 13)
+        Me.Label20.TabIndex = 65
+        Me.Label20.Text = "Function:"
+        '
         'txtFuncParam5
         '
-        Me.txtFuncParam5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.txtFuncParam5.Location = New System.Drawing.Point(257, 717)
+        Me.txtFuncParam5.Location = New System.Drawing.Point(317, 43)
         Me.txtFuncParam5.Name = "txtFuncParam5"
-        Me.txtFuncParam5.Size = New System.Drawing.Size(55, 22)
+        Me.txtFuncParam5.Size = New System.Drawing.Size(55, 20)
         Me.txtFuncParam5.TabIndex = 64
-        Me.txtFuncParam5.Text = "0"
         '
         'txtFuncParam4
         '
-        Me.txtFuncParam4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.txtFuncParam4.Location = New System.Drawing.Point(196, 717)
+        Me.txtFuncParam4.Location = New System.Drawing.Point(256, 43)
         Me.txtFuncParam4.Name = "txtFuncParam4"
-        Me.txtFuncParam4.Size = New System.Drawing.Size(55, 22)
+        Me.txtFuncParam4.Size = New System.Drawing.Size(55, 20)
         Me.txtFuncParam4.TabIndex = 63
-        Me.txtFuncParam4.Text = "0"
         '
         'txtFuncParam3
         '
-        Me.txtFuncParam3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.txtFuncParam3.Location = New System.Drawing.Point(135, 717)
+        Me.txtFuncParam3.Location = New System.Drawing.Point(195, 43)
         Me.txtFuncParam3.Name = "txtFuncParam3"
-        Me.txtFuncParam3.Size = New System.Drawing.Size(55, 22)
+        Me.txtFuncParam3.Size = New System.Drawing.Size(55, 20)
         Me.txtFuncParam3.TabIndex = 62
-        Me.txtFuncParam3.Text = "0"
         '
         'txtFuncParam2
         '
-        Me.txtFuncParam2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.txtFuncParam2.Location = New System.Drawing.Point(74, 717)
+        Me.txtFuncParam2.Location = New System.Drawing.Point(134, 43)
         Me.txtFuncParam2.Name = "txtFuncParam2"
-        Me.txtFuncParam2.Size = New System.Drawing.Size(55, 22)
+        Me.txtFuncParam2.Size = New System.Drawing.Size(55, 20)
         Me.txtFuncParam2.TabIndex = 61
-        Me.txtFuncParam2.Text = "0"
         '
         'txtFuncParam1
         '
-        Me.txtFuncParam1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.txtFuncParam1.Location = New System.Drawing.Point(13, 717)
+        Me.txtFuncParam1.Location = New System.Drawing.Point(73, 43)
         Me.txtFuncParam1.Name = "txtFuncParam1"
-        Me.txtFuncParam1.Size = New System.Drawing.Size(55, 22)
+        Me.txtFuncParam1.Size = New System.Drawing.Size(55, 20)
         Me.txtFuncParam1.TabIndex = 60
-        Me.txtFuncParam1.Text = "0"
         '
         'btnFuncExecute
         '
-        Me.btnFuncExecute.BackColor = System.Drawing.Color.LightGray
-        Me.btnFuncExecute.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnFuncExecute.Location = New System.Drawing.Point(272, 744)
+        Me.btnFuncExecute.Location = New System.Drawing.Point(245, 93)
         Me.btnFuncExecute.Name = "btnFuncExecute"
-        Me.btnFuncExecute.Size = New System.Drawing.Size(75, 23)
+        Me.btnFuncExecute.Size = New System.Drawing.Size(127, 23)
         Me.btnFuncExecute.TabIndex = 59
-        Me.btnFuncExecute.Text = "Execute"
-        Me.btnFuncExecute.UseVisualStyleBackColor = false
+        Me.btnFuncExecute.Text = "Execute Function"
+        Me.btnFuncExecute.UseVisualStyleBackColor = False
         '
         'cmbFuncName
         '
         Me.cmbFuncName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbFuncName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.cmbFuncName.FormattingEnabled = true
-        Me.cmbFuncName.Location = New System.Drawing.Point(13, 743)
+        Me.cmbFuncName.FormattingEnabled = True
+        Me.cmbFuncName.Location = New System.Drawing.Point(61, 13)
         Me.cmbFuncName.Name = "cmbFuncName"
-        Me.cmbFuncName.Size = New System.Drawing.Size(253, 24)
+        Me.cmbFuncName.Size = New System.Drawing.Size(311, 21)
         Me.cmbFuncName.TabIndex = 58
         '
         'tabCreatures
         '
-        Me.tabCreatures.BackColor = System.Drawing.Color.Fuchsia
-        Me.tabCreatures.Controls.Add(Me.btnCrtControl)
-        Me.tabCreatures.Controls.Add(Me.nmbCrtNum)
+        Me.tabCreatures.AutoScroll = True
+        Me.tabCreatures.Controls.Add(Me.grpbSelectedEntity)
+        Me.tabCreatures.Controls.Add(Me.Label19)
+        Me.tabCreatures.Controls.Add(Me.lblNumEntities)
+        Me.tabCreatures.Controls.Add(Me.nmbSelectedEntity)
         Me.tabCreatures.Controls.Add(Me.Label7)
-        Me.tabCreatures.Controls.Add(Me.txtNumCreatures)
         Me.tabCreatures.Location = New System.Drawing.Point(4, 22)
         Me.tabCreatures.Name = "tabCreatures"
-        Me.tabCreatures.Size = New System.Drawing.Size(1304, 778)
+        Me.tabCreatures.Size = New System.Drawing.Size(384, 453)
         Me.tabCreatures.TabIndex = 5
-        Me.tabCreatures.Text = "Creatures"
+        Me.tabCreatures.Text = "Entities"
+        '
+        'grpbSelectedEntity
+        '
+        Me.grpbSelectedEntity.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grpbSelectedEntity.Controls.Add(Me.btnCrtControl)
+        Me.grpbSelectedEntity.Location = New System.Drawing.Point(16, 71)
+        Me.grpbSelectedEntity.Name = "grpbSelectedEntity"
+        Me.grpbSelectedEntity.Size = New System.Drawing.Size(351, 372)
+        Me.grpbSelectedEntity.TabIndex = 49
+        Me.grpbSelectedEntity.TabStop = False
+        Me.grpbSelectedEntity.Text = "Entity#0: "
         '
         'btnCrtControl
         '
-        Me.btnCrtControl.BackColor = System.Drawing.Color.LightGray
-        Me.btnCrtControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btnCrtControl.Location = New System.Drawing.Point(32, 290)
+        Me.btnCrtControl.Location = New System.Drawing.Point(15, 30)
         Me.btnCrtControl.Name = "btnCrtControl"
-        Me.btnCrtControl.Size = New System.Drawing.Size(128, 23)
+        Me.btnCrtControl.Size = New System.Drawing.Size(194, 23)
         Me.btnCrtControl.TabIndex = 46
-        Me.btnCrtControl.Text = "Control Creature"
-        Me.btnCrtControl.UseVisualStyleBackColor = false
+        Me.btnCrtControl.Text = "Switch Control to This Entity"
+        Me.btnCrtControl.UseVisualStyleBackColor = False
         '
-        'nmbCrtNum
+        'Label19
         '
-        Me.nmbCrtNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbCrtNum.Location = New System.Drawing.Point(166, 290)
-        Me.nmbCrtNum.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nmbCrtNum.Name = "nmbCrtNum"
-        Me.nmbCrtNum.Size = New System.Drawing.Size(53, 22)
-        Me.nmbCrtNum.TabIndex = 45
-        Me.nmbCrtNum.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(13, 45)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(52, 13)
+        Me.Label19.TabIndex = 48
+        Me.Label19.Text = "Selected:"
+        '
+        'lblNumEntities
+        '
+        Me.lblNumEntities.AutoSize = True
+        Me.lblNumEntities.Location = New System.Drawing.Point(83, 21)
+        Me.lblNumEntities.Name = "lblNumEntities"
+        Me.lblNumEntities.Size = New System.Drawing.Size(21, 13)
+        Me.lblNumEntities.TabIndex = 47
+        Me.lblNumEntities.Text = "##"
+        '
+        'nmbSelectedEntity
+        '
+        Me.nmbSelectedEntity.Location = New System.Drawing.Point(70, 42)
+        Me.nmbSelectedEntity.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nmbSelectedEntity.Name = "nmbSelectedEntity"
+        Me.nmbSelectedEntity.Size = New System.Drawing.Size(53, 20)
+        Me.nmbSelectedEntity.TabIndex = 45
+        Me.nmbSelectedEntity.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label7
         '
-        Me.Label7.AutoSize = true
-        Me.Label7.BackColor = System.Drawing.Color.LightGray
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label7.Location = New System.Drawing.Point(29, 265)
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(13, 20)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(131, 16)
+        Me.Label7.Size = New System.Drawing.Size(67, 13)
         Me.Label7.TabIndex = 1
-        Me.Label7.Text = "Number of Creatures"
-        '
-        'txtNumCreatures
-        '
-        Me.txtNumCreatures.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.txtNumCreatures.Location = New System.Drawing.Point(166, 262)
-        Me.txtNumCreatures.Name = "txtNumCreatures"
-        Me.txtNumCreatures.Size = New System.Drawing.Size(100, 22)
-        Me.txtNumCreatures.TabIndex = 0
+        Me.Label7.Text = "Entity Count:"
         '
         'tabMPNodes
         '
-        Me.tabMPNodes.BackColor = System.Drawing.Color.Fuchsia
+        Me.tabMPNodes.AutoScroll = True
+        Me.tabMPNodes.Controls.Add(Me.chkDebugDrawing)
         Me.tabMPNodes.Controls.Add(Me.lblAttemptCount)
         Me.tabMPNodes.Controls.Add(Me.txtSteamID)
         Me.tabMPNodes.Controls.Add(Me.chkForce)
         Me.tabMPNodes.Location = New System.Drawing.Point(4, 22)
         Me.tabMPNodes.Name = "tabMPNodes"
-        Me.tabMPNodes.Size = New System.Drawing.Size(1304, 778)
+        Me.tabMPNodes.Size = New System.Drawing.Size(384, 453)
         Me.tabMPNodes.TabIndex = 6
-        Me.tabMPNodes.Text = "mp nodes"
+        Me.tabMPNodes.Text = "MP Nodes"
+        '
+        'chkDebugDrawing
+        '
+        Me.chkDebugDrawing.AutoSize = True
+        Me.chkDebugDrawing.Location = New System.Drawing.Point(20, 83)
+        Me.chkDebugDrawing.Name = "chkDebugDrawing"
+        Me.chkDebugDrawing.Size = New System.Drawing.Size(129, 17)
+        Me.chkDebugDrawing.TabIndex = 21
+        Me.chkDebugDrawing.Text = "Debug Node Drawing"
+        Me.chkDebugDrawing.UseVisualStyleBackColor = False
         '
         'lblAttemptCount
         '
-        Me.lblAttemptCount.AutoSize = true
-        Me.lblAttemptCount.Location = New System.Drawing.Point(62, 345)
+        Me.lblAttemptCount.AutoSize = True
+        Me.lblAttemptCount.Location = New System.Drawing.Point(17, 52)
         Me.lblAttemptCount.Name = "lblAttemptCount"
-        Me.lblAttemptCount.Size = New System.Drawing.Size(45, 13)
+        Me.lblAttemptCount.Size = New System.Drawing.Size(81, 13)
         Me.lblAttemptCount.TabIndex = 6
-        Me.lblAttemptCount.Text = "Label18"
+        Me.lblAttemptCount.Text = "lblAttemptCount"
         '
         'txtSteamID
         '
-        Me.txtSteamID.Location = New System.Drawing.Point(164, 306)
+        Me.txtSteamID.Location = New System.Drawing.Point(119, 18)
         Me.txtSteamID.Name = "txtSteamID"
         Me.txtSteamID.Size = New System.Drawing.Size(205, 20)
         Me.txtSteamID.TabIndex = 5
         '
         'chkForce
         '
-        Me.chkForce.AutoSize = true
-        Me.chkForce.BackColor = System.Drawing.Color.LightGray
-        Me.chkForce.Location = New System.Drawing.Point(65, 306)
+        Me.chkForce.AutoSize = True
+        Me.chkForce.Location = New System.Drawing.Point(20, 19)
         Me.chkForce.Name = "chkForce"
         Me.chkForce.Size = New System.Drawing.Size(92, 17)
         Me.chkForce.TabIndex = 4
         Me.chkForce.Text = "Force Attempt"
-        Me.chkForce.UseVisualStyleBackColor = false
+        Me.chkForce.UseVisualStyleBackColor = False
         '
-        'Label18
+        'chkOverlay
         '
-        Me.Label18.AutoSize = true
-        Me.Label18.BackColor = System.Drawing.Color.LightGray
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label18.Location = New System.Drawing.Point(53, 714)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(75, 16)
-        Me.Label18.TabIndex = 27
-        Me.Label18.Text = "Indictments"
+        Me.chkOverlay.AutoSize = True
+        Me.chkOverlay.Location = New System.Drawing.Point(946, 4)
+        Me.chkOverlay.Name = "chkOverlay"
+        Me.chkOverlay.Size = New System.Drawing.Size(98, 17)
+        Me.chkOverlay.TabIndex = 47
+        Me.chkOverlay.Text = "Always On Top"
+        Me.chkOverlay.UseVisualStyleBackColor = False
         '
-        'nmbIndictments
+        'lblRelease
         '
-        Me.nmbIndictments.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.nmbIndictments.Location = New System.Drawing.Point(132, 712)
-        Me.nmbIndictments.Name = "nmbIndictments"
-        Me.nmbIndictments.Size = New System.Drawing.Size(47, 22)
-        Me.nmbIndictments.TabIndex = 26
+        Me.lblRelease.AutoSize = True
+        Me.lblRelease.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRelease.Location = New System.Drawing.Point(75, 9)
+        Me.lblRelease.Name = "lblRelease"
+        Me.lblRelease.Size = New System.Drawing.Size(51, 13)
+        Me.lblRelease.TabIndex = 3
+        Me.lblRelease.Text = "Nothing"
         '
-        'Form1
+        'Label22
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Fuchsia
-        Me.ClientSize = New System.Drawing.Size(1319, 820)
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(12, 9)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(64, 13)
+        Me.Label22.TabIndex = 4
+        Me.Label22.Text = "Hooked To:"
+        '
+        'buttonApplyHook
+        '
+        Me.buttonApplyHook.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.buttonApplyHook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.buttonApplyHook.Location = New System.Drawing.Point(8, 510)
+        Me.buttonApplyHook.Name = "buttonApplyHook"
+        Me.buttonApplyHook.Size = New System.Drawing.Size(151, 23)
+        Me.buttonApplyHook.TabIndex = 5
+        Me.buttonApplyHook.Text = "Select  Process..."
+        Me.buttonApplyHook.UseVisualStyleBackColor = True
+        '
+        'Label30
+        '
+        Me.Label30.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(214, 516)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(125, 13)
+        Me.Label30.TabIndex = 48
+        Me.Label30.Text = "Value Refresh Rate (Hz):"
+        '
+        'numRefreshRate
+        '
+        Me.numRefreshRate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.numRefreshRate.Location = New System.Drawing.Point(345, 513)
+        Me.numRefreshRate.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
+        Me.numRefreshRate.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.numRefreshRate.Name = "numRefreshRate"
+        Me.numRefreshRate.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.numRefreshRate.Size = New System.Drawing.Size(47, 20)
+        Me.numRefreshRate.TabIndex = 49
+        Me.numRefreshRate.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        '
+        'DaS_PC_Gizmo
+        '
+        Me.ClientSize = New System.Drawing.Size(399, 540)
+        Me.Controls.Add(Me.numRefreshRate)
+        Me.Controls.Add(Me.Label30)
+        Me.Controls.Add(Me.chkOverlay)
+        Me.Controls.Add(Me.buttonApplyHook)
+        Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.tabs)
+        Me.Controls.Add(Me.lblRelease)
+        Me.MinimumSize = New System.Drawing.Size(415, 240)
         Me.Name = "DaS_PC_Gizmo"
-        Me.Text = "Wulf's Dark Souls Overlay"
-        Me.tabs.ResumeLayout(false)
-        Me.tabMain.ResumeLayout(false)
-        Me.tabMain.PerformLayout
-        Me.tabItems.ResumeLayout(false)
-        CType(Me.nmbItemCount,System.ComponentModel.ISupportInitialize).EndInit
-        Me.tabDebug.ResumeLayout(false)
-        Me.tabDebug.PerformLayout
-        CType(Me.nmbMPChannel,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbContrast,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbBrighterCam,System.ComponentModel.ISupportInitialize).EndInit
-        Me.tabStats.ResumeLayout(false)
-        Me.tabStats.PerformLayout
-        CType(Me.nmbSoulLevel,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbVitality,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbAttunement,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbEnd,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbStr,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbDex,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbResistance,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbIntelligence,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbFaith,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbTeamType,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbPhantomType,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.nmbHumanity,System.ComponentModel.ISupportInitialize).EndInit
-        Me.tabLUA.ResumeLayout(false)
-        Me.tabLUA.PerformLayout
-        Me.tabCreatures.ResumeLayout(false)
-        Me.tabCreatures.PerformLayout
-        CType(Me.nmbCrtNum,System.ComponentModel.ISupportInitialize).EndInit
-        Me.tabMPNodes.ResumeLayout(false)
-        Me.tabMPNodes.PerformLayout
-        CType(Me.nmbIndictments,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
+        Me.Text = "Wulf's Dark Souls Gizmo"
+        Me.tabs.ResumeLayout(False)
+        Me.tabMain.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.tabItems.ResumeLayout(False)
+        Me.tabItems.PerformLayout()
+        CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabDebug.ResumeLayout(False)
+        Me.tabDebug.PerformLayout()
+        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabStats.ResumeLayout(False)
+        Me.tabStats.PerformLayout()
+        CType(Me.nmbIndictments, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbSoulLevel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbVitality, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbAttunement, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbEnd, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbStr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbDex, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbResistance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbIntelligence, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbFaith, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabLUA.ResumeLayout(False)
+        Me.tabLUA.PerformLayout()
+        Me.tabCreatures.ResumeLayout(False)
+        Me.tabCreatures.PerformLayout()
+        Me.grpbSelectedEntity.ResumeLayout(False)
+        CType(Me.nmbSelectedEntity, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabMPNodes.ResumeLayout(False)
+        Me.tabMPNodes.PerformLayout()
+        CType(Me.numRefreshRate, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-End Sub
+    End Sub
     Friend WithEvents tabs As System.Windows.Forms.TabControl
     Friend WithEvents tabMain As System.Windows.Forms.TabPage
     Friend WithEvents tabDebug As System.Windows.Forms.TabPage
@@ -1251,7 +1345,6 @@ End Sub
     Friend WithEvents lblHP As System.Windows.Forms.Label
     Friend WithEvents chkBoundingBoxes As System.Windows.Forms.CheckBox
     Friend WithEvents chkSelfVagrant As System.Windows.Forms.CheckBox
-    Friend WithEvents chkDebugDrawing As System.Windows.Forms.CheckBox
     Friend WithEvents tabStats As System.Windows.Forms.TabPage
     Friend WithEvents lblBonfire As System.Windows.Forms.Label
     Friend WithEvents cmbBonfire As System.Windows.Forms.ComboBox
@@ -1285,8 +1378,7 @@ End Sub
     Friend WithEvents cmbFuncName As System.Windows.Forms.ComboBox
     Friend WithEvents tabCreatures As System.Windows.Forms.TabPage
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents txtNumCreatures As System.Windows.Forms.TextBox
-    Friend WithEvents nmbCrtNum As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nmbSelectedEntity As System.Windows.Forms.NumericUpDown
     Friend WithEvents btnCrtControl As System.Windows.Forms.Button
     Friend WithEvents chkMouseMove As CheckBox
     Friend WithEvents chkOverlay As CheckBox
@@ -1316,4 +1408,24 @@ End Sub
     Friend WithEvents lblAttemptCount As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents nmbIndictments As NumericUpDown
+    Friend WithEvents lblNumEntities As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents grpbSelectedEntity As GroupBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents buttonApplyHook As Button
+    Friend WithEvents Label23 As Label
+    Friend WithEvents lblLastPointer As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents chkDebugDrawing As CheckBox
+    Friend WithEvents Label30 As Label
+    Friend WithEvents numRefreshRate As NumericUpDown
 End Class
