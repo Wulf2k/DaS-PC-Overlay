@@ -459,6 +459,12 @@ Public Class DaS_PC_Gizmo
                 chkNoGrav.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H4000) = &H4000)
                 chkSetDeadMode.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H2000000) = &H2000000)
 
+                If chkSetDeadMode.Checked Then
+                    btnSuicide.Text = "This will still kill you."
+                Else
+                    btnSuicide.Text = "Kill Self"
+                End If
+
                 Dim bonfireID As Integer
                 bonfireID = ReadInt32(bonfireptr + &HB04)
                 If Not cmbBonfire.DroppedDown Then
@@ -579,7 +585,7 @@ Public Class DaS_PC_Gizmo
         End If
         WriteUInt32(charptr1 + &H1FC, curval)
     End Sub
-    Private Sub chkSetDeadMode_CheckedChanged(sender As Object, e As EventArgs) Handles chkSetDeadMode.CheckedChanged
+    Private Sub chkSetDeadMode_CheckedChanged(sender As Object, e As EventArgs) Handles chkSetDeadMode.MouseClick
         Dim curval = ReadUInt32(charptr1 + &H1FC)
         If (curval And &H2000000) = &H2000000 Then
             curval -= &H2000000
@@ -587,12 +593,6 @@ Public Class DaS_PC_Gizmo
             curval += &H2000000
         End If
         WriteUInt32(charptr1 + &H1FC, curval)
-
-        If chkSetDeadMode.Checked Then
-            btnSuicide.Text = "This will still kill you."
-        Else
-            btnSuicide.Text = "Kill Self"
-        End If
     End Sub
 
     Private Sub btnXPlus_Click(sender As Object, e As EventArgs) Handles btnXPlus.Click
@@ -828,7 +828,7 @@ Public Class DaS_PC_Gizmo
         Dim bytes() As Byte
         Dim bytes2() As Byte
 
-        Dim bytParams = New Integer() {&H5, &HB, &H11, &H17, &H1D}
+        Dim bytParams = New Integer() {&H1D, &H17, &H11, &HB, &H5}
         Dim bytJmp As Integer = &H23
 
         Dim dbgboost As Integer
