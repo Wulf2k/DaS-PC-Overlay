@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{493913CA-3FE3-4F71-A209-3BACB994E5DD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>DaS_PC_Overlay.My.MyApplication</StartupObject>
-    <RootNamespace>DaS_PC_Overlay</RootNamespace>
-    <AssemblyName>DaS-PC-Overlay</AssemblyName>
+    <StartupObject>DaS_PC_Gizmo.My.MyApplication</StartupObject>
+    <RootNamespace>DaS_PC_Gizmo</RootNamespace>
+    <AssemblyName>DaS-PC-Gizmo</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -20,7 +20,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>DaS-PC-Overlay.xml</DocumentationFile>
+    <DocumentationFile>DaS-PC-Gizmo.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <RemoveIntegerChecks>true</RemoveIntegerChecks>
   </PropertyGroup>
@@ -31,7 +31,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>DaS-PC-Overlay.xml</DocumentationFile>
+    <DocumentationFile>DaS-PC-Gizmo.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -71,11 +71,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="DaS-PC-Gizmo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="DaS-PC-Gizmo.Designer.vb">
+      <DependentUpon>DaS-PC-Gizmo.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -93,16 +93,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SelectProcessPopup.Designer.vb">
+      <DependentUpon>SelectProcessPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectProcessPopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="DaS-PC-Gizmo.resx">
+      <DependentUpon>DaS-PC-Gizmo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectProcessPopup.resx">
+      <DependentUpon>SelectProcessPopup.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Weapons.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RefreshSymbol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
