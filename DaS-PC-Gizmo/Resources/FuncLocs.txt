@@ -361,3 +361,4 @@
 14036128|WarpNextStage_Bonfire
 14034304|WarpRestart
 14034256|WarpRestartNoGrey
+14043600|WarpSelfBloodMark
