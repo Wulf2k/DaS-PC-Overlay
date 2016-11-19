@@ -91,6 +91,7 @@
 14025008|GetBountyRankPoint
 14016176|GetClearBonus
 14019856|GetEnemyPlayerId_Random
+14025536|GetEventFlagValue
 14029552|GetEventGoalState
 14030480|GetEventMode
 14025856|GetFloorMaterial
@@ -280,6 +281,7 @@
 14023856|SetEventCommand
 14023792|SetEventCommandIndex
 14025104|SetEventFlag
+14025568|SetEventFlagValue
 14025904|SetEventGenerate
 14027696|SetEventMovePointType
 14029440|SetEventSpecialEffect
