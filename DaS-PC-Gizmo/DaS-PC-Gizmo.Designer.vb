@@ -30,6 +30,11 @@ Partial Class DaS_PC_Gizmo
         Me.chkSetDeadMode = New System.Windows.Forms.CheckBox()
         Me.btnSuicide = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblstableZpos = New System.Windows.Forms.Label()
+        Me.lblstableYpos = New System.Windows.Forms.Label()
+        Me.lblstableXpos = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.chkMouseMove = New System.Windows.Forms.CheckBox()
         Me.cmbBonfire = New System.Windows.Forms.ComboBox()
@@ -64,6 +69,7 @@ Partial Class DaS_PC_Gizmo
         Me.cmbItemCat = New System.Windows.Forms.ComboBox()
         Me.btnDropItem = New System.Windows.Forms.Button()
         Me.tabDebug = New System.Windows.Forms.TabPage()
+        Me.chkDeadCam = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.nmbMPChannel = New System.Windows.Forms.NumericUpDown()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -133,43 +139,46 @@ Partial Class DaS_PC_Gizmo
         Me.buttonApplyHook = New System.Windows.Forms.Button()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.numRefreshRate = New System.Windows.Forms.NumericUpDown()
-        Me.tabs.SuspendLayout()
-        Me.tabMain.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.tabItems.SuspendLayout()
-        CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabDebug.SuspendLayout()
-        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabStats.SuspendLayout()
-        CType(Me.nmbIndictments, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbSoulLevel, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbVitality, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbAttunement, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbEnd, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbStr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbDex, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbResistance, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbIntelligence, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbFaith, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabLUA.SuspendLayout()
-        Me.tabCreatures.SuspendLayout()
-        Me.grpbSelectedEntity.SuspendLayout()
-        CType(Me.nmbSelectedEntity, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabMPNodes.SuspendLayout()
-        CType(Me.numRefreshRate, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.nmbSpeed = New System.Windows.Forms.NumericUpDown()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.tabs.SuspendLayout
+        Me.tabMain.SuspendLayout
+        Me.GroupBox2.SuspendLayout
+        Me.GroupBox1.SuspendLayout
+        Me.tabItems.SuspendLayout
+        CType(Me.nmbItemCount,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabDebug.SuspendLayout
+        CType(Me.nmbMPChannel,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbContrast,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbBrighterCam,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabStats.SuspendLayout
+        CType(Me.nmbIndictments,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbSoulLevel,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbVitality,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbAttunement,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbEnd,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbStr,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbDex,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbResistance,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbIntelligence,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbFaith,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbTeamType,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbPhantomType,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbHumanity,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabLUA.SuspendLayout
+        Me.tabCreatures.SuspendLayout
+        Me.grpbSelectedEntity.SuspendLayout
+        CType(Me.nmbSelectedEntity,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabMPNodes.SuspendLayout
+        CType(Me.numRefreshRate,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.nmbSpeed,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'tabs
         '
-        Me.tabs.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tabs.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.tabs.Controls.Add(Me.tabMain)
         Me.tabs.Controls.Add(Me.tabItems)
         Me.tabs.Controls.Add(Me.tabDebug)
@@ -177,7 +186,7 @@ Partial Class DaS_PC_Gizmo
         Me.tabs.Controls.Add(Me.tabLUA)
         Me.tabs.Controls.Add(Me.tabCreatures)
         Me.tabs.Controls.Add(Me.tabMPNodes)
-        Me.tabs.Enabled = False
+        Me.tabs.Enabled = false
         Me.tabs.Location = New System.Drawing.Point(4, 28)
         Me.tabs.Name = "tabs"
         Me.tabs.SelectedIndex = 0
@@ -186,7 +195,7 @@ Partial Class DaS_PC_Gizmo
         '
         'tabMain
         '
-        Me.tabMain.AutoScroll = True
+        Me.tabMain.AutoScroll = true
         Me.tabMain.Controls.Add(Me.GroupBox2)
         Me.tabMain.Controls.Add(Me.GroupBox1)
         Me.tabMain.Location = New System.Drawing.Point(4, 22)
@@ -198,20 +207,22 @@ Partial Class DaS_PC_Gizmo
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label33)
+        Me.GroupBox2.Controls.Add(Me.nmbSpeed)
         Me.GroupBox2.Controls.Add(Me.lblHP)
         Me.GroupBox2.Controls.Add(Me.lblStam)
         Me.GroupBox2.Controls.Add(Me.chkSetDeadMode)
         Me.GroupBox2.Controls.Add(Me.btnSuicide)
-        Me.GroupBox2.Location = New System.Drawing.Point(40, 10)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 10)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(303, 116)
+        Me.GroupBox2.Size = New System.Drawing.Size(371, 116)
         Me.GroupBox2.TabIndex = 48
-        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.TabStop = false
         Me.GroupBox2.Text = "Status"
         '
         'lblHP
         '
-        Me.lblHP.AutoSize = True
+        Me.lblHP.AutoSize = true
         Me.lblHP.Location = New System.Drawing.Point(13, 27)
         Me.lblHP.Name = "lblHP"
         Me.lblHP.Size = New System.Drawing.Size(31, 13)
@@ -220,7 +231,7 @@ Partial Class DaS_PC_Gizmo
         '
         'lblStam
         '
-        Me.lblStam.AutoSize = True
+        Me.lblStam.AutoSize = true
         Me.lblStam.Location = New System.Drawing.Point(13, 40)
         Me.lblStam.Name = "lblStam"
         Me.lblStam.Size = New System.Drawing.Size(51, 13)
@@ -229,13 +240,13 @@ Partial Class DaS_PC_Gizmo
         '
         'chkSetDeadMode
         '
-        Me.chkSetDeadMode.AutoSize = True
+        Me.chkSetDeadMode.AutoSize = true
         Me.chkSetDeadMode.Location = New System.Drawing.Point(16, 86)
         Me.chkSetDeadMode.Name = "chkSetDeadMode"
         Me.chkSetDeadMode.Size = New System.Drawing.Size(169, 17)
         Me.chkSetDeadMode.TabIndex = 23
         Me.chkSetDeadMode.Text = "Disable Dying (SetDeadMode)"
-        Me.chkSetDeadMode.UseVisualStyleBackColor = False
+        Me.chkSetDeadMode.UseVisualStyleBackColor = false
         '
         'btnSuicide
         '
@@ -244,10 +255,15 @@ Partial Class DaS_PC_Gizmo
         Me.btnSuicide.Size = New System.Drawing.Size(111, 24)
         Me.btnSuicide.TabIndex = 45
         Me.btnSuicide.Text = "Kill Self"
-        Me.btnSuicide.UseVisualStyleBackColor = False
+        Me.btnSuicide.UseVisualStyleBackColor = false
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblstableZpos)
+        Me.GroupBox1.Controls.Add(Me.lblstableYpos)
+        Me.GroupBox1.Controls.Add(Me.lblstableXpos)
+        Me.GroupBox1.Controls.Add(Me.Label32)
+        Me.GroupBox1.Controls.Add(Me.Label31)
         Me.GroupBox1.Controls.Add(Me.Label27)
         Me.GroupBox1.Controls.Add(Me.chkMouseMove)
         Me.GroupBox1.Controls.Add(Me.cmbBonfire)
@@ -274,16 +290,61 @@ Partial Class DaS_PC_Gizmo
         Me.GroupBox1.Controls.Add(Me.btnYMinus)
         Me.GroupBox1.Controls.Add(Me.btnZMinus)
         Me.GroupBox1.Controls.Add(Me.btnZMinusMinus)
-        Me.GroupBox1.Location = New System.Drawing.Point(40, 132)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 132)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(303, 306)
+        Me.GroupBox1.Size = New System.Drawing.Size(371, 306)
         Me.GroupBox1.TabIndex = 47
-        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.TabStop = false
         Me.GroupBox1.Text = "Location"
+        '
+        'lblstableZpos
+        '
+        Me.lblstableZpos.Location = New System.Drawing.Point(230, 126)
+        Me.lblstableZpos.Name = "lblstableZpos"
+        Me.lblstableZpos.Size = New System.Drawing.Size(60, 23)
+        Me.lblstableZpos.TabIndex = 51
+        Me.lblstableZpos.Text = "(Z POS)"
+        Me.lblstableZpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblstableYpos
+        '
+        Me.lblstableYpos.Location = New System.Drawing.Point(230, 101)
+        Me.lblstableYpos.Name = "lblstableYpos"
+        Me.lblstableYpos.Size = New System.Drawing.Size(60, 23)
+        Me.lblstableYpos.TabIndex = 50
+        Me.lblstableYpos.Text = "(Y POS)"
+        Me.lblstableYpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblstableXpos
+        '
+        Me.lblstableXpos.Location = New System.Drawing.Point(230, 76)
+        Me.lblstableXpos.Name = "lblstableXpos"
+        Me.lblstableXpos.Size = New System.Drawing.Size(60, 23)
+        Me.lblstableXpos.TabIndex = 49
+        Me.lblstableXpos.Text = "(X POS)"
+        Me.lblstableXpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = true
+        Me.Label32.Location = New System.Drawing.Point(230, 44)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(60, 13)
+        Me.Label32.TabIndex = 48
+        Me.Label32.Text = "Last Stable"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = true
+        Me.Label31.Location = New System.Drawing.Point(236, 57)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(47, 13)
+        Me.Label31.TabIndex = 47
+        Me.Label31.Text = "Position:"
         '
         'Label27
         '
-        Me.Label27.AutoSize = True
+        Me.Label27.AutoSize = true
         Me.Label27.Location = New System.Drawing.Point(19, 55)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(47, 13)
@@ -292,18 +353,18 @@ Partial Class DaS_PC_Gizmo
         '
         'chkMouseMove
         '
-        Me.chkMouseMove.AutoSize = True
+        Me.chkMouseMove.AutoSize = true
         Me.chkMouseMove.Location = New System.Drawing.Point(22, 178)
         Me.chkMouseMove.Name = "chkMouseMove"
         Me.chkMouseMove.Size = New System.Drawing.Size(261, 17)
         Me.chkMouseMove.TabIndex = 46
         Me.chkMouseMove.Text = "Use Move Player Using Mouse When Holding Ctrl"
-        Me.chkMouseMove.UseVisualStyleBackColor = False
+        Me.chkMouseMove.UseVisualStyleBackColor = false
         '
         'cmbBonfire
         '
         Me.cmbBonfire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbBonfire.FormattingEnabled = True
+        Me.cmbBonfire.FormattingEnabled = true
         Me.cmbBonfire.Location = New System.Drawing.Point(43, 260)
         Me.cmbBonfire.Name = "cmbBonfire"
         Me.cmbBonfire.Size = New System.Drawing.Size(240, 21)
@@ -311,7 +372,7 @@ Partial Class DaS_PC_Gizmo
         '
         'lblBonfire
         '
-        Me.lblBonfire.AutoSize = True
+        Me.lblBonfire.AutoSize = true
         Me.lblBonfire.Location = New System.Drawing.Point(19, 244)
         Me.lblBonfire.Name = "lblBonfire"
         Me.lblBonfire.Size = New System.Drawing.Size(66, 13)
@@ -320,7 +381,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label24
         '
-        Me.Label24.AutoSize = True
+        Me.Label24.AutoSize = true
         Me.Label24.Location = New System.Drawing.Point(23, 131)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(20, 13)
@@ -329,7 +390,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label25
         '
-        Me.Label25.AutoSize = True
+        Me.Label25.AutoSize = true
         Me.Label25.Location = New System.Drawing.Point(23, 106)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(20, 13)
@@ -338,7 +399,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label26
         '
-        Me.Label26.AutoSize = True
+        Me.Label26.AutoSize = true
         Me.Label26.Location = New System.Drawing.Point(23, 81)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(20, 13)
@@ -347,7 +408,7 @@ Partial Class DaS_PC_Gizmo
         '
         'lblFacing
         '
-        Me.lblFacing.AutoSize = True
+        Me.lblFacing.AutoSize = true
         Me.lblFacing.Location = New System.Drawing.Point(19, 28)
         Me.lblFacing.Name = "lblFacing"
         Me.lblFacing.Size = New System.Drawing.Size(45, 13)
@@ -361,106 +422,106 @@ Partial Class DaS_PC_Gizmo
         Me.btnXMinusMinus.Size = New System.Drawing.Size(30, 23)
         Me.btnXMinusMinus.TabIndex = 30
         Me.btnXMinusMinus.Text = "--"
-        Me.btnXMinusMinus.UseVisualStyleBackColor = False
+        Me.btnXMinusMinus.UseVisualStyleBackColor = false
         '
         'chkNoGrav
         '
-        Me.chkNoGrav.AutoSize = True
+        Me.chkNoGrav.AutoSize = true
         Me.chkNoGrav.Location = New System.Drawing.Point(22, 224)
         Me.chkNoGrav.Name = "chkNoGrav"
         Me.chkNoGrav.Size = New System.Drawing.Size(174, 17)
         Me.chkNoGrav.TabIndex = 21
         Me.chkNoGrav.Text = "Disable Gravity (DisableGravity)"
-        Me.chkNoGrav.UseVisualStyleBackColor = False
+        Me.chkNoGrav.UseVisualStyleBackColor = false
         '
         'chkNoMapHit
         '
-        Me.chkNoMapHit.AutoSize = True
+        Me.chkNoMapHit.AutoSize = true
         Me.chkNoMapHit.Location = New System.Drawing.Point(22, 201)
         Me.chkNoMapHit.Name = "chkNoMapHit"
         Me.chkNoMapHit.Size = New System.Drawing.Size(204, 17)
         Me.chkNoMapHit.TabIndex = 22
         Me.chkNoMapHit.Text = "Disable Map Collision (DisableMapHit)"
-        Me.chkNoMapHit.UseVisualStyleBackColor = False
+        Me.chkNoMapHit.UseVisualStyleBackColor = false
         '
         'btnXPlusPlus
         '
-        Me.btnXPlusPlus.Location = New System.Drawing.Point(229, 76)
+        Me.btnXPlusPlus.Location = New System.Drawing.Point(180, 76)
         Me.btnXPlusPlus.Name = "btnXPlusPlus"
         Me.btnXPlusPlus.Size = New System.Drawing.Size(30, 23)
         Me.btnXPlusPlus.TabIndex = 24
         Me.btnXPlusPlus.Text = "++"
-        Me.btnXPlusPlus.UseVisualStyleBackColor = False
+        Me.btnXPlusPlus.UseVisualStyleBackColor = false
         '
         'chkLockPos
         '
-        Me.chkLockPos.AutoSize = True
+        Me.chkLockPos.AutoSize = true
         Me.chkLockPos.Location = New System.Drawing.Point(43, 155)
         Me.chkLockPos.Name = "chkLockPos"
         Me.chkLockPos.Size = New System.Drawing.Size(114, 17)
         Me.chkLockPos.TabIndex = 36
         Me.chkLockPos.Text = "Hold Position Here"
-        Me.chkLockPos.UseVisualStyleBackColor = False
+        Me.chkLockPos.UseVisualStyleBackColor = false
         '
         'btnXPlus
         '
-        Me.btnXPlus.Location = New System.Drawing.Point(212, 76)
+        Me.btnXPlus.Location = New System.Drawing.Point(163, 76)
         Me.btnXPlus.Name = "btnXPlus"
         Me.btnXPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnXPlus.TabIndex = 25
         Me.btnXPlus.Text = "+"
-        Me.btnXPlus.UseVisualStyleBackColor = False
+        Me.btnXPlus.UseVisualStyleBackColor = false
         '
         'btnYPlusPlus
         '
-        Me.btnYPlusPlus.Location = New System.Drawing.Point(229, 101)
+        Me.btnYPlusPlus.Location = New System.Drawing.Point(180, 101)
         Me.btnYPlusPlus.Name = "btnYPlusPlus"
         Me.btnYPlusPlus.Size = New System.Drawing.Size(30, 23)
         Me.btnYPlusPlus.TabIndex = 26
         Me.btnYPlusPlus.Text = "++"
-        Me.btnYPlusPlus.UseVisualStyleBackColor = False
+        Me.btnYPlusPlus.UseVisualStyleBackColor = false
         '
         'btnYPlus
         '
-        Me.btnYPlus.Location = New System.Drawing.Point(212, 101)
+        Me.btnYPlus.Location = New System.Drawing.Point(163, 101)
         Me.btnYPlus.Name = "btnYPlus"
         Me.btnYPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnYPlus.TabIndex = 27
         Me.btnYPlus.Text = "+"
-        Me.btnYPlus.UseVisualStyleBackColor = False
+        Me.btnYPlus.UseVisualStyleBackColor = false
         '
         'btnZPlusPlus
         '
-        Me.btnZPlusPlus.Location = New System.Drawing.Point(229, 126)
+        Me.btnZPlusPlus.Location = New System.Drawing.Point(180, 126)
         Me.btnZPlusPlus.Name = "btnZPlusPlus"
         Me.btnZPlusPlus.Size = New System.Drawing.Size(30, 23)
         Me.btnZPlusPlus.TabIndex = 28
         Me.btnZPlusPlus.Text = "++"
-        Me.btnZPlusPlus.UseVisualStyleBackColor = False
+        Me.btnZPlusPlus.UseVisualStyleBackColor = false
         '
         'lblZpos
         '
         Me.lblZpos.Location = New System.Drawing.Point(97, 126)
         Me.lblZpos.Name = "lblZpos"
-        Me.lblZpos.Size = New System.Drawing.Size(109, 23)
+        Me.lblZpos.Size = New System.Drawing.Size(60, 23)
         Me.lblZpos.TabIndex = 39
         Me.lblZpos.Text = "(Z POS)"
         Me.lblZpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnZPlus
         '
-        Me.btnZPlus.Location = New System.Drawing.Point(212, 126)
+        Me.btnZPlus.Location = New System.Drawing.Point(163, 126)
         Me.btnZPlus.Name = "btnZPlus"
         Me.btnZPlus.Size = New System.Drawing.Size(18, 23)
         Me.btnZPlus.TabIndex = 29
         Me.btnZPlus.Text = "+"
-        Me.btnZPlus.UseVisualStyleBackColor = False
+        Me.btnZPlus.UseVisualStyleBackColor = false
         '
         'lblYpos
         '
         Me.lblYpos.Location = New System.Drawing.Point(97, 101)
         Me.lblYpos.Name = "lblYpos"
-        Me.lblYpos.Size = New System.Drawing.Size(109, 23)
+        Me.lblYpos.Size = New System.Drawing.Size(60, 23)
         Me.lblYpos.TabIndex = 38
         Me.lblYpos.Text = "(Y POS)"
         Me.lblYpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -472,13 +533,13 @@ Partial Class DaS_PC_Gizmo
         Me.btnXMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnXMinus.TabIndex = 31
         Me.btnXMinus.Text = "-"
-        Me.btnXMinus.UseVisualStyleBackColor = False
+        Me.btnXMinus.UseVisualStyleBackColor = false
         '
         'lblXpos
         '
         Me.lblXpos.Location = New System.Drawing.Point(97, 76)
         Me.lblXpos.Name = "lblXpos"
-        Me.lblXpos.Size = New System.Drawing.Size(109, 23)
+        Me.lblXpos.Size = New System.Drawing.Size(60, 23)
         Me.lblXpos.TabIndex = 37
         Me.lblXpos.Text = "(X POS)"
         Me.lblXpos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -490,7 +551,7 @@ Partial Class DaS_PC_Gizmo
         Me.btnYMinusMinus.Size = New System.Drawing.Size(30, 23)
         Me.btnYMinusMinus.TabIndex = 32
         Me.btnYMinusMinus.Text = "--"
-        Me.btnYMinusMinus.UseVisualStyleBackColor = False
+        Me.btnYMinusMinus.UseVisualStyleBackColor = false
         '
         'btnYMinus
         '
@@ -499,7 +560,7 @@ Partial Class DaS_PC_Gizmo
         Me.btnYMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnYMinus.TabIndex = 33
         Me.btnYMinus.Text = "-"
-        Me.btnYMinus.UseVisualStyleBackColor = False
+        Me.btnYMinus.UseVisualStyleBackColor = false
         '
         'btnZMinus
         '
@@ -508,7 +569,7 @@ Partial Class DaS_PC_Gizmo
         Me.btnZMinus.Size = New System.Drawing.Size(18, 23)
         Me.btnZMinus.TabIndex = 35
         Me.btnZMinus.Text = "-"
-        Me.btnZMinus.UseVisualStyleBackColor = False
+        Me.btnZMinus.UseVisualStyleBackColor = false
         '
         'btnZMinusMinus
         '
@@ -517,11 +578,11 @@ Partial Class DaS_PC_Gizmo
         Me.btnZMinusMinus.Size = New System.Drawing.Size(30, 23)
         Me.btnZMinusMinus.TabIndex = 34
         Me.btnZMinusMinus.Text = "--"
-        Me.btnZMinusMinus.UseVisualStyleBackColor = False
+        Me.btnZMinusMinus.UseVisualStyleBackColor = false
         '
         'tabItems
         '
-        Me.tabItems.AutoScroll = True
+        Me.tabItems.AutoScroll = true
         Me.tabItems.Controls.Add(Me.Label29)
         Me.tabItems.Controls.Add(Me.Label28)
         Me.tabItems.Controls.Add(Me.nmbItemCount)
@@ -536,7 +597,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label29
         '
-        Me.Label29.AutoSize = True
+        Me.Label29.AutoSize = true
         Me.Label29.Location = New System.Drawing.Point(38, 45)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(30, 13)
@@ -546,7 +607,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label28
         '
-        Me.Label28.AutoSize = True
+        Me.Label28.AutoSize = true
         Me.Label28.Location = New System.Drawing.Point(16, 20)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(52, 13)
@@ -565,7 +626,7 @@ Partial Class DaS_PC_Gizmo
         'cmbItemName
         '
         Me.cmbItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbItemName.FormattingEnabled = True
+        Me.cmbItemName.FormattingEnabled = true
         Me.cmbItemName.Location = New System.Drawing.Point(74, 42)
         Me.cmbItemName.Name = "cmbItemName"
         Me.cmbItemName.Size = New System.Drawing.Size(246, 21)
@@ -574,7 +635,7 @@ Partial Class DaS_PC_Gizmo
         'cmbItemCat
         '
         Me.cmbItemCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbItemCat.FormattingEnabled = True
+        Me.cmbItemCat.FormattingEnabled = true
         Me.cmbItemCat.Items.AddRange(New Object() {"Weapons", "Armor", "Rings", "Goods"})
         Me.cmbItemCat.Location = New System.Drawing.Point(74, 16)
         Me.cmbItemCat.Name = "cmbItemCat"
@@ -588,11 +649,12 @@ Partial Class DaS_PC_Gizmo
         Me.btnDropItem.Size = New System.Drawing.Size(160, 23)
         Me.btnDropItem.TabIndex = 47
         Me.btnDropItem.Text = "Spawn Item(DropItem)"
-        Me.btnDropItem.UseVisualStyleBackColor = False
+        Me.btnDropItem.UseVisualStyleBackColor = false
         '
         'tabDebug
         '
-        Me.tabDebug.AutoScroll = True
+        Me.tabDebug.AutoScroll = true
+        Me.tabDebug.Controls.Add(Me.chkDeadCam)
         Me.tabDebug.Controls.Add(Me.Label6)
         Me.tabDebug.Controls.Add(Me.nmbMPChannel)
         Me.tabDebug.Controls.Add(Me.Label5)
@@ -610,9 +672,19 @@ Partial Class DaS_PC_Gizmo
         Me.tabDebug.TabIndex = 1
         Me.tabDebug.Text = "Debug"
         '
+        'chkDeadCam
+        '
+        Me.chkDeadCam.AutoSize = true
+        Me.chkDeadCam.Location = New System.Drawing.Point(11, 169)
+        Me.chkDeadCam.Name = "chkDeadCam"
+        Me.chkDeadCam.Size = New System.Drawing.Size(79, 17)
+        Me.chkDeadCam.TabIndex = 47
+        Me.chkDeadCam.Text = "Death Cam"
+        Me.chkDeadCam.UseVisualStyleBackColor = false
+        '
         'Label6
         '
-        Me.Label6.AutoSize = True
+        Me.Label6.AutoSize = true
         Me.Label6.Location = New System.Drawing.Point(6, 76)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
@@ -628,7 +700,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
+        Me.Label5.AutoSize = true
         Me.Label5.Location = New System.Drawing.Point(167, 5)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(46, 13)
@@ -638,7 +710,7 @@ Partial Class DaS_PC_Gizmo
         'nmbContrast
         '
         Me.nmbContrast.DecimalPlaces = 1
-        Me.nmbContrast.Enabled = False
+        Me.nmbContrast.Enabled = false
         Me.nmbContrast.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.nmbContrast.Location = New System.Drawing.Point(169, 24)
         Me.nmbContrast.Name = "nmbContrast"
@@ -647,7 +719,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
+        Me.Label4.AutoSize = true
         Me.Label4.Location = New System.Drawing.Point(94, 5)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(56, 13)
@@ -657,7 +729,7 @@ Partial Class DaS_PC_Gizmo
         'nmbBrighterCam
         '
         Me.nmbBrighterCam.DecimalPlaces = 1
-        Me.nmbBrighterCam.Enabled = False
+        Me.nmbBrighterCam.Enabled = false
         Me.nmbBrighterCam.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
         Me.nmbBrighterCam.Location = New System.Drawing.Point(101, 24)
         Me.nmbBrighterCam.Name = "nmbBrighterCam"
@@ -666,47 +738,47 @@ Partial Class DaS_PC_Gizmo
         '
         'chkBrighterCam
         '
-        Me.chkBrighterCam.AutoSize = True
+        Me.chkBrighterCam.AutoSize = true
         Me.chkBrighterCam.Location = New System.Drawing.Point(7, 25)
         Me.chkBrighterCam.Name = "chkBrighterCam"
         Me.chkBrighterCam.Size = New System.Drawing.Size(94, 17)
         Me.chkBrighterCam.TabIndex = 22
         Me.chkBrighterCam.Text = "Override Filter:"
-        Me.chkBrighterCam.UseVisualStyleBackColor = False
+        Me.chkBrighterCam.UseVisualStyleBackColor = false
         '
         'chkHide
         '
-        Me.chkHide.AutoSize = True
+        Me.chkHide.AutoSize = true
         Me.chkHide.Location = New System.Drawing.Point(11, 100)
         Me.chkHide.Name = "chkHide"
         Me.chkHide.Size = New System.Drawing.Size(80, 17)
         Me.chkHide.TabIndex = 21
         Me.chkHide.Text = "Player Hide"
-        Me.chkHide.UseVisualStyleBackColor = False
+        Me.chkHide.UseVisualStyleBackColor = false
         '
         'chkSelfVagrant
         '
-        Me.chkSelfVagrant.AutoSize = True
+        Me.chkSelfVagrant.AutoSize = true
         Me.chkSelfVagrant.Location = New System.Drawing.Point(11, 123)
         Me.chkSelfVagrant.Name = "chkSelfVagrant"
         Me.chkSelfVagrant.Size = New System.Drawing.Size(84, 17)
         Me.chkSelfVagrant.TabIndex = 19
         Me.chkSelfVagrant.Text = "Self Vagrant"
-        Me.chkSelfVagrant.UseVisualStyleBackColor = False
+        Me.chkSelfVagrant.UseVisualStyleBackColor = false
         '
         'chkBoundingBoxes
         '
-        Me.chkBoundingBoxes.AutoSize = True
+        Me.chkBoundingBoxes.AutoSize = true
         Me.chkBoundingBoxes.Location = New System.Drawing.Point(11, 146)
         Me.chkBoundingBoxes.Name = "chkBoundingBoxes"
         Me.chkBoundingBoxes.Size = New System.Drawing.Size(103, 17)
         Me.chkBoundingBoxes.TabIndex = 18
         Me.chkBoundingBoxes.Text = "Bounding Boxes"
-        Me.chkBoundingBoxes.UseVisualStyleBackColor = False
+        Me.chkBoundingBoxes.UseVisualStyleBackColor = false
         '
         'tabStats
         '
-        Me.tabStats.AutoScroll = True
+        Me.tabStats.AutoScroll = true
         Me.tabStats.Controls.Add(Me.Label18)
         Me.tabStats.Controls.Add(Me.nmbIndictments)
         Me.tabStats.Controls.Add(Me.Label17)
@@ -743,7 +815,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label18
         '
-        Me.Label18.AutoSize = True
+        Me.Label18.AutoSize = true
         Me.Label18.Location = New System.Drawing.Point(29, 63)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(61, 13)
@@ -759,7 +831,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label17
         '
-        Me.Label17.AutoSize = True
+        Me.Label17.AutoSize = true
         Me.Label17.Location = New System.Drawing.Point(59, 339)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(33, 13)
@@ -775,7 +847,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label16
         '
-        Me.Label16.AutoSize = True
+        Me.Label16.AutoSize = true
         Me.Label16.Location = New System.Drawing.Point(35, 308)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(57, 13)
@@ -792,7 +864,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label12
         '
-        Me.Label12.AutoSize = True
+        Me.Label12.AutoSize = true
         Me.Label12.Location = New System.Drawing.Point(53, 101)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(37, 13)
@@ -808,7 +880,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label13
         '
-        Me.Label13.AutoSize = True
+        Me.Label13.AutoSize = true
         Me.Label13.Location = New System.Drawing.Point(31, 124)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(61, 13)
@@ -824,7 +896,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label14
         '
-        Me.Label14.AutoSize = True
+        Me.Label14.AutoSize = true
         Me.Label14.Location = New System.Drawing.Point(33, 147)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(59, 13)
@@ -840,7 +912,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label15
         '
-        Me.Label15.AutoSize = True
+        Me.Label15.AutoSize = true
         Me.Label15.Location = New System.Drawing.Point(43, 170)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(47, 13)
@@ -856,7 +928,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
+        Me.Label11.AutoSize = true
         Me.Label11.Location = New System.Drawing.Point(44, 193)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(48, 13)
@@ -872,7 +944,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label10
         '
-        Me.Label10.AutoSize = True
+        Me.Label10.AutoSize = true
         Me.Label10.Location = New System.Drawing.Point(30, 214)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(60, 13)
@@ -888,7 +960,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label9
         '
-        Me.Label9.AutoSize = True
+        Me.Label9.AutoSize = true
         Me.Label9.Location = New System.Drawing.Point(31, 239)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(61, 13)
@@ -904,7 +976,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
+        Me.Label8.AutoSize = true
         Me.Label8.Location = New System.Drawing.Point(60, 262)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(30, 13)
@@ -920,7 +992,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
+        Me.Label3.AutoSize = true
         Me.Label3.Location = New System.Drawing.Point(31, 37)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 13)
@@ -936,7 +1008,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
+        Me.Label2.AutoSize = true
         Me.Label2.Location = New System.Drawing.Point(14, 14)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 13)
@@ -952,7 +1024,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
+        Me.Label1.AutoSize = true
         Me.Label1.Location = New System.Drawing.Point(41, 285)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(51, 13)
@@ -968,7 +1040,7 @@ Partial Class DaS_PC_Gizmo
         '
         'tabLUA
         '
-        Me.tabLUA.AutoScroll = True
+        Me.tabLUA.AutoScroll = true
         Me.tabLUA.Controls.Add(Me.lblLastPointer)
         Me.tabLUA.Controls.Add(Me.Label23)
         Me.tabLUA.Controls.Add(Me.Label21)
@@ -988,8 +1060,8 @@ Partial Class DaS_PC_Gizmo
         '
         'lblLastPointer
         '
-        Me.lblLastPointer.AutoSize = True
-        Me.lblLastPointer.Enabled = False
+        Me.lblLastPointer.AutoSize = true
+        Me.lblLastPointer.Enabled = false
         Me.lblLastPointer.ForeColor = System.Drawing.SystemColors.GrayText
         Me.lblLastPointer.Location = New System.Drawing.Point(129, 96)
         Me.lblLastPointer.Name = "lblLastPointer"
@@ -999,8 +1071,8 @@ Partial Class DaS_PC_Gizmo
         '
         'Label23
         '
-        Me.Label23.AutoSize = True
-        Me.Label23.Enabled = False
+        Me.Label23.AutoSize = true
+        Me.Label23.Enabled = false
         Me.Label23.ForeColor = System.Drawing.SystemColors.GrayText
         Me.Label23.Location = New System.Drawing.Point(29, 95)
         Me.Label23.Name = "Label23"
@@ -1010,7 +1082,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label21
         '
-        Me.Label21.AutoSize = True
+        Me.Label21.AutoSize = true
         Me.Label21.Location = New System.Drawing.Point(4, 48)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(63, 13)
@@ -1019,7 +1091,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label20
         '
-        Me.Label20.AutoSize = True
+        Me.Label20.AutoSize = true
         Me.Label20.Location = New System.Drawing.Point(4, 18)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(51, 13)
@@ -1068,12 +1140,12 @@ Partial Class DaS_PC_Gizmo
         Me.btnFuncExecute.Size = New System.Drawing.Size(127, 23)
         Me.btnFuncExecute.TabIndex = 59
         Me.btnFuncExecute.Text = "Execute Function"
-        Me.btnFuncExecute.UseVisualStyleBackColor = False
+        Me.btnFuncExecute.UseVisualStyleBackColor = false
         '
         'cmbFuncName
         '
         Me.cmbFuncName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbFuncName.FormattingEnabled = True
+        Me.cmbFuncName.FormattingEnabled = true
         Me.cmbFuncName.Location = New System.Drawing.Point(61, 13)
         Me.cmbFuncName.Name = "cmbFuncName"
         Me.cmbFuncName.Size = New System.Drawing.Size(311, 21)
@@ -1081,7 +1153,7 @@ Partial Class DaS_PC_Gizmo
         '
         'tabCreatures
         '
-        Me.tabCreatures.AutoScroll = True
+        Me.tabCreatures.AutoScroll = true
         Me.tabCreatures.Controls.Add(Me.grpbSelectedEntity)
         Me.tabCreatures.Controls.Add(Me.Label19)
         Me.tabCreatures.Controls.Add(Me.lblNumEntities)
@@ -1095,15 +1167,15 @@ Partial Class DaS_PC_Gizmo
         '
         'grpbSelectedEntity
         '
-        Me.grpbSelectedEntity.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grpbSelectedEntity.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.grpbSelectedEntity.Controls.Add(Me.btnCrtControl)
         Me.grpbSelectedEntity.Location = New System.Drawing.Point(16, 71)
         Me.grpbSelectedEntity.Name = "grpbSelectedEntity"
         Me.grpbSelectedEntity.Size = New System.Drawing.Size(351, 372)
         Me.grpbSelectedEntity.TabIndex = 49
-        Me.grpbSelectedEntity.TabStop = False
+        Me.grpbSelectedEntity.TabStop = false
         Me.grpbSelectedEntity.Text = "Entity#0: "
         '
         'btnCrtControl
@@ -1113,11 +1185,11 @@ Partial Class DaS_PC_Gizmo
         Me.btnCrtControl.Size = New System.Drawing.Size(194, 23)
         Me.btnCrtControl.TabIndex = 46
         Me.btnCrtControl.Text = "Switch Control to This Entity"
-        Me.btnCrtControl.UseVisualStyleBackColor = False
+        Me.btnCrtControl.UseVisualStyleBackColor = false
         '
         'Label19
         '
-        Me.Label19.AutoSize = True
+        Me.Label19.AutoSize = true
         Me.Label19.Location = New System.Drawing.Point(13, 45)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(52, 13)
@@ -1126,7 +1198,7 @@ Partial Class DaS_PC_Gizmo
         '
         'lblNumEntities
         '
-        Me.lblNumEntities.AutoSize = True
+        Me.lblNumEntities.AutoSize = true
         Me.lblNumEntities.Location = New System.Drawing.Point(83, 21)
         Me.lblNumEntities.Name = "lblNumEntities"
         Me.lblNumEntities.Size = New System.Drawing.Size(21, 13)
@@ -1144,7 +1216,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
+        Me.Label7.AutoSize = true
         Me.Label7.Location = New System.Drawing.Point(13, 20)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(67, 13)
@@ -1153,7 +1225,7 @@ Partial Class DaS_PC_Gizmo
         '
         'tabMPNodes
         '
-        Me.tabMPNodes.AutoScroll = True
+        Me.tabMPNodes.AutoScroll = true
         Me.tabMPNodes.Controls.Add(Me.chkDebugDrawing)
         Me.tabMPNodes.Controls.Add(Me.lblAttemptCount)
         Me.tabMPNodes.Controls.Add(Me.txtSteamID)
@@ -1166,17 +1238,17 @@ Partial Class DaS_PC_Gizmo
         '
         'chkDebugDrawing
         '
-        Me.chkDebugDrawing.AutoSize = True
+        Me.chkDebugDrawing.AutoSize = true
         Me.chkDebugDrawing.Location = New System.Drawing.Point(20, 83)
         Me.chkDebugDrawing.Name = "chkDebugDrawing"
         Me.chkDebugDrawing.Size = New System.Drawing.Size(129, 17)
         Me.chkDebugDrawing.TabIndex = 21
         Me.chkDebugDrawing.Text = "Debug Node Drawing"
-        Me.chkDebugDrawing.UseVisualStyleBackColor = False
+        Me.chkDebugDrawing.UseVisualStyleBackColor = false
         '
         'lblAttemptCount
         '
-        Me.lblAttemptCount.AutoSize = True
+        Me.lblAttemptCount.AutoSize = true
         Me.lblAttemptCount.Location = New System.Drawing.Point(17, 52)
         Me.lblAttemptCount.Name = "lblAttemptCount"
         Me.lblAttemptCount.Size = New System.Drawing.Size(81, 13)
@@ -1192,28 +1264,28 @@ Partial Class DaS_PC_Gizmo
         '
         'chkForce
         '
-        Me.chkForce.AutoSize = True
+        Me.chkForce.AutoSize = true
         Me.chkForce.Location = New System.Drawing.Point(20, 19)
         Me.chkForce.Name = "chkForce"
         Me.chkForce.Size = New System.Drawing.Size(92, 17)
         Me.chkForce.TabIndex = 4
         Me.chkForce.Text = "Force Attempt"
-        Me.chkForce.UseVisualStyleBackColor = False
+        Me.chkForce.UseVisualStyleBackColor = false
         '
         'chkOverlay
         '
-        Me.chkOverlay.AutoSize = True
+        Me.chkOverlay.AutoSize = true
         Me.chkOverlay.Location = New System.Drawing.Point(946, 4)
         Me.chkOverlay.Name = "chkOverlay"
         Me.chkOverlay.Size = New System.Drawing.Size(98, 17)
         Me.chkOverlay.TabIndex = 47
         Me.chkOverlay.Text = "Always On Top"
-        Me.chkOverlay.UseVisualStyleBackColor = False
+        Me.chkOverlay.UseVisualStyleBackColor = false
         '
         'lblRelease
         '
-        Me.lblRelease.AutoSize = True
-        Me.lblRelease.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRelease.AutoSize = true
+        Me.lblRelease.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.lblRelease.Location = New System.Drawing.Point(75, 9)
         Me.lblRelease.Name = "lblRelease"
         Me.lblRelease.Size = New System.Drawing.Size(51, 13)
@@ -1222,7 +1294,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label22
         '
-        Me.Label22.AutoSize = True
+        Me.Label22.AutoSize = true
         Me.Label22.Location = New System.Drawing.Point(12, 9)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(64, 13)
@@ -1231,19 +1303,19 @@ Partial Class DaS_PC_Gizmo
         '
         'buttonApplyHook
         '
-        Me.buttonApplyHook.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.buttonApplyHook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.buttonApplyHook.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.buttonApplyHook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.buttonApplyHook.Location = New System.Drawing.Point(8, 510)
         Me.buttonApplyHook.Name = "buttonApplyHook"
         Me.buttonApplyHook.Size = New System.Drawing.Size(151, 23)
         Me.buttonApplyHook.TabIndex = 5
         Me.buttonApplyHook.Text = "Select  Process..."
-        Me.buttonApplyHook.UseVisualStyleBackColor = True
+        Me.buttonApplyHook.UseVisualStyleBackColor = true
         '
         'Label30
         '
-        Me.Label30.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label30.AutoSize = True
+        Me.Label30.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label30.AutoSize = true
         Me.Label30.Location = New System.Drawing.Point(214, 516)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(125, 13)
@@ -1252,7 +1324,7 @@ Partial Class DaS_PC_Gizmo
         '
         'numRefreshRate
         '
-        Me.numRefreshRate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.numRefreshRate.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.numRefreshRate.Location = New System.Drawing.Point(345, 513)
         Me.numRefreshRate.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
         Me.numRefreshRate.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
@@ -1261,6 +1333,25 @@ Partial Class DaS_PC_Gizmo
         Me.numRefreshRate.Size = New System.Drawing.Size(47, 20)
         Me.numRefreshRate.TabIndex = 49
         Me.numRefreshRate.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        '
+        'nmbSpeed
+        '
+        Me.nmbSpeed.DecimalPlaces = 2
+        Me.nmbSpeed.Increment = New Decimal(New Integer() {25, 0, 0, 131072})
+        Me.nmbSpeed.Location = New System.Drawing.Point(304, 83)
+        Me.nmbSpeed.Name = "nmbSpeed"
+        Me.nmbSpeed.Size = New System.Drawing.Size(61, 20)
+        Me.nmbSpeed.TabIndex = 46
+        Me.nmbSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = true
+        Me.Label33.Location = New System.Drawing.Point(257, 85)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(41, 13)
+        Me.Label33.TabIndex = 47
+        Me.Label33.Text = "Speed:"
         '
         'DaS_PC_Gizmo
         '
@@ -1275,48 +1366,49 @@ Partial Class DaS_PC_Gizmo
         Me.MinimumSize = New System.Drawing.Size(415, 240)
         Me.Name = "DaS_PC_Gizmo"
         Me.Text = "Wulf's Dark Souls Gizmo"
-        Me.tabs.ResumeLayout(False)
-        Me.tabMain.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.tabItems.ResumeLayout(False)
-        Me.tabItems.PerformLayout()
-        CType(Me.nmbItemCount, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabDebug.ResumeLayout(False)
-        Me.tabDebug.PerformLayout()
-        CType(Me.nmbMPChannel, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbContrast, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbBrighterCam, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabStats.ResumeLayout(False)
-        Me.tabStats.PerformLayout()
-        CType(Me.nmbIndictments, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbSoulLevel, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbVitality, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbAttunement, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbEnd, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbStr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbDex, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbResistance, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbIntelligence, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbFaith, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbTeamType, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbPhantomType, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nmbHumanity, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabLUA.ResumeLayout(False)
-        Me.tabLUA.PerformLayout()
-        Me.tabCreatures.ResumeLayout(False)
-        Me.tabCreatures.PerformLayout()
-        Me.grpbSelectedEntity.ResumeLayout(False)
-        CType(Me.nmbSelectedEntity, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabMPNodes.ResumeLayout(False)
-        Me.tabMPNodes.PerformLayout()
-        CType(Me.numRefreshRate, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.tabs.ResumeLayout(false)
+        Me.tabMain.ResumeLayout(false)
+        Me.GroupBox2.ResumeLayout(false)
+        Me.GroupBox2.PerformLayout
+        Me.GroupBox1.ResumeLayout(false)
+        Me.GroupBox1.PerformLayout
+        Me.tabItems.ResumeLayout(false)
+        Me.tabItems.PerformLayout
+        CType(Me.nmbItemCount,System.ComponentModel.ISupportInitialize).EndInit
+        Me.tabDebug.ResumeLayout(false)
+        Me.tabDebug.PerformLayout
+        CType(Me.nmbMPChannel,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbContrast,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbBrighterCam,System.ComponentModel.ISupportInitialize).EndInit
+        Me.tabStats.ResumeLayout(false)
+        Me.tabStats.PerformLayout
+        CType(Me.nmbIndictments,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbSoulLevel,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbVitality,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbAttunement,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbEnd,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbStr,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbDex,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbResistance,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbIntelligence,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbFaith,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbTeamType,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbPhantomType,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbHumanity,System.ComponentModel.ISupportInitialize).EndInit
+        Me.tabLUA.ResumeLayout(false)
+        Me.tabLUA.PerformLayout
+        Me.tabCreatures.ResumeLayout(false)
+        Me.tabCreatures.PerformLayout
+        Me.grpbSelectedEntity.ResumeLayout(false)
+        CType(Me.nmbSelectedEntity,System.ComponentModel.ISupportInitialize).EndInit
+        Me.tabMPNodes.ResumeLayout(false)
+        Me.tabMPNodes.PerformLayout
+        CType(Me.numRefreshRate,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.nmbSpeed,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents tabs As System.Windows.Forms.TabControl
     Friend WithEvents tabMain As System.Windows.Forms.TabPage
     Friend WithEvents tabDebug As System.Windows.Forms.TabPage
@@ -1428,4 +1520,12 @@ Partial Class DaS_PC_Gizmo
     Friend WithEvents chkDebugDrawing As CheckBox
     Friend WithEvents Label30 As Label
     Friend WithEvents numRefreshRate As NumericUpDown
+    Friend WithEvents lblstableZpos As Label
+    Friend WithEvents lblstableYpos As Label
+    Friend WithEvents lblstableXpos As Label
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label31 As Label
+    Friend WithEvents chkDeadCam As CheckBox
+    Friend WithEvents Label33 As Label
+    Friend WithEvents nmbSpeed As NumericUpDown
 End Class

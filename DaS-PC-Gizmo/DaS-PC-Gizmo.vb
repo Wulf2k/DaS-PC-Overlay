@@ -209,9 +209,11 @@ Public Class DaS_PC_Gizmo
 
         cls.Clear()
         For i = 0 To tmpList.Length - 1
-            tmp1 = tmpList(i).Split("|")(0)
-            tmp2 = tmpList(i).Split("|")(1)
-            cls.Add(tmp1, tmp2)
+            If tmpList(i).Contains("|") Then
+                tmp1 = tmpList(i).Split("|")(0)
+                tmp2 = tmpList(i).Split("|")(1)
+                cls.Add(tmp1, tmp2)
+            End If
         Next
 
         nameList.Clear()
@@ -450,10 +452,30 @@ Public Class DaS_PC_Gizmo
                 playerYpos = ReadFloat(charposdataptr + &H14)
                 playerZpos = ReadFloat(charposdataptr + &H18)
 
+                Dim stableXpos As Single
+                Dim stableYpos As Single
+                Dim stableZpos As Single
+
+                Dim tmpptr As Integer
+                tmpptr = &H13784A0
+                If debug Then tmpptr = &H137C660
+
+                tmpptr = ReadInt32(tmpptr)
+
+                stableXpos = ReadFloat(tmpptr + &HB70)
+                stableYpos = ReadFloat(tmpptr + &HB74)
+                stableZpos = ReadFloat(tmpptr + &HB78)
+
+
                 lblFacing.Text = "Heading: " & playerFacing.ToString("0.00") & "°"
                 lblXpos.Text = playerXpos.ToString("0.00")
                 lblYpos.Text = playerYpos.ToString("0.00")
                 lblZpos.Text = playerZpos.ToString("0.00")
+
+                lblstableXpos.Text = stableXpos.ToString("0.00")
+                lblstableYpos.Text = stableYpos.ToString("0.00")
+                lblstableZpos.Text = stableZpos.ToString("0.00")
+
 
                 chkNoMapHit.Checked = ((ReadUInt32(charmapdataptr + &HC4) And &H10) = &H10)
                 chkNoGrav.Checked = ((ReadUInt32(charptr1 + &H1FC) And &H4000) = &H4000)
@@ -475,6 +497,22 @@ Public Class DaS_PC_Gizmo
                     End If
                     cmbBonfire.SelectedItem = clsBonfires(bonfireID)
                 End If
+
+                
+                If Not nmbSpeed.Focused Then
+                    tmpptr = &H137DC70
+                    If debug Then tmpptr = &H1381e30
+
+                    tmpptr = ReadInt32(tmpptr)
+                    tmpptr = ReadInt32(tmpptr + 4)
+                    tmpptr = ReadInt32(tmpptr)
+                    tmpptr = ReadInt32(tmpptr + &H28)
+                    tmpptr = ReadInt32(tmpptr + &H14)
+
+
+                    nmbSpeed.Value = ReadFloat(tmpptr + &H64)
+                End If
+
 
             Case 1
 
@@ -500,12 +538,18 @@ Public Class DaS_PC_Gizmo
                     nmbBrighterCam.Value = ReadFloat(tmpptr + &H270)
                     nmbContrast.Value = ReadFloat(tmpptr + &H280)
 
+
                     tmpptr = ReadUInt32(&H137E204 + dbgboost)
                     nmbMPChannel.Value = ReadBytes(tmpptr + &HB69, 1)(0)
 
+                    tmpptr = &H13784E7
+                    if debug Then tmpptr = &H137C6A8
+                    chkHide.Checked = (ReadBytes(tmpptr, 1)(0) = 1)
 
-                    'Only mapped for Debug
-                    chkHide.Checked = (ReadBytes(&H137C6A8, 1)(0) = 1)
+                    tmpptr = &H137D644
+                    If debug Then tmpptr = &H1381804
+                    tmpptr = ReadInt32(tmpptr)
+                    chkDeadCam.Checked = (ReadBytes(tmpptr + &H40, 1)(0) = 1)
                 End If
 
 
@@ -702,10 +746,13 @@ Public Class DaS_PC_Gizmo
 
 
     Private Sub chkHide_CheckedChanged(sender As Object, e As EventArgs) Handles chkHide.MouseClick
+        Dim tmpptr As integer
+        tmpptr = &H13784E7
+        if debug Then tmpptr = &H137C6A8
         If chkHide.Checked Then
-            WriteBytes(&H137C6A8, {1})
+            WriteBytes(tmpptr, {1})
         Else
-            WriteBytes(&H137C6A8, {0})
+            WriteBytes(tmpptr, {0})
         End If
     End Sub
 
@@ -1100,11 +1147,34 @@ Public Class DaS_PC_Gizmo
         End If
     End Sub
 
-    Private Sub chkDebug_CheckedChanged(sender As Object, e As MouseEventArgs) Handles chkDebugDrawing.MouseClick
-
-    End Sub
 
     Private Sub numRefreshRate_ValueChanged(sender As Object, e As EventArgs) Handles numRefreshRate.ValueChanged
         refTimer.Interval = (1000.0 / numRefreshRate.Value)
+    End Sub
+
+    Private Sub chkDeadCam_CheckedChanged(sender As Object, e As EventArgs) Handles chkDeadCam.MouseClick
+        Dim tmpptr As integer
+        tmpptr = &H137D644
+        if debug Then tmpptr = &H1381804
+        tmpptr = ReadInt32(tmpptr)
+        If chkDeadCam.Checked Then
+            WriteBytes(tmpptr + &H40, {1})
+        Else
+            WriteBytes(tmpptr + &H40, {0})
+        End If
+    End Sub
+
+    Private Sub nmbSpeed_ValueChanged(sender As Object, e As EventArgs) Handles nmbSpeed.ValueChanged
+        Dim tmpptr As integer
+        tmpptr = &H137DC70
+        If debug Then tmpptr = &H1381e30
+
+        tmpptr = ReadInt32(tmpptr)
+        tmpptr = ReadInt32(tmpptr + 4)
+        tmpptr = ReadInt32(tmpptr)
+        tmpptr = ReadInt32(tmpptr + &H28)
+        tmpptr = ReadInt32(tmpptr + &H14)
+
+        WriteFloat(tmpptr + &H64, nmbSpeed.value)
     End Sub
 End Class
