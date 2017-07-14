@@ -105,7 +105,7 @@ Public Class DaS_PC_Gizmo
     Dim charstartYPos As Single
     Dim charstartZpos As Single
 
-    Dim luaParams = New Integer() {0, 0, 0, 0, 0}
+    Dim luaParams = New String() {0, 0, 0, 0, 0}
     Dim previousLuaParamText = New String() {"", "", "", "", ""}
 
     Private _targetProcess As Process = Nothing 'to keep track of it. not used yet.
@@ -530,26 +530,31 @@ Public Class DaS_PC_Gizmo
 
                 If Not beta Then
 
-
-                    If debug Then dbgboost = &H41C0
-                    tmpptr = ReadUInt32(&H1378520 + dbgboost)
-                    tmpptr = ReadUInt32(tmpptr + &H10)
-                    chkBrighterCam.Checked = (ReadBytes(tmpptr + &H26D, 1)(0) = 1)
-                    nmbBrighterCam.Value = ReadFloat(tmpptr + &H270)
-                    nmbContrast.Value = ReadFloat(tmpptr + &H280)
+                    Try
 
 
-                    tmpptr = ReadUInt32(&H137E204 + dbgboost)
-                    nmbMPChannel.Value = ReadBytes(tmpptr + &HB69, 1)(0)
+                        If debug Then dbgboost = &H41C0
+                        tmpptr = ReadUInt32(&H1378520 + dbgboost)
+                        tmpptr = ReadUInt32(tmpptr + &H10)
+                        chkBrighterCam.Checked = (ReadBytes(tmpptr + &H26D, 1)(0) = 1)
+                        nmbBrighterCam.Value = ReadFloat(tmpptr + &H270)
+                        nmbContrast.Value = ReadFloat(tmpptr + &H280)
 
-                    tmpptr = &H13784E7
-                    if debug Then tmpptr = &H137C6A8
-                    chkHide.Checked = (ReadBytes(tmpptr, 1)(0) = 1)
 
-                    tmpptr = &H137D644
-                    If debug Then tmpptr = &H1381804
-                    tmpptr = ReadInt32(tmpptr)
-                    chkDeadCam.Checked = (ReadBytes(tmpptr + &H40, 1)(0) = 1)
+                        tmpptr = ReadUInt32(&H137E204 + dbgboost)
+                        nmbMPChannel.Value = ReadBytes(tmpptr + &HB69, 1)(0)
+
+                        tmpptr = &H13784E7
+                        If debug Then tmpptr = &H137C6A8
+                        chkHide.Checked = (ReadBytes(tmpptr, 1)(0) = 1)
+
+                        tmpptr = &H137D644
+                        If debug Then tmpptr = &H1381804
+                        tmpptr = ReadInt32(tmpptr)
+                        chkDeadCam.Checked = (ReadBytes(tmpptr + &H40, 1)(0) = 1)
+                    Catch ex As Exception
+
+                    End Try
                 End If
 
 
@@ -891,7 +896,11 @@ Public Class DaS_PC_Gizmo
         insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
 
         For i As Integer = 4 To 0 Step -1
-            bytes2 = BitConverter.GetBytes(luaParams(i))
+            If luaParams(i).Contains(".") Then
+                bytes2 = BitConverter.GetBytes(Convert.ToSingle(luaParams(i)))
+            Else
+                bytes2 = BitConverter.GetBytes(Convert.ToInt32(luaParams(i)))
+            End If
             Array.Copy(bytes2, 0, bytes, bytParams(i), bytes2.Length)
         Next
 
@@ -1092,7 +1101,7 @@ Public Class DaS_PC_Gizmo
         grpbSelectedEntity.Text = "Entity #" & nmbSelectedEntity.Value & ": "
     End Sub
 
-    Private Sub removeNonIntLuaParamChars(txtBox As TextBox, paramIndex As Integer)
+    Private Sub removeNonNumericLuaParamChars(txtBox As TextBox, paramIndex As Integer)
         Dim chkStr = txtBox.Text.ToCharArray()
         Dim newText = ""
         luaParams(paramIndex) = 0
@@ -1101,6 +1110,8 @@ Public Class DaS_PC_Gizmo
             If Integer.TryParse(chkStr(i), nextDigit) Then
                 luaParams(paramIndex) += (nextDigit * (10 ^ (chkStr.GetUpperBound(0) - i)))
                 newText = nextDigit & newText
+            ElseIf chkStr(i) = "." Or chkStr(i) = "-" Then
+                newText = nextDigit & newText
             End If
         Next
         previousLuaParamText(paramIndex) = newText
@@ -1108,9 +1119,8 @@ Public Class DaS_PC_Gizmo
     End Sub
 
     Private Sub checkLuaParamTextChangeIgnore(textBox As TextBox, paramIndex As Integer)
-        If textBox.Text IsNot previousLuaParamText(paramIndex) Then
-            removeNonIntLuaParamChars(textBox, paramIndex)
-        End If
+
+        luaParams(paramIndex) = textBox.Text
     End Sub
 
     Private Sub txtFuncParam1_TextChanged(sender As Object, e As EventArgs) Handles txtFuncParam1.TextChanged
