@@ -1,6 +1,7 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.Runtime.InteropServices
 Imports System.Threading
+Imports System.Globalization
 
 
 Public Class DaS_PC_Gizmo
@@ -548,6 +549,9 @@ Public Class DaS_PC_Gizmo
                         If debug Then tmpptr = &H137C6A8
                         chkHide.Checked = (ReadBytes(tmpptr, 1)(0) = 1)
 
+
+                        chkDisableAI.Checked = (ReadBytes(tmpptr, 1)(0) = 1)
+
                         tmpptr = &H137D644
                         If debug Then tmpptr = &H1381804
                         tmpptr = ReadInt32(tmpptr)
@@ -751,9 +755,19 @@ Public Class DaS_PC_Gizmo
 
 
     Private Sub chkHide_CheckedChanged(sender As Object, e As EventArgs) Handles chkHide.MouseClick
-        Dim tmpptr As integer
+        Dim tmpptr As Integer
         tmpptr = &H13784E7
-        if debug Then tmpptr = &H137C6A8
+        If debug Then tmpptr = &H137C6A8
+        If chkHide.Checked Then
+            WriteBytes(tmpptr, {1})
+        Else
+            WriteBytes(tmpptr, {0})
+        End If
+    End Sub
+    Private Sub chkDisableAI_CheckedChanged(sender As Object, e As EventArgs) Handles chkDisableAI.CheckedChanged
+        Dim tmpptr As Integer
+        tmpptr = &H13784EE
+        If debug Then tmpptr = &H137C6AF
         If chkHide.Checked Then
             WriteBytes(tmpptr, {1})
         Else
@@ -896,10 +910,12 @@ Public Class DaS_PC_Gizmo
         insertPtr = VirtualAllocEx(_targetProcessHandle, 0, TargetBufferSize, MEM_COMMIT, PAGE_READWRITE)
 
         For i As Integer = 4 To 0 Step -1
+            If luaParams(i) = "False" Then luaParams(i) = 0
+            If luaParams(i) = "True" Then luaParams(i) = 1
             If luaParams(i).Contains(".") Then
-                bytes2 = BitConverter.GetBytes(Convert.ToSingle(luaParams(i)))
+                bytes2 = BitConverter.GetBytes(Convert.ToSingle(luaParams(i), New CultureInfo("en-us")))
             Else
-                bytes2 = BitConverter.GetBytes(Convert.ToInt32(luaParams(i)))
+                bytes2 = BitConverter.GetBytes(Convert.ToInt32(luaParams(i), New CultureInfo("en-us")))
             End If
             Array.Copy(bytes2, 0, bytes, bytParams(i), bytes2.Length)
         Next
@@ -1187,4 +1203,5 @@ Public Class DaS_PC_Gizmo
 
         WriteFloat(tmpptr + &H64, nmbSpeed.value)
     End Sub
+
 End Class
