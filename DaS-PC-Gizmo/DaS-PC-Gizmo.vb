@@ -549,7 +549,8 @@ Public Class DaS_PC_Gizmo
                         If debug Then tmpptr = &H137C6A8
                         chkHide.Checked = (ReadBytes(tmpptr, 1)(0) = 1)
 
-
+                        tmpptr = &H13784EE
+                        If debug Then tmpptr = &H137C6AF
                         chkDisableAI.Checked = (ReadBytes(tmpptr, 1)(0) = 1)
 
                         tmpptr = &H137D644
@@ -768,7 +769,7 @@ Public Class DaS_PC_Gizmo
         Dim tmpptr As Integer
         tmpptr = &H13784EE
         If debug Then tmpptr = &H137C6AF
-        If chkHide.Checked Then
+        If chkDisableAI.Checked Then
             WriteBytes(tmpptr, {1})
         Else
             WriteBytes(tmpptr, {0})
