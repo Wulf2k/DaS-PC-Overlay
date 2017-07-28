@@ -923,6 +923,7 @@ Public Class DaS_PC_Gizmo
         For i As Integer = 4 To 0 Step -1
             If luaParams(i) = "False" Then luaParams(i) = 0
             If luaParams(i) = "True" Then luaParams(i) = 1
+            If luaParams(i) Is Nothing Then luaParams(i) = 0
             If luaParams(i).Contains(".") Then
                 bytes2 = BitConverter.GetBytes(Convert.ToSingle(luaParams(i), New CultureInfo("en-us")))
             Else
