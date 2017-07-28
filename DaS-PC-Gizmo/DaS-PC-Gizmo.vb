@@ -599,6 +599,16 @@ Public Class DaS_PC_Gizmo
 
                 nmbSelectedEntity.Maximum = ((crtend - crtstart) / 4)
                 lblNumEntities.Text = nmbSelectedEntity.Maximum.ToString()
+
+                Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbSelectedEntity.Value - 4)
+
+                lblEntityPointerValue.Text = Hex(crtdata1ptr)
+
+
+
+
+
+
             Case 6
                 If ForceIdPtr > 0 Then
                     lblAttemptCount.Text = "Attempts: " & ReadInt32(ForceIdPtr + &H120)
@@ -933,7 +943,7 @@ Public Class DaS_PC_Gizmo
     End Sub
 
     Private Sub btnCrtControl_Click(sender As Object, e As EventArgs) Handles btnCrtControl.Click
-        'Only fully works in debug.
+
         If debug Then
             dbgboost = &H41C0
         Else
@@ -951,8 +961,14 @@ Public Class DaS_PC_Gizmo
 
         WriteInt32(camPtr, crtdata1ptr)
 
-        Dim ctrlptr As Integer = ReadInt32(&H137D648 + dbgboost)
-        ctrlptr = ReadInt32(ctrlptr + &HE8)
+        'Dim ctrlptr As Integer = ReadInt32(&H137D648 + dbgboost)
+        'ctrlptr = ReadInt32(ctrlptr + &HE8)
+
+        Dim ctrlptr As Integer
+        ctrlptr = ReadInt32(crtstart)
+        ctrlptr = ReadInt32(ctrlptr + &H28)
+        ctrlptr = ReadInt32(ctrlptr + &H54)
+
 
         WriteInt32(crtdata3ptr + &H244, ctrlptr)
 
@@ -1116,6 +1132,22 @@ Public Class DaS_PC_Gizmo
 
     Private Sub nmbCrtNum_ValueChanged(sender As Object, e As EventArgs) Handles nmbSelectedEntity.ValueChanged
         grpbSelectedEntity.Text = "Entity #" & nmbSelectedEntity.Value & ": "
+
+        If debug Then
+            dbgboost = &H41C0
+        Else
+            dbgboost = 0
+        End If
+
+        Dim crtdata As Integer = ReadInt32(&H137DC70 + dbgboost)
+        Dim crtstart As Integer = ReadInt32(crtdata + 4)
+        Dim crtend As Integer = ReadInt32(crtdata + 8)
+
+        Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbSelectedEntity.Value - 4)
+
+        Dim camPtr As Integer = ReadInt32(&H137D648 + dbgboost) + &HEC
+
+        WriteInt32(camPtr, crtdata1ptr)
     End Sub
 
     Private Sub removeNonNumericLuaParamChars(txtBox As TextBox, paramIndex As Integer)
@@ -1205,4 +1237,21 @@ Public Class DaS_PC_Gizmo
         WriteFloat(tmpptr + &H64, nmbSpeed.value)
     End Sub
 
+    Private Sub btnCrtControlRestore_Click(sender As Object, e As EventArgs) Handles btnCrtControlRestore.Click
+        If debug Then
+            dbgboost = &H41C0
+        Else
+            dbgboost = 0
+        End If
+
+        Dim crtdata As Integer = ReadInt32(&H137DC70 + dbgboost)
+        Dim crtstart As Integer = ReadInt32(crtdata + 4)
+        Dim crtend As Integer = ReadInt32(crtdata + 8)
+
+        Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbSelectedEntity.Value - 4)
+        Dim crtdata3ptr As Integer = ReadInt32(crtdata1ptr + &H28)
+
+
+        WriteInt32(crtdata3ptr + &H244, 0)
+    End Sub
 End Class

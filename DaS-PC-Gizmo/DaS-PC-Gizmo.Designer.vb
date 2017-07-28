@@ -71,6 +71,7 @@ Partial Class DaS_PC_Gizmo
         Me.cmbItemCat = New System.Windows.Forms.ComboBox()
         Me.btnDropItem = New System.Windows.Forms.Button()
         Me.tabDebug = New System.Windows.Forms.TabPage()
+        Me.chkDisableAI = New System.Windows.Forms.CheckBox()
         Me.chkDeadCam = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.nmbMPChannel = New System.Windows.Forms.NumericUpDown()
@@ -141,7 +142,9 @@ Partial Class DaS_PC_Gizmo
         Me.buttonApplyHook = New System.Windows.Forms.Button()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.numRefreshRate = New System.Windows.Forms.NumericUpDown()
-        Me.chkDisableAI = New System.Windows.Forms.CheckBox()
+        Me.lblEntityPointerText = New System.Windows.Forms.Label()
+        Me.lblEntityPointerValue = New System.Windows.Forms.Label()
+        Me.btnCrtControlRestore = New System.Windows.Forms.Button()
         Me.tabs.SuspendLayout()
         Me.tabMain.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -693,6 +696,16 @@ Partial Class DaS_PC_Gizmo
         Me.tabDebug.TabIndex = 1
         Me.tabDebug.Text = "Debug"
         '
+        'chkDisableAI
+        '
+        Me.chkDisableAI.AutoSize = True
+        Me.chkDisableAI.Location = New System.Drawing.Point(11, 215)
+        Me.chkDisableAI.Name = "chkDisableAI"
+        Me.chkDisableAI.Size = New System.Drawing.Size(74, 17)
+        Me.chkDisableAI.TabIndex = 48
+        Me.chkDisableAI.Text = "Disable AI"
+        Me.chkDisableAI.UseVisualStyleBackColor = False
+        '
         'chkDeadCam
         '
         Me.chkDeadCam.AutoSize = True
@@ -1191,6 +1204,9 @@ Partial Class DaS_PC_Gizmo
         Me.grpbSelectedEntity.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grpbSelectedEntity.Controls.Add(Me.btnCrtControlRestore)
+        Me.grpbSelectedEntity.Controls.Add(Me.lblEntityPointerValue)
+        Me.grpbSelectedEntity.Controls.Add(Me.lblEntityPointerText)
         Me.grpbSelectedEntity.Controls.Add(Me.btnCrtControl)
         Me.grpbSelectedEntity.Location = New System.Drawing.Point(16, 71)
         Me.grpbSelectedEntity.Name = "grpbSelectedEntity"
@@ -1205,7 +1221,7 @@ Partial Class DaS_PC_Gizmo
         Me.btnCrtControl.Name = "btnCrtControl"
         Me.btnCrtControl.Size = New System.Drawing.Size(194, 23)
         Me.btnCrtControl.TabIndex = 46
-        Me.btnCrtControl.Text = "Switch Control to This Entity"
+        Me.btnCrtControl.Text = "Take Control of Entity"
         Me.btnCrtControl.UseVisualStyleBackColor = False
         '
         'Label19
@@ -1219,7 +1235,6 @@ Partial Class DaS_PC_Gizmo
         '
         'lblNumEntities
         '
-        Me.lblNumEntities.AutoSize = True
         Me.lblNumEntities.Location = New System.Drawing.Point(83, 21)
         Me.lblNumEntities.Name = "lblNumEntities"
         Me.lblNumEntities.Size = New System.Drawing.Size(21, 13)
@@ -1237,7 +1252,6 @@ Partial Class DaS_PC_Gizmo
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(13, 20)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(67, 13)
@@ -1355,15 +1369,30 @@ Partial Class DaS_PC_Gizmo
         Me.numRefreshRate.TabIndex = 49
         Me.numRefreshRate.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
-        'chkDisableAI
+        'lblEntityPointerText
         '
-        Me.chkDisableAI.AutoSize = True
-        Me.chkDisableAI.Location = New System.Drawing.Point(11, 215)
-        Me.chkDisableAI.Name = "chkDisableAI"
-        Me.chkDisableAI.Size = New System.Drawing.Size(74, 17)
-        Me.chkDisableAI.TabIndex = 48
-        Me.chkDisableAI.Text = "Disable AI"
-        Me.chkDisableAI.UseVisualStyleBackColor = False
+        Me.lblEntityPointerText.Location = New System.Drawing.Point(12, 97)
+        Me.lblEntityPointerText.Name = "lblEntityPointerText"
+        Me.lblEntityPointerText.Size = New System.Drawing.Size(76, 13)
+        Me.lblEntityPointerText.TabIndex = 50
+        Me.lblEntityPointerText.Text = "Entity Pointer:"
+        '
+        'lblEntityPointerValue
+        '
+        Me.lblEntityPointerValue.Location = New System.Drawing.Point(94, 97)
+        Me.lblEntityPointerValue.Name = "lblEntityPointerValue"
+        Me.lblEntityPointerValue.Size = New System.Drawing.Size(72, 13)
+        Me.lblEntityPointerValue.TabIndex = 51
+        Me.lblEntityPointerValue.Text = "#########"
+        '
+        'btnCrtControlRestore
+        '
+        Me.btnCrtControlRestore.Location = New System.Drawing.Point(15, 59)
+        Me.btnCrtControlRestore.Name = "btnCrtControlRestore"
+        Me.btnCrtControlRestore.Size = New System.Drawing.Size(194, 23)
+        Me.btnCrtControlRestore.TabIndex = 52
+        Me.btnCrtControlRestore.Text = "Restore Control to Entity"
+        Me.btnCrtControlRestore.UseVisualStyleBackColor = False
         '
         'DaS_PC_Gizmo
         '
@@ -1541,4 +1570,7 @@ End Sub
     Friend WithEvents Label33 As Label
     Friend WithEvents nmbSpeed As NumericUpDown
     Friend WithEvents chkDisableAI As CheckBox
+    Friend WithEvents lblEntityPointerText As Label
+    Friend WithEvents lblEntityPointerValue As Label
+    Friend WithEvents btnCrtControlRestore As Button
 End Class
