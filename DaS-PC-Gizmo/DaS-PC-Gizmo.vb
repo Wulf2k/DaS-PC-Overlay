@@ -1258,4 +1258,18 @@ Public Class DaS_PC_Gizmo
 
         WriteInt32(crtdata3ptr + &H244, 0)
     End Sub
+
+    Private Sub chkBackgroundInput_CheckedChanged(sender As Object, e As EventArgs) Handles chkBackgroundInput.CheckedChanged
+        If debug Then
+            dbgboost = &H36B0
+        Else
+            dbgboost = 0
+        End If
+
+        If chkBackgroundInput.Checked Then
+            WriteBytes(&HF72543 + dbgboost, {&HB0, 1, &H90})
+        Else
+            WriteBytes(&HF72543 + dbgboost, {&HF, 94, &HC0})
+        End If
+    End Sub
 End Class

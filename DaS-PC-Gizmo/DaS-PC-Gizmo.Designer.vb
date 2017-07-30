@@ -126,6 +126,8 @@ Partial Class DaS_PC_Gizmo
         Me.cmbFuncName = New System.Windows.Forms.ComboBox()
         Me.tabCreatures = New System.Windows.Forms.TabPage()
         Me.grpbSelectedEntity = New System.Windows.Forms.GroupBox()
+        Me.lblEntityID = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
         Me.btnCrtControlRestore = New System.Windows.Forms.Button()
         Me.lblEntityPointerValue = New System.Windows.Forms.Label()
         Me.lblEntityPointerText = New System.Windows.Forms.Label()
@@ -145,8 +147,7 @@ Partial Class DaS_PC_Gizmo
         Me.buttonApplyHook = New System.Windows.Forms.Button()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.numRefreshRate = New System.Windows.Forms.NumericUpDown()
-        Me.lblEntityID = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
+        Me.chkBackgroundInput = New System.Windows.Forms.CheckBox()
         Me.tabs.SuspendLayout
         Me.tabMain.SuspendLayout
         Me.GroupBox2.SuspendLayout
@@ -679,6 +680,7 @@ Partial Class DaS_PC_Gizmo
         'tabDebug
         '
         Me.tabDebug.AutoScroll = true
+        Me.tabDebug.Controls.Add(Me.chkBackgroundInput)
         Me.tabDebug.Controls.Add(Me.chkDisableAI)
         Me.tabDebug.Controls.Add(Me.chkDeadCam)
         Me.tabDebug.Controls.Add(Me.Label6)
@@ -1219,6 +1221,22 @@ Partial Class DaS_PC_Gizmo
         Me.grpbSelectedEntity.TabStop = false
         Me.grpbSelectedEntity.Text = "Entity#0: "
         '
+        'lblEntityID
+        '
+        Me.lblEntityID.Location = New System.Drawing.Point(94, 121)
+        Me.lblEntityID.Name = "lblEntityID"
+        Me.lblEntityID.Size = New System.Drawing.Size(72, 13)
+        Me.lblEntityID.TabIndex = 54
+        Me.lblEntityID.Text = "#########"
+        '
+        'Label35
+        '
+        Me.Label35.Location = New System.Drawing.Point(12, 121)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(76, 13)
+        Me.Label35.TabIndex = 53
+        Me.Label35.Text = "Entity ID:"
+        '
         'btnCrtControlRestore
         '
         Me.btnCrtControlRestore.Location = New System.Drawing.Point(15, 59)
@@ -1398,21 +1416,15 @@ Partial Class DaS_PC_Gizmo
         Me.numRefreshRate.TabIndex = 49
         Me.numRefreshRate.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
-        'lblEntityID
+        'chkBackgroundInput
         '
-        Me.lblEntityID.Location = New System.Drawing.Point(94, 121)
-        Me.lblEntityID.Name = "lblEntityID"
-        Me.lblEntityID.Size = New System.Drawing.Size(72, 13)
-        Me.lblEntityID.TabIndex = 54
-        Me.lblEntityID.Text = "#########"
-        '
-        'Label35
-        '
-        Me.Label35.Location = New System.Drawing.Point(12, 121)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(76, 13)
-        Me.Label35.TabIndex = 53
-        Me.Label35.Text = "Entity ID:"
+        Me.chkBackgroundInput.AutoSize = true
+        Me.chkBackgroundInput.Location = New System.Drawing.Point(11, 416)
+        Me.chkBackgroundInput.Name = "chkBackgroundInput"
+        Me.chkBackgroundInput.Size = New System.Drawing.Size(152, 17)
+        Me.chkBackgroundInput.TabIndex = 49
+        Me.chkBackgroundInput.Text = "Accept input without focus"
+        Me.chkBackgroundInput.UseVisualStyleBackColor = false
         '
         'DaS_PC_Gizmo
         '
@@ -1595,4 +1607,5 @@ End Sub
     Friend WithEvents btnCrtControlRestore As Button
     Friend WithEvents lblEntityID As Label
     Friend WithEvents Label35 As Label
+    Friend WithEvents chkBackgroundInput As CheckBox
 End Class
