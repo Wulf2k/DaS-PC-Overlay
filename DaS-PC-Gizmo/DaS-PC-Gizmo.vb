@@ -603,6 +603,7 @@ Public Class DaS_PC_Gizmo
                 Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbSelectedEntity.Value - 4)
 
                 lblEntityPointerValue.Text = Hex(crtdata1ptr)
+                lblEntityID.Text = ReadInt32(crtdata1ptr + &H68)
 
 
 
@@ -923,7 +924,7 @@ Public Class DaS_PC_Gizmo
         For i As Integer = 4 To 0 Step -1
             If luaParams(i) = "False" Then luaParams(i) = 0
             If luaParams(i) = "True" Then luaParams(i) = 1
-            If luaParams(i) Is Nothing Then luaParams(i) = 0
+            If luaParams(i) Is Nothing or luaParams(i).length < 1 Then luaParams(i) = 0
             If luaParams(i).Contains(".") Then
                 bytes2 = BitConverter.GetBytes(Convert.ToSingle(luaParams(i), New CultureInfo("en-us")))
             Else
@@ -940,6 +941,8 @@ Public Class DaS_PC_Gizmo
 
         Rtn = WriteProcessMemory(_targetProcessHandle, insertPtr, bytes, TargetBufferSize, 0)
         CreateRemoteThread(_targetProcessHandle, 0, 0, insertPtr, 0, 0, 0)
+
+        Console.WriteLine(Hex(insertPtr))
 
     End Sub
 
