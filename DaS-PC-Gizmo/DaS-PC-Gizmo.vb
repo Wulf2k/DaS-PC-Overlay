@@ -605,7 +605,8 @@ Public Class DaS_PC_Gizmo
                 lblEntityPointerValue.Text = Hex(crtdata1ptr)
                 lblEntityID.Text = ReadInt32(crtdata1ptr + &H68)
 
-
+                lblEntityCtrlPtr.Text = Hex(readint32(readint32(crtdata1ptr+&H28)+&H54))
+                lblAIID.Text = ReadInt32(crtdata1ptr + &H41c)
 
 
 

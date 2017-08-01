@@ -71,6 +71,7 @@ Partial Class DaS_PC_Gizmo
         Me.cmbItemCat = New System.Windows.Forms.ComboBox()
         Me.btnDropItem = New System.Windows.Forms.Button()
         Me.tabDebug = New System.Windows.Forms.TabPage()
+        Me.chkBackgroundInput = New System.Windows.Forms.CheckBox()
         Me.chkDisableAI = New System.Windows.Forms.CheckBox()
         Me.chkDeadCam = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -147,7 +148,10 @@ Partial Class DaS_PC_Gizmo
         Me.buttonApplyHook = New System.Windows.Forms.Button()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.numRefreshRate = New System.Windows.Forms.NumericUpDown()
-        Me.chkBackgroundInput = New System.Windows.Forms.CheckBox()
+        Me.lblEntityCtrlPtr = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.lblAIID = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.tabs.SuspendLayout
         Me.tabMain.SuspendLayout
         Me.GroupBox2.SuspendLayout
@@ -700,6 +704,16 @@ Partial Class DaS_PC_Gizmo
         Me.tabDebug.TabIndex = 1
         Me.tabDebug.Text = "Debug"
         '
+        'chkBackgroundInput
+        '
+        Me.chkBackgroundInput.AutoSize = true
+        Me.chkBackgroundInput.Location = New System.Drawing.Point(11, 416)
+        Me.chkBackgroundInput.Name = "chkBackgroundInput"
+        Me.chkBackgroundInput.Size = New System.Drawing.Size(152, 17)
+        Me.chkBackgroundInput.TabIndex = 49
+        Me.chkBackgroundInput.Text = "Accept input without focus"
+        Me.chkBackgroundInput.UseVisualStyleBackColor = false
+        '
         'chkDisableAI
         '
         Me.chkDisableAI.AutoSize = true
@@ -1208,6 +1222,10 @@ Partial Class DaS_PC_Gizmo
         Me.grpbSelectedEntity.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
             Or System.Windows.Forms.AnchorStyles.Left)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.grpbSelectedEntity.Controls.Add(Me.lblAIID)
+        Me.grpbSelectedEntity.Controls.Add(Me.Label37)
+        Me.grpbSelectedEntity.Controls.Add(Me.lblEntityCtrlPtr)
+        Me.grpbSelectedEntity.Controls.Add(Me.Label36)
         Me.grpbSelectedEntity.Controls.Add(Me.lblEntityID)
         Me.grpbSelectedEntity.Controls.Add(Me.Label35)
         Me.grpbSelectedEntity.Controls.Add(Me.btnCrtControlRestore)
@@ -1223,7 +1241,7 @@ Partial Class DaS_PC_Gizmo
         '
         'lblEntityID
         '
-        Me.lblEntityID.Location = New System.Drawing.Point(94, 121)
+        Me.lblEntityID.Location = New System.Drawing.Point(94, 143)
         Me.lblEntityID.Name = "lblEntityID"
         Me.lblEntityID.Size = New System.Drawing.Size(72, 13)
         Me.lblEntityID.TabIndex = 54
@@ -1231,7 +1249,7 @@ Partial Class DaS_PC_Gizmo
         '
         'Label35
         '
-        Me.Label35.Location = New System.Drawing.Point(12, 121)
+        Me.Label35.Location = New System.Drawing.Point(12, 143)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(76, 13)
         Me.Label35.TabIndex = 53
@@ -1416,15 +1434,37 @@ Partial Class DaS_PC_Gizmo
         Me.numRefreshRate.TabIndex = 49
         Me.numRefreshRate.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
-        'chkBackgroundInput
+        'lblEntityCtrlPtr
         '
-        Me.chkBackgroundInput.AutoSize = true
-        Me.chkBackgroundInput.Location = New System.Drawing.Point(11, 416)
-        Me.chkBackgroundInput.Name = "chkBackgroundInput"
-        Me.chkBackgroundInput.Size = New System.Drawing.Size(152, 17)
-        Me.chkBackgroundInput.TabIndex = 49
-        Me.chkBackgroundInput.Text = "Accept input without focus"
-        Me.chkBackgroundInput.UseVisualStyleBackColor = false
+        Me.lblEntityCtrlPtr.Location = New System.Drawing.Point(94, 119)
+        Me.lblEntityCtrlPtr.Name = "lblEntityCtrlPtr"
+        Me.lblEntityCtrlPtr.Size = New System.Drawing.Size(72, 13)
+        Me.lblEntityCtrlPtr.TabIndex = 56
+        Me.lblEntityCtrlPtr.Text = "#########"
+        '
+        'Label36
+        '
+        Me.Label36.Location = New System.Drawing.Point(12, 119)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(76, 13)
+        Me.Label36.TabIndex = 55
+        Me.Label36.Text = "Entity Ctrl ptr:"
+        '
+        'lblAIID
+        '
+        Me.lblAIID.Location = New System.Drawing.Point(94, 167)
+        Me.lblAIID.Name = "lblAIID"
+        Me.lblAIID.Size = New System.Drawing.Size(72, 13)
+        Me.lblAIID.TabIndex = 58
+        Me.lblAIID.Text = "#########"
+        '
+        'Label37
+        '
+        Me.Label37.Location = New System.Drawing.Point(12, 167)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(76, 13)
+        Me.Label37.TabIndex = 57
+        Me.Label37.Text = "AI ID:"
         '
         'DaS_PC_Gizmo
         '
@@ -1608,4 +1648,8 @@ End Sub
     Friend WithEvents lblEntityID As Label
     Friend WithEvents Label35 As Label
     Friend WithEvents chkBackgroundInput As CheckBox
+    Friend WithEvents lblEntityCtrlPtr As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents lblAIID As Label
+    Friend WithEvents Label37 As Label
 End Class
