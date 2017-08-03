@@ -6,6 +6,7 @@
 14024912|AddCurrentVowRankPoint
 14042560|AddCustomRoutePoint
 14016032|AddDeathCount
+14028080|AddEventParts
 14028016|AddEventParts_Ignore
 14035040|AddEventSimpleTalk
 14034976|AddEventSimpleTalkTimer
@@ -30,8 +31,8 @@
 14049200|CastPointSpell
 14048912|CastTargetSpell
 14048848|CastTargetSpellPlus
-14028144|ChangeInitPosAng
 14050256|ChangeGreyGhost
+14028144|ChangeInitPosAng
 14044272|ChangeModel
 14032288|ChangeTarget
 14047392|ChangeThink
