@@ -603,7 +603,7 @@ Public Class DaS_PC_Gizmo
                 Dim crtdata1ptr As Integer = ReadInt32(crtstart + 4 * nmbSelectedEntity.Value - 4)
 
                 lblEntityPointerValue.Text = Hex(crtdata1ptr)
-                lblEntityID.Text = ReadInt32(crtdata1ptr + &H68)
+                lblEntityID.Text = ReadInt32(crtdata1ptr + &H208)
 
                 lblEntityCtrlPtr.Text = Hex(readint32(readint32(crtdata1ptr+&H28)+&H54))
                 lblAIID.Text = ReadInt32(crtdata1ptr + &H41c)
