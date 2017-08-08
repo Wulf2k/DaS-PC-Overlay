@@ -314,6 +314,7 @@
 14020896|SetObjDeactivate
 14021440|SetObjDisableBreak
 14024576|SetObjEventCollisionFill
+14033696|SetObjSfx
 14015600|SetReturnPointEntityId
 14018176|SetReviveWait
 14024688|SetSelfBloodMapUid
@@ -331,6 +332,7 @@
 14017584|SetTextEffect
 14016640|SetTutorialSummonedPos
 14017984|SetValidTalk
+14020336|ShowGenDialog
 14014816|ShowRankingDialog
 14024640|StopLoopAnimation
 14027088|StopPlayer
@@ -357,6 +359,7 @@
 14014480|Util_RequestRespawn
 14020640|ValidPointLight
 14020768|ValidSfx
+14032976|Warn
 14032192|Warp
 14043760|WarpDmy
 14036224|WarpNextStage

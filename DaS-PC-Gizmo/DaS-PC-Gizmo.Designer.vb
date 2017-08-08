@@ -127,6 +127,10 @@ Partial Class DaS_PC_Gizmo
         Me.cmbFuncName = New System.Windows.Forms.ComboBox()
         Me.tabCreatures = New System.Windows.Forms.TabPage()
         Me.grpbSelectedEntity = New System.Windows.Forms.GroupBox()
+        Me.lblAIID = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.lblEntityCtrlPtr = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
         Me.lblEntityID = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.btnCrtControlRestore = New System.Windows.Forms.Button()
@@ -148,10 +152,8 @@ Partial Class DaS_PC_Gizmo
         Me.buttonApplyHook = New System.Windows.Forms.Button()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.numRefreshRate = New System.Windows.Forms.NumericUpDown()
-        Me.lblEntityCtrlPtr = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.lblAIID = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
+        Me.dgvEntities = New System.Windows.Forms.DataGridView()
+        Me.btnLoadEntities = New System.Windows.Forms.Button()
         Me.tabs.SuspendLayout
         Me.tabMain.SuspendLayout
         Me.GroupBox2.SuspendLayout
@@ -183,6 +185,7 @@ Partial Class DaS_PC_Gizmo
         CType(Me.nmbSelectedEntity,System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabMPNodes.SuspendLayout
         CType(Me.numRefreshRate,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.dgvEntities,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'tabs
@@ -1222,6 +1225,8 @@ Partial Class DaS_PC_Gizmo
         Me.grpbSelectedEntity.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
             Or System.Windows.Forms.AnchorStyles.Left)  _
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.grpbSelectedEntity.Controls.Add(Me.btnLoadEntities)
+        Me.grpbSelectedEntity.Controls.Add(Me.dgvEntities)
         Me.grpbSelectedEntity.Controls.Add(Me.lblAIID)
         Me.grpbSelectedEntity.Controls.Add(Me.Label37)
         Me.grpbSelectedEntity.Controls.Add(Me.lblEntityCtrlPtr)
@@ -1238,6 +1243,38 @@ Partial Class DaS_PC_Gizmo
         Me.grpbSelectedEntity.TabIndex = 49
         Me.grpbSelectedEntity.TabStop = false
         Me.grpbSelectedEntity.Text = "Entity#0: "
+        '
+        'lblAIID
+        '
+        Me.lblAIID.Location = New System.Drawing.Point(94, 167)
+        Me.lblAIID.Name = "lblAIID"
+        Me.lblAIID.Size = New System.Drawing.Size(72, 13)
+        Me.lblAIID.TabIndex = 58
+        Me.lblAIID.Text = "#########"
+        '
+        'Label37
+        '
+        Me.Label37.Location = New System.Drawing.Point(12, 167)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(76, 13)
+        Me.Label37.TabIndex = 57
+        Me.Label37.Text = "AI ID:"
+        '
+        'lblEntityCtrlPtr
+        '
+        Me.lblEntityCtrlPtr.Location = New System.Drawing.Point(94, 119)
+        Me.lblEntityCtrlPtr.Name = "lblEntityCtrlPtr"
+        Me.lblEntityCtrlPtr.Size = New System.Drawing.Size(72, 13)
+        Me.lblEntityCtrlPtr.TabIndex = 56
+        Me.lblEntityCtrlPtr.Text = "#########"
+        '
+        'Label36
+        '
+        Me.Label36.Location = New System.Drawing.Point(12, 119)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(76, 13)
+        Me.Label36.TabIndex = 55
+        Me.Label36.Text = "Entity Ctrl ptr:"
         '
         'lblEntityID
         '
@@ -1434,37 +1471,25 @@ Partial Class DaS_PC_Gizmo
         Me.numRefreshRate.TabIndex = 49
         Me.numRefreshRate.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
-        'lblEntityCtrlPtr
+        'dgvEntities
         '
-        Me.lblEntityCtrlPtr.Location = New System.Drawing.Point(94, 119)
-        Me.lblEntityCtrlPtr.Name = "lblEntityCtrlPtr"
-        Me.lblEntityCtrlPtr.Size = New System.Drawing.Size(72, 13)
-        Me.lblEntityCtrlPtr.TabIndex = 56
-        Me.lblEntityCtrlPtr.Text = "#########"
+        Me.dgvEntities.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.dgvEntities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEntities.Location = New System.Drawing.Point(7, 228)
+        Me.dgvEntities.Name = "dgvEntities"
+        Me.dgvEntities.Size = New System.Drawing.Size(338, 138)
+        Me.dgvEntities.TabIndex = 59
         '
-        'Label36
+        'btnLoadEntities
         '
-        Me.Label36.Location = New System.Drawing.Point(12, 119)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(76, 13)
-        Me.Label36.TabIndex = 55
-        Me.Label36.Text = "Entity Ctrl ptr:"
-        '
-        'lblAIID
-        '
-        Me.lblAIID.Location = New System.Drawing.Point(94, 167)
-        Me.lblAIID.Name = "lblAIID"
-        Me.lblAIID.Size = New System.Drawing.Size(72, 13)
-        Me.lblAIID.TabIndex = 58
-        Me.lblAIID.Text = "#########"
-        '
-        'Label37
-        '
-        Me.Label37.Location = New System.Drawing.Point(12, 167)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(76, 13)
-        Me.Label37.TabIndex = 57
-        Me.Label37.Text = "AI ID:"
+        Me.btnLoadEntities.Location = New System.Drawing.Point(7, 199)
+        Me.btnLoadEntities.Name = "btnLoadEntities"
+        Me.btnLoadEntities.Size = New System.Drawing.Size(194, 23)
+        Me.btnLoadEntities.TabIndex = 60
+        Me.btnLoadEntities.Text = "Load Entities"
+        Me.btnLoadEntities.UseVisualStyleBackColor = false
         '
         'DaS_PC_Gizmo
         '
@@ -1518,6 +1543,7 @@ Partial Class DaS_PC_Gizmo
         Me.tabMPNodes.ResumeLayout(false)
         Me.tabMPNodes.PerformLayout
         CType(Me.numRefreshRate,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.dgvEntities,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -1652,4 +1678,6 @@ End Sub
     Friend WithEvents Label36 As Label
     Friend WithEvents lblAIID As Label
     Friend WithEvents Label37 As Label
+    Friend WithEvents btnLoadEntities As Button
+    Friend WithEvents dgvEntities As DataGridView
 End Class

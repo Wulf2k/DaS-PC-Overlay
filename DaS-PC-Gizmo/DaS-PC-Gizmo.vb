@@ -1273,4 +1273,48 @@ Public Class DaS_PC_Gizmo
             WriteBytes(&HF72543 + dbgboost, {&HF, 94, &HC0})
         End If
     End Sub
+
+    Private Sub btnLoadEntities_Click(sender As Object, e As EventArgs) Handles btnLoadEntities.Click
+
+        dgvEntities.Rows.Clear
+        dgvEntities.Columns.Clear
+
+        dgvEntities.Columns.Add("Pointer", "pointer")
+        dgvEntities.Columns.Add("CharPtr1", "charptr1")
+        dgvEntities.Columns.Add("Name", "name")
+        dgvEntities.Columns.Add("ParamID", "paramid")
+        dgvEntities.Columns.Add("EventID", "eventid")
+
+
+        Dim structPtr As Integer
+        Dim entityPtr As Integer 
+        Dim entityCount As Integer
+
+        Dim charptr1 As integer
+
+        Dim tmpRow(20) As String
+
+        structPtr = ReadInt32(&H137D644)
+        structPtr = ReadInt32(structPtr + &HE4)
+        entityCount = ReadInt32(structPtr)
+
+        structPtr = ReadInt32(structPtr + 4)
+        
+
+
+        For i = 0 To entityCount - 1
+            entityPtr = structPtr + i * &H20
+            charptr1 = ReadInt32(entityPtr)
+
+            tmpRow(0) = Hex(entityPtr)
+            tmpRow(1) = Hex(charptr1)
+            tmpRow(2) = ReadUnicodeStr(charptr1 + &H38)
+            tmpRow(3) = ReadInt32(charptr1 + &H68)
+            tmpRow(4) = ReadInt32(charptr1 + &H208)
+            dgvEntities.Rows.Add(tmpRow)
+        Next
+        
+
+
+    End Sub
 End Class
