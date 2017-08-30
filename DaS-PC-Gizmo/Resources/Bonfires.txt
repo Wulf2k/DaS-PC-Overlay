@@ -61,5 +61,6 @@
 1802960|Firelink Altar
 1802961|Kiln of the First Flame (Entrance)
 1812100|Northern Undead Asylum (Cell)
+1812900|Northern Undead Asylum (Cell, Repeat)
 1812960|Northern Undead Asylum (Bonfire #1)
 1812961|Northern Undead Asylum (Bonfire #2)
